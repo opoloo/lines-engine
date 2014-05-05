@@ -1,0 +1,54 @@
+<%= simple_form_for([:admin, @author]) do |f| %>
+  <div class="new-author">
+    <div class="row">
+      <div class="label">
+        <h3>
+          <%= f.label :name, "Name" %>
+        </h3>
+      </div>
+      <div class="input">
+        <%= f.text_field :name %>
+      </div>
+      <div class="additional"></div>
+    </div>
+    <div class="row">
+      <div class="label">
+        <h3>
+          <%= f.label :email, "E-Mail" %>
+        </h3>
+      </div>
+      <div class="input">
+        <%= f.text_field :email %>
+      </div>
+      <div class="additional"></div>
+    </div>
+    <div class="row">
+      <div class="label">
+        <h3>
+          <%= f.label :gplus_profile, "G+ Profile" %>
+        </h3>
+      </div>
+      <div class="input">
+        <%= f.text_field :gplus_profile %>
+      </div>
+      <div class="additional"></div>
+    </div>
+    <div class="row">
+      <div class="label">
+        <h3>
+          <%= f.label :description, "Description" %>
+        </h3>
+      </div>
+      <div class="input">
+        <%= f.text_area :description %>
+      </div>
+      <div class="additional"></div>
+    </div>
+
+    <%= render_navbar do %>
+      <%= f.submit "Save Author", class: "btn btn-save-publish" %>
+      <%= link_to 'Cancel', admin_authors_path, class: 'btn btn-cancel' %>
+    <% end %>  
+
+  </div>
+<% end %>

@@ -1,0 +1,32 @@
+<div id="footer">
+  <div id="footer_content">
+  
+    <div class="row about">
+      <div class="two-cols margin-2cols">
+        <h2><a href="http://lines.opoloo.com">Lines ...</a></h2>
+        <p>offers a solid starting point for Rails- and web-developers that want to cut the crap and focus on their content, with the freedom of full OSS access. You could start here by telling your readers what your blog aims at doing.</p>
+      </div>
+      <div class="two-cols">
+        <h2><a href="http://www.opoloo.com">How to get in touch ...</a></h2>
+        <p>In this section you could provide contact information and a couple of links to your website or projects. But what the dickens: you're an awesome developer — you can do whatever you want. For any concerns, write an email to <%= mail_to "info@opoloo.com", "info@opoloo.com", :encode => "javascript" %>.</p>
+      </div>
+    </div>
+  
+    <hr/>
+    
+    <div id="copyright">
+      <span class="weekday">Happy <%= Time.now.strftime("%A") %>.</span>
+      <p>
+        &copy; <%= Time.now.year %> | Powered by <a href="http://lines.opoloo.com">LINES</a> | 
+        <%= link_to "RSS", articles_url(format: "atom") %>
+        <% unless CONFIG[:twitter_url].nil? || CONFIG[:twitter_url].blank? %> 
+          | <a href="<%= CONFIG[:twitter_url] %>" class="twitter"><span>Twitter</span></a>
+        <% end %>
+        <% unless CONFIG[:gplus_url].nil? || CONFIG[:gplus_url].blank? %>
+          | <a href="<%= CONFIG[:gplus_url] %>" class="gplus"><span>Google +</span></a>
+        <% end %>
+      </p>
+    </div>
+  
+  </div>
+</div>

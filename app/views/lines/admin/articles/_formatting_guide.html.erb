@@ -1,0 +1,89 @@
+<div id="formatting_guide" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="formatting_guide_inner">
+    <div class="modal-header">
+      <button type="button" class="btn btn-close-formatting-small" data-dismiss="modal" aria-hidden="true">×</button>
+      <h2>Formatting Guid &mdash; Markdown Cheat Sheet</h2>
+      <hr />
+    </div>
+    <div class="modal-body">
+      <div class="content cheatsheet">
+        <div class="cheatsheet-content">
+          <div class="mod">
+            <div class="col">
+              <h2>Format Text</h2>
+              <p><strong>Headers</strong></p>
+              <pre># This is an &lt;h1&gt; tag
+## This is an &lt;h2&gt; tag
+###### This is an &lt;h6&gt; tag</pre>
+              <p><strong>Text styles</strong></p>
+              <pre>*This text will be italic*
+_This will also be italic_
+**This text will be bold**
+__This will also be bold__
+
+*You **can** combine them*</pre>
+            </div>
+            <div class="col">
+              <h2>Lists</h2>
+              <p><strong>Unordered</strong></p>
+              <pre>* Item 1
+* Item 2
+  * Item 2a
+  * Item 2b</pre>
+              <p><strong>Ordered</strong></p>
+              <pre>1. Item 1
+2. Item 2
+3. Item 3
+   * Item 3a
+   * Item 3b</pre>
+            </div>
+            <div class="col">
+              <h2>Miscellaneous</h2>
+              <p><strong>Images</strong></p>
+              <pre>![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](url)</pre>
+              <p><strong>Links</strong></p>
+              <pre>http://github.com - automatic!
+[GitHub](http://github.com)</pre>
+              <p><strong>Blockquotes</strong></p>
+              <pre>As Kanye West said:
+
+&gt; We're living the future so
+&gt; the present is our past.</pre>
+            </div>
+          </div>
+          <div class="rule"></div>
+
+          <h2>Code Examples in Markdown</h2>
+          <div class="col">
+            <pre>```javascript
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+}
+```</pre>
+            </div>
+            <div class="col">
+              <p><strong>Or, indent your code 4 spaces</strong></p>
+              <pre>Here is a Python code example
+without syntax highlighting:
+
+  def foo:
+    if not bar:
+      return true</pre>
+            </div>
+            <div class="col">
+              <p><strong>Inline code for comments</strong></p>
+              <pre>I think you should use an
+`&lt;addr&gt;` element here instead.</pre>
+            </div>
+        </div>
+
+        </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-close-formatting" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+  </div>
+</div>

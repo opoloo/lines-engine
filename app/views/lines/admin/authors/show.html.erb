@@ -1,0 +1,53 @@
+<div class="new-author">
+  <div class="row show">
+    <div class="label">
+      <h3>
+        Name
+      </h3>
+    </div>
+    <div class="input">
+      <%= @author.name %>
+    </div>
+    <div class="additional"></div>
+  </div>
+  <div class="row show">
+    <div class="label">
+      <h3>
+        E-Mail
+      </h3>
+    </div>
+    <div class="input">
+      <%= @author.email %>
+    </div>
+    <div class="additional"></div>
+  </div>
+  <div class="row show">
+    <div class="label">
+      <h3>
+        G+ Profile
+      </h3>
+    </div>
+    <div class="input">
+      <%= link_to @author.gplus_profile, @author.gplus_profile %>
+    </div>
+    <div class="additional"></div>
+  </div>
+  <div class="row show">
+    <div class="label">
+      <h3>
+        Description
+      </h3>
+    </div>
+    <div class="input">
+      <%= @author.description %>
+    </div>
+    <div class="additional"></div>
+  </div>
+  <br />
+  <br />
+  <br />
+  <%= render_navbar do %>
+    <%= link_to 'Edit', edit_admin_author_path(@author), class: "btn btn-save-publish" %>
+    <%= link_to 'Back', admin_authors_path, class: "btn btn-cancel" %>
+  <% end %>
+</div>

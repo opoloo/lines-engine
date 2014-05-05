@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Lines" %></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= stylesheet_link_tag    "admin", media: "all" %>
+    <%= javascript_include_tag "admin" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <%#= render 'shared/navigation' %>
+
+    <div id="main" role="main">
+      <div class="container">
+        <div class="content">
+           <div class="row">
+            <div class="span12">
+              <div class="spacer"></div>
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+            </div>
+          </div>
+          <footer>
+          </footer>
+        </div>
+      </div> <!--! end of .container -->
+    </div> <!--! end of #main -->
+  </body>
+</html>

@@ -1,0 +1,755 @@
+$darkgrey: #333;
+$lightgrey: #666;
+$orange: #e8581e;
+
+@mixin addTransition($x) {
+  transition: all $x+s ease;
+  -o-transition: all $x+s ease;
+  -ms-transition: all $x+s ease;
+  -moz-transition: all $x+s ease;
+  -webkit-transition: all $x+s ease;
+}
+
+/*------------------------  1. FONTS  -----------------------*/
+@font-face {
+  font-family: 'BPmono';
+  src: url('/fonts/BPmono-webfont.eot');
+  src: url('/fonts/BPmono-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/BPmono-webfont.woff') format('woff'),
+  url('/fonts/BPmono-webfont.ttf') format('truetype'),
+  url('/fonts/BPmono-webfont.svg#BPmono-webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BPmonoItalic';
+  src: url('/fonts/BPmonoItalics-webfont.eot');
+  src: url('/fonts/BPmonoItalics-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/BPmonoItalics-webfont.woff') format('woff'),
+  url('/fonts/BPmonoItalics-webfont.ttf') format('truetype'),
+  url('/fonts/BPmonoItalics-webfont.svg#BPmonoItalics-webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BPmonoBold';
+  src: url('/fonts/BPmonoBold-webfont.eot');
+  src: url('/fonts/BPmonoBold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/BPmonoBold-webfont.woff') format('woff'),
+  url('/fonts/BPmonoBold-webfont.ttf') format('truetype'),
+  url('/fonts/BPmonoBold-webfont.svg#BPmonoBold-webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Museo';
+  src: url('/fonts/Museo500-Regular-webfont.eot');
+  src: url('/fonts/Museo500-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Museo500-Regular-webfont.woff') format('woff'),
+  url('/fonts/Museo500-Regular-webfont.ttf') format('truetype'),
+  url('/fonts/Museo500-Regular-webfont.svg#Museo500-Regular-webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuseoLight';
+  src: url('/fonts/Museo300-Regular-webfont.eot');
+  src: url('/fonts/Museo300-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Museo300-Regular-webfont.woff') format('woff'),
+  url('/fonts/Museo300-Regular-webfont.ttf') format('truetype'),
+  url('/fonts/Museo300-Regular-webfont.svg#Museo300-Regular-webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/fonts/Ubuntu-R-webfont.eot');
+  src: url('/fonts/Ubuntu-R-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Ubuntu-R-webfont.woff') format('woff'),
+  url('/fonts/Ubuntu-R-webfont.ttf') format('truetype'),
+  url('/fonts/Ubuntu-R-webfont.svg#Ubuntu-R-webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UbuntuBold';
+  src: url('/fonts/Ubuntu-B-webfont.eot');
+  src: url('/fonts/Ubuntu-B-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Ubuntu-B-webfont.woff') format('woff'),
+  url('/fonts/Ubuntu-B-webfont.ttf') format('truetype'),
+  url('/fonts/Ubuntu-B-webfont.svg#Ubuntu-B-webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UbuntuItalic';
+  src: url('/fonts/Ubuntu-RI-webfont.eot');
+  src: url('/fonts/Ubuntu-RI-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Ubuntu-RI-webfont.woff') format('woff'),
+  url('/fonts/Ubuntu-RI-webfont.ttf') format('truetype'),
+  url('/fonts/Ubuntu-RI-webfont.svg#Ubuntu-R-webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UbuntuLight';
+  src: url('/fonts/Ubuntu-L-webfont.eot');
+  src: url('/fonts/Ubuntu-L-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Ubuntu-L-webfont.woff') format('woff'),
+  url('/fonts/Ubuntu-L-webfont.ttf') format('truetype'),
+  url('/fonts/Ubuntu-L-webfont.svg#Ubuntu-L-webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------  2. GENERAL  ----------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+
+* {
+  margin:0px;
+  padding:0px;
+}
+
+body {
+  font-family: 'Ubuntu';
+  line-height:1.5em;
+  font-size:1.125em;
+  color: #555;
+  height:100%;
+  background-color:#fff;
+}
+
+img, div {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+div {
+  overflow:hidden;
+}
+
+p, h1 {
+  width: 100%;
+  display: block;
+  min-width: 100%;
+}
+
+div.article_header {
+  h1 a {
+    display:block;
+    min-width:100%;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+
+#pagewrap {
+  width:auto;
+  #content {
+    #article_actions {
+      div, form {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+ul {
+  li {
+    list-style-position:inside;
+  }
+}
+
+div.article_header h1.title {
+  font-family: 'Museo';
+  font-weight:normal;
+  color: $orange;
+  font-size:1.8em;
+  line-height:1.01em;
+  margin:30px 0 10px 0;
+  width:100%;
+  letter-spacing: -0.03em;
+  a {
+    color: $orange;
+  }
+  a:hover {
+    color:$darkgrey;
+  }
+}
+
+i, em {
+  font-family: 'UbuntuItalic';
+  font-weight:normal;
+  font-style:normal;
+}
+
+strong, bold {
+  font-family: 'UbuntuBold';
+  font-weight:normal;
+  font-style:normal;
+}
+
+a, input[type=submit] {
+  text-decoration: none;
+  color:$darkgrey;
+  @include addTransition(0.3);
+}
+
+a:hover {
+  color:$orange;
+}
+
+.float-right {
+  float:right;
+  margin:15px 0px 5px 10px;
+}
+
+.clearfix:before, .clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+}
+.clearfix {
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*------------------------  3. HEADER  ----------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+
+#topbar {
+  color: #fff;
+  width: 100%;
+  font-size: 12px;
+  padding: 2px 0px 2px 0px;
+  background-color: #000;
+  div {
+    max-width: 960px;
+    margin: 0px auto 0px auto;
+  }
+  .right {
+    float: right;
+  }
+  a {
+    color: #aaa
+  }
+}
+
+#meta_content {
+  margin: 0px auto;
+  max-width: 920px;
+  padding: 20px 20px;
+  font-family: 'Museo';
+  font-size: 1.188em;
+  border-bottom: 1px solid #e3e3e3;
+  a {
+    color: #000;
+  }
+  a:hover {
+    color: $orange;
+  }
+  #logo {
+    float: left;
+  }
+  #lines {
+    float: right;
+    font-size: 0.737em;
+    text-transform: uppercase;
+  }
+}
+
+
+
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------  4. CONTENT  ----------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+
+#content {
+  max-width: 960px;
+  margin: 0px auto;
+  .two-cols {
+    width: 42%;
+    float: left;
+  }
+}
+
+div.article {
+  margin: 0 0 70px 0;
+  max-width: 480px;
+  float: left;
+  .article_googleplus, div.article_footer, div.sub_title, .article_content {
+    display:none;
+  }
+  .hero_image { 
+    margin: 20px 0 0 0;
+    a {
+      display: block;
+      width: 480px;
+      height: 270px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      img {
+        width: 480px;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+div.article.first {
+  max-width: 960px;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0 25px 0;
+  .article_googleplus, .article_footer, .article_content, div.sub_title {
+    display: block;
+  }
+  .article_teaser {
+    display: none;
+  }
+  div.article_wrapper {
+    border-bottom: 1px solid #ccc;
+    padding: 30px 20px 30px 20px;
+    margin: 30px 0px 25px 0px;
+  }
+  h1 {
+    font-size: 2.4em;
+    line-height: 1em;
+  }
+  div.article_content h1 {
+    font-size: 1.3em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: $darkgrey;
+    letter-spacing: 0.05em;
+    font-family: 'Museo';
+  }
+  div.hero_image {
+    a {
+      width: 960px;
+      height: auto;
+      img {
+        width: 960px;
+      }
+    }
+  }
+}
+
+
+div.article_wrapper {
+  border-top: 1px solid #ccc;
+  border-bottom: none;
+  padding: 30px 10px 0px 10px;
+  margin: 30px 10px 0 10px;
+}
+
+div.article_header {
+  text-align: center;
+  padding: 0 15px;
+}
+
+
+div.sub_title {
+  font-size: 1.333em;
+  color: #b4b4b4;
+  line-height: 1.1em;
+  margin: 0 0 25px 0;
+  letter-spacing: 0.05em;
+}
+
+div.author_name {
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+div.article_content {
+  line-height: 1.8em;
+  padding: 0px 80px 0px 80px;
+  h1 {
+    font-weight: normal;
+    font-size: 1.556em;
+    line-height: 1em;
+    margin: 50px 0 10px 0;
+    letter-spacing: 0.1em;
+  }
+  h2 {
+    font-size: 1.333em;
+    font-weight: normal;
+    margin: 40px 0 5px 0;
+    letter-spacing: 0.13em;
+    color: #b4b4b4;
+    text-transform: uppercase;
+  }
+  h3 {
+    font-weight: normal;
+    font-size: 1.111em;
+    font-family: 'UbuntuBold';
+    margin: 30px 0 0 0;
+  }
+  h4 {
+    font-weight: normal;
+    font-size: 1em;
+    letter-spacing: 0.04em;
+    margin: 30px 0 5px 0;
+    text-transform: uppercase;
+  }
+  h5 {
+    font-weight: normal;
+    font-size: 1em;
+    font-family: 'UbuntuBold';
+    margin: 20px 0 0 0;
+  }
+  ul {
+    margin-left: 10px;
+    li {
+      margin: 0 0 5px 0;
+    }
+  }
+
+  ol {
+    margin-left: 30px;
+  }
+
+  ul, ol {
+    margin-bottom: 20px;
+  }
+
+  pre {
+    font-size: 1.0em;
+    line-height: 1.5em;
+    margin-bottom: 15px;
+  }
+  .highlight pre {
+    margin: 0px 0 30px 20px;
+    padding: 10px;
+  }
+  a {
+    border-bottom: 1px solid #ccc;
+    padding: 0 0 1px 0;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+div.article_content p {
+  margin: 0 0 20px 0;
+  width: 100%;
+  min-width: 100%;
+  display: block;
+}
+
+div.article_footer {
+  text-align: center;
+  color: #808080;
+  font-size: 0.8em;
+  padding: 0px 80px;
+  a {
+    color: $orange;
+  }
+  a:hover {
+    color: $darkgrey;
+  }
+}
+
+div.article_googleplus {
+  border-bottom: 1px solid #ccc;
+  padding: 0px 20px 20px 20px;
+  font-size: 1.500em;
+  min-height: 40px;
+  line-height: 40px;
+  text-align: center;
+  a {
+    color: $lightgrey;
+    margin: 0px auto 0px auto;
+    display: inline-block;
+  }
+  a:hover {
+    color: $darkgrey;
+  }
+  span {
+    background: url('/assets/ic_googleplus.png') 0px 0px no-repeat;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    display: inline-block;
+    float: left;
+    margin: 0 15px 0 0;
+  }
+}
+
+#pagination {
+  display: block;
+  overflow: visible;
+  border-top: 1px solid #ccc;
+  margin: 0px auto;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 1.500em;
+  padding: 30px 0 0 0;
+  text-align: center;
+  position: relative;
+  a {
+    color: $lightgrey;
+  }
+  a:hover {
+    color: $darkgrey;
+  }
+  .newer, .older {
+    position: absolute;
+    display: inline-block;
+  }
+  .newer {
+    left: 0px;
+  }
+  .older {
+    right: 0px;
+  }
+  .prev, .first {
+    float: left;
+    background: url('/assets/arrow_left.png') top left no-repeat;
+    padding: 0 10px 0 50px;
+  }
+  .next, .last {
+    float: right;
+    background: url('/assets/arrow_right.png') top right no-repeat;
+    padding: 0 50px 10px 0px;
+  }
+
+  .pages {
+    font-size: 0.7em;
+    color: lighten($lightgrey,30%);
+    a {
+      color: lighten($lightgrey,30%);
+      &:hover {
+        color: $lightgrey;
+      }
+    }
+    .current {
+      color: $lightgrey;
+      font-size: 1.50em;
+    }
+  }
+}
+
+div.more-link {
+  margin:40px 20px 0px 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size:0.8em;
+  a {
+    background-color: #f4f4f4;
+    padding:5px 10px;
+    color: #4d4d4d;
+    display:block;
+    width:100%;
+    text-align:center;
+  }
+  a:hover {
+    background-color: #e7e7e7;
+  }
+}
+
+#footer {
+  background-color: #f4f4f4;
+  margin:50px 0 0 0;
+  padding:50px 0px;
+
+  #footer_content {
+    margin:0px auto;
+    max-width:960px;
+    color:#999;
+    font-size:0.85em;
+    font-family: 'UbuntuLight';
+  }
+  .footer-headline {
+    display: block;
+    text-align: center;
+    font-size:29px;
+    text-transform: uppercase;
+    font-family: 'MuseoLight';
+    letter-spacing: 0.03em;
+    margin:0 0 40px 0;
+  }
+  a {
+    font-family: 'UbuntuItalic';
+  }
+  a:hover {
+    color: $darkgrey;
+  }
+  hr {
+    background-color:#ccc;
+    height:1px;
+    width: 100%;
+    border:none;
+    display: block;
+    margin:40px 0px;
+  }
+  .row.about {
+    text-align: left;
+    .two-cols {
+      padding:0px 20px;
+      width:380px;
+      line-height:24px;
+    }
+
+
+  }
+  h2, h2 a {
+    display:block;
+    text-transform: uppercase;
+    font-family: 'MuseoLight';
+    font-size:22px;
+    margin:0 0 10px 0px;
+    letter-spacing: 0.03em;
+    font-weight: normal;
+  }
+  span.label {
+    text-transform: uppercase;
+    font-size:13px;
+    color:#c0bfbf;
+  }
+  .projects {
+    color:#747474;
+  }
+  .project-title {
+    font-family: 'Museo';
+    color: $darkgrey;
+    display:block;
+    font-size:33px;
+    margin:3px 0px 15px 0px;
+  }
+  .weekday {
+    display: block;
+    font-family: 'MuseoLight';
+    color: $darkgrey;
+  }
+  a {
+    color:#999;
+  }
+  a:hover {
+    color:$orange;
+  }
+  a.twitter:hover {
+    color:#0dc0ed;
+  }
+  a.gplus:hover {
+    color:#dd3b30;
+  }
+  .float-left {
+    float:left;
+    display: table-cell;
+  }
+  div.project-img {
+    float:left;
+    width:140px;
+    text-align: center;
+    padding:25px 0 0 0;
+  }
+  div.project-text {
+    float:left;
+    width:290px;
+  }
+
+  .two-cols {
+    max-width:430px;
+    float:left;
+  }
+  .four-cols {
+    max-width:230px;
+    float:left;
+  }
+  .margin-2cols {
+    margin-right:100px;
+  }
+  .margin-4cols {
+    margin-right:30px;
+  }
+}
+#footer h5 {
+  font-size:30px;
+  color: $darkgrey;
+  font-weight: normal;
+  margin:0 0 10px 0;
+  a {
+    color: $darkgrey;
+  }
+}
+
+#copyright {
+  text-align:center;
+  padding:50px 0 10px 0;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing: 0.05em;
+  line-height:24px;
+  a {
+    color:#999;
+    font-family: 'Ubuntu';
+  }
+  a:hover {
+    color:$orange;
+  }
+}
+
+.margin-2cols {
+  margin-right:8%;
+}
+
+hr {
+  background-color:#3d3d3d;
+  height:1px;
+  width: 100%;
+  border:none;
+  display: block;
+  margin:30px 0px;
+}
+
+div.rss {
+  display:none;
+}
+
+blockquote {
+  font-family: 'BPmono';
+  font-size:18px;
+  color:#999;
+  padding-left:30px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  em {
+    font-family: 'BPmonoItalic';
+    letter-spacing: -0.02em;
+  }
+  strong {
+    font-family: 'BPmonoBold';
+  }
+}

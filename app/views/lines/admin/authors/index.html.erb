@@ -1,0 +1,34 @@
+<%= render_navbar do %>
+  <%= link_to 'New Author', new_admin_author_path, class: "btn btn-new-author" %>
+  <%= link_to 'Articles', admin_articles_path, class: "btn btn-articles" %>
+  <%= link_to 'Visit Blog', "/", class: "btn btn-view-blog" %>
+<% end %>
+
+<% if defined?(@author) && @author.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@author.errors.count, "error") %> prohibited this author from being saved:</h2>
+
+  <ul>
+  <% @author.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+  <a href="#" class="close">x</a>
+</div>
+<% end %>
+
+<h2>All authors</h2>
+<div class="authors-list">
+  <% @authors.each do |author| %>
+    <table class="author">
+      <tr>
+        <td class="show"><%= link_to '', admin_author_path(author) %></td>
+        <td class="edit"><%= link_to '', edit_admin_author_path(author) %></td>
+        <td class="name"><%= link_to author.name, edit_admin_author_path(author) %></td>
+        <td class="email"><%= author.email %></td>
+        <td class="delete"><%= link_to '', admin_author_path(author), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="delete"><%= button_to "", {controller: :authors, action: 'destroy', id: author.id }, method: :delete, confirm: "Are you sure?" %></td>
+      </tr>
+    </table>
+  <% end %>
+</div>

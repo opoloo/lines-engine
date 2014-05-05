@@ -1,0 +1,141 @@
+= Lines Blog by Opoloo[http://www.opoloo.com]
+
+== Introduction
+
+Lines is a customizable blog framework for rails developers. It aims at making publishing simple and beautiful.
+
+Lines is a very slim, feature-constrained, young publishing platform. It is not wordpress or blogger and it doesn't aspire to be. It needs brains, work, and time to mature. It is a framework for tech-savvies who care about their content with the freedom of full OSS access.
+
+To get an idea of the appearance, see the screenshots below, visit the {Lines Website}[http://lines.opoloo.com], or see it in action at link: http://blog.opoloo.com
+
+== Note for Rails 4 lovers
+
+If you prefer a cutting edge Rails 4 version of Lines, checkout the {rails4 branch}[https://github.com/opoloo/lines/tree/rails4]
+
+== Features & Specifications
+
+- based on Rails 3.2
+- solid editing system
+- simple, consistent publishing process
+- clear, responsive presentation
+- extendable & customizable
+- full focus on content
+
+=== Features
+
+- 960x540 px hero graphics for posts
+- upload default hero images that you want to use more frequently
+- customizable generic titles & subtitles
+- automatic teaser & scaled image for the article overview
+- determine featured article
+- six headline styles according to priority
+- italics & bold text
+- block quotes
+- images, lists, links
+- tags for articles
+- G+ link to social network discussion
+- multiple authors and author information (for your small company or guest authors)
+- add documents for download
+- formatting help
+- direct RSS reader access
+- code highlighting
+
+
+== Installation
+
+1. Clone the repository:
+    git clone git@github.com:opoloo/lines.git
+
+2. Switch into the lines directory:
+    cd lines
+
+3. There is a installation task that will guide you through the rest of the installation process. Just switch to the 'lines' directory and run:
+    ruby install.rb
+
+If you need some more information or help, you can just follow this readme file.
+
+
+=== Managing admin users
+
+Currently Lines does not offer a GUI for managing users. Just open a console with 'rails c' and add/change a user manually:
+
+  # CREATE a new user
+  User.create(email: "your@email.com", password: "yoursecret")
+
+  # UPDATE an existing user
+  u = User.find_by_email('your@email.com')
+  u.email = "new@mail.com"
+  u.password = "newsekret"
+  u.save
+
+=== Adjust database details
+
+To adjust your database details, go to <tt>config/database.yml</tt>
+
+    username: DATABASE_USERNAME
+    password: DATABASE_PASSWORD
+
+There'll be 3 blocks that contain <tt>username</tt> & <tt>password</tt>. Development-, Test- & Production-Database.
+
+If there is no <tt>config/database.yml</tt>, just copy the <tt>config/database.yml.dist</tt> like that:
+
+    cd config
+    cp database.yml.dist database.yml
+
+or like this (in case you want to stay in your root directory):
+
+    cp config/database.yml.dist config/database.yml
+
+Renaming the <tt>config/database.yml.dist</tt> to <tt>config/database.yml</tt> works as well.
+
+
+=== Google Sitemap
+
+The sitemap_generator gem (https://github.com/kjvarga/sitemap_generator) handles the creation of sitemaps for search engines. To update the sitemap on server, run:
+
+  bundle exec rake sitemap:refresh:no_ping # don't ping search engines
+  bundle exec rake sitemap:refresh         # ping search engines
+
+Don't forget to adjust the full url to your sitemaps in <tt>public/robots.txt</tt>
+
+== Documentation
+
+The complete documentation can be found at rdoc.info: http://rdoc.info/github/opoloo/lines/master/frames
+
+== Customization
+
+=== Modify CSS/SCSS
+
+Admin viewer SCSS: <tt>app/assets/stylesheets/admin.css.scss</tt>
+
+Default viewer SCSS: <tt>app/assets/stylesheets/style.css.scss</tt>
+
+=== Modify custom hero images
+
+You can add, remove or change the +HERO_IMAGES+ variable inside the <tt>app/models/article.rb</tt> model. The corresponding images reside inside the <tt>public/heroes</tt> directory.
+
+=== Header (Meta) & Footer
+
+To change the header/meta/footer elements you need to modify <tt>app/views/layouts/application.html.erb</tt>
+
+== Screenshots
+
+Some screenshots to get an impression of the look & feel
+
+=== Dashboard
+{<img src="http://lines.opoloo.com/images/screenshot_01.png" />}[http://lines.opoloo.com/images/screenshot_01.png]
+
+=== Create or edit an article
+{<img src="http://lines.opoloo.com/images/screenshot_02.png" />}[http://lines.opoloo.com/images/screenshot_02.png]
+
+=== Preview and publish
+{<img src="http://lines.opoloo.com/images/screenshot_03.png" />}[http://lines.opoloo.com/images/screenshot_03.png]
+
+
+== License
+
+You may use the Lines blog template as you please. You must, however, keep the footer section, so attribution to Lines[http://lines.opoloo.com] and {Opoloo}[http://www.opoloo.com] is granted.
+
+We heartily invite you to extend the features of the template, but when you do, you should fork it on GitHub, so everyone can profit from your work.
+
+You can see the full license here: http://choosealicense.com/licenses/lgpl-v3/

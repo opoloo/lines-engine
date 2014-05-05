@@ -1,0 +1,297 @@
+  [1m[36m (20.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (15.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to BaseMigration (20140505122014)
+  [1m[35m (8.2ms)[0m  CREATE TABLE `articles` (`id` int(11) auto_increment PRIMARY KEY, `title` varchar(255), `sub_title` varchar(255), `content` text, `published` tinyint(1) DEFAULT 0, `published_at` datetime, `hero_image` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `slug` varchar(255), `gplus_url` varchar(255), `featured` tinyint(1) DEFAULT 0, `document` varchar(255), `short_hero_image` varchar(255)) ENGINE=InnoDB
+  [1m[36m (15.2ms)[0m  [1mCREATE UNIQUE INDEX `index_articles_on_slug` USING btree ON `articles` (`slug`) [0m
+  [1m[35m (8.4ms)[0m  CREATE TABLE `authorables` (`id` int(11) auto_increment PRIMARY KEY, `author_id` int(11), `article_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (12.1ms)[0m  [1mCREATE  INDEX `index_authorables_on_article_id` USING btree ON `authorables` (`article_id`) [0m
+  [1m[35m (11.6ms)[0m  CREATE  INDEX `index_authorables_on_author_id` USING btree ON `authorables` (`author_id`) 
+  [1m[36m (8.3ms)[0m  [1mCREATE TABLE `authors` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `description` text, `gplus_profile` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (8.6ms)[0m  CREATE TABLE `friendly_id_slugs` (`id` int(11) auto_increment PRIMARY KEY, `slug` varchar(255) NOT NULL, `sluggable_id` int(11) NOT NULL, `sluggable_type` varchar(40), `created_at` datetime) ENGINE=InnoDB
+  [1m[36m (13.8ms)[0m  [1mCREATE UNIQUE INDEX `index_friendly_id_slugs_on_slug_and_sluggable_type` USING btree ON `friendly_id_slugs` (`slug`, `sluggable_type`) [0m
+  [1m[35m (14.7ms)[0m  CREATE  INDEX `index_friendly_id_slugs_on_sluggable_id` USING btree ON `friendly_id_slugs` (`sluggable_id`) 
+  [1m[36m (13.7ms)[0m  [1mCREATE  INDEX `index_friendly_id_slugs_on_sluggable_type` USING btree ON `friendly_id_slugs` (`sluggable_type`) [0m
+  [1m[35m (8.3ms)[0m  CREATE TABLE `pictures` (`id` int(11) auto_increment PRIMARY KEY, `image` varchar(255), `name` varchar(255), `article_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (18.1ms)[0m  [1mCREATE  INDEX `index_pictures_on_article_id` USING btree ON `pictures` (`article_id`) [0m
+  [1m[35m (10.5ms)[0m  CREATE TABLE `taggings` (`id` int(11) auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `taggable_type` varchar(255), `tagger_id` int(11), `tagger_type` varchar(255), `context` varchar(128), `created_at` datetime) ENGINE=InnoDB
+  [1m[36m (12.0ms)[0m  [1mCREATE  INDEX `index_taggings_on_tag_id` USING btree ON `taggings` (`tag_id`) [0m
+  [1m[35m (13.1ms)[0m  CREATE  INDEX `index_taggings_on_taggable_id_and_taggable_type_and_context` USING btree ON `taggings` (`taggable_id`, `taggable_type`, `context`) 
+  [1m[36m (8.0ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (9.3ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140505122014')
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36m (13.7ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (13.4ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to BaseMigration (20140505122014)
+  [1m[35m (8.3ms)[0m  CREATE TABLE `lines_articles` (`id` int(11) auto_increment PRIMARY KEY, `title` varchar(255), `sub_title` varchar(255), `content` text, `published` tinyint(1) DEFAULT 0, `published_at` datetime, `hero_image` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `slug` varchar(255), `gplus_url` varchar(255), `featured` tinyint(1) DEFAULT 0, `document` varchar(255), `short_hero_image` varchar(255)) ENGINE=InnoDB
+  [1m[36m (13.1ms)[0m  [1mCREATE UNIQUE INDEX `index_lines_articles_on_slug` USING btree ON `lines_articles` (`slug`) [0m
+  [1m[35m (7.8ms)[0m  CREATE TABLE `lines_authorables` (`id` int(11) auto_increment PRIMARY KEY, `lines_author_id` int(11), `lines_article_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (23.1ms)[0m  [1mCREATE  INDEX `index_lines_authorables_on_article_id` USING btree ON `lines_authorables` (`lines_article_id`) [0m
+  [1m[35m (22.2ms)[0m  CREATE  INDEX `index_lines_authorables_on_author_id` USING btree ON `lines_authorables` (`lines_author_id`) 
+  [1m[36m (9.6ms)[0m  [1mCREATE TABLE `lines_authors` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `description` text, `gplus_profile` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (12.6ms)[0m  CREATE TABLE `friendly_id_slugs` (`id` int(11) auto_increment PRIMARY KEY, `slug` varchar(255) NOT NULL, `sluggable_id` int(11) NOT NULL, `sluggable_type` varchar(40), `created_at` datetime) ENGINE=InnoDB
+  [1m[36m (17.7ms)[0m  [1mCREATE UNIQUE INDEX `index_friendly_id_slugs_on_slug_and_sluggable_type` USING btree ON `friendly_id_slugs` (`slug`, `sluggable_type`) [0m
+  [1m[35m (13.8ms)[0m  CREATE  INDEX `index_friendly_id_slugs_on_sluggable_id` USING btree ON `friendly_id_slugs` (`sluggable_id`) 
+  [1m[36m (17.5ms)[0m  [1mCREATE  INDEX `index_friendly_id_slugs_on_sluggable_type` USING btree ON `friendly_id_slugs` (`sluggable_type`) [0m
+  [1m[35m (9.1ms)[0m  CREATE TABLE `lines_pictures` (`id` int(11) auto_increment PRIMARY KEY, `image` varchar(255), `name` varchar(255), `article_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX `index_lines_pictures_on_article_id` USING btree ON `lines_pictures` (`lines_article_id`) [0m
+Mysql2::Error: Key column 'lines_article_id' doesn't exist in table: CREATE  INDEX `index_lines_pictures_on_article_id` USING btree ON `lines_pictures` (`lines_article_id`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to BaseMigration (20140505122014)
+  [1m[35m (4.2ms)[0m  DROP TABLE `lines_articles`
+  [1m[36m (12.6ms)[0m  [1mCREATE TABLE `lines_articles` (`id` int(11) auto_increment PRIMARY KEY, `title` varchar(255), `sub_title` varchar(255), `content` text, `published` tinyint(1) DEFAULT 0, `published_at` datetime, `hero_image` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `slug` varchar(255), `gplus_url` varchar(255), `featured` tinyint(1) DEFAULT 0, `document` varchar(255), `short_hero_image` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (13.9ms)[0m  CREATE UNIQUE INDEX `index_lines_articles_on_slug` USING btree ON `lines_articles` (`slug`) 
+  [1m[36m (2.2ms)[0m  [1mDROP TABLE `lines_authorables`[0m
+  [1m[35m (10.4ms)[0m  CREATE TABLE `lines_authorables` (`id` int(11) auto_increment PRIMARY KEY, `lines_author_id` int(11), `lines_article_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (12.9ms)[0m  [1mCREATE  INDEX `index_lines_authorables_on_article_id` USING btree ON `lines_authorables` (`lines_article_id`) [0m
+  [1m[35m (12.8ms)[0m  CREATE  INDEX `index_lines_authorables_on_author_id` USING btree ON `lines_authorables` (`lines_author_id`) 
+  [1m[36m (2.1ms)[0m  [1mDROP TABLE `lines_authors`[0m
+  [1m[35m (7.9ms)[0m  CREATE TABLE `lines_authors` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `description` text, `gplus_profile` varchar(255)) ENGINE=InnoDB
+  [1m[36m (2.3ms)[0m  [1mDROP TABLE `friendly_id_slugs`[0m
+  [1m[35m (8.2ms)[0m  CREATE TABLE `friendly_id_slugs` (`id` int(11) auto_increment PRIMARY KEY, `slug` varchar(255) NOT NULL, `sluggable_id` int(11) NOT NULL, `sluggable_type` varchar(40), `created_at` datetime) ENGINE=InnoDB
+  [1m[36m (13.5ms)[0m  [1mCREATE UNIQUE INDEX `index_friendly_id_slugs_on_slug_and_sluggable_type` USING btree ON `friendly_id_slugs` (`slug`, `sluggable_type`) [0m
+  [1m[35m (14.1ms)[0m  CREATE  INDEX `index_friendly_id_slugs_on_sluggable_id` USING btree ON `friendly_id_slugs` (`sluggable_id`) 
+  [1m[36m (17.7ms)[0m  [1mCREATE  INDEX `index_friendly_id_slugs_on_sluggable_type` USING btree ON `friendly_id_slugs` (`sluggable_type`) [0m
+  [1m[35m (4.9ms)[0m  DROP TABLE `lines_pictures`
+  [1m[36m (69.0ms)[0m  [1mCREATE TABLE `lines_pictures` (`id` int(11) auto_increment PRIMARY KEY, `image` varchar(255), `name` varchar(255), `lines_article_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (134.0ms)[0m  CREATE  INDEX `index_lines_pictures_on_article_id` USING btree ON `lines_pictures` (`lines_article_id`) 
+  [1m[36m (8.1ms)[0m  [1mCREATE TABLE `taggings` (`id` int(11) auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `taggable_type` varchar(255), `tagger_id` int(11), `tagger_type` varchar(255), `context` varchar(128), `created_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (12.8ms)[0m  CREATE  INDEX `index_taggings_on_tag_id` USING btree ON `taggings` (`tag_id`) 
+  [1m[36m (12.8ms)[0m  [1mCREATE  INDEX `index_taggings_on_taggable_id_and_taggable_type_and_context` USING btree ON `taggings` (`taggable_id`, `taggable_type`, `context`) [0m
+  [1m[35m (8.1ms)[0m  CREATE TABLE `tags` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB
+  [1m[36m (7.5ms)[0m  [1mCREATE TABLE `lines_users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140505122014')[0m
+  [1m[35m (3.6ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLines::User Exists (2.6ms)[0m  SELECT  1 AS one FROM `lines_users`  WHERE `lines_users`.`email` = BINARY 'valid@example.com' LIMIT 1
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO `lines_users` (`created_at`, `email`, `password_digest`, `updated_at`) VALUES ('2014-05-05 14:27:29', 'valid@example.com', '$2a$04$EDG5pyk22aOCdKZUMOObG.NHHLPNqWKU7qr0eSNDHEC2ZrZkQMAYW', '2014-05-05 14:27:29')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (3.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLines::User Exists (0.3ms)[0m  SELECT  1 AS one FROM `lines_users`  WHERE `lines_users`.`email` = BINARY 'flo_stroman@boyle.biz' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `lines_users` (`created_at`, `email`, `password_digest`, `updated_at`) VALUES ('2014-05-05 14:27:29', 'flo_stroman@boyle.biz', '$2a$04$LHQ56RRi.nNA9FZgII7CluW6b4YZh7miXhkqbYfburMNmjzWGJxEq', '2014-05-05 14:27:29')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLines::User Exists (0.3ms)[0m  SELECT  1 AS one FROM `lines_users`  WHERE `lines_users`.`email` = BINARY 'valid@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `lines_users` (`created_at`, `email`, `password_digest`, `updated_at`) VALUES ('2014-05-05 14:27:29', 'valid@example.com', '$2a$04$aF.7AYCBPQzWqabHWVYtqOGI7.Pdbkn4epjc5uaMN1S4/1m618j9i', '2014-05-05 14:27:29')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.7ms)[0m  [1mROLLBACK[0m

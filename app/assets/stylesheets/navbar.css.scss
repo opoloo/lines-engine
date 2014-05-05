@@ -1,0 +1,145 @@
+$orange: #e8581e;
+$background: #2d2d2d;
+$text: #e3e3e3;
+$btn: #434343;
+$btn_active: $orange;
+
+@mixin addTransition($x) {
+  transition: all $x+s ease;
+  -o-transition: all $x+s ease;
+  -ms-transition: all $x+s ease;
+  -moz-transition: all $x+s ease;
+  -webkit-transition: all $x+s ease;
+}
+
+.btn {
+  font-family: 'Cabin', sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+  color: #ffffff;
+  padding: 10px 15px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border: 0px;
+  display: inline-block;
+  margin: 8px 0px;
+  &.btn-publish {
+    background-color: $orange !important;
+    color: #d6d6d6;
+    &:hover {
+      background-color: lighten($orange, 15%) !important;
+    }
+  }
+  &.btn-edit, &.btn-back {
+    background-color: #434343;
+    &:hover {
+      background-color: lighten(#434343, 15%);
+    }
+  }
+}
+
+#navbar {
+  height: 60px;
+  background-color: $background;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 9999;
+  width: 100%;
+  color: $text;
+  .navbar-inner{
+    width: 960px;
+    height: 60px;
+    line-height: 60px;
+    margin:0 auto;
+    span.blogtitle {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 32px;
+      text-transform: uppercase;
+      color: $text;
+      letter-spacing: 0.03em;
+    }
+    span.backlink {
+      width: 60px;
+      height: 60px;
+      display: inline-block;
+      float: left;
+      margin-right: 10px;
+      @include addTransition(0.3);
+      a {
+        display: inline-block;
+        background: transparent url(/assets/ic_action_home.png) no-repeat scroll center center;
+        height: 60px;
+        width: 60px;
+      }
+      &:hover {
+        background-color: $btn;
+      }
+    }
+    span.actionlink {
+      float: left;
+      display: inline-block;
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-right: 20px;
+    }
+    span.buttons {
+      float: left;
+      display: inline-block;
+      line-height:60px;
+      padding-top:5px;
+      a, input {
+        display: inline-block;
+        background-color: $btn;
+        color: $text;
+        height: 35px;
+        margin-right: 15px;
+        line-height: 35px;
+        padding: 0px 15px;
+        text-transform: uppercase;
+        float:left;
+        &.btn-save-publish {
+          background: $orange;
+          &:hover {
+            background: lighten($orange, 15%);
+          }
+        }
+        &:hover {
+          background: lighten($btn, 15%);
+        }
+      }
+      form {
+        float:left;
+        display: inline-block;
+        height:40px;
+      }
+    }
+    span.logged-in-as {
+      font-size: 14px;
+      float: right;
+    }
+    span.logout {
+      float: right;
+      margin-left: 15px;
+      a {
+        color: $text;
+        font-size: 14px;
+        font-family: 'Cabin', sans-serif;
+        text-transform: uppercase;
+        border-bottom: 1px solid #434343;
+        &:hover {
+          border-bottom: 1px solid $orange;
+        }
+      }
+    }
+  }
+}
+
+.spacer {
+  height: 60px;
+  width: 100%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  margin-bottom: 50px;
+}

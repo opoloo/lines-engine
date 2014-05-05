@@ -1,0 +1,175 @@
+<%= simple_form_for([:admin, @article], id: 'article_form') do |f| %>
+
+  <div class="new-article">
+    <div class="row">
+      <div class="label">
+        <h3><%= f.label :hero_image, "Hero Image" %> <span class="required">*</span></h3>
+      </div>
+      <div class="input">
+        <div class="hero-image" style="background: url('<%= @article.hero_image? ? @article.hero_image : @article.short_hero_image %>'); background-size: cover;">
+          <% if @article.hero_image? %>
+            <%= f.label :hero_image, "Change Image", class: "choose-file" %>
+          <% elsif @article.short_hero_image? %>
+            <%= f.label :hero_image, "Change Image", class: "choose-file" %>
+          <% else %>
+            <%= f.label :hero_image, "Upload Image", class: "choose-file" %>
+          <% end %>
+          <%= f.file_field :hero_image, class: "hero-image-value" %>
+          <%= f.hidden_field :hero_image_file %>
+          <div class="hidden">
+            <%= f.hidden_field :hero_image_cache, class: "hero-image-cache" %>
+            <span id="hero_image_name"><%= (@article.hero_image.filename) if @article.hero_image? %></span>
+          </div>
+        </div>
+      </div>
+      <div class="additional">
+        <div class="short-hero-images-box">
+          <h2>Default images</h2>
+          <div class="short-hero-images">
+            <% Article::HERO_IMAGES.each_with_index do |h, i| %>
+              <div class="short-hero-image-box">
+                <img src="<%= "/heroes/#{h}" %>" width="115" id="hero_<%= i %>" class="select_image <%= 'selected_image' if ('/heroes/' + h) == @article.short_hero_image %>" />
+              </div>
+            <% end %>
+            <%= f.hidden_field :short_hero_image, class: "short-hero-image-cache" %>
+          </div>
+          <br style="clear: both;" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">
+        <h3><%= f.label :title, "Title" %> <span class="required">*</span></h3>
+      </div>
+      <div class="input input-text">
+        <%= f.text_field :title, class: "article-title" %>
+      </div>
+      <div class="additional">
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">
+        <h3><%= f.label :sub_title, "Subtitle" %></h3>
+      </div>
+      <div class="input input-text">
+        <%= f.text_field :sub_title, class: "article-subtitle" %>
+      </div>
+      <div class="additional">
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">
+        <h3><%= f.label :content, "Content" %> <span class="required">*</span></h3>
+      </div>
+      <div class="input input-textarea">
+        <%= f.text_area :content %>
+      </div>
+      <div class="additional">
+        <a href="#formatting_guide" data-toggle="modal" class="btn-formatting-help">&lt;/&gt; Formatting Help</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">
+        <h3>Authors <span class="required">*</span></h3>
+      </div>
+      <div class="input">
+        <%= hidden_field_tag "article[author_ids][]", nil %>
+        <% @author_count = 1 %>
+        <% Author.all.each do |author| %>
+          <% if (@author_count <= 2) %>
+            <div class="checkbox first-row">
+          <% else %>
+            <div class="checkbox">
+          <% end %>
+            <%= check_box_tag "article[author_ids][]", author.id, @article.author_ids.include?(author.id), id: dom_id(author) %>
+            <label for="<%= dom_id(author) %>" class="checkbox"><span></span><%= author.name %></label>
+          </div>
+          <% @author_count += 1 %>
+        <% end %>
+      </div>
+      <div class="additional">
+        <%= link_to "+ Add new author", new_admin_author_path(), class: "add-new-author" %>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="label">
+        <h3><%= f.label :gplus_url, "G+ URL" %></h3>
+      </div>
+      <div class="input input-text">
+        <%= f.text_field :gplus_url %>
+      </div>
+      <div class="additional">
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">
+        <h3><label>Document</label></h3>
+      </div>
+      <div class="input">
+        <div class="documents">
+          <%= f.label :document, "#{@article.document? ? @article.document.file.filename : 'Choose File' }", class: "choose-files" -%>
+          <%= f.file_field :document, class: "article-document-value" %>
+          <div class="hidden">
+            <%= f.hidden_field :document_cache %>
+            <%= (@article.hero_image.filename) if @article.document? %>
+          </div>
+        </div>
+
+        <% if @article.document? %>
+        <div class="checkbox">
+          <%= f.check_box :remove_document %>
+          <label for="article_remove_document" class="checkbox"><span></span>Delete document</label>
+        </div>
+        <% end %>
+
+      </div>
+      <div class="additional">
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">
+        <h3><%= f.label :tag_list, "Tags" %></h3>
+      </div>
+      <div class="input input-text">
+        <%= f.autocomplete_field :tag_list, autocomplete_tag_name_admin_articles_path, :"data-delimiter" => ', ' %>
+      </div>
+      <div class="additional">
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">
+        <h3>Published at <span class="required">*</span></h3>
+      </div>
+      <div class="input input-text">
+        <%= f.text_field :published_at, value: (@article.published_at || Time.now).strftime("%Y-%m-%d"), 'data-behaviour' => 'datepicker' %>
+      </div>
+      <div class="additional">
+
+      </div>
+    </div>
+
+    <%= render_navbar do %>
+      <%= f.submit "Save Article", class: "btn btn-save-publish" %>
+      <%= link_to "Cancel", admin_articles_path, class: "btn btn-cancel" %>
+    <% end %>        
+
+  </div>
+<% end %>
+
+<%= render 'admin/articles/formatting_guide' %>
+

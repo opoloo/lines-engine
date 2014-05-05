@@ -1,0 +1,25 @@
+<% if @article.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+  <ul>
+  <% @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+  <a href="#" class="close">x</a>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="span8">
+    <div class="form-box">
+      <%= render 'admin/articles/form' %>
+    </div>
+  </div>
+
+  <div class="span4 picture-box">
+    <%= render 'admin/articles/picture_box' %>
+  </div>
+
+</div>

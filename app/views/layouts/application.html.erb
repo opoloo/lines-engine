@@ -1,0 +1,45 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="UTF-8" />
+  <meta name="author" content="<%= CONFIG[:meta_author] %>" />
+  <meta name="revisit-after" content="3 days" />
+  <meta name="robots" content="index,follow" />
+  <%= display_meta_tags site: CONFIG[:title_short] %>
+  <meta name="geo.position" CONTENT="<%= CONFIG[:geo_position] %>">
+  <meta name="geo.placename" CONTENT="<%= CONFIG[:geo_address] %>">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <%= yield :head %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if current_user %>
+  <%= render_navbar { "" } %>
+  <div class="spacer"></div>
+<% end %>
+<div id="pagewrap">
+  <a id="top"></a>
+  <div id="meta">
+    <div id="meta_content">
+      <div id="logo">
+          <a href="/"><img src="<%= CONFIG[:logo] %>" alt="Logo Lines" /></a>
+      </div>
+      <div id="lines">
+        <%= CONFIG[:short_description] %>
+      </div>
+    </div>
+  </div>
+
+  <div id="content">
+    <%= yield %>
+  </div>
+
+  <%= render 'shared/footer' %>
+
+</div>
+</body>
+</html>

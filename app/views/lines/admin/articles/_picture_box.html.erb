@@ -1,0 +1,31 @@
+<div class="well well_small">
+  
+  <h2>Upload photos</h2>
+
+  <div id="pictures">
+    <% if @article.pictures.any? %>
+      <% @article.pictures.each do |picture| %>
+        <div class="picture-preview" id="<%= dom_id picture %>">
+          <div class="picture"><%= image_tag picture.image_url(:preview) %></div>
+          <a href="#insert" class="insert-image" data-url="<%= picture.image_url %>"></a>
+          <%= button_to "", admin_picture_path(picture), remote: true, confirm: "Are you sure?", method: :delete, class: 'btn-delete-photo' %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  
+  <div class="picture-preview">
+    <%= form_for [:admin, Picture.new], {enctype: "multipart/form-data"} do |f| %>
+      <img src="/assets/ic_action_add.png" style="height: 48px; width: 48px; padding: 18px;" alt="" />
+      <input id="picture_image" multiple="multiple" name="picture[image]" type="file" />
+    <% end %>
+  </div>
+  <br style="clear: both;" />
+
+</div>
+
+<script id="template-upload" type="text/x-tmpl">
+  <div class="upload">
+    <div class="progress"><div class="bar" style="width: 0%"></div></div>
+  </div>
+</script>

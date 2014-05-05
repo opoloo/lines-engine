@@ -1,0 +1,22 @@
+<%= render_navbar {} %>
+<div class="login">
+  <h1>Login</h1>
+
+  <%= form_tag sessions_path do %>
+    <div class="email">
+      <%= label_tag :email, "Email address" %>
+      <%= text_field_tag :email, params[:email] %>
+      <br style="clear: both;" />
+    </div>
+    <div class="password">
+      <%= label_tag :password, "Password" %>
+      <%= password_field_tag :password %>
+      <br style="clear: both;" />
+    </div>
+    <br style="clear: both;" />
+    <div class="submit">
+      <%= submit_tag "Login" %>
+      <a href="/">or go back to your blog.</a>
+    </div>
+  <% end %>
+</div>

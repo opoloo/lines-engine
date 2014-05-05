@@ -1,0 +1,47 @@
+<div class="article<%= (article_counter < 0) ? " first":"" %>">
+<% cache article do %>
+
+  <div class="hero_image">
+    <%= link_to article_path(article), { style: "background-image:url('#{article.image_url}')" } do %>
+      <img src="<%= article.image_url %>" alt="<%= article.title %>" />
+    <% end %>
+  </div>
+
+  <div class="article_header">
+    <h1 class="title"><%= link_to article.title, article_path(article) %></h1>
+    <div class="sub_title"><%= article.sub_title %></div>
+    <div class="author_name"><span>by</span> <%= display_article_authors(article) %></div>
+  </div>
+
+  <div class="article_wrapper">
+
+    <div class="article_content">
+      <%= markdown article.content %>
+      <% if article.document? %>
+      <div class="article_document">
+        <%= link_to "Download #{article.document.file.filename}", article.document_url %>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="article_teaser">
+      <%= format_code(article.content) %>
+      <div class="more-link">
+        <%= link_to "Read full article", article_path(article) %>
+      </div>
+    </div>
+
+  </div>
+
+  <% unless article.gplus_url.blank? %>
+    <div class="article_googleplus">
+      <a href="<%= article.gplus_url %>"><span></span>Discuss this article at Google+</a>
+    </div>
+  <% end %>
+  
+  <div class="article_footer">
+    Written on <span class="published_at"><%= article.published_at.to_date %></span> by <%= display_article_authors(article, true) %>
+  </div>
+  
+<% end %>
+</div>

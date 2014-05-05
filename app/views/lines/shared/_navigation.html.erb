@@ -1,0 +1,18 @@
+<div class="navbar navbar-fixed-top">
+  <nav class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="/admin"><%= CONFIG[:title_short] %></a>
+
+      <ul class="user-info">
+        <% if current_user %>
+          <li><%= current_user.email %></li>
+          <li><a href="<%= logout_path %>">Logout</a></li>
+        <% end %>
+      </ul>
+      <br class="clear" />
+    </div>
+  </nav>
+</div>
+
+
+    

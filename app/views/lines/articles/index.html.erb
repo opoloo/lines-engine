@@ -1,0 +1,16 @@
+<% content_for :head, auto_discovery_link_tag(:atom, articles_url(format: "atom")) %>
+
+<div class="rss">
+    <%= link_to image_tag("feed-icon-28x28.png"), articles_url(format: "atom") %>
+</div>
+
+<div id="articles">
+  <%= render partial: 'article', locals: { article: @first_article, article_counter: -1 } unless @first_article.nil? %>
+  <%= render partial: "article_collection", collection: @articles %>
+</div>
+
+<% if @articles.num_pages > 1 %>
+<div id="pagination">
+  <%= paginate @articles, outer_window: 1, window: 2 %>
+</div>
+<% end %>

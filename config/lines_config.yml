@@ -1,0 +1,51 @@
+###################################
+### GENERAL, HEADER & META TAGS ###
+###################################
+
+logo: "/assets/logo.png"                                      # Logo for your blog
+title: "Lines Blog - A Blog about Ruby on Rails"              # Give your blog a meaningful title. This is used for the HTML title attribute
+title_short: "Lines Blog"                                     # Place the name of your blog or a short title here
+short_description: "A Ruby on Rails Developer's Blog"         # Short description for your blog
+meta_description: "Lines - A Ruby on Rails Developer's Blog"  # meta description tag
+meta_author: "John Doe"                                       # meta tag for author
+keywords: "Lines, Blog, Ruby on Rails"                        # your keywords
+og_logo: "http://www.opoloo.de/assets/opoloogo.png"           # OpenGraph logo
+geo_position: "50.00; 8.27"                                   # Geo tags for position and address
+geo_address: "Opoloo, 55116 Mainz"                            # Geo tags for position and address
+
+
+##############
+### SOCIAL ###
+##############
+
+# Your Twitter and Google+ profile URL
+# Leave empty if you don't want to display inside the footer
+twitter_url: 'http://twitter.com/opoloo'
+gplus_url: 'https://plus.google.com/+Opoloo'
+
+
+#################
+### ATOM FEED ###
+#################
+
+feed_title: "Lines Blog - A Blog about Ruby on Rails"      # give your feed a title
+feed_logo: "http://blog.opoloo.com/assets/opoloo_feed.png" # full URL to the feed logo. Aspect ratio should be 2:1
+feed_favicon: "http://blog.opoloo.com/favivon.ico"         # #full URL to the favicon. Aspect ratio should be 1:1
+
+
+#####################
+### APP SPECIFICS ###
+#####################
+
+articles_per_page: 10 # Pagination: How many articles should be desplayed per page?
+
+# Your apps secret token. Generate a new one with 'rake secret' and paste it below
+secret_token: "afa4a436180a2febe9b814c6a57b6f3ad298aa82ce0ab4c9e8238713764b665e978f9fad8146587b6cf4a518de4a8f0eac1156cf43a778548e0082629d099fef"
+
+# Environment dependent configuration. Place your URLs here
+development:
+  host: "localhost:3000"
+test:
+  host: "test.local"
+production:
+  host: "blog.opoloo.com"
