@@ -9,8 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require navbar
- *= require style
- *= require pygments
- *= require media_queries
+ *= require lines/navbar
+ *= require lines/style
+ *= require lines/pygments
+ *= require lines/media_queries
  */

@@ -6,8 +6,8 @@
     <title><%= content_for?(:title) ? yield(:title) : "Lines" %></title>
     <meta name="description" content="">
     <meta name="author" content="">
-    <%= stylesheet_link_tag    "admin", media: "all" %>
-    <%= javascript_include_tag "admin" %>
+    <%= stylesheet_link_tag    "lines/admin", media: "all" %>
+    <%= javascript_include_tag "lines/admin" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>

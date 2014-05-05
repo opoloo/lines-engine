@@ -12,10 +12,11 @@ module Lines
       Rails.application.config.assets.paths << root.join("app", "assets", "images")
       Rails.application.config.assets.paths << root.join("app", "assets", "stylesheets")
       Rails.application.config.assets.paths << root.join("app", "assets", "javascripts")
+      Rails.application.config.assets.paths << root.join("app", "assets", "fonts")
     end
 
     initializer "lines.assets.precompile" do |app|
-      app.config.assets.precompile += %w(admin.css admin.js)
+      app.config.assets.precompile += %w(lines/admin.css lines/admin.js)
     end
 
     initializer 'lines.action_controller' do |app|

@@ -6,7 +6,7 @@ module Lines
 
   class ArticlesController < ApplicationController
 
-    layout 'application'
+    layout 'lines/application'
 
     KEYWORDS = CONFIG[:keywords]
     SITE_TITLE = CONFIG[:title]

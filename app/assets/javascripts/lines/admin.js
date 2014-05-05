@@ -4,8 +4,8 @@
 //= require autocomplete-rails
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
-//= require pictures
-//= require autosize.min
+//= require lines/pictures
+//= require lines/autosize.min
 
 // Function to insert uploaded pictures into the content at cursor position
 jQuery.fn.extend({
