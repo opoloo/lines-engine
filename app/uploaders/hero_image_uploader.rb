@@ -24,4 +24,8 @@ class HeroImageUploader < CarrierWave::Uploader::Base
     "/assets/heroes/" + [filename].compact.join('_')
   end
 
+  def root
+    Rails.root.join 'public/'
+  end
+
 end

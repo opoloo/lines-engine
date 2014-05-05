@@ -10,4 +10,7 @@ class DocumentUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  def root
+    Rails.root.join 'public/'
+  end
 end
