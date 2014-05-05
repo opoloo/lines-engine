@@ -6,8 +6,6 @@ module Lines
 
   class Admin::AuthorsController < Admin::ApplicationController
 
-    before_action :author_params
-
     # Listes all authroes
     def index
       @authors = Author.all
@@ -20,7 +18,7 @@ module Lines
 
     # New author
     def new
-      @author = Author.new
+      @author = Lines::Author.new
     end
 
     # Edit an existing author
@@ -30,7 +28,7 @@ module Lines
 
     # Create a new author from params
     def create
-      @author = Author.new(params[:author])
+      @author = Author.new(author_params)
 
       if @author.save
         redirect_to admin_author_path @author, notice: 'Author was successfully created.'

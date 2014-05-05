@@ -6,6 +6,7 @@ module Lines
     require 'jquery-rails'
     require 'jquery-ui-rails'
     require 'jquery-fileupload-rails'
+    require 'sanitize'
 
     initializer :assets do |config|
       Rails.application.config.assets.paths << root.join("app", "assets", "images")
@@ -15,6 +16,12 @@ module Lines
 
     initializer "lines.assets.precompile" do |app|
       app.config.assets.precompile += %w(admin.css admin.js)
+    end
+
+    initializer 'lines.action_controller' do |app|
+      ActiveSupport.on_load :action_controller do
+        helper Lines::ApplicationHelper
+      end
     end
 
     # RSpec configuration for generators

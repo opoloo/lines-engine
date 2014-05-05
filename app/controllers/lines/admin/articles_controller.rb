@@ -31,13 +31,13 @@ module Lines
       @first_page = true
 
       respond_to do |format|
-        format.html {render :show, layout: 'application'}
+        format.html {render :show, layout: 'preview'}
       end
     end
 
     # GET /admin/articles/new
     def new
-      @article = Article.new
+      @article = Lines::Article.new
 
       respond_to do |format|
         format.html # new.html.erb

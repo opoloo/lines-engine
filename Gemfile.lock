@@ -17,7 +17,7 @@ PATH
   specs:
     lines (0.0.1)
       acts-as-taggable-on (>= 2.3.3)
-      bcrypt-ruby (~> 3.0.0)
+      bcrypt (~> 3.1.0)
       carrierwave
       coffee-rails (>= 4.0.0)
       jquery-fileupload-rails
@@ -70,7 +70,7 @@ GEM
       activesupport (>= 3, < 5)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
-    bcrypt-ruby (3.0.1)
+    bcrypt (3.1.7)
     builder (3.2.2)
     capistrano (3.2.1)
       i18n
@@ -262,6 +262,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.0)
   capistrano
   capybara
   factory_girl_rails

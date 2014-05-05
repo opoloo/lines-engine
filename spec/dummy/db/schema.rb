@@ -43,14 +43,14 @@ ActiveRecord::Schema.define(version: 20140505122014) do
   add_index "lines_articles", ["slug"], name: "index_lines_articles_on_slug", unique: true, using: :btree
 
   create_table "lines_authorables", force: true do |t|
-    t.integer  "lines_author_id"
-    t.integer  "lines_article_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "author_id"
+    t.integer  "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "lines_authorables", ["lines_article_id"], name: "index_lines_authorables_on_article_id", using: :btree
-  add_index "lines_authorables", ["lines_author_id"], name: "index_lines_authorables_on_author_id", using: :btree
+  add_index "lines_authorables", ["article_id"], name: "index_lines_authorables_on_article_id", using: :btree
+  add_index "lines_authorables", ["author_id"], name: "index_lines_authorables_on_author_id", using: :btree
 
   create_table "lines_authors", force: true do |t|
     t.string   "name"
@@ -64,12 +64,12 @@ ActiveRecord::Schema.define(version: 20140505122014) do
   create_table "lines_pictures", force: true do |t|
     t.string   "image"
     t.string   "name"
-    t.integer  "lines_article_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "lines_pictures", ["lines_article_id"], name: "index_lines_pictures_on_article_id", using: :btree
+  add_index "lines_pictures", ["article_id"], name: "index_lines_pictures_on_article_id", using: :btree
 
   create_table "lines_users", force: true do |t|
     t.string   "email"

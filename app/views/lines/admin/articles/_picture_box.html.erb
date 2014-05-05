@@ -15,7 +15,7 @@
   </div>
   
   <div class="picture-preview">
-    <%= form_for [:admin, Picture.new], {enctype: "multipart/form-data"} do |f| %>
+    <%= form_for [:admin, Lines::Picture.new], {enctype: "multipart/form-data"} do |f| %>
       <img src="/assets/ic_action_add.png" style="height: 48px; width: 48px; padding: 18px;" alt="" />
       <input id="picture_image" multiple="multiple" name="picture[image]" type="file" />
     <% end %>

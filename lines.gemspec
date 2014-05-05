@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'redcarpet'
   s.add_dependency 'jquery-rails', '2.1.4'
   s.add_dependency 'acts-as-taggable-on', '>= 2.3.3'
-  s.add_dependency 'bcrypt-ruby', '~> 3.0.0'
+  s.add_dependency 'bcrypt', '~> 3.1.0'
   s.add_dependency 'simple_form', '~> 3.0.0.rc'
   s.add_dependency 'sitemap_generator'
   s.add_dependency 'jquery-fileupload-rails'
