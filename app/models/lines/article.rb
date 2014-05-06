@@ -11,6 +11,7 @@ require 'kaminari'
 require 'acts-as-taggable-on'
 require 'carrierwave'
 require 'carrierwave/orm/activerecord'
+require 'friendly_id'
 
 module Lines
   class Article < ActiveRecord::Base

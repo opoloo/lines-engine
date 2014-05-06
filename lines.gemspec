@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'kaminari'
   s.add_dependency 'pygments.rb'
   s.add_dependency 'redcarpet'
-  s.add_dependency 'jquery-rails', '2.1.4'
+  s.add_dependency 'jquery-rails'
   s.add_dependency 'acts-as-taggable-on', '>= 2.3.3'
   s.add_dependency 'bcrypt', '~> 3.1.0'
   s.add_dependency 'simple_form', '~> 3.0.0.rc'
@@ -34,6 +34,10 @@ Gem::Specification.new do |s|
   s.add_dependency 'sass-rails',   '>= 4.0.0'
   s.add_dependency 'coffee-rails', '>= 4.0.0'
   s.add_dependency 'uglifier', '>= 1.3.0'
+  s.add_dependency 'friendly_id', '~> 5.0.3'
+  s.add_dependency 'rails3-jquery-autocomplete', '~> 1.0.11'
+  s.add_dependency 'meta-tags'
+  s.add_dependency 'rack-ssl-enforcer'
   
   s.add_development_dependency "mysql2"
 

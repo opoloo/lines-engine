@@ -7,6 +7,9 @@ module Lines
     require 'jquery-ui-rails'
     require 'jquery-fileupload-rails'
     require 'sanitize'
+    require 'meta_tags'
+    require 'rack/ssl-enforcer'
+    require 'rails3-jquery-autocomplete'
 
     initializer :assets do |config|
       Rails.application.config.assets.paths << root.join("app", "assets", "images")
