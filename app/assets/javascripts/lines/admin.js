@@ -54,7 +54,7 @@ $(document).ready(function() {
   });
   
   // Insert image into content of the post
-  $(".insert-image").live('click', function(e){
+  $(document.body).on('click', ".insert-image",  function(e){
     var url = $(this).attr( 'data-url' );
     var value = '\n![Alt text](' + url + ')\n';
     $('#article_content').insertAtCaret(value);
@@ -69,7 +69,7 @@ $(document).ready(function() {
 
   // Select a default hero image
   // Switch classes and preview the selected default image in the hero image canvas
-  $(".select_image").live('click', function(e){
+  $(".select_image").on('click', function(e){
     e.preventDefault();
     
     bg_url = $(this).attr('src');
