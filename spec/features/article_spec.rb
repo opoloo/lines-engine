@@ -21,8 +21,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   check "Foo Bar"
   fill_in "Subtitle", with: "with RSpec and Rails"
   fill_in "G+ URL", with: "http://gplus.de/opoloo"
-  engine_root=File.join(File.dirname(__FILE__), '../')
-  attach_file('article_hero_image', File.join(engine_root, 'support/images/example.jpg'))
+  attach_file('article_hero_image', File.join(Lines::Engine.root, 'spec/support/images/example.jpg'))
   click_on "Save"
   expect(page).to have_content "How to Test"
 end
