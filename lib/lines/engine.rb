@@ -15,6 +15,11 @@ module Lines
       Rails.application.config.assets.paths << root.join("app", "assets", "fonts")
     end
 
+    # Initializer to combine this engines static assets with the static assets of the hosting site.
+    initializer "static assets" do |app|
+      app.middleware.insert_before(::ActionDispatch::Static, ::ActionDispatch::Static, "#{root}/public")
+    end
+
     initializer "lines.assets.precompile" do |app|
       app.config.assets.precompile += %w(lines/admin.css lines/admin.js)
     end
