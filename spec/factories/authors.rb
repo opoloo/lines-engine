@@ -1,7 +1,7 @@
 require 'faker'
 
 FactoryGirl.define do
-  factory :author do |f|
+  factory :author, class: Lines::Author do |f|
     f.name { Faker::Name.name }
     f.email { Faker::Internet.email }
     f.description "dsf"

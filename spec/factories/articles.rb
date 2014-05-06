@@ -6,7 +6,8 @@ FactoryGirl.define do
     f.sub_title "My subtitle"
     f.content "Content for article"
     f.published_at Time.now
-    f.hero_image { File.open(File.join(Rails.root, '/spec/support/images/example.jpg')) }
+    engine_root=File.join(File.dirname(__FILE__), '../')
+    f.hero_image { File.open(File.join(engine_root, 'support/images/example.jpg')) }
     f.author_ids   {
       count = 0
       Array(5..10).sample.times.map do

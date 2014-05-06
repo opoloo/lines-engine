@@ -42,5 +42,10 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  config.before(:each, type: :routing) do
+  @routes = Utilizer::Engine.routes
+  assertion_instance.instance_variable_set(:@routes, Utilizer::Engine.routes)
+end
+
   config.include AuthMacros
 end

@@ -4,7 +4,7 @@ def login_and_visit_new_article
   log_in({ email: 'valid@example.com', password: 'password123' })
   expect(page).to have_content('Logged in')
   @author = FactoryGirl.create(:author, name: "Foo Bar")
-  visit admin_articles_path
+  visit lines.admin_articles_path
   click_on "New Article"
   expect(page).to have_content('New article')
 end

@@ -1,8 +1,9 @@
 require 'faker'
 
 FactoryGirl.define do
-  factory :picture do |f|
-    f.image { File.open(File.join(Rails.root, '/spec/support/images/example.jpg')) }
+  factory :picture, class: Lines::Picture do |f|
+  	engine_root=File.join(File.dirname(__FILE__), '../')
+    f.image { File.open(File.join(engine_root, 'support/images/example.jpg')) }
     article
   end
 end
