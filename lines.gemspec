@@ -16,7 +16,10 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
-  s.add_dependency "rails", "~> 4.1.0"
+  s.add_dependency "orm_adapter", "~> 0.1"
+  s.add_dependency "thread_safe", "~> 0.1"
+  s.add_dependency "railties", ">= 3.2.6", "< 5"
+  #s.add_dependency "rails", "~> 4.1.0"
   s.add_dependency 'rmagick'
   s.add_dependency 'thor'
   s.add_dependency 'carrierwave'
@@ -38,8 +41,12 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails3-jquery-autocomplete', '~> 1.0.11'
   s.add_dependency 'meta-tags'
   s.add_dependency 'rack-ssl-enforcer'
+
   
   s.add_development_dependency "mysql2"
 
-  s.test_files = Dir["spec/**/*"]
+  #s.files = `git ls-files`.split("n")
+  #s.executables = `git ls-files`.split("n").map{|f| f =~ /^bin/(.*)/ ? $1 : nil}.compact
+
+  #s.test_files = Dir["spec/**/*"]
 end

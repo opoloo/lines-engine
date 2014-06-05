@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lines (0.0.1)
+    lines (0.0.2)
       acts-as-taggable-on (>= 2.3.3)
       bcrypt (~> 3.1.0)
       carrierwave
@@ -12,10 +12,11 @@ PATH
       jquery-ui-rails
       kaminari
       meta-tags
+      orm_adapter (~> 0.1)
       pygments.rb
       rack-ssl-enforcer
-      rails (~> 4.1.0)
       rails3-jquery-autocomplete (~> 1.0.11)
+      railties (>= 3.2.6, < 5)
       redcarpet
       rmagick
       sanitize
@@ -23,6 +24,7 @@ PATH
       simple_form (~> 3.0.0.rc)
       sitemap_generator
       thor
+      thread_safe (~> 0.1)
       uglifier (>= 1.3.0)
 
 GEM
@@ -144,7 +146,7 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.3)
     minitest (5.3.3)
-    multi_json (1.10.0)
+    multi_json (1.10.1)
     mysql2 (0.3.15)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -152,6 +154,7 @@ GEM
     nio4r (1.0.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
+    orm_adapter (0.5.0)
     polyglot (0.3.4)
     posix-spawn (0.3.8)
     pry (0.9.12.6)
