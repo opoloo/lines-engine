@@ -47,7 +47,7 @@ module Lines
 
     # Predifined hero images.
     # Images are loaded from the <tt>public/heroes</tt> directory
-    HERO_IMAGES = %w(001_dark.jpg 001.jpg 002_dark.jpg 002.jpg 003_dark.jpg 003.jpg)
+    HERO_IMAGES = CONFIG[:hero_images]
 
     # Returns URL of selected image from HERO_IMAGES array
     def short_hero_image_url
