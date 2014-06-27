@@ -37,6 +37,8 @@ feed_favicon: "http://blog.opoloo.com/favivon.ico"         # #full URL to the fa
 ### APP SPECIFICS ###
 #####################
 
+refresh_sitemap: false
+
 hero_images: ["001_dark.jpg", "001.jpg", "002_dark.jpg", "002.jpg", "003_dark.jpg", "003.jpg"]
 
 articles_per_page: 10 # Pagination: How many articles should be desplayed per page?

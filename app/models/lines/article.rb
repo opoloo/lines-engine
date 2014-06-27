@@ -88,7 +88,7 @@ module Lines
     # Refreshes the sitemap and pings the search engines
     def refresh_sitemap
       if self.published
-        if Rails.env == 'production'
+        if Rails.env == 'production' && ENV["CONFIG_FILE"]
           SitemapGenerator::Interpreter.run(config_file: ENV["CONFIG_FILE"])
           SitemapGenerator::Sitemap.ping_search_engines 
         end
