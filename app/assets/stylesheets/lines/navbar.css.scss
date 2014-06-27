@@ -68,7 +68,7 @@ $btn_active: $orange;
       @include addTransition(0.3);
       a {
         display: inline-block;
-        background: transparent url(/assets/ic_action_home.png) no-repeat scroll center center;
+        background: transparent image-url('ic_action_home.png') no-repeat scroll center center;
         height: 60px;
         width: 60px;
       }
