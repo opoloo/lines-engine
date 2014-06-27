@@ -1,4 +1,5 @@
 require 'redcarpet'
+require 'pygments'
 # encoding: utf-8
 # Provides helper methods for views.
 module Lines

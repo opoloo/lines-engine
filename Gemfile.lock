@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lines (0.0.3)
+    lines (0.0.4)
       acts-as-taggable-on (>= 2.3.3)
       bcrypt (~> 3.1.0)
       carrierwave
@@ -93,7 +93,7 @@ GEM
     crass (0.2.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
-    execjs (2.2.0)
+    execjs (2.2.1)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.4.1)
