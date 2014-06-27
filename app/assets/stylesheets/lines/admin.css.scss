@@ -2,8 +2,8 @@
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ * Any CSS and SCSS file within this directory, libstylesheets, vendorstylesheets,
+ * or vendorstylesheets of plugins, if any, can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
@@ -13,7 +13,7 @@
  *= require lines/navbar
  */
 
-@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono|Cabin|Roboto|Roboto+Condensed);
+@import url(//fonts.googleapis.com/css?family=Ubuntu+Mono|Cabin|Roboto|Roboto+Condensed);
 
 $darkgrey: #333;
 $lightgrey: #666;
@@ -132,10 +132,10 @@ hr {
         }
         .preview {
           width: 51px;
-          background: #f2f2f2 url('/assets/article-icons.png') no-repeat scroll 10px 18px;
+          background: #f2f2f2 image-url('article-icons.png') no-repeat scroll 10px 18px;
           cursor: pointer;
           &:hover {
-            background: #f2f2f2 url('/assets/article-icons.png') no-repeat scroll -40px 18px;
+            background: #f2f2f2 image-url('article-icons.png') no-repeat scroll -40px 18px;
           }
           a {
             display: block;
@@ -145,10 +145,10 @@ hr {
         }
         .edit {
           width: 51px;
-          background: #f2f2f2 url('/assets/article-icons.png') no-repeat scroll 15px -34px;
+          background: #f2f2f2 image-url('article-icons.png') no-repeat scroll 15px -34px;
           cursor: pointer;
           &:hover {
-            background: #f2f2f2 url('/assets/article-icons.png') no-repeat scroll -35px -34px;
+            background: #f2f2f2 image-url('article-icons.png') no-repeat scroll -35px -34px;
           }
           a {
             display: block;
@@ -191,19 +191,19 @@ hr {
         .featured {
           width: 35px;
           input[type=submit] {
-            background: transparent url('/assets/article-icons.png') no-repeat scroll -94px -135px;
+            background: transparent image-url('article-icons.png') no-repeat scroll -94px -135px;
             cursor: pointer;
             display: block;
             height: 53px;
             width: 35px;
             &:hover {
-              background: transparent url('/assets/article-icons.png') no-repeat scroll -44px -135px;
+              background: transparent image-url('article-icons.png') no-repeat scroll -44px -135px;
             }
           }
           &.not input[type=submit] {
-            background: transparent url('/assets/article-icons.png') no-repeat scroll 6px -135px;
+            background: transparent image-url('article-icons.png') no-repeat scroll 6px -135px;
             &:hover {
-              background: transparent url('/assets/article-icons.png') no-repeat scroll -44px -135px;
+              background: transparent image-url('article-icons.png') no-repeat scroll -44px -135px;
             }
           }
         }
@@ -217,13 +217,13 @@ hr {
         .delete {
           width: 35px;
           input[type=submit] {
-            background: transparent url('/assets/article-icons.png') no-repeat scroll 8px -85px;
+            background: transparent image-url('article-icons.png') no-repeat scroll 8px -85px;
             cursor: pointer;
             display: block;
             height: 53px;
             width: 35px;
             &:hover {
-              background: transparent url('/assets/article-icons.png') no-repeat scroll -42px -85px;
+              background: transparent image-url('article-icons.png') no-repeat scroll -42px -85px;
             }
           }
         }
@@ -237,10 +237,10 @@ hr {
         line-height: 53px;
         .show {
           width: 51px;
-          background: #f2f2f2 url('/assets/article-icons.png') no-repeat scroll 10px 18px;
+          background: #f2f2f2 image-url('article-icons.png') no-repeat scroll 10px 18px;
           cursor: pointer;
           &:hover {
-            background: #f2f2f2 url('/assets/article-icons.png') no-repeat scroll -40px 18px;
+            background: #f2f2f2 image-url('article-icons.png') no-repeat scroll -40px 18px;
           }
           a {
             display: block;
@@ -250,10 +250,10 @@ hr {
         }
         .edit {
           width: 51px;
-          background: #f2f2f2 url('/assets/article-icons.png') no-repeat scroll 15px -34px;
+          background: #f2f2f2 image-url('article-icons.png') no-repeat scroll 15px -34px;
           cursor: pointer;
           &:hover {
-            background: #f2f2f2 url('/assets/article-icons.png') no-repeat scroll -35px -34px;
+            background: #f2f2f2 image-url('article-icons.png') no-repeat scroll -35px -34px;
           }
           a {
             display: block;
@@ -292,13 +292,13 @@ hr {
         .delete {
           width: 35px;
           input[type=submit] {
-            background: transparent url('/assets/article-icons.png') no-repeat scroll 8px -85px;
+            background: transparent image-url('article-icons.png') no-repeat scroll 8px -85px;
             cursor: pointer;
             display: block;
             height: 53px;
             width: 35px;
             &:hover {
-              background: transparent url('/assets/article-icons.png') no-repeat scroll -42px -85px;
+              background: transparent image-url('article-icons.png') no-repeat scroll -42px -85px;
             }
           }
         }
@@ -448,12 +448,12 @@ hr {
           display:inline-block;
           width:15px;
           height:15px;
-          background: transparent url('/assets/checkbox-icon.png') no-repeat right top;
+          background: transparent image-url('checkbox-icon.png') no-repeat right top;
           cursor: pointer;
           margin: -2px 10px 0px 0px;
         }
         input[type=checkbox]:checked + label span {
-          background: transparent url('/assets/checkbox-icon.png') no-repeat left top;
+          background: transparent image-url('checkbox-icon.png') no-repeat left top;
         }
       }
       .documents {
@@ -664,24 +664,24 @@ hr {
         }
       }
       .insert-image {
-        background: transparent url('/assets/article-icons.png') no-repeat scroll 0px -194px;
+        background: transparent image-url('article-icons.png') no-repeat scroll 0px -194px;
         width: 15px;
         height: 30px;
         display: inline-block;
         float: left;
         &:hover {
-          background: transparent url('/assets/article-icons.png') no-repeat scroll -50px -194px;
+          background: transparent image-url('article-icons.png') no-repeat scroll -50px -194px;
         }
       }
       .btn-delete-photo {
-        background: transparent url('/assets/article-icons.png') no-repeat scroll 0px -244px;
+        background: transparent image-url('article-icons.png') no-repeat scroll 0px -244px;
         width: 12px;
         height: 30px;
         display: inline-block;
         float: right;
         cursor: pointer;
         &:hover {
-          background: transparent url('/assets/article-icons.png') no-repeat scroll -50px -244px;
+          background: transparent image-url('article-icons.png') no-repeat scroll -50px -244px;
         }
       }
       .upload {
@@ -867,12 +867,12 @@ hr {
   .older {right:0px;}
   .prev a, .first a {
     float:left;
-    background:url('/assets/ic_arrow_left.png') top left no-repeat;
+    background:image-url('ic_arrow_left.png') top left no-repeat;
     padding: 8px 0px 10px 50px;
   }
   .next a, .last a {
     float:right;
-    background:url('/assets/ic_arrow_right.png') top right no-repeat;
+    background:image-url('ic_arrow_right.png') top right no-repeat;
     padding: 8px 50px 10px 0px;
   }
 
@@ -893,13 +893,13 @@ hr {
 }
 
 .top_link {
-  background: transparent url('/assets/footer_icon.png') no-repeat scroll 0 0;
+  background: transparent image-url('footer_icon.png') no-repeat scroll 0 0;
   margin: 80px auto;
   width: 57px;
   height: 57px;
   cursor: pointer;
   &:hover {
-    background: transparent url('/assets//footer_icon.png') no-repeat scroll -100px 0;
+    background: transparent image-url('footer_icon.png') no-repeat scroll -100px 0;
   }
 }
 
