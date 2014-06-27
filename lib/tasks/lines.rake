@@ -13,6 +13,7 @@ namespace :lines do
   desc "Create a new Lines User"
   task :create_user => :environment do
     # Get user's credentials
+    Rake::Task["db:migrate"].invoke
     puts "\n\nLets create a new user for administration. This step is required to be able to login.\n\n"
     get_credentials
     

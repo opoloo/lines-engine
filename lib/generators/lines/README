@@ -3,17 +3,24 @@
          INSTALLTION FINISHED
   ************************************
 
+      Please adjust the configuration file to your needs:
+
+        config/lines_config.yml
+
+
       To setup Lines, run one of the following tasks:
 
-          rake lines:setup        # Migrate database, create Admin user and default entries."
+        rake lines:setup        # Migrate database, create Admin user and default entries."
 
-              or, if you just want to create a new user:
+      or, if you just want to create a new user:
 
-          rake lines:create_user  # Create a new Lines User
+        rake lines:create_user  # Create a new Lines User
+
+
 
       Other available rake tasks:
 
-          rake lines:db:seed      # Load lines seeds (you need to run 'rake lines:create_user' first)
+        rake lines:db:seed      # Load lines seeds (you need to run 'rake lines:create_user' first)
 
 
   ************************************
