@@ -36,8 +36,8 @@ module Lines
     end
 
     def add_user
-      if yes?("Would you like to creae an admin user? (y/N):")
-        rake 'lines:create_user'
+      if yes?("Would you like to create an admin user? (y/N):")
+        rake 'lines:add_user'
       end
     end
 

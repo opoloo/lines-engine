@@ -14,7 +14,7 @@
 
       or, if you just want to create a new user:
 
-        rake lines:create_user  # Create a new Lines User
+        rake lines:add_user  # Create a new Lines User
 
 
 
