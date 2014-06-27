@@ -5,7 +5,7 @@ module Lines
 
   class SessionsController < ApplicationController
 
-    layout "admin"
+    layout "lines/admin"
 
     
     # Renders form for creating a new article 

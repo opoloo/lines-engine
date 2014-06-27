@@ -12,7 +12,7 @@ module Lines
 
     before_action :authorize
 
-    layout 'admin'
+    layout 'lines/admin'
 
   end
 
