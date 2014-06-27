@@ -60,7 +60,7 @@ module Lines
           if current_user
             content_tag(:span, link_to('', admin_articles_path), class: 'backlink', title: 'Dashboard') + content_tag(:span, action_link, class: 'actionlink') + content_tag(:span, class: 'buttons', &block) + content_tag(:span, link_to('Logout', logout_path), class: 'logout') + content_tag(:span, "Logged in as #{current_user.email}", class: 'logged-in-as')
           else
-            content_tag(:span, link_to('', '/'), class: 'backlink') + content_tag(:span, action_link, class: 'actionlink')
+            content_tag(:span, link_to('', lines.root_path), class: 'backlink') + content_tag(:span, action_link, class: 'actionlink')
           end
         end
       end

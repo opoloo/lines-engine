@@ -1,7 +1,7 @@
 <%= render_navbar do %>
   <%= link_to 'New Article', new_admin_article_path, class: "btn btn-new-article" %>  
   <%= link_to 'Authors', admin_authors_path, class: "btn btn-authors" %>
-  <%= link_to 'Visit Blog', "/", class: "btn btn-view-blog" %>
+  <%= link_to 'Visit Blog', lines.root_path, class: "btn btn-view-blog" %>
 <% end %>
 
 <% if @articles_unpublished.size > 0 %>

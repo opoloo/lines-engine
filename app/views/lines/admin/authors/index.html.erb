@@ -1,7 +1,7 @@
 <%= render_navbar do %>
   <%= link_to 'New Author', new_admin_author_path, class: "btn btn-new-author" %>
   <%= link_to 'Articles', admin_articles_path, class: "btn btn-articles" %>
-  <%= link_to 'Visit Blog', "/", class: "btn btn-view-blog" %>
+  <%= link_to 'Visit Blog', lines.root_path, class: "btn btn-view-blog" %>
 <% end %>
 
 <% if defined?(@author) && @author.errors.any? %>
