@@ -1,14 +1,3 @@
-= DEVELOPMENT INSTALLATION
-
-- clone the repo
-- Add <tt>gem 'lines', path: "/path/to/gem/directory"</tt> to your Gemfile</tt>
-- bundle
-- run 'rails g lines:install'
-- To add users: rake lines:add_user
-
-
-
-
 = Lines Blog by Opoloo[http://www.opoloo.com]
 
 == Introduction
