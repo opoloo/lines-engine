@@ -20,7 +20,7 @@
 
       Other available rake tasks:
 
-        rake lines:db:seed      # Load lines seeds (you need to run 'rake lines:create_user' first)
+        rake lines:db:seed      # Load lines seeds (you need to run 'rake lines:add_user' first)
 
 
   ************************************
