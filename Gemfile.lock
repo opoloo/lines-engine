@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lines (0.0.4)
+    lines (0.1.0)
       acts-as-taggable-on (~> 3.2.6)
       bcrypt (~> 3.1.0)
       carrierwave
