@@ -19,13 +19,9 @@ Lines is a very slim, feature-constrained, young publishing platform. It is not 
 
 To get an idea of the appearance, see the screenshots below, visit the {Lines Website}[http://lines.opoloo.com], or see it in action at link: http://blog.opoloo.com
 
-== Note for Rails 4 lovers
-
-If you prefer a cutting edge Rails 4 version of Lines, checkout the {rails4 branch}[https://github.com/opoloo/lines/tree/rails4]
 
 == Features & Specifications
 
-- based on Rails 3.2
 - solid editing system
 - simple, consistent publishing process
 - clear, responsive presentation
@@ -54,50 +50,32 @@ If you prefer a cutting edge Rails 4 version of Lines, checkout the {rails4 bran
 
 == Installation
 
-1. Clone the repository:
-    git clone git@github.com:opoloo/lines.git
+1. Add the gem to your Gemfile:
+    gem 'lines', github: 'thej/lines-engine'
 
-2. Switch into the lines directory:
-    cd lines
+2. Run 'bundle':
+    bundle
 
-3. There is a installation task that will guide you through the rest of the installation process. Just switch to the 'lines' directory and run:
-    ruby install.rb
+3. There is a installation task that will guide you through the rest of the installation process. Just switch to your application directory and run:
+    rails g lines:install
+
+4. Adjust settings for Lines in the newly generated 'config/lines_config.yml' file.
 
 If you need some more information or help, you can just follow this readme file.
 
 
 === Managing admin users
 
-Currently Lines does not offer a GUI for managing users. Just open a console with 'rails c' and add/change a user manually:
+Currently Lines does not offer a GUI for managing users, but you can use a rake task to do so:
 
-  # CREATE a new user
-  User.create(email: "your@email.com", password: "yoursecret")
+  rake lines:add_user
 
+To update an existing user, you'll need the rails console with 'rails c'
   # UPDATE an existing user
   u = User.find_by_email('your@email.com')
   u.email = "new@mail.com"
   u.password = "newsekret"
   u.save
-
-=== Adjust database details
-
-To adjust your database details, go to <tt>config/database.yml</tt>
-
-    username: DATABASE_USERNAME
-    password: DATABASE_PASSWORD
-
-There'll be 3 blocks that contain <tt>username</tt> & <tt>password</tt>. Development-, Test- & Production-Database.
-
-If there is no <tt>config/database.yml</tt>, just copy the <tt>config/database.yml.dist</tt> like that:
-
-    cd config
-    cp database.yml.dist database.yml
-
-or like this (in case you want to stay in your root directory):
-
-    cp config/database.yml.dist config/database.yml
-
-Renaming the <tt>config/database.yml.dist</tt> to <tt>config/database.yml</tt> works as well.
 
 
 === Google Sitemap
@@ -117,17 +95,15 @@ The complete documentation can be found at rdoc.info: http://rdoc.info/github/op
 
 === Modify CSS/SCSS
 
-Admin viewer SCSS: <tt>app/assets/stylesheets/admin.css.scss</tt>
-
-Default viewer SCSS: <tt>app/assets/stylesheets/style.css.scss</tt>
+Default viewer SCSS: <tt>app/assets/stylesheets/lines/style.css.scss</tt>
 
 === Modify custom hero images
 
-You can add, remove or change the +HERO_IMAGES+ variable inside the <tt>app/models/article.rb</tt> model. The corresponding images reside inside the <tt>public/heroes</tt> directory.
+You can add, remove or change the +HERO_IMAGES+ variable inside the <tt>config/lines_config.yml</tt> file. The corresponding images reside inside the <tt>public/heroes</tt> directory.
 
 === Header (Meta) & Footer
 
-To change the header/meta/footer elements you need to modify <tt>app/views/layouts/application.html.erb</tt>
+To change the header/meta/footer elements you need to modify <tt>app/views/layouts/lines/application.html.erb</tt>
 
 == Screenshots
 
