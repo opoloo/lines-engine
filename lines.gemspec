@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'pygments.rb'
   s.add_dependency 'redcarpet'
   s.add_dependency 'jquery-rails'
-  s.add_dependency 'acts-as-taggable-on', '>= 2.3.3'
+  s.add_dependency 'acts-as-taggable-on', '~> 3.2.6'
   s.add_dependency 'bcrypt', '~> 3.1.0'
   s.add_dependency 'simple_form', '~> 3.0.0.rc'
   s.add_dependency 'sitemap_generator'

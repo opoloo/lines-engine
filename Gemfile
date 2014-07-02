@@ -17,6 +17,8 @@ gemspec
 #gem 'rails3-jquery-autocomplete', github: 'francisd/rails3-jquery-autocomplete'
 #gem 'meta-tags', require: 'meta_tags'
 #gem 'rack-ssl-enforcer', require: 'rack/ssl-enforcer'
+gem 'acts-as-taggable-on', '~> 3.2.6'
+
 
 group :development do
   gem 'capistrano'

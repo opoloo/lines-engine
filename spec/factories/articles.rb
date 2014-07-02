@@ -14,5 +14,9 @@ FactoryGirl.define do
         FactoryGirl.create(:author, :name => "Author #{count}", :email => "author#{count}@example.com", :description => "desc#{count}")[:id]
       end
     }
+
+    factory :article_with_tags, class: Lines::Article do |a|
+      a.tag_list 'tag1, tag2'
+    end
   end
 end

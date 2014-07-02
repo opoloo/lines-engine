@@ -27,6 +27,12 @@ module Lines
       FactoryGirl.build(:article, author_ids: nil).should_not be_valid
     end
 
+    it "is valid with tags" do
+      a = FactoryGirl.create(:article_with_tags)
+      a.should be_valid
+      a.tag_list.should == ['tag1', 'tag2']
+    end
+
   end
 
 end

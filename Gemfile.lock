@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     lines (0.0.4)
-      acts-as-taggable-on (>= 2.3.3)
+      acts-as-taggable-on (~> 3.2.6)
       bcrypt (~> 3.1.0)
       carrierwave
       coffee-rails (>= 4.0.0)
@@ -143,7 +143,7 @@ GEM
       actionpack (>= 3.0.0)
     method_source (0.8.2)
     mime-types (1.25.1)
-    mini_portile (0.5.3)
+    mini_portile (0.6.0)
     minitest (5.3.3)
     multi_json (1.10.1)
     mysql2 (0.3.15)
@@ -151,8 +151,8 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (2.9.0)
     nio4r (1.0.0)
-    nokogiri (1.6.1)
-      mini_portile (~> 0.5.0)
+    nokogiri (1.6.2.1)
+      mini_portile (= 0.6.0)
     nokogumbo (1.1.9)
       nokogiri
     orm_adapter (0.5.0)
@@ -262,6 +262,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on (~> 3.2.6)
   capistrano
   capybara
   factory_girl_rails
