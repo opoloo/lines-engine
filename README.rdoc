@@ -3,9 +3,8 @@
 - clone the repo
 - Add <tt>gem 'lines', path: "/path/to/gem/directory"</tt> to your Gemfile</tt>
 - bundle
-- Mount the engine in the routes.rb with <tt>mount Lines::Engine => "/blog"</tt>
-- <tt>rake lines:install:migrations</tt> to copy migrations to the host ap
-- <tt>rake db:migrate</tt>
+- run 'rails g lines:install'
+- To add users: rake lines:add_user
 
 
 
