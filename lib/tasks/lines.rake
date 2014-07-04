@@ -29,32 +29,6 @@ namespace :lines do
 
   end
 
-
-  desc "Migrate database, create Admin user and default entries."
-  task :setup => :environment do
-
-  begin
-
-    # Run migrations
-    Rake::Task["db:migrate"].invoke
-    puts "Database created and migrations run.\n\n"
-    
-    # Add user
-    Rake::Task["lines:add_user"].invoke
-
-    # Display final instructions
-    puts "\n\nCongrats! Your Lines blog is now ready to use. Just start the server:"
-    puts "\n  rails server\n"
-    puts  "...and head to #{CONFIG[:host]}/login to get started.\n\n"
-
-  rescue SystemExit, Interrupt
-    puts "\n\nBye Bye."
-  rescue Exception => e
-    raise
-  end
-
-  end
-
   
   # Reads credentials(email and password) from STDIN
   def get_credentials
