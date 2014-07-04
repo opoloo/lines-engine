@@ -1,31 +1,31 @@
 PATH
   remote: .
   specs:
-    lines (0.1.0)
-      acts-as-taggable-on (~> 3.2.6)
-      bcrypt (~> 3.1.0)
-      carrierwave
-      coffee-rails (>= 4.0.0)
-      friendly_id (~> 5.0.3)
-      jquery-fileupload-rails
-      jquery-rails
-      jquery-ui-rails
-      kaminari
-      meta-tags
-      orm_adapter (~> 0.1)
-      pygments.rb
-      rack-ssl-enforcer
-      rails3-jquery-autocomplete (~> 1.0.11)
+    lines (0.1.2)
+      acts-as-taggable-on (~> 3.2.6, >= 3.2.6)
+      bcrypt (~> 3.1.0, >= 3.1.0)
+      carrierwave (~> 0.10.0, >= 0.10.0)
+      coffee-rails (~> 4.0.0, >= 4.0.0)
+      friendly_id (~> 5.0.3, >= 5.0.3)
+      jquery-fileupload-rails (~> 0.4.1, >= 0.4.1)
+      jquery-rails (~> 3.1.0, >= 3.1.0)
+      jquery-ui-rails (~> 4.0.0, >= 4.0.0)
+      kaminari (~> 0.16.1, >= 0.16.1)
+      meta-tags (~> 2.0.0, >= 2.0.0)
+      orm_adapter (~> 0.1, >= 0.5)
+      pygments.rb (~> 0.6.0, >= 0.6.0)
+      rack-ssl-enforcer (~> 0.2.7, >= 0.2.7)
+      rails3-jquery-autocomplete (~> 1.0.11, >= 1.0.11)
       railties (>= 3.2.6, < 5)
-      redcarpet
-      rmagick
-      sanitize
-      sass-rails (>= 4.0.0)
-      simple_form (~> 3.0.0.rc)
-      sitemap_generator
-      thor
-      thread_safe (~> 0.1)
-      uglifier (>= 1.3.0)
+      redcarpet (~> 3.1.2, >= 3.1.2)
+      rmagick (~> 2.13.2, >= 2.13.2)
+      sanitize (~> 3.0.0, >= 3.0.0)
+      sass-rails (~> 4.0.0, >= 4.0.0)
+      simple_form (~> 3.0.0, >= 3.0.0)
+      sitemap_generator (~> 5.0.0, >= 5.0.4)
+      thor (~> 0.1, >= 0.19)
+      thread_safe (~> 0.1, >= 0.3)
+      uglifier (~> 1.3.0, >= 1.3.0)
 
 GEM
   remote: https://rubygems.org/
@@ -122,8 +122,9 @@ GEM
     jquery-rails (3.1.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (4.2.1)
-      railties (>= 3.2.16)
+    jquery-ui-rails (4.0.4)
+      jquery-rails
+      railties (>= 3.1.0)
     json (1.8.1)
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
@@ -146,7 +147,6 @@ GEM
     mini_portile (0.6.0)
     minitest (5.3.3)
     multi_json (1.10.1)
-    mysql2 (0.3.15)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.0)
@@ -250,9 +250,9 @@ GEM
       polyglot (>= 0.3.1)
     tzinfo (1.1.0)
       thread_safe (~> 0.1)
-    uglifier (2.5.1)
+    uglifier (1.3.0)
       execjs (>= 0.3.0)
-      json (>= 1.8.0)
+      multi_json (~> 1.0, >= 1.0.2)
     xpath (2.0.0)
       nokogiri (~> 1.3)
     yajl-ruby (1.1.0)
@@ -270,7 +270,6 @@ DEPENDENCIES
   guard-rspec
   launchy
   lines!
-  mysql2
   railroady
   rb-inotify (~> 0.9)
   rspec-rails

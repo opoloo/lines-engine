@@ -13,40 +13,35 @@ Gem::Specification.new do |s|
   s.summary     = "LINES is the open source blog platform you have been waiting for"
   s.description = "LINES lets you manage your posts in a clear, consistent frontend. The gracefully slender editor keeps your editing simple and lets you just splash around in your ideas. Once you're happy, just hit publish and see your text, code examples, images, and links shine."
   s.license     = "LGPL3"
+  s.date        = '2010-04-28'
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.rdoc"]
 
-  s.add_dependency "orm_adapter", "~> 0.1"
-  s.add_dependency "thread_safe", "~> 0.1"
+  s.add_dependency "orm_adapter", "~> 0.1", ">= 0.5"
+  s.add_dependency "thread_safe", "~> 0.1", ">= 0.3"
   s.add_dependency "railties", ">= 3.2.6", "< 5"
-  #s.add_dependency "rails", "~> 4.1.0"
-  s.add_dependency 'rmagick'
-  s.add_dependency 'thor'
-  s.add_dependency 'carrierwave'
-  s.add_dependency 'kaminari'
-  s.add_dependency 'pygments.rb'
-  s.add_dependency 'redcarpet'
-  s.add_dependency 'jquery-rails'
-  s.add_dependency 'acts-as-taggable-on', '~> 3.2.6'
-  s.add_dependency 'bcrypt', '~> 3.1.0'
-  s.add_dependency 'simple_form', '~> 3.0.0.rc'
-  s.add_dependency 'sitemap_generator'
-  s.add_dependency 'jquery-fileupload-rails'
-  s.add_dependency 'jquery-ui-rails'
-  s.add_dependency 'sanitize'
-  s.add_dependency 'sass-rails',   '>= 4.0.0'
-  s.add_dependency 'coffee-rails', '>= 4.0.0'
-  s.add_dependency 'uglifier', '>= 1.3.0'
-  s.add_dependency 'friendly_id', '~> 5.0.3'
-  s.add_dependency 'rails3-jquery-autocomplete', '~> 1.0.11'
-  s.add_dependency 'meta-tags'
-  s.add_dependency 'rack-ssl-enforcer'
+  s.add_dependency 'rmagick', "~> 2.13.2", ">= 2.13.2"
+  s.add_dependency 'thor', "~> 0.1", ">= 0.19"
+  s.add_dependency 'carrierwave', "~> 0.10.0", ">= 0.10.0"
+  s.add_dependency 'kaminari', "~> 0.16.1", ">= 0.16.1"
+  s.add_dependency 'pygments.rb', "~> 0.6.0", ">= 0.6.0"
+  s.add_dependency 'redcarpet', "~> 3.1.2", ">= 3.1.2"
+  s.add_dependency 'jquery-rails', "~> 3.1.0", ">= 3.1.0"
+  s.add_dependency 'acts-as-taggable-on', '~> 3.2.6', ">= 3.2.6"
+  s.add_dependency 'bcrypt', '~> 3.1.0', ">= 3.1.0"
+  s.add_dependency 'simple_form', '~> 3.0.0', ">= 3.0.0"
+  s.add_dependency 'sitemap_generator', "~> 5.0.0", ">= 5.0.4"
+  s.add_dependency 'jquery-fileupload-rails', "~> 0.4.1", ">= 0.4.1"
+  s.add_dependency 'jquery-ui-rails', "~> 4.0.0", ">= 4.0.0"
+  s.add_dependency 'sanitize', "~> 3.0.0", ">= 3.0.0"
+  s.add_dependency 'sass-rails', "~> 4.0.0", '>= 4.0.0'
+  s.add_dependency 'coffee-rails', '~> 4.0.0', '>= 4.0.0'
+  s.add_dependency 'uglifier', '~> 1.3.0', '>= 1.3.0'
+  s.add_dependency 'friendly_id', '~> 5.0.3', '>= 5.0.3'
+  s.add_dependency 'rails3-jquery-autocomplete', '~> 1.0.11', '>= 1.0.11'
+  s.add_dependency 'meta-tags', '~> 2.0.0', '>= 2.0.0'
+  s.add_dependency 'rack-ssl-enforcer', '~> 0.2.7', '>= 0.2.7'
 
-  
-  s.add_development_dependency "mysql2"
 
-  #s.files = `git ls-files`.split("n")
-  #s.executables = `git ls-files`.split("n").map{|f| f =~ /^bin/(.*)/ ? $1 : nil}.compact
-
-  #s.test_files = Dir["spec/**/*"]
+  s.test_files = Dir["spec/**/*"]
 end
