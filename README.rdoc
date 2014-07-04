@@ -40,7 +40,7 @@ To get an idea of the appearance, see the screenshots below, visit the {Lines We
 == Installation
 
 1. Add the gem to your Gemfile:
-    gem 'lines', github: 'thej/lines-engine'
+    gem 'lines-engine'
 
 2. Run 'bundle':
     bundle
