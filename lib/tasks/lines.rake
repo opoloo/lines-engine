@@ -40,7 +40,7 @@ namespace :lines do
     puts "Database created and migrations run.\n\n"
     
     # Add user
-    Rake::Task["lines:create_user"].invoke
+    Rake::Task["lines:add_user"].invoke
 
     # Display final instructions
     puts "\n\nCongrats! Your Lines blog is now ready to use. Just start the server:"
