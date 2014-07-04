@@ -42,6 +42,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'meta-tags', '~> 2.0.0', '>= 2.0.0'
   s.add_dependency 'rack-ssl-enforcer', '~> 0.2.7', '>= 0.2.7'
 
+  s.add_development_dependency 'mysql2', '~> 2.9', '>= 2.9'
 
   s.test_files = Dir["spec/**/*"]
 end
