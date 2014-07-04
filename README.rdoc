@@ -48,7 +48,7 @@ To get an idea of the appearance, see the screenshots below, visit the {Lines We
 3. There is a installation task that will guide you through the rest of the installation process. Just switch to your application directory and run:
     rails g lines:install
 
-4. Adjust settings for Lines in the newly generated 'config/lines_config.yml' file.
+4. Adjust settings for Lines in the newly generated <tt>config/lines_config.yml</tt> file.
 
 If you need some more information or help, you can just follow this readme file.
 
