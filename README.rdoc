@@ -1,5 +1,7 @@
 = Lines Blog by Opoloo[http://www.opoloo.com]
 
+{<img src="https://badge.fury.io/rb/lines-engine.svg" alt="Gem Version" />}[http://badge.fury.io/rb/lines-engine]
+
 == Introduction
 
 Lines is a customizable blog framework for rails developers. It aims at making publishing simple and beautiful.
