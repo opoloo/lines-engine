@@ -5,4 +5,5 @@ spec/dummy/public/uploads/
 spec/dummy/uploads
 spec/dummy/log/
 spec/dummy/tmp
+spec/dummy/public/assets
 /lines-engine-*.gem
