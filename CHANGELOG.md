@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.11
+
+- Version badge added to README
+
+
 ## 0.1.9 / 0.1.10 - 2014-07-10
 
 - Obsolete files removed to reduce gem's filesize
