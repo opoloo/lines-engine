@@ -14,7 +14,7 @@ module Lines
 
     # Authenticate user and create a new session.
     def create
-      user = User.find_by(email: params[:email])
+      user = Lines::User.find_by(email: params[:email])
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
         redirect_to admin_root_url, notice: "Logged in!"
