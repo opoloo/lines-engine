@@ -44,14 +44,15 @@ module Lines
     def show
       @first_page = true
       @article = Article.published.find(params[:id])
+      meta_tags = { title: SITE_TITLE,
+        type: 'article',
+        url: 'meta_og_url',
+        site_name: SITE_TITLE,
+      }
+      meta_tags[:image] = CONFIG[:host] + @article.image_url if @article.image_url.present?
       set_meta_tags title: @article.title,
                     keywords: KEYWORDS + @article.tag_list.to_s,
-                    open_graph: { title: SITE_TITLE,
-                                     type: 'article',
-                                     url: 'meta_og_url',
-                                     site_name: SITE_TITLE,
-                                     image: CONFIG[:host] + @article.image_url
-                                   }
+                    open_graph: meta_tags
       if request.path != article_path(@article)
         return redirect_to @article, status: :moved_permanently
       end
