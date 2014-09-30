@@ -57,8 +57,8 @@ module Lines
       end
       html = content_tag(:div, id: 'navbar') do
         content_tag(:div, class: 'navbar-inner') do
-          if current_user
-            content_tag(:span, link_to('', admin_articles_path), class: 'backlink', title: 'Dashboard') + content_tag(:span, action_link, class: 'actionlink') + content_tag(:span, class: 'buttons', &block) + content_tag(:span, link_to('Logout', logout_path), class: 'logout') + content_tag(:span, "Logged in as #{current_user.email}", class: 'logged-in-as')
+          if current_lines_user
+            content_tag(:span, link_to('', admin_articles_path), class: 'backlink', title: 'Dashboard') + content_tag(:span, action_link, class: 'actionlink') + content_tag(:span, class: 'buttons', &block) + content_tag(:span, link_to('Logout', logout_path), class: 'logout') + content_tag(:span, "Logged in as #{current_lines_user.email}", class: 'logged-in-as')
           else
             content_tag(:span, link_to('', lines.root_path), class: 'backlink') + content_tag(:span, action_link, class: 'actionlink')
           end

@@ -8,7 +8,7 @@ feature 'user logs in' do
   end
 
   scenario 'with invalid email' do
-    @_current_user = FactoryGirl.create(:user)
+    @_current_lines_user = FactoryGirl.create(:user)
     visit lines.login_path
     fill_in "Email", with: "invalid_email"
     fill_in "Password", with: 'sekret'
@@ -18,7 +18,7 @@ feature 'user logs in' do
   end
 
   scenario 'with blank password' do
-    @_current_user = FactoryGirl.create(:user, email: 'valid@example.com')
+    @_current_lines_user = FactoryGirl.create(:user, email: 'valid@example.com')
     visit lines.login_path
     fill_in "Email", with: "valid@example.com"
     fill_in "Password", with: ''

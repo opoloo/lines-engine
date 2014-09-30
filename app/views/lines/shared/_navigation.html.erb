@@ -4,8 +4,8 @@
       <a class="brand" href="/admin"><%= CONFIG[:title_short] %></a>
 
       <ul class="user-info">
-        <% if current_user %>
-          <li><%= current_user.email %></li>
+        <% if current_lines_user %>
+          <li><%= current_lines_user.email %></li>
           <li><a href="<%= logout_path %>">Logout</a></li>
         <% end %>
       </ul>
