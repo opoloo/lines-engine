@@ -1,6 +1,8 @@
-require "lines/engine"
-
 module Lines
+  if defined?(Rails)
+    require "lines/engine"
+  end
+
   # host application root path
   # We set this when the engine is initialized
   mattr_accessor :app_root

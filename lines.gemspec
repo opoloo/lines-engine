@@ -40,7 +40,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails3-jquery-autocomplete', '~> 1.0.11', '>= 1.0.11'
   s.add_dependency 'meta-tags', '~> 2.0.0', '>= 2.0.0'
   s.add_dependency 'rack-ssl-enforcer', '~> 0.2.7', '>= 0.2.7'
-  s.add_runtime_dependency 'rails', ['>= 3', '< 5']
+  #s.add_runtime_dependency 'rails', ['>= 3', '< 5']
 
   s.add_development_dependency 'mysql2', '~> 2.9', '>= 2.9'
   s.add_development_dependency 'rspec-rails', '~> 2.14.2', '< 3'
@@ -48,7 +48,10 @@ Gem::Specification.new do |s|
 
   s.files         = `git ls-files`.split("\n").select{ |file_name| !(file_name =~ /^spec/) }
   s.test_files    = `git ls-files`.split("\n").select{ |file_name| (file_name =~ /^spec/) }
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  #s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.executables   = s.executables   = s.files.grep(%r{^bin/}) do |f|
+    f == 'bin/rails' ? nil : File.basename(f)
+  end.compact
   s.require_paths = ["lib"]
 
 end

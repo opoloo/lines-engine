@@ -2,6 +2,8 @@ module Lines
   class Engine < ::Rails::Engine
     isolate_namespace Lines
 
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+
     require 'kaminari'
     require 'jquery-rails'
     require 'jquery-ui-rails'
