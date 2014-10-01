@@ -6,14 +6,16 @@
 require_dependency "lines/application_controller"
 
 module Lines
+  module Admin
 
-  class Admin::ApplicationController < ApplicationController
-    protect_from_forgery
+    class ApplicationController < Lines::ApplicationController
+      protect_from_forgery
 
-    before_action :authorize
+      before_action :authorize
 
-    layout 'lines/admin'
+      layout 'lines/admin'
 
+    end
+    
   end
-
 end
