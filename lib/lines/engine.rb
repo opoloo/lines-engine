@@ -10,7 +10,6 @@ module Lines
     require 'jquery-fileupload-rails'
     require 'sanitize'
     require 'meta_tags'
-    require 'rack/ssl-enforcer'
     require 'rails3-jquery-autocomplete'
 
     initializer :assets do |config|
@@ -46,11 +45,6 @@ module Lines
         :request_specs => true
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
-
-    # Require SSL for admin area and login form
-    config.middleware.use Rack::SslEnforcer, :only => [%r{^/admin}, "/login", %r{^/sessions}],
-      :ignore => '/assets', :strict => true if Rails.env.production?
-      
 
   end
 end
