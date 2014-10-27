@@ -4,7 +4,7 @@ namespace :lines do
 
   namespace :db do
     desc "Load lines seeds"
-    task :seed do
+    task :seed_articles do
       Lines::Engine.load_seed
     end
   end
