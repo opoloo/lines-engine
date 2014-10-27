@@ -17,7 +17,7 @@ module Lines
 
     # Returns formatted and highlighted code fragments
     def markdown(text)
-      renderer = HTMLwithPygments.new(hard_wrap: true, filter_html: true, with_toc_data: false)
+      renderer = HTMLwithPygments.new(hard_wrap: true, filter_html: false, with_toc_data: false)
       options = {
         autolink: true,
         no_intra_emphasis: true,

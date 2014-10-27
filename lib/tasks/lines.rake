@@ -1,7 +1,6 @@
 # encoding: utf-8
 namespace :lines do
   
-
   namespace :db do
     desc "Load lines seeds"
     task :seed_articles do
