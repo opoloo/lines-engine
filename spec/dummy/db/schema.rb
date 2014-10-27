@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140702160604) do
+ActiveRecord::Schema.define(version: 20141027143656) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20140702160604) do
     t.boolean  "featured",         default: false
     t.string   "document"
     t.string   "short_hero_image"
+    t.text     "teaser"
   end
 
   add_index "lines_articles", ["slug"], name: "index_lines_articles_on_slug", unique: true, using: :btree

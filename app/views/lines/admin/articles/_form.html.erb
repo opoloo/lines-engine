@@ -64,6 +64,16 @@
 
     <div class="row">
       <div class="label">
+        <h3><%= f.label :teaser, "Teaser" %></h3>
+      </div>
+      <div class="input input-textarea">
+        <%= f.text_area :teaser %>
+      </div>
+      <div class="additional"></div>
+    </div>
+
+    <div class="row">
+      <div class="label">
         <h3><%= f.label :content, "Content" %> <span class="required">*</span></h3>
       </div>
       <div class="input input-textarea">

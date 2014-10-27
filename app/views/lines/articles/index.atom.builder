@@ -8,7 +8,11 @@ atom_feed do |feed|
     feed.entry article, url: article_url(article), published: article.published_at do |entry|
       entry.title article.title
       entry.summary type: 'xhtml' do |xhtml|
-        xhtml << format_code(article.content)
+        if article.teaser.present?
+          xhtml << markdown(article.teaser)
+        else
+          xhtml << format_code(article.content)
+        end
       end
       entry.content type: 'xhtml' do |xhtml|
         xhtml << content_tag(:p,"<img src=\"#{article.image_url}\" alt=\"#{article.title}\"/>".html_safe).html_safe
