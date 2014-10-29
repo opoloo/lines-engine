@@ -49,7 +49,7 @@ module Lines
     def show
       @first_page = true
       @article = Article.published.find(params[:id])
-      article.teaser = nil unless @article.teaser.present?
+      @article.teaser = nil unless @article.teaser.present?
       meta_tags = { title: SITE_TITLE,
         type: 'article',
         url: 'meta_og_url',
