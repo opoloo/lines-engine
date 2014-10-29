@@ -12,6 +12,7 @@ end
 def create_valid_article
   #expect(page).to have_content('New article')
   fill_in "Title", with: "How to Test"
+  fill_in "Teaser", with: "Awesome teaser!"
   fill_in "Content", with: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -39,6 +40,7 @@ feature 'user creates article' do
     expect(page).to have_content "Lorem ipsum dolor"
     expect(page).to have_content "Foo Bar"
     expect(page).to have_content "RSpec and Rails"
+    expect(page).to have_content "Awesome teaser!"
   end
 
   scenario 'with invalid attributes' do
