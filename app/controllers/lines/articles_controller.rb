@@ -22,7 +22,12 @@ module Lines
           else
             @articles = Article.published.page(params[:page].to_i).padding(1)
           end
-          @first_article = Article.published.first if @articles.first_page?
+          
+          if @articles.first_page?
+            @first_article = Article.published.first 
+            @first_article.teaser = nil unless @first_article.teaser.present?
+          end
+          
           set_meta_tags title: SITE_TITLE,
                         description: CONFIG[:meta_description],
                         keywords: KEYWORDS,
@@ -44,6 +49,7 @@ module Lines
     def show
       @first_page = true
       @article = Article.published.find(params[:id])
+      article.teaser = nil unless @article.teaser.present?
       meta_tags = { title: SITE_TITLE,
         type: 'article',
         url: 'meta_og_url',
