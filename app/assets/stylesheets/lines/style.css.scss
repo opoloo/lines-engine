@@ -1,3 +1,5 @@
+$max-width: 960px;
+
 $darkgrey: #333;
 $lightgrey: #666;
 $orange: #e8581e;
@@ -68,14 +70,14 @@ hr { display: block; margin: 30px 0px; height: 1px; background-color: #3d3d3d; b
   font-size: 12px;
   padding: 2px 0;
   background-color: #000;
-  div { max-width: 960px; margin: 0 auto; }
+  div { max-width: $max-width; margin: 0 auto; }
   .right { float: right; }
   a { color: #aaa; }
 }
 
 header {
   margin: 0 auto;
-  max-width: 920px;
+  max-width: $max-width;
   padding: 20px;
   font-family: 'Museo';
   font-size: 1.188em;
@@ -100,13 +102,14 @@ header {
 /*-----------------------------------------------------------*/
 /*-----------------------------------------------------------*/
 
-#content {
-  max-width: 960px;
+.container {
+  position: relative;
+  max-width: $max-width;
   margin: 0 auto;
 }
 
 .article {
-  max-width: 960px;
+  max-width: $max-width;
   padding: 10px 0 25px 0;
   font-family: 'Ubuntu';
   line-height: 1.5em;
