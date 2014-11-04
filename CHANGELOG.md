@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3 
+
+- Heavily simplified CSS and markup for articles
+
+
+## 0.2
+
+- Teaser is back!
+- Various small bug fixes
+
 ## 0.1.11 / 0.1.12
 
 - Version badge added to README
