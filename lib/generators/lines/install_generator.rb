@@ -14,10 +14,11 @@ module Lines
 
     def copy_stylesheets
       FileUtils.mkdir_p "app/assets/stylesheets/lines"
-      copy_file "../../../app/assets/stylesheets/lines/style.css.scss",        "app/assets/stylesheets/lines/style.css.scss"
-      copy_file "../../../app/assets/stylesheets/lines/media_queries.css.scss",        "app/assets/stylesheets/lines/media_queries.css.scss"
+      copy_file "../../../app/assets/stylesheets/lines/style.css.scss",         "app/assets/stylesheets/lines/style.css.scss"
+      copy_file "../../../app/assets/stylesheets/lines/fonts.css.scss",         "app/assets/stylesheets/lines/fonts.css.scss"
+      copy_file "../../../app/assets/stylesheets/lines/media_queries.css.scss", "app/assets/stylesheets/lines/media_queries.css.scss"
       copy_file "../../../app/assets/stylesheets/lines/navbar.css.scss",        "app/assets/stylesheets/lines/navbar.css.scss"
-      copy_file "../../../app/assets/stylesheets/lines/pygments.css.erb",        "app/assets/stylesheets/lines/pygments.css.erb"
+      copy_file "../../../app/assets/stylesheets/lines/pygments.css.erb",       "app/assets/stylesheets/lines/pygments.css.erb"
     end
 
     def copy_views
