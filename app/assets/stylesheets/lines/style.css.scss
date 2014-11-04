@@ -213,10 +213,8 @@ header {
 
     blockquote {
       font-family: 'BPmono';
-      font-size:18px;
+      font-size: 1.125em;
       color:#999;
-      padding-left:30px;
-      line-height: 28px;
       letter-spacing: -0.02em;
       em { font-family: 'BPmonoItalic'; letter-spacing: -0.02em; }
       strong { font-family: 'BPmonoBold'; }
@@ -224,7 +222,6 @@ header {
 
     pre {
       font-size: 1.0em;
-      line-height: 1.5em;
       margin-bottom: 15px;
     }
 
@@ -268,7 +265,6 @@ header {
 
 
   &.small {
-    margin: 0 0 70px 0;
     max-width: 50%;
     float: left;
     .article_header {
