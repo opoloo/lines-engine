@@ -1,5 +1,5 @@
-<div class="article<%= (article_counter < 0) ? " first":"" %>">
-<%#= raise article.image_url.inspect %>
+<div class="article <%= (article_counter < 0) ? 'first' : 'small' %>">
+
 <% cache article do %>
 
   <div class="hero_image">
@@ -9,36 +9,30 @@
   </div>
 
   <div class="article_header">
-    <h1 class="title"><%= link_to article.title, article_path(article) %></h1>
-    <div class="sub_title"><%= article.sub_title %></div>
+    <h1><%= link_to article.title, article_path(article) %></h1>
+    <h2><%= article.sub_title %></h2>
     <div class="author_name"><span>by</span> <%= display_article_authors(article) %></div>
   </div>
 
-  <div class="article_wrapper">
-
-    <div class="article_teaser">
-      <% if article_counter == -1 %>
-        <% teaser = article.teaser.present? ? markdown(article.teaser) : nil %>
-      <% else %>
-        <% teaser = article.teaser.present? ? format_code(article.teaser) : format_code(article.content) %>
-      <% end %>
-      <%= teaser %>
-      <div class="more-link">
-        <%= link_to "Read full article", article_path(article) %>
-      </div>
+  <div class="article_teaser">
+    <% if article_counter == -1 %>
+      <% teaser = article.teaser.present? ? markdown(article.teaser) : nil %>
+    <% else %>
+      <% teaser = article.teaser.present? ? format_code(article.teaser) : format_code(article.content) %>
+    <% end %>
+    <%= teaser %>
+    <div class="more-link">
+      <%= link_to "Read full article", article_path(article) %>
     </div>
+  </div>
 
-
-    <div class="article_content">
-      <%= markdown article.content %>
-      <% if article.document? %>
-      <div class="article_document">
-        <%= link_to "Download #{article.document.file.filename}", article.document_url %>
-      </div>
-      <% end %>
+  <div class="article_content">
+    <%= markdown article.content %>
+    <% if article.document? %>
+    <div class="article_document">
+      <%= link_to "Download #{article.document.file.filename}", article.document_url %>
     </div>
-
-
+    <% end %>
   </div>
 
   <% unless article.gplus_url.blank? %>

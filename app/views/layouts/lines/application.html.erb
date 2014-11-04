@@ -21,25 +21,21 @@
   <%= render_navbar { "" } %>
   <div class="spacer"></div>
 <% end %>
-<div id="pagewrap">
-  <a id="top"></a>
-  <div id="meta">
-    <div id="meta_content">
-      <div id="logo">
-          <a href="/"><img src="<%= CONFIG[:logo] %>" alt="Logo Lines" /></a>
-      </div>
-      <div id="lines">
-        <%= CONFIG[:short_description] %>
-      </div>
-    </div>
+
+<header>
+  <div id="logo">
+      <a href="/"><img src="<%= CONFIG[:logo] %>" alt="Logo Lines" /></a>
   </div>
-
-  <div id="content">
-    <%= yield %>
+  <div id="lines">
+    <%= CONFIG[:short_description] %>
   </div>
+</header>
 
-  <%= render 'lines/shared/footer' %>
-
+<div id="content">
+  <%= yield %>
 </div>
+
+<%= render 'lines/shared/footer' %>
+
 </body>
 </html>

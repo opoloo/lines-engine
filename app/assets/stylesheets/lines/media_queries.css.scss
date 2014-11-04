@@ -2,73 +2,25 @@
 smaller than 975px
 *************************************************************************************/
 @media screen and (max-width: 975px) {
-  #pagewrap { width: 100%; padding: 0; }
-  #content img { width:100%;}
-  div.article, div.article.first { 
-    max-width: 100%; float: none; display: block; 
-    div.hero_image { 
-      text-align: center;
-      a, img { width: 100%; height: auto; }
-    }
-
-  }
-  div.rss { display: none; }
-  #footer { padding: 30px 20px; }
-  #topbar { padding: 0 1%; max-width:98%; }
-  div.article_content, div.article_teaser {
-    padding: 0 15px;
-    h1 { line-height: 1.5em; }
-  }
-  div.article_header {
-    h1 {
-      width: 100%;
-      a { width: 100%; display: block;}
-    }
-  }
-  #footer-content img { max-width: 100%; }
-  #footer .two-cols { max-width: 100%; display: block; float: none; }
 }
-
-
-
 
 /************************************************************************************
 smaller than 800px
 *************************************************************************************/
 @media screen and (max-width: 800px) {
-  div.article_header h1.title  { font-size: 1.6em; margin: 30px 0 10px 0; }
-  div.sub_title { font-size: 1.1em; }
-  #topbar {
-    text-align:center;
-    .right {float:none;}
-  }
-  div.article_content, div.article_teaser { padding: 0 10px; }
-  .two-cols { float:none; width:100%; }
-  h4.mobile-margin { margin: 40px 0 0 0;}
-  #logo, #lines { text-align: center; width: 100%; }
-  #lines { margin: 20px 0 0 0; }
-  h5.margin-top a { margin-top: 40px; display: block; }
-  #footer {
-    .two-cols { padding: 0; width: 100%; line-height: 24px; float: none; display: block; }
-    .row.about {
-      text-align: center;
-      .two-cols { padding: 0; width: 100%; line-height: 24px; }
-    }
-    .about-title { margin: 20px 0 5px 0; }
-    hr { margin: 20px 0; }
-    div.project-img { float: none; width: 100%; text-align: center; display: block; margin: 20px 0 0 0; }
-    div.project-text { float: none; width: 100%; }
-    .footer-headline { margin: 0; }
-  }
+  html { font-size: 14px; }
+}
 
-
+/************************************************************************************
+smaller than 600px
+*************************************************************************************/
+@media screen and (max-width: 600px) {
+  html { font-size: 12px; }
+  .article.small { width: 100%; max-width: 100%; }
 }
 
 /************************************************************************************
 smaller than 480px
 *************************************************************************************/
 @media screen and (max-width: 480px) {
-   #footer {
-     .footer-headline { font-size: 22px; }
-   }
 }

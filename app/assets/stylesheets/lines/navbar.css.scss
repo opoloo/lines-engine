@@ -39,6 +39,9 @@ $btn_active: $orange;
 }
 
 #navbar {
+  font-family: 'Cabin', sans-serif;
+  line-height: 1.5em;
+  font-size: 1.125em;
   height: 60px;
   background-color: $background;
   position: fixed;
