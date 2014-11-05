@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lines-engine (0.3.3.1)
+    lines-engine (0.3.3.2)
       acts-as-taggable-on (~> 3.2.6, >= 3.2.6)
       bcrypt (~> 3.1.0, >= 3.1.0)
       carrierwave (~> 0.10.0, >= 0.10.0)
@@ -203,7 +203,7 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
-    sanitize (3.0.2)
+    sanitize (3.0.3)
       crass (~> 0.2.0)
       nokogiri (>= 1.4.4)
       nokogumbo (= 1.1.12)
