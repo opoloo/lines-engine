@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.3
+
+- Override file for custom CSS added (lines_overrides.css.scss)
+
+
 ## 0.3.2
 
 - Pagination (kaminari gem) fixed: templates are now loaded from app/views/kaminari/lines/ as theme

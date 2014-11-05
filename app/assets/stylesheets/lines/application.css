@@ -14,4 +14,5 @@
  *= require lines/style
  *= require lines/pygments
  *= require lines/media_queries
+ *= require lines/lines_overrides
  */
