@@ -15,12 +15,7 @@
   </div>
 
   <div class="article_teaser">
-    <% if article_counter == -1 %>
-      <% teaser = article.teaser.present? ? markdown(article.teaser) : nil %>
-    <% else %>
-      <% teaser = article.teaser.present? ? format_code(article.teaser) : format_code(article.content) %>
-    <% end %>
-    <%= teaser %>
+    <%= render_teaser(article, article_counter) %>
     <div class="more-link">
       <%= link_to "Read full article", article_path(article) %>
     </div>

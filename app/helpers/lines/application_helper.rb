@@ -4,7 +4,17 @@ require 'pygments'
 # Provides helper methods for views.
 module Lines
   module ApplicationHelper
-    
+
+    # Renders the teaser for an article. 
+    def render_teaser(article, article_counter=0)
+      if article_counter < 0
+        teaser = article.teaser.present? ? markdown(article.teaser) : nil
+      else
+        teaser = article.teaser.present? ? format_code(article.teaser) : format_code(article.content)
+      end
+      teaser
+    end
+
     # Highlights and formats code fragments with Pygments 
     class HTMLwithPygments < Redcarpet::Render::XHTML
       def block_code(code, language)

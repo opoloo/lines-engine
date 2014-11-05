@@ -3,7 +3,7 @@
 ## 0.3.3
 
 - Override file for custom CSS added (lines_overrides.css.scss)
-
+- Rendering of teaser extracted to helper method 'render_teaser'
 
 ## 0.3.2
 
