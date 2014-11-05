@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1
+
+- Fonts are now referenced by unified names and font attributes ('Ubuntu' instead of 'UbuntuBold' and 'UbuntuItalic')
+
 ## 0.3 
 
 - Heavily simplified CSS and markup for articles

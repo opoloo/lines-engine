@@ -46,8 +46,8 @@ a {
 }
 
 i, em, strong, b { font-weight: normal; font-style: normal; }
-i, em { font-family: 'UbuntuItalic'; }
-strong, b { font-family: 'UbuntuBold'; }
+i, em { font-family: 'Ubuntu'; font-style: italic; }
+strong, b { font-family: 'Ubuntu'; font-weight: bold; }
 
 ul li { list-style-position: inside; }
 
@@ -80,6 +80,7 @@ header {
   max-width: $max-width;
   padding: 20px;
   font-family: 'Museo';
+  font-weight: 500;
   font-size: 1.188em;
   border-bottom: 1px solid #e3e3e3;
   a {
@@ -93,7 +94,6 @@ header {
     text-transform: uppercase;
   }
 }
-
 
 
 /*-----------------------------------------------------------*/
@@ -116,7 +116,6 @@ header {
   font-size: 1.125em;
   color: #555;
 
-
   .hero_image {
     margin-top: 1.2em;
   }
@@ -126,7 +125,7 @@ header {
     padding: 0 15px;
     h1  {
       font-family: 'Museo';
-      font-weight: normal;
+      font-weight: 500;
       font-size: 2.4em;
       line-height: 1.01em;
       letter-spacing: -0.03em;
@@ -152,7 +151,7 @@ header {
     padding: 0 10%;
     margin: 30px auto;
     .more-link { display: none; }
-    p { font-family: 'UbuntuBold'; }
+    p { font-weight: bold; }
   } 
 
   .article_content {
@@ -162,6 +161,7 @@ header {
 
     h1 {
       font-family: 'Museo';
+      font-weight: 500;
       font-size: 1.3em;
       color: $darkgrey;
       text-transform: uppercase;
@@ -179,7 +179,8 @@ header {
 
     h3 {
       font-size: 1.111em;
-      font-family: 'UbuntuBold';
+      font-family: 'Ubuntu';
+      font-weight: bold;
       margin: 30px 0 0 0;
     }
 
@@ -192,7 +193,8 @@ header {
 
     h5 {
       font-size: 1em;
-      font-family: 'UbuntuBold';
+      font-family: 'Ubuntu';
+      font-weight: bold;
       margin: 20px 0 0 0;
     }
 
@@ -216,8 +218,8 @@ header {
       font-size: 1.125em;
       color:#999;
       letter-spacing: -0.02em;
-      em { font-family: 'BPmonoItalic'; letter-spacing: -0.02em; }
-      strong { font-family: 'BPmonoBold'; }
+      em { font-style: italic; letter-spacing: -0.02em; }
+      strong { font-weight: bold; }
     }
 
     pre {
@@ -272,7 +274,7 @@ header {
       h2 { display: none; }
     }
     .article_teaser {
-      p { font-family: 'Ubuntu'; }
+      p { font-weight: normal; }
       .more-link {
         display: block;
         margin:40px auto 0 auto;
@@ -294,10 +296,7 @@ header {
     }
     .article_googleplus, .article_footer, .article_content { display:none; }
   }
-
 }
-
-
 
 #pagination {
   display: block;
@@ -377,20 +376,21 @@ footer, #footer {
   h2, h2 a {
     margin-top: 20px;
     text-transform: uppercase;
-    font-family: 'MuseoLight';
+    font-family: 'Museo';
     font-size: 1.2em;
-    font-weight: normal;
+    font-weight: 300;
     letter-spacing: 0.03em;
   }
-
 
   span.label {
     text-transform: uppercase;
     font-size:13px;
     color:#c0bfbf;
   }
+
   .weekday {
-    font-family: 'MuseoLight';
+    font-family: 'Museo';
+    font-weight: 300;
     color: $darkgrey;
   }
   
