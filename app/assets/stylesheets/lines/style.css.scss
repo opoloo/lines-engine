@@ -299,6 +299,7 @@ header {
 }
 
 #pagination {
+  font-family: 'Ubuntu';
   display: block;
   overflow: visible;
   border-top: 1px solid #ccc;
@@ -318,13 +319,11 @@ header {
   .older { right: 0px; }
   .prev, .first {
     float: left;
-    background: url('/assets/arrow_left.png') top left no-repeat;
-    padding: 0 10px 0 50px;
+    padding: 0 10px;
   }
   .next, .last {
     float: right;
-    background: url('/assets/arrow_right.png') top right no-repeat;
-    padding: 0 50px 10px 0px;
+    padding: 0 10px;
   }
 
   .pages {

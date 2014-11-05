@@ -23,6 +23,7 @@ module Lines
 
     def copy_views
       directory('../../../app/views/lines', 'app/views/lines/', {:exclude_pattern => /admin|sessions/})
+      directory('../../../app/views/kaminari', 'app/views/kaminari/'
       copy_file('../../../app/views/layouts/lines/application.html.erb', 'app/views/layouts/lines/application.html.erb')
       copy_file('../../../app/views/layouts/lines/preview.html.erb', 'app/views/layouts/lines/preview.html.erb')
     end

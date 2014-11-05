@@ -1,8 +1,15 @@
 # Changelog
 
+## 0.3.2
+
+- Pagination (kaminari gem) fixed: templates are now loaded from app/views/kaminari/lines/ as theme
+- Install generator: paginator templates from kaminari gem are now correctly added to host app
+
+
 ## 0.3.1
 
 - Fonts are now referenced by unified names and font attributes ('Ubuntu' instead of 'UbuntuBold' and 'UbuntuItalic')
+
 
 ## 0.3 
 
