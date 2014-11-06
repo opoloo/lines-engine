@@ -1,0 +1,81 @@
+* { 
+  margin: 0; padding: 0; 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body { height: 100%; background-color: #fff; }
+
+img, div { border: 0; display: block; }
+
+div, header, footer { display: block; overflow: hidden; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+a {
+  text-decoration: none;
+  color: $darkgrey;
+  @include addTransition(0.3);
+  &:hover { color: $orange; }
+}
+
+i, em { font-family: $Merriweather; font-style: italic; }
+strong, b { font-family: $Merriweather; font-weight: bold; }
+
+ul li { list-style-position: outside; }
+
+hr { display: block; margin: 1.2em 0; height: 1px; background-color: #3d3d3d; border:none; }
+
+.float-right { float:right; margin: 15px 0 5px 10px; }
+.clearfix {
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+    &:before, &:after { content: ""; display: table; }
+    &:after { clear: both; }
+}
+
+div.rss { display:none; }
+
+/*--------------------------------------------------------*/
+/*------------------------  HEADER  ----------------------*/
+/*--------------------------------------------------------*/
+
+#topbar {
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 0;
+  background-color: #000;
+  div { max-width: $max-width; margin: 0 auto; }
+  .right { float: right; }
+  a { color: #aaa; }
+}
+
+header {
+  margin: 0 auto;
+  max-width: $max-width;
+  padding: 1.1em;
+  font-family: $SourceSansPro;
+  font-weight: 500;
+  font-size: 1.188em;
+  border-bottom: 1px solid #e3e3e3;
+  a {
+    color: #000;
+    &:hover { color: $orange; }
+  }
+  #logo { float: left; }
+  #lines {
+    float: right;
+    font-size: 0.737em;
+    text-transform: uppercase;
+  }
+}
+
+.container {
+  position: relative;
+  max-width: $max-width;
+  margin: 0 auto;
+}

@@ -1,3 +1,3 @@
 module Lines
-  VERSION = "0.3.3.2"
+  VERSION = "0.4"
 end

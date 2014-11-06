@@ -1,4 +1,8 @@
-/*------------------------  1. FONTS  -----------------------*/
+@import url(//fonts.googleapis.com/css?family=Merriweather:400,400italic,700);
+@import url(//fonts.googleapis.com/css?family=Merriweather+Sans:400,700);
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,700italic,900);
+@import url(//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic&subset=latin,latin-ext);
+
 @font-face {
   font-family: 'BPmono';
   src: url('/assets/BPmono-webfont.eot');
@@ -29,71 +33,5 @@
   url('/assets/BPmonoBold-webfont.ttf') format('truetype'),
   url('/assets/BPmonoBold-webfont.svg#BPmonoBold-webfont') format('svg');
   font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Museo';
-  src: url('/assets/Museo500-Regular-webfont.eot');
-  src: url('/assets/Museo500-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/assets/Museo500-Regular-webfont.woff') format('woff'),
-  url('/assets/Museo500-Regular-webfont.ttf') format('truetype'),
-  url('/assets/Museo500-Regular-webfont.svg#Museo500-Regular-webfont') format('svg');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Museo';
-  src: url('/assets/Museo300-Regular-webfont.eot');
-  src: url('/assets/Museo300-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/assets/Museo300-Regular-webfont.woff') format('woff'),
-  url('/assets/Museo300-Regular-webfont.ttf') format('truetype'),
-  url('/assets/Museo300-Regular-webfont.svg#Museo300-Regular-webfont') format('svg');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Ubuntu';
-  src: url('/assets/Ubuntu-R-webfont.eot');
-  src: url('/assets/Ubuntu-R-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/assets/Ubuntu-R-webfont.woff') format('woff'),
-  url('/assets/Ubuntu-R-webfont.ttf') format('truetype'),
-  url('/assets/Ubuntu-R-webfont.svg#Ubuntu-R-webfont') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Ubuntu';
-  src: url('/assets/Ubuntu-B-webfont.eot');
-  src: url('/assets/Ubuntu-B-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/assets/Ubuntu-B-webfont.woff') format('woff'),
-  url('/assets/Ubuntu-B-webfont.ttf') format('truetype'),
-  url('/assets/Ubuntu-B-webfont.svg#Ubuntu-B-webfont') format('svg');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Ubuntu';
-  src: url('/assets/Ubuntu-RI-webfont.eot');
-  src: url('/assets/Ubuntu-RI-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/assets/Ubuntu-RI-webfont.woff') format('woff'),
-  url('/assets/Ubuntu-RI-webfont.ttf') format('truetype'),
-  url('/assets/Ubuntu-RI-webfont.svg#Ubuntu-R-webfont') format('svg');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'UbuntuLight';
-  src: url('/assets/Ubuntu-L-webfont.eot');
-  src: url('/assets/Ubuntu-L-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/assets/Ubuntu-L-webfont.woff') format('woff'),
-  url('/assets/Ubuntu-L-webfont.ttf') format('truetype'),
-  url('/assets/Ubuntu-L-webfont.svg#Ubuntu-L-webfont') format('svg');
-  font-weight: normal;
   font-style: normal;
 }

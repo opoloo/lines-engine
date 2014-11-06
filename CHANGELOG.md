@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4
+
+- CSS finetuning. CSS files are now splitted into semantic parts.
+
+
 ## 0.3.3 / 0.3.3.1
 
 - Override file for custom CSS added (lines_overrides.css.scss)

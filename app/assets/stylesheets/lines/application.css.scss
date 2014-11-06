@@ -9,10 +9,14 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require lines/fonts
- *= require lines/navbar
- *= require lines/style
  *= require lines/pygments
- *= require lines/media_queries
- *= require lines/lines_overrides
  */
+
+@import 'fonts.css.scss';
+@import 'variables_and_mixins.css.scss';
+@import 'navbar.css.scss';
+@import 'general.css.scss';
+@import 'article.css.scss';
+@import 'footer.css.scss';
+@import 'media_queries.css.scss';
+@import 'lines_overrides.css.scss';
