@@ -50,9 +50,9 @@ module Lines
       @first_page = true
       @article = Article.published.find(params[:id])
       @article.teaser = nil unless @article.teaser.present?
-      meta_tags = { title: SITE_TITLE,
+      meta_tags = { title: @article.title,
         type: 'article',
-        url: 'meta_og_url',
+        url: url_for(@article),
         site_name: SITE_TITLE,
       }
       meta_tags[:image] = CONFIG[:host] + @article.image_url if @article.image_url.present?

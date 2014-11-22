@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.1
+
+- Meta Tags and OpenGraph Tags fixed
+
 ## 0.4
 
 - CSS finetuning. CSS files are now splitted into semantic parts.
