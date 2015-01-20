@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.2 - 0.4.4
+
+- upgraded gem versions and dependencies
+- mior fixe
+
 ## 0.4.1
 
 - Meta Tags and OpenGraph Tags fixed

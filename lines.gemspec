@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.date        = Date.today.to_s
 
 
-  s.add_dependency 'orm_adapter', '~> 0.1', '>= 0.5'
+  s.add_dependency 'orm_adapter', '>= 0.5'
   s.add_dependency 'thread_safe', '~> 0.1', '>= 0.3'
   s.add_dependency 'railties', '>= 3.2.6', '< 5'
   s.add_dependency 'rmagick', '~> 2.13.2', '>= 2.13.2'
@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'kaminari', '~> 0.16.1', '>= 0.16.1'
   s.add_dependency 'pygments.rb', '~> 0.6.0', '>= 0.6.0'
   s.add_dependency 'redcarpet', '~> 3.1.2', '>= 3.1.2'
-  s.add_dependency 'jquery-rails', '~> 3.1.0', '>= 3.1.0'
+  s.add_dependency 'jquery-rails', '< 5', '>= 3.1.0'
   s.add_dependency 'acts-as-taggable-on', '~> 3.2.6', '>= 3.2.6'
   s.add_dependency 'bcrypt', '~> 3.1.0', '>= 3.1.0'
   s.add_dependency 'simple_form', '~> 3', '>= 3.0.0', '< 4'
@@ -33,8 +33,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'jquery-fileupload-rails', '~> 0.4.1', '>= 0.4.1'
   s.add_dependency 'jquery-ui-rails', '~> 4', '>= 4.0.0'
   s.add_dependency 'sanitize', '~> 3.0.0', '>= 3.0.0'
-  s.add_dependency 'sass-rails', '~> 4.0.0', '>= 4.0.0'
-  s.add_dependency 'coffee-rails', '~> 4.0.0', '>= 4.0.0'
+  s.add_dependency 'sass-rails', '>= 4.0.0'
+  s.add_dependency 'coffee-rails', '< 5', '>= 4.0.0'
   s.add_dependency 'uglifier', '~> 2', '>= 2'
   s.add_dependency 'friendly_id', '~> 5.1.0', '>= 5.1.0'
   s.add_dependency 'rails3-jquery-autocomplete', '~> 1.0.11', '>= 1.0.11'
