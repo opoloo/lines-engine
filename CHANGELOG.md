@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.5
+
+- BUGFIX: stylesheet for pagination is now included correctly
+
 ## 0.4.2 - 0.4.4
 
 - upgraded gem versions and dependencies
