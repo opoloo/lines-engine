@@ -1,0 +1,22 @@
+<div class="article small">
+<% cache "#{article_small}_small" do %>
+  <div class="hero_image">
+    <%= link_to article_path(article_small), { style: "background-image:url('#{article_small.image_url}')" } do %>
+      <img src="<%= article_small.image_url %>" alt="<%= article_small.title %>" />
+    <% end %>
+  </div>
+
+  <div class="article_header">
+    <h1><%= link_to article_small.title, article_path(article_small) %></h1>
+    <h2><%= article_small.sub_title %></h2>
+    <div class="author_name"><span>by</span> <%= display_article_authors(article_small) %></div>
+  </div>
+
+  <div class="article_teaser">
+    <%= render_teaser(article_small) %>
+    <div class="more-link">
+      <%= link_to "Read full article", article_path(article_small) %>
+    </div>
+  </div>
+<% end %>
+</div>

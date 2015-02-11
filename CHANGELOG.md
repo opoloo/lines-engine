@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.6
+
+- Fixed caching bug. 
+
 ## 0.4.5
 
 - BUGFIX: stylesheet for pagination is now included correctly
