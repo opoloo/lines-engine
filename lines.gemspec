@@ -39,6 +39,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'friendly_id', '~> 5.1.0', '>= 5.1.0'
   s.add_dependency 'rails3-jquery-autocomplete', '~> 1.0.11', '>= 1.0.11'
   s.add_dependency 'meta-tags', '~> 2.0.0', '>= 2.0.0'
+  s.add_dependency 'bcrypt-ruby', '>= 3.0.0', '<= 4'
   s.add_runtime_dependency 'rails', ['>= 3', '< 5']
 
   s.add_development_dependency 'mysql2', '~> 2.9', '>= 2.9'

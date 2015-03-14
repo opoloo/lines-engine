@@ -1,8 +1,9 @@
 # Changelog
 
-## 0.4.6
+## 0.4.6.x
 
-- Fixed caching bug. 
+- Fixed caching bug.
+- Fixed issue #2 (missing brypt-ruby dependency)
 
 ## 0.4.5
 
