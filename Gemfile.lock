@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lines-engine (0.4.6.3)
+    lines-engine (0.4.6.4)
       acts-as-taggable-on (~> 3.2.6, >= 3.2.6)
       bcrypt (~> 3.1.0, >= 3.1.0)
       bcrypt-ruby (>= 3.0.0, <= 4)
@@ -19,7 +19,7 @@ PATH
       rails3-jquery-autocomplete (~> 1.0.11, >= 1.0.11)
       railties (>= 3.2.6, < 5)
       redcarpet (~> 3.1.2, >= 3.1.2)
-      rmagick (~> 2.13.2, >= 2.13.2)
+      rmagick (~> 2.13.4, >= 2.13.4)
       sanitize (~> 3.0.0, >= 3.0.0)
       sass-rails (>= 4.0.0)
       simple_form (~> 3, >= 3.0.0, < 4)

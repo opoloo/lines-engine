@@ -4,6 +4,7 @@
 
 - Fixed caching bug.
 - Fixed issue #2 (missing brypt-ruby dependency)
+- Updated rmagick gem
 
 ## 0.4.5
 
