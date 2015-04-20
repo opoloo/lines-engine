@@ -23,6 +23,7 @@ gem 'acts-as-taggable-on', '~> 3.2.6'
 group :development do
   gem 'capistrano'
   gem 'yard'
+  gem 'autoprefixer-rails'
 end
 
 group :development, :test do
