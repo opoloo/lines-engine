@@ -1,5 +1,10 @@
 # Changelog
 
+## development (master)
+
+- Require statements from css manifest files removed that prevented @import statements to work correctly
+
+
 ## 0.4.6.x
 
 - Fixed caching bug.
