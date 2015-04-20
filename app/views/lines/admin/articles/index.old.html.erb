@@ -8,29 +8,17 @@
   <h2>Unpublished articles</h2>
   <div class="articles-list">
     <% @articles_unpublished.each do |article| %>
-      <div class="article unpublished">
-        <div class="title">
-          <%= link_to article.title, edit_admin_article_path(article), title: article.title %>
-        </div>
-        <div class="subtitle">
-          <%= link_to article.sub_title, edit_admin_article_path(article), title: article.sub_title %>
-        </div>
-        <div class="actions">
-          <div class="left">
-            <%= link_to "Publish", admin_article_toggle_publish_path(article), class: "btn-publish" %>
-          </div>
-          <div class="right">
-            <%= link_to "", {controller: :articles, action: 'destroy', id: article.id}, data: { confirm: "Are you sure?" }, class: "btn-delete icon-delete", method: :delete %>
-          </div>
-        </div>
-          <!--<td class="preview"><%= link_to "", admin_article_path(article), title: "Preview article" %></td>
+      <table class="article unpublished" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="preview"><%= link_to "", admin_article_path(article), title: "Preview article" %></td>
           <td style="width: 2px;"></td>
           <td class="edit"><%= link_to "", edit_admin_article_path(article), title: "Edit article" %></td>
           <td class="title"><%= link_to truncate(article.title, length: 25, omission: "…"), edit_admin_article_path(article), title: article.title %></td>
           <td class="subtitle"><%= link_to truncate(article.sub_title, length: 35, omission: "…"), edit_admin_article_path(article), title: article.sub_title %></td>
           <td class="date"><%= article.published_at.to_date %></td>
-          <td class="delete"><%= button_to "", {controller: :articles, action: 'destroy', id: article.id }, method: :delete, confirm: "Are you sure?" %></td>-->
-      </div>
+          <td class="delete"><%= button_to "", {controller: :articles, action: 'destroy', id: article.id }, method: :delete, confirm: "Are you sure?" %></td>
+        </tr>
+      </table>
     <% end %>
   </div>
 <% end %>
@@ -39,25 +27,7 @@
   <h2>Published articles</h2>
   <div class="articles-list">
     <% @articles_published.each do |article| %>
-      <div class="article published">
-        <div class="title">
-          <%= link_to article.title, edit_admin_article_path(article), title: article.title %>
-        </div>
-        <div class="subtitle">
-          <%= link_to article.sub_title, edit_admin_article_path(article), title: article.sub_title %>
-        </div>
-        <div class="actions">
-          <div class="left">
-            <% feature_class = article.featured ? 'btn-unfeature' : 'btn-feature' %>
-            <%= link_to "", admin_article_toggle_feature_path(article), class: "#{feature_class} icon-keep" %>
-            <%= link_to "Unpublish", admin_article_toggle_publish_path(article), class: "btn-unpublish" %>
-          </div>
-          <div class="right">
-            <%= link_to "", {controller: :articles, action: 'destroy', id: article.id}, data: { confirm: "Are you sure?" }, class: "btn-delete icon-delete", method: :delete %>
-          </div>
-        </div>
-      </div>
-      <!-- <table class="article published" cellspacing="0" cellpadding="0">
+      <table class="article published" cellspacing="0" cellpadding="0">
         <tr>
           <td class="preview"><%= link_to "", admin_article_path(article), title: "Preview article" %></td>
           <td style="width: 2px;"></td>
@@ -68,7 +38,7 @@
           <td class="date"><%= article.published_at.to_date %></td>
           <td class="delete"><%= button_to "", {controller: :articles, action: 'destroy', id: article.id }, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
-      </table> -->
+      </table>
     <% end %>
   </div>
 <% end %>

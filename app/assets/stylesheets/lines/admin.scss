@@ -14,9 +14,19 @@
  */
 
 /*
+ * Mixins
+ */
+@mixin clearfix() {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*
  * Imports
  */
 @import url(http://fonts.googleapis.com/css?family=Merriweather+Sans:400,800);
+@import url(/iconfont/iconfont.css);
 
 /*
  * Variables
@@ -41,6 +51,9 @@ $size-gamma: 1.444rem; // 26em
   outline: 0;
   box-sizing: border-box;
 }
+*:before, *:after {
+  box-sizing: border-box;
+}
 
 html, body {
   height: 100%;
@@ -53,6 +66,10 @@ body {
   font-size: $size-alpha;
   font-family: $font-alpha;
   color: $color-alpha;
+}
+
+a {
+  text-decoration: none;
 }
 
 h2 {
@@ -72,6 +89,62 @@ h2 {
   margin: 0 auto;
 }
 
+.articles-list {
+  margin-bottom: 2em;
+}
+
 .article {
-  
+  border-bottom: 1px solid $color-gamma;
+  padding-bottom: 1em;
+  &+.article {
+    margin-top: 1em;
+  }
+  &.unpublished {
+    .title {
+      a {
+        color: $color-alpha;
+      }
+    }
+  }
+  &.published {
+    .title {
+      a {
+        color: $color-gamma;
+      }
+    }
+  }
+  .title {
+    font-size: $size-gamma;
+  }
+  .subtitle {
+    margin-bottom: 0.5em;
+    a {
+      color: $color-gamma;
+    }
+  }
+  .actions {
+    font-size: $size-beta;
+    a {
+      color: $color-gamma;
+      text-transform: uppercase;
+    }
+    .btn-unfeature {
+      color: $color-beta;
+    }
+    .btn-publish {
+      color: $color-beta;
+    }
+    .btn-unpublish {
+      color: $color-alpha;
+    }
+    .left {
+      float: left;
+    }
+    .right {
+      float: right;
+    }
+    &:after {
+      @include clearfix();
+    }
+  }
 }
