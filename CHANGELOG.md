@@ -1,5 +1,11 @@
 # Changelog
 
+## development (master)
+
+- Require statements from css manifest files removed that prevented @import statements to work correctly
+- renamed .css.scss files to .scss due to Rails deprecation warning
+
+
 ## 0.4.6.x
 
 - Fixed caching bug.

@@ -8,16 +8,15 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require lines/pygments
  */
 
-@import 'fonts.css.scss';
-@import 'variables_and_mixins.css.scss';
-@import 'navbar.css.scss';
-@import 'general.css.scss';
-@import 'article.css.scss';
-@import 'pagination.css.scss';
-@import 'footer.css.scss';
-@import 'media_queries.css.scss';
-@import 'lines_overrides.css.scss';
+@import 'pygments.css';
+@import 'fonts.css';
+@import 'variables_and_mixins.css';
+@import 'navbar.css';
+@import 'general.css';
+@import 'article.css';
+@import 'pagination.css';
+@import 'footer.css';
+@import 'media_queries.css';
+@import 'lines_overrides.css';
