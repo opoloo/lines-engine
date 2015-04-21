@@ -25,7 +25,7 @@ module Lines
     end
 
     initializer "lines.assets.precompile" do |app|
-      app.config.assets.precompile += %w(lines/application.css lines/application.js lines/admin.css lines/admin.js)
+      app.config.assets.precompile += %w(lines/application.css lines/application.js lines/admin/admin.css lines/admin/admin.js)
     end
 
     initializer 'lines.action_controller' do |app|
