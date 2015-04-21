@@ -1,6 +1,5 @@
 <%= render_navbar do %>
-  <%= link_to 'New Article', new_admin_article_path, class: "btn btn-new-article" %>  
-  <%= link_to 'Authors', admin_authors_path, class: "btn btn-authors" %>
+  <%= link_to 'New Article', new_admin_article_path, class: "btn btn-new-article highlight" %>  
   <%= link_to 'Visit Blog', lines.root_path, class: "btn btn-view-blog" %>
 <% end %>
 
@@ -17,7 +16,7 @@
         </div>
         <div class="actions">
           <div class="left">
-            <%= link_to "Publish", admin_article_toggle_publish_path(article), class: "btn-publish" %>
+            <%= link_to "Publish", admin_article_toggle_publish_path(article), method: :post, class: "btn-publish" %>
           </div>
           <div class="right">
             <%= link_to "", {controller: :articles, action: 'destroy', id: article.id}, data: { confirm: "Are you sure?" }, class: "btn-delete icon-delete", method: :delete %>
@@ -50,7 +49,7 @@
           <div class="left">
             <% feature_class = article.featured ? 'btn-unfeature' : 'btn-feature' %>
             <%= link_to "", admin_article_toggle_feature_path(article), class: "#{feature_class} icon-keep" %>
-            <%= link_to "Unpublish", admin_article_toggle_publish_path(article), class: "btn-unpublish" %>
+            <%= link_to "Unpublish", admin_article_toggle_publish_path(article), method: :post, class: "btn-unpublish" %>
           </div>
           <div class="right">
             <%= link_to "", {controller: :articles, action: 'destroy', id: article.id}, data: { confirm: "Are you sure?" }, class: "btn-delete icon-delete", method: :delete %>

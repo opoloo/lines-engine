@@ -1,6 +1,113 @@
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $height-alpha;
+  background-color: $color-alpha;
+  color: #fff;
+  .navbar-inner {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    line-height: $height-alpha;
+    font-size: $size-beta;
+    height: $height-alpha;
+    .buttons {
+      a.btn {
+        color: #fff;
+        text-transform: uppercase;
+        padding: 10px;
+        border-radius: 3px;
+        &.highlight {
+          background-color: $color-beta;
+        }
+      }
+    }
+  }
+  .submenu {
+    background-color: $color-alpha;
+    position: absolute;
+    top: $height-alpha;
+    left: 0;
+    width: 100%;
+    display: none;
+    .submenu-inner {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px 20px 20px;
+      ul {
+        list-style: none;
+        border-top: 1px solid $color-delta;
+        padding-top: 1em;
+        li {
+          font-size: $size-alpha;
+          &+li {
+            margin-top: 1em;
+          }
+        }
+        &+ul {
+          margin-top: 1em;
+        }
+      }
+      a {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: $size-beta;
+      }
+    }
+  }
+}
+
+.btn-menu {
+  float: right;
+  width: $height-alpha;
+  height: $height-alpha;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  .stripes {
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    transition: all 0.3s ease;
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      transition: all 0.3s ease;
+    }
+    &:before {
+      transform: translateY(-250%) rotate(0deg);
+    }
+    &:after {
+      transform: translateY(250%) rotate(0deg);
+    }
+  }
+  &.active {
+    transform: rotate(90deg);
+    .stripes {
+      background-color: transparent;
+      &:before {
+        transform: translateY(0%) rotate(45deg);
+      }
+      &:after {
+        transform: translateY(0%) rotate(-45deg);
+      }
+    }
+  }
+}
 
 .spacer {
-  height: $height-alpha;
+  height: $height-alpha + 20px;
   width: 100%;
   position: relative;
   top: 0px;

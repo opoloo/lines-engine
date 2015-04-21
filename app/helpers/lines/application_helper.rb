@@ -68,7 +68,24 @@ module Lines
       html = content_tag(:div, id: 'navbar') do
         content_tag(:div, class: 'navbar-inner') do
           if current_lines_user
-            content_tag(:span, link_to('', admin_articles_path), class: 'backlink', title: 'Dashboard') + content_tag(:span, action_link, class: 'actionlink') + content_tag(:span, class: 'buttons', &block) + content_tag(:span, link_to('Logout', logout_path), class: 'logout') + content_tag(:span, "Logged in as #{current_lines_user.email}", class: 'logged-in-as')
+            #content_tag(:span, link_to('', admin_articles_path), class: 'backlink', title: 'Dashboard') + content_tag(:span, action_link, class: 'actionlink') + content_tag(:span, class: 'buttons', &block) + content_tag(:span, link_to('Logout', logout_path), class: 'logout') + content_tag(:span, "Logged in as #{current_lines_user.email}", class: 'logged-in-as')
+            content_tag(:span, class: 'buttons', &block) + "<div class='btn-menu'><dic class='stripes'></div></div>".html_safe + 
+            "<div class='submenu'>
+              <div class='submenu-inner'>
+                <ul>
+                  <li>#{link_to("All Articles", admin_articles_path)}</li>
+                  <li>#{link_to("Authors", admin_authors_path)}</li>
+                </ul>
+                <ul>
+                  <li>Logged in as #{current_lines_user.email}</li>
+                  <li>#{link_to("Logout", logout_path)}</li>
+                </ul>
+                <ul>
+                  <li>#{link_to("Formatting Help", "#")}</li>
+                  <li>#{link_to("About Lines", "#")}</li>
+                </ul>
+              </div>
+            </div>".html_safe
           else
             content_tag(:span, link_to('', lines.root_path), class: 'backlink') + content_tag(:span, action_link, class: 'actionlink')
           end

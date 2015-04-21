@@ -12,7 +12,7 @@
  *= require jquery.ui.all
  */
 
-@import 'lines/variables_and_mixins';
+@import 'lines/admin/variables_and_mixins';
 @import 'lines/navbar';
 
 /*
@@ -52,6 +52,25 @@ h2 {
   text-transform: uppercase;
   font-weight: 800;
   margin-bottom: 1em;
+}
+
+/*
+ * Alerts
+ */
+.alert {
+  background-color: rgba(#0a0, .5);
+  border: 1px solid #0a0;
+  padding: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+  position: relative;
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: block;
+  }
 }
 
 /*
