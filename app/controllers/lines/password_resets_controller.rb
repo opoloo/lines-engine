@@ -35,6 +35,8 @@ module Lines
         flash.now[:error] = "Password confirmation does not match"
         render 'edit'
       elsif @user.update_attributes(user_params)
+        # deletr reset_digest and reset_sent_at
+        @user.update_attributes(reset_digest: nil, reset_sent_at: nil)        
         flash[:success] = "Password has been reset. You can now log in with your new password."
         redirect_to new_session_path
       else
