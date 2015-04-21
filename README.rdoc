@@ -21,22 +21,21 @@ To get an idea of the appearance, see the screenshots below, visit the {Lines We
 
 === Features
 
-- 960x540 px hero graphics for posts
+
+- authentication system (w/ password reset, remember token, ...)
+- custom hero graphics for posts
 - upload default hero images that you want to use more frequently
 - customizable generic titles & subtitles
 - automatic teaser & scaled image for the article overview
 - determine featured article
-- six headline styles according to priority
-- italics & bold text
-- block quotes
-- images, lists, links
+- markdown implementation (six headline styles according to priority, italics & bold text, block quotes, images, lists, links,...)
+- code highlighting
+- formatting help
 - tags for articles
 - G+ link to social network discussion
 - multiple authors and author information (for your small company or guest authors)
 - add documents for download
-- formatting help
 - direct RSS reader access
-- code highlighting
 
 
 == Installation
