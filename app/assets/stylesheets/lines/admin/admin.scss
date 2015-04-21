@@ -54,6 +54,12 @@ h2 {
   margin-bottom: 1em;
 }
 
+input, textarea {
+  font-size: $size-beta;
+  font-family: $font-alpha;
+  resize: none;
+}
+
 /*
  * Alerts
  */
@@ -139,6 +145,64 @@ h2 {
     }
     &:after {
       @include clearfix();
+    }
+  }
+}
+
+/*
+ * Forms
+ */
+form {
+  input[type="text"], textarea {
+    width: 100%;
+    border-bottom: 1px solid $color-gamma;
+    padding: 0.5em;
+    &:focus {
+      border-bottom-color: $color-beta;
+    }
+  }
+  input[type="checkbox"] {
+    display: none;
+    &+label {
+      position: relative;
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      font-size: $size-beta;
+      margin-bottom: 1em;
+      cursor: pointer;
+      &:after {
+        content: "\f101";
+        font-family: 'iconfont';
+        position: absolute;
+        color: $color-gamma;
+        right: 0;
+        top: 50%;
+        font-size: 1.5em;
+        transform: translateY(-50%);
+      }
+    }
+    &:checked {
+      &+label {
+        &:after {
+          content: "\f100";
+          color: $color-beta;
+        }
+      }
+    }
+  }
+  .input-field {
+    margin-bottom: 1em;
+  }
+  .required {
+    position: relative;
+    &:after {
+      content: "*";
+      color: $color-beta;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 }
