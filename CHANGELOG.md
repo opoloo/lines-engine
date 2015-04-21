@@ -1,5 +1,22 @@
 # Changelog
 
+## development @master branch
+
+- Users are now able to reset their passwords. 
+- IMPORTANT: please adjust your +config/lines_config.yml+ and add +from_email+ according to the following example:
+    ```
+    development:
+      host: "localhost:3000"
+      from_email: 'noreply@example.com'
+    test:
+      host: "test.local"
+      from_email: 'noreply@example.com'
+    production:
+      host: "blog.opoloo.com"
+      from_email: 'noreply@example.com'
+    ```
+-
+
 ## 0.5
 
 - Completely moved from sprockets to SASS @import statements. Be aware that you have to remove all "*= require" statements from your CSS manifest and use @import instead. For more information, see: http://guides.rubyonrails.org/asset_pipeline.html

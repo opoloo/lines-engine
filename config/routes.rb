@@ -1,10 +1,15 @@
 Lines::Engine.routes.draw do
 
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'tags/:tag', to: 'articles#index', as: :tag
 
   resources :sessions
+  resources :password_resets,     only: [:new, :create, :edit, :update]
 
   resources :articles, only: [:index, :show] do
     get 'page/:page', action: :index, on: :collection

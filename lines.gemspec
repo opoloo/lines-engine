@@ -14,6 +14,9 @@ Gem::Specification.new do |s|
   s.description = "LINES lets you manage your posts in a clear, consistent frontend. The gracefully slender editor keeps your editing simple and lets you just splash around in your ideas. Once you're happy, just hit publish and see your text, code examples, images, and links shine."
   s.license     = "LGPL3"
   s.date        = Date.today.to_s
+  s.required_ruby_version = '>= 1.9.3'
+  s.cert_chain  = ['certs/lines-engine.pem']
+  s.signing_key = File.expand_path("~/.ssh/gem-private_key.pem") if $0 =~ /gem\z/
 
 
   s.add_dependency 'orm_adapter', '>= 0.5'

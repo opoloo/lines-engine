@@ -62,5 +62,4 @@ feature 'user publishes an article' do
     click_on "Publish"
     page.find("table.published").should have_content "How to Test"
   end
-
 end
