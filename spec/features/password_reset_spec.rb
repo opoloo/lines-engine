@@ -24,10 +24,25 @@ feature 'user resets password' do
     expect(@user.reload.reset_digest).to eq nil
   end
 
-  # scenario 'with password too shord' do
-  # end
+  scenario 'with password too short' do
+    fill_in "Password", with: 't'
+    fill_in "Confirmation", with: 't'
+    click_on 'Update password'
+    expect(page).to have_content 'too short'
+  end
 
-  # scenario 'with password confirmation not matching' do
-  # end
+  scenario 'with empty password' do
+    fill_in "Password", with: ''
+    fill_in "Confirmation", with: ''
+    click_on 'Update password'
+    expect(page).to have_content "Password can't be blank"
+  end
+
+  scenario 'with password confirmation not matching' do
+    fill_in "Password", with: 'testtest'
+    fill_in "Confirmation", with: 'testtest234'
+    click_on 'Update password'
+    expect(page).to have_content 'not match'
+  end
 
 end
