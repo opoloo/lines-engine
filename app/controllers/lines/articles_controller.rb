@@ -24,8 +24,9 @@ module Lines
           end
           
           if @articles.first_page?
-            @first_article = Article.published.first 
-            @first_article.teaser = nil unless @first_article.teaser.present?
+            if @first_article = Article.published.first
+              @first_article.teaser = nil unless @first_article.teaser.present?
+            end
           end
           
           set_meta_tags title: SITE_TITLE,

@@ -15,16 +15,53 @@
 module Lines
 
   class User < ActiveRecord::Base
-    # use bcrypt-ruby to encrypt passwords
+    # Use bcrypt-ruby to encrypt passwords
     has_secure_password validations: false
-    validates :password, length: { minimum: 6 }, allow_blank: false
-    validates :password, presence: true, on: :create
+    
+    attr_accessor :reset_token
 
     # Validations
     validates :password, length: { minimum: 6 }, if: :validate_password?
+    validates :password, presence: true, on: :create
     validates :email, uniqueness: true, presence: true
 
-    
+    # Sets +rest_digest+ and +reset_sent_at+ for password reset.
+    def create_reset_digest
+      self.reset_token = User.generate_token
+      update_attribute(:reset_digest,  User.digest(reset_token))
+      update_attribute(:reset_sent_at, Time.zone.now)
+    end
+
+    # Sends email with instructions how to reset password.
+    def send_password_reset_email
+      UserMailer.password_reset(self).deliver
+    end
+
+    # Returns true if the given token matches the digest.
+    def authenticated?(attribute, token)
+      digest = send("#{attribute}_digest")
+      return false if digest.nil?
+      BCrypt::Password.new(digest).is_password?(token)
+    end
+
+
+    # Generate a random token.
+    def User.generate_token
+      SecureRandom.urlsafe_base64
+    end
+
+    # Returns the hash digest of the given string.
+    def User.digest(string)
+      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+      BCrypt::Password.create(string, cost: cost)
+    end
+
+    # Returns true if a password reset has expired.
+    def password_reset_expired?
+      reset_sent_at < 2.hours.ago
+    end
+
+
     private 
       # Returns +true+ if a password is submitted
       def validate_password?
@@ -32,5 +69,4 @@ module Lines
       end
 
   end
-
 end

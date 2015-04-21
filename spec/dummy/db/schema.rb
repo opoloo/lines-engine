@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141027143656) do
+ActiveRecord::Schema.define(version: 20150421093311) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -77,6 +77,8 @@ ActiveRecord::Schema.define(version: 20141027143656) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
   create_table "taggings", force: true do |t|

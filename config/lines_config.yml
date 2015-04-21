@@ -49,7 +49,10 @@ secret_token: "afa4a436180a2febe9b814c6a57b6f3ad298aa82ce0ab4c9e8238713764b665e9
 # Environment dependent configuration. Place your URLs here
 development:
   host: "localhost:3000"
+  from_email: 'noreply@example.com'
 test:
   host: "test.local"
+  from_email: 'noreply@example.com'
 production:
   host: "blog.opoloo.com"
+  from_email: 'noreply@example.com'
