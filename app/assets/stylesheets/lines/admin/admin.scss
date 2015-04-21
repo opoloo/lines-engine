@@ -1,0 +1,208 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, libstylesheets, vendorstylesheets,
+ * or vendorstylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require jquery.ui.all
+ */
+
+@import 'lines/admin/variables_and_mixins';
+@import 'lines/navbar';
+
+/*
+ * Reset
+ */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+*:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+/*
+ * Defaults
+ */
+body {
+  font-size: $size-alpha;
+  font-family: $font-alpha;
+  color: $color-alpha;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: $size-beta;
+  color: $color-gamma;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 1em;
+}
+
+input, textarea {
+  font-size: $size-beta;
+  font-family: $font-alpha;
+  resize: none;
+}
+
+/*
+ * Alerts
+ */
+.alert {
+  background-color: rgba(#0a0, .5);
+  border: 1px solid #0a0;
+  padding: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+  position: relative;
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: block;
+  }
+}
+
+/*
+ * Content
+ */
+.content {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.articles-list {
+  margin-bottom: 2em;
+}
+
+.article {
+  border-bottom: 1px solid $color-gamma;
+  padding-bottom: 1em;
+  &+.article {
+    margin-top: 1em;
+  }
+  &.unpublished {
+    .title {
+      a {
+        color: $color-alpha;
+      }
+    }
+  }
+  &.published {
+    .title {
+      a {
+        color: $color-gamma;
+      }
+    }
+  }
+  .title {
+    font-size: $size-gamma;
+  }
+  .subtitle {
+    margin-bottom: 0.5em;
+    a {
+      color: $color-gamma;
+    }
+  }
+  .actions {
+    font-size: $size-beta;
+    a {
+      color: $color-gamma;
+      text-transform: uppercase;
+    }
+    .btn-unfeature {
+      color: $color-beta;
+    }
+    .btn-publish {
+      color: $color-beta;
+    }
+    .btn-unpublish {
+      color: $color-alpha;
+    }
+    .left {
+      float: left;
+    }
+    .right {
+      float: right;
+    }
+    &:after {
+      @include clearfix();
+    }
+  }
+}
+
+/*
+ * Forms
+ */
+form {
+  input[type="text"], textarea {
+    width: 100%;
+    border-bottom: 1px solid $color-gamma;
+    padding: 0.5em;
+    &:focus {
+      border-bottom-color: $color-beta;
+    }
+  }
+  input[type="checkbox"] {
+    display: none;
+    &+label {
+      position: relative;
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      font-size: $size-beta;
+      margin-bottom: 1em;
+      cursor: pointer;
+      &:after {
+        content: "\f101";
+        font-family: 'iconfont';
+        position: absolute;
+        color: $color-gamma;
+        right: 0;
+        top: 50%;
+        font-size: 1.5em;
+        transform: translateY(-50%);
+      }
+    }
+    &:checked {
+      &+label {
+        &:after {
+          content: "\f100";
+          color: $color-beta;
+        }
+      }
+    }
+  }
+  .input-field {
+    margin-bottom: 1em;
+  }
+  .required {
+    position: relative;
+    &:after {
+      content: "*";
+      color: $color-beta;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

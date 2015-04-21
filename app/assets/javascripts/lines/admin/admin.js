@@ -4,8 +4,8 @@
 //= require autocomplete-rails
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
-//= require lines/pictures
-//= require lines/autosize.min
+//= require lines/admin/pictures
+//= require lines/admin/autosize.min
 
 // Function to insert uploaded pictures into the content at cursor position
 jQuery.fn.extend({
@@ -37,6 +37,14 @@ jQuery.fn.extend({
 });
 
 $(document).ready(function() {
+  // New stuff lines 1.0
+  $(document).on("click", ".btn-menu", function(e) {
+    $(this).toggleClass("active");
+    $("#navbar .submenu").slideToggle(300);
+  });
+
+
+
   // Deactivate OnBeforeUnload on submit button
   // You can add even more buttons, just add the class or id of the button/link
   // All buttons/links which are listed below will not produce a "Warning"-Alert on leaving the page when something has changed but not saved

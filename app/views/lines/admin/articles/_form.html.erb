@@ -1,7 +1,7 @@
 <%= simple_form_for([:admin, @article], id: 'article_form') do |f| %>
 
   <div class="new-article">
-    <div class="row">
+    <!--<div class="row">
       <div class="label">
         <h3><%= f.label :hero_image, "Hero Image" %> <span class="required">*</span></h3>
       </div>
@@ -36,33 +36,43 @@
           <br style="clear: both;" />
         </div>
       </div>
+    </div> -->
+
+    <div class="input-field required">
+      <%= f.text_field :title, placeholder: "Title" %>
     </div>
 
-    <div class="row">
-      <div class="label">
-        <h3><%= f.label :title, "Title" %> <span class="required">*</span></h3>
-      </div>
-      <div class="input input-text">
-        <%= f.text_field :title, class: "article-title" %>
-      </div>
-      <div class="additional">
-
-      </div>
+    <div class="input-field">
+      <%= f.text_field :sub_title, placeholder: "Subtitle" %>
     </div>
 
-    <div class="row">
-      <div class="label">
-        <h3><%= f.label :sub_title, "Subtitle" %></h3>
-      </div>
-      <div class="input input-text">
-        <%= f.text_field :sub_title, class: "article-subtitle" %>
-      </div>
-      <div class="additional">
-
-      </div>
+    <div class="input-field required">
+      <%= f.text_area :content, placeholder: "Body copy", rows: 1 %>
     </div>
 
-    <div class="row">
+    <h2>Authors</h2>
+
+    <div class="input-field required">
+      <% Lines::Author.all.each do |author| %>
+        <%= check_box_tag "article[author_ids][]", author.id, @article.author_ids.include?(author.id), id: dom_id(author) %>
+        <label for="<%= dom_id(author) %>"><%= author.name %></label>
+      <% end %>
+    </div>
+
+    <div class="input-field">
+      <%= f.autocomplete_field :tag_list, autocomplete_tag_name_admin_articles_path, :"data-delimiter" => ', ', placeholder: "Tags" %>
+    </div>
+
+    <div class="input-field">
+      <%= f.text_field :gplus_url, placeholder: "Google+ link" %>
+    </div>
+
+    <div class="input-field">
+      <%# Default value: (@article.published_at || Time.now).strftime("%Y-%m-%d") %>
+      <%= f.text_field :published_at, value: "", 'data-behaviour' => 'datepicker', placeholder: "Published on" %>
+    </div>
+
+    <!-- <div class="row">
       <div class="label">
         <h3><%= f.label :teaser, "Teaser" %></h3>
       </div>
@@ -70,21 +80,20 @@
         <%= f.text_area :teaser %>
       </div>
       <div class="additional"></div>
-    </div>
+    </div> -->
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="label">
         <h3><%= f.label :content, "Content" %> <span class="required">*</span></h3>
       </div>
       <div class="input input-textarea">
-        <%= f.text_area :content %>
       </div>
       <div class="additional">
         <a href="#formatting_guide" data-toggle="modal" class="btn-formatting-help">&lt;/&gt; Formatting Help</a>
       </div>
-    </div>
+    </div> -->
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="label">
         <h3>Authors <span class="required">*</span></h3>
       </div>
@@ -106,9 +115,9 @@
       <div class="additional">
         <%= link_to "+ Add new author", new_admin_author_path(), class: "add-new-author" %>
       </div>
-    </div>
+    </div> -->
 
-    <hr />
+    <!-- <hr />
 
     <div class="row">
       <div class="label">
@@ -171,15 +180,15 @@
       <div class="additional">
 
       </div>
-    </div>
+    </div> -->
 
     <%= render_navbar do %>
-      <%= f.submit "Save Article", class: "btn btn-save-publish" %>
+      <%= f.submit "Save Article", class: "btn btn-save-publish highlight" %>
       <%= link_to "Cancel", admin_articles_path, class: "btn btn-cancel" %>
     <% end %>        
 
   </div>
 <% end %>
 
-<%= render 'lines/admin/articles/formatting_guide' %>
+<%#= render 'lines/admin/articles/formatting_guide' %>
 
