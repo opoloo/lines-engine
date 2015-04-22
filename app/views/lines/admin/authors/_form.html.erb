@@ -1,52 +1,23 @@
 <%= simple_form_for([:admin, @author]) do |f| %>
   <div class="new-author">
-    <div class="row">
-      <div class="label">
-        <h3>
-          <%= f.label :name, "Name" %>
-        </h3>
-      </div>
-      <div class="input">
-        <%= f.text_field :name %>
-      </div>
-      <div class="additional"></div>
+
+    <h2>New Author</h2>
+
+    <div class="input-field required">
+      <%= f.text_field :name, placeholder: "Name" %>
     </div>
-    <div class="row">
-      <div class="label">
-        <h3>
-          <%= f.label :email, "E-Mail" %>
-        </h3>
-      </div>
-      <div class="input">
-        <%= f.text_field :email %>
-      </div>
-      <div class="additional"></div>
+    <div class="input-field required">
+      <%= f.text_field :email, placeholder: "E-Mail" %>
     </div>
-    <div class="row">
-      <div class="label">
-        <h3>
-          <%= f.label :gplus_profile, "G+ Profile" %>
-        </h3>
-      </div>
-      <div class="input">
-        <%= f.text_field :gplus_profile %>
-      </div>
-      <div class="additional"></div>
+    <div class="input-field">
+      <%= f.text_field :gplus_profile, placeholder: "Google+ Profile" %>
     </div>
-    <div class="row">
-      <div class="label">
-        <h3>
-          <%= f.label :description, "Description" %>
-        </h3>
-      </div>
-      <div class="input">
-        <%= f.text_area :description %>
-      </div>
-      <div class="additional"></div>
+    <div class="input-field required">
+      <%= f.text_area :description, placeholder: "Description", rows: 1 %>
     </div>
 
     <%= render_navbar do %>
-      <%= f.submit "Save Author", class: "btn btn-save-publish" %>
+      <%= f.submit "Save Author", class: "btn btn-save-publish highlight" %>
       <%= link_to 'Cancel', admin_authors_path, class: 'btn btn-cancel' %>
     <% end %>  
 

@@ -60,7 +60,7 @@ $(document).ready(function() {
 
   // Autogrow and -shrink the content text box while typing
   // This allows the user to see the whole text copy all the time
-  $('#article_content').autosize();
+  $('textarea').autosize();
 
   // Close error notification
   $('#error_explanation, .close').on('click', function(e){
