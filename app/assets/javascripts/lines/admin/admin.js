@@ -49,6 +49,20 @@ $(document).ready(function() {
     val.placeholder = "Password";
   });
 
+  // Handle Codemirror
+  $.each($("[data-editor='codemirror']"), function(key, val) {
+    CodeMirror.fromTextArea(val, {
+      mode: {
+        name: 'gfm',
+        highlightFormatting: true
+      },
+      lineWrapping: true,
+      tabSize: 2,
+      theme: 'lines',
+      viewportMargin: Infinity
+    });
+  });
+
   // ---------------------------------------------------------
 
   // Deactivate OnBeforeUnload on submit button

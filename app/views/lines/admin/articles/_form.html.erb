@@ -38,21 +38,25 @@
       </div>
     </div> -->
 
-    <div class="input-field required">
-      <%= f.text_field :title, placeholder: "Title" %>
+    <div class="input-field">
+      <%= f.text_field :title, placeholder: "Title *" %>
     </div>
 
     <div class="input-field">
-      <%= f.text_field :sub_title, placeholder: "Subtitle" %>
+      <%= f.text_field :sub_title, placeholder: "Subtitle *" %>
     </div>
 
-    <div class="input-field required">
-      <%= f.text_area :content, placeholder: "Body copy", rows: 1 %>
+    <div class="input-field">
+      <%= f.text_area :teaser, placeholder: "Teaser *", rows: 1 %>
+    </div>
+
+    <div class="input-field">
+      <%= f.text_area :content, placeholder: "Body copy *", rows: 1, data: {editor: "codemirror"} %>
     </div>
 
     <h2>Authors</h2>
 
-    <div class="input-field required">
+    <div class="input-field">
       <% Lines::Author.all.each do |author| %>
         <%= check_box_tag "article[author_ids][]", author.id, @article.author_ids.include?(author.id), id: dom_id(author) %>
         <label for="<%= dom_id(author) %>"><%= author.name %></label>

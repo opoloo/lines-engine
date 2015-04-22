@@ -58,6 +58,7 @@ input, textarea {
   font-size: $size-beta;
   font-family: $font-alpha;
   resize: none;
+  display: block;
 }
 
 /*
@@ -181,7 +182,7 @@ form {
       margin-bottom: 1em;
       cursor: pointer;
       &:after {
-        content: "\f101";
+        content: "\f101"; // Blank checkbox
         font-family: 'iconfont';
         position: absolute;
         color: $color-gamma;
@@ -194,7 +195,7 @@ form {
     &:checked {
       &+label {
         &:after {
-          content: "\f100";
+          content: "\f100"; // Filled checkbox
           color: $color-beta;
         }
       }
@@ -209,17 +210,7 @@ form {
       color: #fff;
       padding: 10px;
       border-radius: 3px;
-    }
-  }
-  .required {
-    position: relative;
-    &:after {
-      content: "*";
-      color: $color-beta;
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
+      cursor: pointer;
     }
   }
 }

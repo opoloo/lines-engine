@@ -1,0 +1,41 @@
+/* blue/black #100719 */
+/* red #c10020 */
+/* grey #9793a0 */
+/* dark grey #403947 */
+
+.cm-s-lines.CodeMirror {
+  background: #fff;
+  color: #000;
+  font-size: 1.222rem;
+  border-bottom: 1px solid #9793a0;
+  height: auto;
+  padding: 0.5em;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.cm-s-lines.CodeMirror.CodeMirror-focused {
+  border-bottom-color: #c10020;
+}
+
+.cm-s-lines.CodeMirror pre {
+  padding: 0;
+}
+
+.cm-s-lines.CodeMirror .CodeMirror-placeholder {
+  color: #a9a9a9;
+}
+
+.cm-s-lines div.CodeMirror-selected {background: #c10020 !important;}
+.cm-s-lines.CodeMirror ::selection { background: rgba(73, 72, 62, .99); }
+.cm-s-lines.CodeMirror ::-moz-selection { background: rgba(73, 72, 62, .99); }
+.cm-s-lines .CodeMirror-gutters {background: #272822; border-right: 0px;}
+.cm-s-lines .CodeMirror-guttermarker { color: white; }
+.cm-s-lines .CodeMirror-guttermarker-subtle { color: #d0d0d0; }
+.cm-s-lines .CodeMirror-linenumber {color: #d0d0d0;}
+.cm-s-lines .CodeMirror-cursor {border-left: 1px solid #000 !important;}
+
+.cm-s-lines .CodeMirror-activeline-background {background: #373831 !important;}
+.cm-s-lines .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}
