@@ -93,10 +93,10 @@ input, textarea {
   margin-bottom: 2em;
 }
 
-.article {
+.article, .author {
   border-bottom: 1px solid $color-gamma;
   padding-bottom: 1em;
-  &+.article {
+  &+.article, &+.author {
     margin-top: 1em;
   }
   &.unpublished {
@@ -113,10 +113,13 @@ input, textarea {
       }
     }
   }
-  .title {
+  .title, .name {
     font-size: $size-gamma;
+    a {
+      color: $color-alpha;
+    }
   }
-  .subtitle {
+  .subtitle, .email {
     margin-bottom: 0.5em;
     a {
       color: $color-gamma;
@@ -127,6 +130,9 @@ input, textarea {
     a {
       color: $color-gamma;
       text-transform: uppercase;
+    }
+    .btn-edit {
+      color: $color-beta;
     }
     .btn-unfeature {
       color: $color-beta;
@@ -142,6 +148,9 @@ input, textarea {
     }
     .right {
       float: right;
+      a + a {
+        margin-left: 0.5em;
+      }
     }
     &:after {
       @include clearfix();
@@ -153,7 +162,7 @@ input, textarea {
  * Forms
  */
 form {
-  input[type="text"], textarea {
+  input[type="text"], input[type="password"], textarea {
     width: 100%;
     border-bottom: 1px solid $color-gamma;
     padding: 0.5em;
@@ -193,6 +202,14 @@ form {
   }
   .input-field {
     margin-bottom: 1em;
+  }
+  .submit {
+    input[type="submit"] {
+      background-color: $color-beta;
+      color: #fff;
+      padding: 10px;
+      border-radius: 3px;
+    }
   }
   .required {
     position: relative;

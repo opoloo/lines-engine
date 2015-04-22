@@ -67,7 +67,6 @@
   height: $height-alpha;
   cursor: pointer;
   position: relative;
-  transition: all 0.3s ease;
   .stripes {
     position: absolute;
     width: 18px;
@@ -93,8 +92,8 @@
     }
   }
   &.active {
-    transform: rotate(90deg);
     .stripes {
+      transform: rotate(90deg);
       background-color: transparent;
       &:before {
         transform: translateY(0%) rotate(45deg);

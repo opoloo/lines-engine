@@ -38,12 +38,18 @@ jQuery.fn.extend({
 
 $(document).ready(function() {
   // New stuff lines 1.0
+  // Handle menu button
   $(document).on("click", ".btn-menu", function(e) {
     $(this).toggleClass("active");
     $("#navbar .submenu").slideToggle(300);
   });
 
+  // Handle password input placeholders
+  $.each($("input[type='password']"), function(key, val) {
+    val.placeholder = "Password";
+  });
 
+  // ---------------------------------------------------------
 
   // Deactivate OnBeforeUnload on submit button
   // You can add even more buttons, just add the class or id of the button/link

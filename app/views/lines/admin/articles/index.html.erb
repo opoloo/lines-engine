@@ -19,6 +19,7 @@
             <%= link_to "Publish", admin_article_toggle_publish_path(article), method: :post, class: "btn-publish" %>
           </div>
           <div class="right">
+            <%= link_to "Preview", admin_article_path(article) %>
             <%= link_to "", {controller: :articles, action: 'destroy', id: article.id}, data: { confirm: "Are you sure?" }, class: "btn-delete icon-delete", method: :delete %>
           </div>
         </div>
@@ -52,6 +53,7 @@
             <%= link_to "Unpublish", admin_article_toggle_publish_path(article), method: :post, class: "btn-unpublish" %>
           </div>
           <div class="right">
+            <%= link_to "Preview", admin_article_path(article) %>
             <%= link_to "", {controller: :articles, action: 'destroy', id: article.id}, data: { confirm: "Are you sure?" }, class: "btn-delete icon-delete", method: :delete %>
           </div>
         </div>
