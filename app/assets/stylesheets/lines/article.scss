@@ -6,7 +6,7 @@
   color: #555;
 
 
-  h1, h2, h3, h4, h5 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: $SourceSansPro;
   }
 
@@ -29,18 +29,18 @@
   .article_header {
     text-align: center;
     h1  {
-      font-size: 2.4em;
-      font-weight: 700;
-      line-height: 1.05em;
-      color: $orange;
-      a { color: $orange; }
-      a:hover { color:$darkgrey; }        
+      font-size: 3.0em;
+      font-weight: 900;
+      line-height: 120%;
+      color: $black;
+      a { color: $black; }
+      a:hover { color:$red; }        
     }
     h2 {
       font-size: 1.333em;
       font-weight: 400;
-      color: #b4b4b4;
-      line-height: 1.1em;
+      color: $grey;
+      line-height: 120%;
     }
     .author_name {
       font-family: $MerriweatherSans;
@@ -59,23 +59,22 @@
   .article_content {
     line-height: 1.8em;
 
-    h1, h2, h3, h4, h5, h6 { margin-top: 3.0em; line-height: 1.15em; color: #333 }
+    h1, h2, h3, h4, h5, h6 { margin-top: 3.0em; line-height: 120%; color: $black }
+    h2, h3, h4, h5 { font-weight: 700; }
+    h6 { font-weight: 600; }
 
-    h1 { font-size: 2.0em; }
-
-    h2 { font-size: 1.5em; }
-
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 2.0em;}
     h3 { 
-      font-size: 1.25em; 
-      color: $orange; 
+      font-size: 1.5em;
+      color: $red; 
       margin-bottom: 1.0em; 
-      a { color: $orange; }
-      a:hover { color: $darkgrey; }
+      a { color: $red; }
+      a:hover { color: $grey; }
     }
-
-    h4 { font-size: 1.111em; }
-
-    h5 { font-size: 1em; }
+    h4 { font-size: 1.25em; text-transform: uppercase;  }
+    h5 { font-size: 1.25em; }
+    h6 { font-size: 1.25em; color: $grey; }
 
     p { 
       display: block; 
@@ -107,10 +106,33 @@
     }
 
     pre {
-      font-size: 1.0em;
+      border-left: 2px solid $grey;
+      font-family: $Monospace;
+      font-weight: 400;
+      font-size: 1.25em;
+      line-height: 140%;
+      color: $grey;
+      padding: 20px 0;
     }
 
-    .highlight pre { margin: auto 2em; }
+    table {
+      border: none;
+      text-align: left;
+      margin: 40px 0;
+      th, td {
+        border: 1px solid $grey;
+        font-family: $SourceSansPro;
+        line-height: 120%;        
+        font-size: 1.25em;
+        color: $grey;
+        text-transform: uppercase;
+        padding: 20px;
+      }
+      th { font-weight: 700; }
+      td { font-weight: 400; }
+    }
+
+    .highlight pre { margin: auto 2em; font-size: 0.875em; }
   }
 
   .article_footer {
