@@ -10,9 +10,9 @@ smaller than 800px
 @media screen and (max-width: 800px) {
   html, body { font-size: 16px; }
   .article {
-	  .article_header, .article_teaser, .article_content {
-	    & > * { padding: 0 8%; }
-	  }  	
+    .article_header, .article_teaser, .article_content {
+      & > * { padding: 0 8%; }
+    }
   }
 }
 
@@ -28,5 +28,10 @@ smaller than 600px
 smaller than 480px
 *************************************************************************************/
 @media screen and (max-width: 480px) {
-  html, body { font-size: 10px; }
+html, body { font-size: 12px; }
+  .article {
+    .article_header h1 {
+      font-size: 2.0em;
+    }
+  }
 }
