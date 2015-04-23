@@ -25,6 +25,36 @@
   color: #a9a9a9;
 }
 
+/*
+ * Headlines
+ */
+.cm-s-lines.CodeMirror .cm-header {
+  font-weight: 400;
+  color: #666;
+}
+
+.cm-s-lines.CodeMirror .cm-header-1 {
+  font-size: 1.333em;
+}
+
+.cm-s-lines.CodeMirror .cm-header-2 {
+  font-size: 1.111em;
+}
+
+.cm-s-lines.CodeMirror .cm-header-3 {
+  font-size: 1em;
+}
+
+/*
+ * Formatting
+ */
+.cm-s-lines.CodeMirror .cm-formatting {
+  color: #dddddd;
+}
+
+/*
+ * Misc
+ */
 .cm-s-lines div.CodeMirror-selected {background: #c10020 !important;}
 .cm-s-lines.CodeMirror ::selection { background: rgba(73, 72, 62, .99); }
 .cm-s-lines.CodeMirror ::-moz-selection { background: rgba(73, 72, 62, .99); }

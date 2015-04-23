@@ -1,7 +1,7 @@
 <%= simple_form_for([:admin, @article], id: 'article_form') do |f| %>
 
   <div class="new-article">
-    <!--<div class="row">
+    <div class="row">
       <div class="label">
         <h3><%= f.label :hero_image, "Hero Image" %> <span class="required">*</span></h3>
       </div>
@@ -36,7 +36,7 @@
           <br style="clear: both;" />
         </div>
       </div>
-    </div> -->
+    </div>
 
     <div class="input-field">
       <%= f.text_field :title, placeholder: "Title *" %>
@@ -51,6 +51,7 @@
     </div>
 
     <div class="input-field">
+      <div class="image-upload icon-check-box"></div>
       <%= f.text_area :content, placeholder: "Body copy *", rows: 1, data: {editor: "codemirror"} %>
     </div>
 
