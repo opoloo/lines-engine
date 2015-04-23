@@ -36,7 +36,7 @@
       a:hover { color:$red; }        
     }
     h2 {
-      font-size: 1.333em;
+      font-size: 1.5em;
       font-weight: 400;
       color: $grey;
       line-height: 120%;
@@ -50,7 +50,7 @@
 
 
   .article_teaser {
-    font-size: 1.125em;
+    font-size: 1.375em;
     line-height: 1.8em;
     font-weight: 400;
   } 
@@ -76,18 +76,21 @@
     h6 { font-size: 1.25em; color: $grey; }
 
     p { 
+      font-size: 1.125em;
       display: block; 
-      a { color: $orange; }
-      a:hover { color: $darkgrey; }
+      a { color: $red; }
+      a:hover { color: $grey; }
     }
   
-    a { border-bottom: 1px solid #ccc; }
+    a { 
+      border-bottom: 1px solid $grey;
+    }
 
     img { display: block; margin: 0 auto; }
 
     br { display: block; margin: 0; padding: 0;}
     
-    ul, ol {  }
+    ul, ol { font-size: 1.125em; }
     ul {
       margin-left: 2em;
       margin-right: 2em;
