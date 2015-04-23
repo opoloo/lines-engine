@@ -6,8 +6,17 @@
   <title><%= content_for?(:title) ? yield(:title) : "Lines" %></title>
   <meta name="description" content="">
   <meta name="author" content="">
-  <%= stylesheet_link_tag    "lines/admin", media: "all" %>
-  <%= javascript_include_tag "lines/admin" %>
+  <!-- Codemirror Start -->
+  <link rel="stylesheet" href="/codemirror/lib/codemirror.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="/codemirror/theme/lines.css" type="text/css" media="all" />
+  <script type="text/javascript" src="/codemirror/lib/codemirror.js"></script>
+  <script type="text/javascript" src="/codemirror/addon/display/placeholder.js"></script>
+  <script type="text/javascript" src="/codemirror/addon/mode/overlay.js"></script>
+  <script type="text/javascript" src="/codemirror/mode/markdown/markdown.js"></script>
+  <script type="text/javascript" src="/codemirror/mode/gfm/gfm.js"></script>
+  <!-- Codemirror End -->
+  <%= stylesheet_link_tag    "lines/admin/admin", media: "all" %>
+  <%= javascript_include_tag "lines/admin/admin" %>
   <%= csrf_meta_tags %>
   <%= yield(:head) %>
 </head>

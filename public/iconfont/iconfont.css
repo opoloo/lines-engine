@@ -1,0 +1,43 @@
+/*
+  Icon Font: fontcustom
+*/
+
+@font-face {
+  font-family: "iconfont";
+  src: url("./iconfont.eot");
+  src: url("./iconfont.eot?#iefix") format("embedded-opentype"),
+       url("./iconfont.woff") format("woff"),
+       url("./iconfont.ttf") format("truetype"),
+       url("./iconfont.svg#fontcustom") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "iconfont";
+    src: url("./iconfont.svg#fontcustom") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-check-box:before,
+.icon-check-box-outline-blank:before,
+.icon-close:before,
+.icon-delete:before,
+.icon-keep:before,
+.icon-menu:before {
+  font-family: "iconfont";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon-check-box:before { content: "\f100"; }
+.icon-check-box-outline-blank:before { content: "\f101"; }
+.icon-close:before { content: "\f102"; }
+.icon-delete:before { content: "\f103"; }
+.icon-keep:before { content: "\f104"; }
+.icon-menu:before { content: "\f105"; }
