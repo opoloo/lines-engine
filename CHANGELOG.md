@@ -17,7 +17,7 @@
       host: "blog.opoloo.com"
       from_email: 'noreply@example.com'
     ```
--
+- updated required gems (actionpack and redcarpet security alerts)
 
 ## 0.5
 
