@@ -3,6 +3,8 @@
 ## development @master branch
 
 - Users are now able to reset their passwords. 
+- Default styles updated. If you want to use the new version, you have to overwrite your existing lines css files.
+- new generator +rails g lines:copy_styles+ added to update stylesheets from newer gem versions
 - IMPORTANT: please adjust your +config/lines_config.yml+ and add +from_email+ according to the following example:
     ```
     development:
@@ -15,7 +17,7 @@
       host: "blog.opoloo.com"
       from_email: 'noreply@example.com'
     ```
--
+- updated required gems (actionpack and redcarpet security alerts)
 
 ## 0.5
 

@@ -65,10 +65,15 @@ Currently Lines does not offer a GUI for managing users, but you can use a rake 
 
 To update an existing user, you'll need the rails console with 'rails c'
   # UPDATE an existing user
-  u = User.find_by_email('your@email.com')
+  u = User.find_by(email: 'your@email.com')
   u.email = "new@mail.com"
   u.password = "newsekret"
   u.save
+
+
+=== Copy/update stylesheets
+
+Run <tt>rails g lines:copy_styles</tt> to install stylesheets from newer gem versions. Keep in mind to backup your overrides and other customizations before doing so!
 
 
 === Google Sitemap
