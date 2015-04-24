@@ -2,6 +2,8 @@
 
 ## development @master branch
 
+##0.6
+
 - Users are now able to reset their passwords. 
 - Default styles updated. If you want to use the new version, you have to overwrite your existing lines css files.
 - new generator +rails g lines:copy_styles+ added to update stylesheets from newer gem versions
