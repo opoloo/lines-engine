@@ -6,6 +6,7 @@
   height: $height-alpha;
   background-color: $color-alpha;
   color: #fff;
+  z-index: 100;
   .navbar-inner {
     width: 100%;
     max-width: 1000px;
@@ -20,6 +21,7 @@
         text-transform: uppercase;
         padding: 10px;
         border-radius: 3px;
+        cursor: pointer;
         &.highlight {
           background-color: $color-beta;
         }
@@ -67,7 +69,6 @@
   height: $height-alpha;
   cursor: pointer;
   position: relative;
-  transition: all 0.3s ease;
   .stripes {
     position: absolute;
     width: 18px;
@@ -93,8 +94,8 @@
     }
   }
   &.active {
-    transform: rotate(90deg);
     .stripes {
+      transform: rotate(90deg);
       background-color: transparent;
       &:before {
         transform: translateY(0%) rotate(45deg);

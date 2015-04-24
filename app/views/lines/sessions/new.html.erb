@@ -1,17 +1,13 @@
 <%= render_navbar {} %>
 <div class="login">
-  <h1>Login</h1>
+  <h2>Administration Login</h2>
 
   <%= form_tag sessions_path do %>
-    <div class="email">
-      <%= label_tag :email, "Email address" %>
-      <%= text_field_tag :email, params[:email] %>
-      <br style="clear: both;" />
+    <div class="input-field">
+      <%= text_field_tag :email, params[:email], placeholder: "E-Mail" %>
     </div>
-    <div class="password">
-      <%= label_tag :password, "Password" %>
+    <div class="input-field">
       <%= password_field_tag :password %>
-      <br style="clear: both;" />
     </div>
     <br style="clear: both;" />
     <div class="submit">

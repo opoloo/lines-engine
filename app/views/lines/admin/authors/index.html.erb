@@ -1,6 +1,5 @@
 <%= render_navbar do %>
-  <%= link_to 'New Author', new_admin_author_path, class: "btn btn-new-author" %>
-  <%= link_to 'Articles', admin_articles_path, class: "btn btn-articles" %>
+  <%= link_to 'New Author', new_admin_author_path, class: "btn btn-new-author highlight" %>
   <%= link_to 'Visit Blog', lines.root_path, class: "btn btn-view-blog" %>
 <% end %>
 
@@ -20,15 +19,21 @@
 <h2>All authors</h2>
 <div class="authors-list">
   <% @authors.each do |author| %>
-    <table class="author">
-      <tr>
-        <td class="show"><%= link_to '', admin_author_path(author) %></td>
-        <td class="edit"><%= link_to '', edit_admin_author_path(author) %></td>
-        <td class="name"><%= link_to author.name, edit_admin_author_path(author) %></td>
-        <td class="email"><%= author.email %></td>
-        <td class="delete"><%= link_to '', admin_author_path(author), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td class="delete"><%= button_to "", {controller: :authors, action: 'destroy', id: author.id }, method: :delete, confirm: "Are you sure?" %></td>
-      </tr>
-    </table>
+    <div class="author">
+      <div class="name">
+        <%= link_to author.name, edit_admin_author_path(author) %>
+      </div>
+      <div class="email">
+        <%= link_to author.email, edit_admin_author_path(author) %>
+      </div>
+      <div class="actions">
+        <div class="left">
+          <%= link_to "Edit", edit_admin_author_path(author), class: "btn-edit" %>
+        </div>
+        <div class="right">
+          <%= link_to "", {controller: :authors, action: 'destroy', id: author.id}, data: { confirm: "Are you sure?" }, class: "btn-delete icon-delete", method: :delete %>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>

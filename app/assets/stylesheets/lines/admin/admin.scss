@@ -93,10 +93,10 @@ input, textarea {
   margin-bottom: 2em;
 }
 
-.article {
+.article, .author {
   border-bottom: 1px solid $color-gamma;
   padding-bottom: 1em;
-  &+.article {
+  &+.article, &+.author {
     margin-top: 1em;
   }
   &.unpublished {
@@ -113,10 +113,13 @@ input, textarea {
       }
     }
   }
-  .title {
+  .title, .name {
     font-size: $size-gamma;
+    a {
+      color: $color-alpha;
+    }
   }
-  .subtitle {
+  .subtitle, .email {
     margin-bottom: 0.5em;
     a {
       color: $color-gamma;
@@ -127,6 +130,9 @@ input, textarea {
     a {
       color: $color-gamma;
       text-transform: uppercase;
+    }
+    .btn-edit {
+      color: $color-beta;
     }
     .btn-unfeature {
       color: $color-beta;
@@ -142,6 +148,9 @@ input, textarea {
     }
     .right {
       float: right;
+      a + a {
+        margin-left: 0.5em;
+      }
     }
     &:after {
       @include clearfix();
@@ -153,10 +162,11 @@ input, textarea {
  * Forms
  */
 form {
-  input[type="text"], textarea {
+  input[type="text"], input[type="password"], textarea {
     width: 100%;
     border-bottom: 1px solid $color-gamma;
     padding: 0.5em;
+    overflow: hidden;
     &:focus {
       border-bottom-color: $color-beta;
     }
@@ -172,7 +182,7 @@ form {
       margin-bottom: 1em;
       cursor: pointer;
       &:after {
-        content: "\f101";
+        content: "\f101"; // Blank checkbox
         font-family: 'iconfont';
         position: absolute;
         color: $color-gamma;
@@ -185,7 +195,7 @@ form {
     &:checked {
       &+label {
         &:after {
-          content: "\f100";
+          content: "\f100"; // Filled checkbox
           color: $color-beta;
         }
       }
@@ -193,16 +203,45 @@ form {
   }
   .input-field {
     margin-bottom: 1em;
-  }
-  .required {
-    position: relative;
     &:after {
-      content: "*";
-      color: $color-beta;
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
+      @include clearfix();
     }
   }
+  .image-upload {
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: $color-gamma;
+    position: relative;
+    cursor: pointer;
+    margin-left: 16px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: $size-gamma;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -8px;
+      margin-top: -6px;
+      border-right: 8px solid $color-gamma;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+    }
+  }
+  .submit {
+    input[type="submit"] {
+      background-color: $color-beta;
+      color: #fff;
+      padding: 10px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  }
+}
+
+.body-picture-upload {
+  display: none;
 }
