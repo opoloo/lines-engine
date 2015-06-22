@@ -2,6 +2,11 @@
 
 ## development @master branch
 
+##06.1.
+
+- updated dependend gems
+
+
 ##0.6
 
 - Users are now able to reset their passwords. 
