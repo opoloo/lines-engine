@@ -2,7 +2,7 @@
 
 ## development @master branch
 
-##06.1.
+##0.6.1, 0.6.2
 
 - updated dependend gems
 
