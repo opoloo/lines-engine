@@ -62,18 +62,13 @@ header {
   padding: 1.1em;
   font-family: $SourceSansPro;
   font-weight: 500;
-  font-size: 1.188em;
-  border-bottom: 1px solid #e3e3e3;
+  font-size: 1.250em;
   a {
     color: #000;
     &:hover { color: $orange; }
   }
-  #logo { float: left; }
-  #lines {
-    float: right;
-    font-size: 0.737em;
-    text-transform: uppercase;
-  }
+  #logo { float: left; text-transform: uppercase; }
+  #lines { float: right; }
 }
 
 .container {
