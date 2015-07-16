@@ -110,59 +110,79 @@
       font-size: 1.25em;
       line-height: 140%;
       color: $grey;
-      padding: 20px 0;
+      padding: 0 20px;
     }
+
+    .highlight pre { font-size: 0.875em; }
 
     table {
       border: none;
       text-align: left;
-      margin: 40px 0;
+      margin: 40px 13%;
+      border-spacing: 0;
+      border-collapse: collapse;
       th, td {
         border: 1px solid $grey;
         font-family: $SourceSansPro;
         line-height: 120%;        
         font-size: 1.25em;
-        color: $grey;
-        text-transform: uppercase;
-        padding: 20px;
+        color: $black;
+        padding: 0.6em;
       }
-      th { font-weight: 700; }
+      th { text-transform: uppercase; font-weight: 600; }
       td { font-weight: 400; }
     }
 
-    .highlight pre { margin: auto 2em; font-size: 0.875em; }
+
+    .article_document {
+      a {
+        display: block;
+        text-align: center;
+        background-color: $black;
+        color: $white;
+        font-family: $SourceSansPro;
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 3rem;
+        &:hover { background-color: $red; }
+      }
+    }
   }
 
   .article_footer {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    text-align: center;
-    color: #808080;
-    font-size: 0.8em;
-    a { color: $orange; }
-    a:hover { color: $darkgrey; }
+    margin: 0 13%;
+    line-height: 130%;
+    font-family: $SourceSansPro;
+    color: $grey;
+    text-align: left;
+    a {
+      font-weight: 600;
+      &:hover { color: $black; }
+    }
   }
 
   .article_googleplus {
-    border-top: 1px solid #ccc;
-    padding: 1.1em;
-    min-height: 40px;
-    line-height: 40px;
     text-align: center;
+    font-family: $SourceSansPro;
     a {
       margin: 0 auto;
       display: inline-block;
-      color: $lightgrey;
-      &:hover { color: $darkgrey; }
-    }
-    span {
-      background: url('/assets/ic_googleplus.png') 0px 0px no-repeat;
-      height: 40px;
-      width: 40px;
-      line-height: 40px;
-      display: inline-block;
-      float: left;
-      margin: 0 15px 0 0;
+      color: $black;
+      line-height: 32px;
+      font-size: 1.25rem;
+      &:before {
+        content: "";
+        display: inline-block;
+        margin-right: 10px;
+        float: left;
+        color: #fff;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: url('/assets/gplus.svg') $red center center no-repeat;
+        background-size: 80% auto;  
+      }
+      &:hover { color: lighten($grey, 10%); }
     }
   }
 

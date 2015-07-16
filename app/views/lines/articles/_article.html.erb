@@ -29,10 +29,12 @@
 
   <% unless article.gplus_url.blank? %>
     <div class="article_googleplus">
-      <a href="<%= article.gplus_url %>"><span></span>Discuss this article at Google+</a>
+      <a href="<%= article.gplus_url %>">Discuss this article at Google+</a>
     </div>
   <% end %>
   
+  <hr>
+
   <div class="article_footer">
     Written on <span class="published_at"><%= article.published_at.to_date %></span> by <%= display_article_authors(article, true) %>
   </div>

@@ -73,8 +73,7 @@
     </div>
 
     <div class="input-field">
-      <%# Default value: (@article.published_at || Time.now).strftime("%Y-%m-%d") %>
-      <%= f.text_field :published_at, value: "", 'data-behaviour' => 'datepicker', placeholder: "Published on" %>
+      <%= f.text_field :published_at, value: (@article.published_at || Time.now).strftime("%Y-%m-%d"), 'data-behaviour' => 'datepicker', placeholder: "Published on" %>
     </div>
 
     <!-- <div class="row">
