@@ -1,6 +1,6 @@
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.all
+//= require jquery-ui/datepicker
 //= require autocomplete-rails
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
@@ -39,13 +39,10 @@ jQuery.fn.extend({
 
 hero_image = {
   init: function() {
-  // New stuff lines 1.0
-  // Handle hero image uploads
-  hero_image.init();
+    // New stuff lines 1.0
+    // Handle hero image uploads
+    hero_image.init();
 
-  // New stuff lines 1.0
-  // Handle hero image uploads
-  hero_image.init();
 
     this.bind_events();
     this.check_availability();

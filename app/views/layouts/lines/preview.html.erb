@@ -7,8 +7,26 @@
   <%= javascript_include_tag "lines/application" %>
 </head>
 <body>
+<header>
+  <div id="logo">
+    <a href="/">
+      <% if CONFIG[:logo].empty? %>
+        <%= CONFIG[:blog_name] %>
+      <% else %>
+        <img src="<%= CONFIG[:logo] %>" alt="<%= CONFIG[:blog_name] %>" />
+      <% end %>
+    </a>
+  </div>
+  <div id="lines">
+    <%= CONFIG[:short_description] %>
+  </div>
+</header>
+
 <div class="container">
+  <%= render 'lines/shared/flash' %>
   <%= yield %>
 </div>
+
+<%= render 'lines/shared/footer' %>
 </body>
 </html>
