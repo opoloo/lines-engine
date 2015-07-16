@@ -36,8 +36,28 @@ jQuery.fn.extend({
   }
 });
 
+hero_image = {
+  init: function() {
+    this.bind_events();
+  },
+
+  bind_events: function() {
+    $(document).on('click', '.btn-change-hero', function(e) {
+      e.preventDefault();
+      $('.upload-overlay').fadeIn('fast');
+    });
+    $(document).on('click', '.hero-background-overlay', function(e) {
+      e.preventDefault();
+      $('.upload-overlay').fadeOut('fast');
+    });
+  }
+};
+
 $(document).ready(function() {
   // New stuff lines 1.0
+  // Handle hero image uploads
+  hero_image.init();
+
   // Handle menu button
   $(document).on("click", ".btn-menu", function(e) {
     $(this).toggleClass("active");
