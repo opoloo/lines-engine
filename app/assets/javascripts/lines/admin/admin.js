@@ -37,7 +37,77 @@ jQuery.fn.extend({
   }
 });
 
+hero_image = {
+  init: function() {
+  // New stuff lines 1.0
+  // Handle hero image uploads
+  hero_image.init();
+
+  // New stuff lines 1.0
+  // Handle hero image uploads
+  hero_image.init();
+
+    this.bind_events();
+    this.check_availability();
+  },
+
+  bind_events: function() {
+    $(document).on('click', '.btn-change-hero', function(e) {
+      e.preventDefault();
+      $('.upload-overlay').fadeIn('fast');
+    });
+    $(document).on('click', '.hero-background-overlay', function(e) {
+      e.preventDefault();
+      $('.upload-overlay').fadeOut('fast');
+    });
+    $(document).on('click', '.hero-images img', function(e) {
+      e.preventDefault();
+      hero_image.preview_default($(this));
+    });
+    document.getElementById('article_hero_image').addEventListener('change', this.preview, false);
+  },
+
+  check_availability: function() {
+    if (!window.File && !window.FileReader && !window.FileList && !window.Blob) {
+      console.log('The File APIs are not fully supported in this browser.');
+    }
+  },
+
+  preview_default: function(img) {
+    $('#article_hero_image_file').val(img.attr('src'));
+    if ($('.hero-upload > img').length) {
+      $('.hero-upload > img').attr('src', img.attr('src'));
+    } else {
+      $('.hero-upload').append('<img src="' + img.attr('src') + '" alt="" />');
+    }
+    $('.upload-overlay').fadeOut('fast');
+  },
+
+  preview: function(e) {
+    var files = e.target.files;
+    if (files.length > 0) {
+      var f = files[0];
+      var reader = new FileReader();
+      reader.onload = (function(theFile) {
+        return function(e) {
+          if ($('.hero-upload > img').length) {
+            $('.hero-upload > img').attr('src', e.target.result);
+          } else {
+            $('.hero-upload').append('<img src="' + e.target.result + '" alt="" />');
+          }
+          $('.upload-overlay').fadeOut('fast');
+        };
+      })(f);
+      reader.readAsDataURL(f);
+    }
+  }
+};
+
 $(document).ready(function() {
+  // New stuff lines 1.0
+  // Handle hero image uploads
+  hero_image.init();
+
   // Handle password input placeholders
   $.each($("input[type='password']"), function(key, val) {
     val.placeholder = "Password";

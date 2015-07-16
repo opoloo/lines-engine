@@ -188,6 +188,88 @@ form {
       }
     }
   }
+  .hero-upload {
+    margin-bottom: 1em;
+    background-color: $color-gamma;
+    color: #fff;
+    position: relative;
+    min-height: 7em;
+    &:before {
+      content: "No image";
+      position: absolute;
+      z-index: 0;
+      left: 2em;
+      bottom: 2em;
+      line-height: 1;
+      padding: 1em;
+    }
+    input {
+      display: none;
+    }
+    .btn-change-hero {
+      background-color: $color-delta;
+      text-transform: uppercase;
+      padding: 1em;
+      position: absolute;
+      right: 2em;
+      bottom: 2em;
+      border-radius: 4px;
+      line-height: 1;
+      cursor: pointer;
+      z-index: 2;
+      transition: background 0.3s ease;
+      &:hover {
+        background-color: lighten($color-delta, 10%);
+      }
+    }
+    > img {
+      display: block;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+    .upload-overlay {
+      position: absolute;
+      display: none;
+      z-index: 3;
+      top: 2em;
+      right: 2em;
+      left: 2em;
+      width: calc(100% - 4em);
+      .upload-overlay-inner {
+        position: relative;
+        background-color: #fff;
+        padding: 2em;
+        z-index: 1;
+        label {
+          background-color: $color-beta;
+          padding: 0.5em 1em;
+          display: block;
+          margin-bottom: 1em;
+          cursor: pointer;
+        }
+        .hero-images {
+          img {
+            width: 100%;
+            display: block;
+            &+img {
+              margin-top: 1em;
+            }
+          }
+        }
+      }
+      .hero-background-overlay {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color-alpha, 0.8);
+        z-index: 0;
+      }
+    }
+  }
   .input-field {
     margin-bottom: 1em;
     &:after {
