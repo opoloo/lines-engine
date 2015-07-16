@@ -9,6 +9,7 @@
 </div>
 
 <% if @articles.num_pages > 1 %>
+<hr>
 <div id="pagination">
   <%= paginate @articles, outer_window: 1, window: 2, theme: 'lines' %>
 </div>

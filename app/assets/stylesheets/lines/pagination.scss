@@ -1,38 +1,15 @@
 #pagination {
-  font-family: $Merriweather;
-  display: block;
-  overflow: visible;
-  border-top: 1px solid #ccc;
-  margin: 0px auto;
-  width: 100%;
+  font-family: $SourceSansPro;
+  font-weight: 600;
+  margin: 1.8em auto 0 auto;
   text-transform: uppercase;
-  font-size: 1.5em;
-  padding: 30px 0 0 0;
+  font-size: 1.25rem;
   text-align: center;
-  position: relative;
   a {
-    color: $lightgrey;
-    &:hover { color: $darkgrey; }
-  }
-  .newer, .older { position: absolute; display: inline-block; }
-  .newer { left: 0px; }
-  .older { right: 0px; }
-  .prev, .first {
-    float: left;
-    padding: 0 10px;
-  }
-  .next, .last {
-    float: right;
-    padding: 0 10px;
+    color: $grey;
+    &:hover { color: lighen($grey, 10%); }
   }
 
-  .pages {
-    font-size: 0.7em;
-    color: lighten($lightgrey,30%);
-    a {
-      color: lighten($lightgrey,30%);
-      &:hover { color: $lightgrey; }
-    }
-    .current { color: $lightgrey; font-size: 1.50em; }
-  }
+  .newer, .older, .page { margin: 0 1em;}
+  .current { color: $black; }
 }
