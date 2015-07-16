@@ -18,12 +18,18 @@
     font-size: $size-beta;
     height: $height-alpha;
     .buttons {
+      form.button_to {
+        display: inline-block;
+      }
       a.btn, input.btn {
+        font-size: $size-beta;
+        border: 0 none;
         color: #fff;
         text-transform: uppercase;
         padding: 10px;
         border-radius: 3px;
         cursor: pointer;
+        
         &.highlight {
           background-color: $color-beta;
         }
