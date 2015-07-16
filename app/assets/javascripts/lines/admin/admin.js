@@ -6,6 +6,7 @@
 //= require jquery-fileupload/vendor/tmpl
 //= require lines/admin/pictures
 //= require lines/admin/autosize.min
+//= require lines/admin/navbar
 
 // Function to insert uploaded pictures into the content at cursor position
 jQuery.fn.extend({
@@ -37,13 +38,6 @@ jQuery.fn.extend({
 });
 
 $(document).ready(function() {
-  // New stuff lines 1.0
-  // Handle menu button
-  $(document).on("click", ".btn-menu", function(e) {
-    $(this).toggleClass("active");
-    $("#navbar .submenu").slideToggle(300);
-  });
-
   // Handle password input placeholders
   $.each($("input[type='password']"), function(key, val) {
     val.placeholder = "Password";

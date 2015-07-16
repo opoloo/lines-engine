@@ -150,7 +150,7 @@
   }
 
   .article_footer {
-    margin: 0 13%;
+    margin: 4em 13%;
     line-height: 130%;
     font-family: $SourceSansPro;
     color: $grey;
@@ -191,14 +191,14 @@
     max-width: 50%;
     float: left;
     .article_header {
-      h1 { font-size: 1.8em; }
+      h1 { font-size: 1.75rem; }
       h2 { display: none; }
     }
     .article_teaser {
       p { font-size: 1.0rem; line-height: 1.5em; }
       .more-link {
         display: block;
-        margin: 0 auto;
+        margin: 0 auto 2em auto;
         text-align: center;
         font-family: $SourceSansPro;
         a {
@@ -213,7 +213,7 @@
           display:block;
           width:100%;
           text-align:center;
-          &:hover { background-color: $grey; }
+          &:hover { background-color: darken($white, 10%); }
         }
       }      
     }
