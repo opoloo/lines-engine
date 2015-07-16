@@ -244,6 +244,13 @@ form {
         background-color: #fff;
         padding: 2em;
         z-index: 1;
+        .btn-remove-hero {
+          background-color: $color-gamma;
+          padding: 0.5em 1em;
+          margin-bottom: 1em;
+          cursor: pointer;
+          display: none;
+        }
         label {
           background-color: $color-beta;
           padding: 0.5em 1em;
@@ -316,4 +323,28 @@ form {
 
 .body-picture-upload {
   display: none;
+}
+
+#error_explanation {
+  background-color: rgba(#f00, 0.2);
+  border: 1px solid #f00;
+  padding: 1em;
+  position: relative;
+  margin-bottom: 1em;
+  h2 {
+    color: #f00;
+  }
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #000;
+    width: 2em;
+    height: 2em;
+    line-height: 2;
+    text-align: center;
+  }
+  ul {
+    padding-left: 1em;
+  }
 }
