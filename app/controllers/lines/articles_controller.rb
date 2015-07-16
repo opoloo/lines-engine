@@ -63,6 +63,8 @@ module Lines
       if request.path != article_path(@article)
         return redirect_to @article, status: :moved_permanently
       end
+
+      @related_articles = Article.published.where('id != ?', @article.id).order('').limit(2)
     end
 
   end
