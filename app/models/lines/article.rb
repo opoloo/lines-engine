@@ -32,7 +32,7 @@ module Lines
     mount_uploader :document, DocumentUploader
 
     # Pagination and tagging
-    paginates_per CONFIG[:articles_per_page]
+    paginates_per 1 #CONFIG[:articles_per_page]
     acts_as_taggable
 
     # Validations
