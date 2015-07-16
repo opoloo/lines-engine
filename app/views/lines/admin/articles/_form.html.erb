@@ -1,23 +1,25 @@
 <%= simple_form_for([:admin, @article], id: 'article_form') do |f| %>
-
   <div class="new-article">
     <div class="hero-upload">
       <%= f.file_field :hero_image %>
       <div class="btn-change-hero">Change</div>
-      <%#= @article.hero_image? ? "<img src='#{@article.hero_image}' alt='' />".html_safe : "" %>
-      <% if @article.hero_image %>
-        <img src="<%= @article.hero_image %>" alt="" />
-      <% elsif @article.short_hero_image %>
+      <%#= @article.hero_image? ? "<img src='#{@article.hero_image}' alt='' />".html_safe : "<img src='#{@article.short_hero_image}' alt='' />".html_safe %>
+      <% if @article.short_hero_image.present? %>
         <img src="<%= @article.short_hero_image %>" alt="" />
+      <% elsif @article.hero_image.present? %>
+        <img src="<%= @article.hero_image %>" alt="" />
       <% end %>
+      <%= f.hidden_field :hero_image_file %>
       <div class="upload-overlay">
         <div class="upload-overlay-inner">
           <h2>Select Hero Image</h2>
+
           <%= f.label :hero_image, "Upload an image" %>
           <div class="hero-images">
             <% Lines::Article::HERO_IMAGES.each_with_index do |h, i| %>
               <img src="<%= "/heroes/#{h}" %>" alt="" class="<%= 'selected-hero-image' if ('/heroes/' + h) == @article.short_hero_image %>" />
             <% end %>
+            <%= f.hidden_field :short_hero_image, class: "short-hero-image-cache" %>
           </div>
         </div>
         <div class="hero-background-overlay"></div>
