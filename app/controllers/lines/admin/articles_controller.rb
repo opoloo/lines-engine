@@ -127,6 +127,7 @@ module Lines
 
           picture_filename = "hero_image"
           picture_original_filename = "hero_image"
+          raise params[:article][:hero_image_file].inspect
           picture_content_type = splitBase64(params[:article][:hero_image_file])[:type]
           picture_data = splitBase64(params[:article][:hero_image_file])[:data]
 
