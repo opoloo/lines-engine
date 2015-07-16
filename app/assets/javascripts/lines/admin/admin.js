@@ -39,14 +39,6 @@ jQuery.fn.extend({
 
 hero_image = {
   init: function() {
-  // New stuff lines 1.0
-  // Handle hero image uploads
-  hero_image.init();
-
-  // New stuff lines 1.0
-  // Handle hero image uploads
-  hero_image.init();
-
     this.bind_events();
     this.check_availability();
   },
@@ -64,6 +56,10 @@ hero_image = {
       e.preventDefault();
       hero_image.preview_default($(this));
     });
+    $(document).on('click', '.btn-remove-hero', function(e) {
+      e.preventDefault();
+      hero_image.remove_hero();
+    });
     document.getElementById('article_hero_image').addEventListener('change', this.preview, false);
   },
 
@@ -73,6 +69,12 @@ hero_image = {
     }
   },
 
+  remove_hero: function() {
+    $('#article_hero_image_file').val('');
+    $('.hero-upload > img').remove();
+    $('.upload-overlay').fadeOut('fast');
+  },
+
   preview_default: function(img) {
     $('#article_hero_image_file').val(img.attr('src'));
     if ($('.hero-upload > img').length) {
@@ -80,6 +82,7 @@ hero_image = {
     } else {
       $('.hero-upload').append('<img src="' + img.attr('src') + '" alt="" />');
     }
+    $('.btn-remove-hero').show();
     $('.upload-overlay').fadeOut('fast');
   },
 
@@ -95,6 +98,7 @@ hero_image = {
           } else {
             $('.hero-upload').append('<img src="' + e.target.result + '" alt="" />');
           }
+          $('.btn-remove-hero').show();
           $('.upload-overlay').fadeOut('fast');
         };
       })(f);
@@ -159,112 +163,11 @@ $(document).ready(function() {
     $(this).datepicker({dateFormat: "yy-mm-dd"});
   });
 
-  // Select a default hero image
-  // Switch classes and preview the selected default image in the hero image canvas
-  $(".select_image").on('click', function(e){
-    e.preventDefault();
-    
-    bg_url = $(this).attr('src');
-    
-    $('.hero-image').css('background-image', 'url(' + bg_url + ')');
-    
-    if ($(this).hasClass('selected_image')) { // deselect selected short_hero image
-      $(".selected_image").removeClass('selected_image');
-      $("#article_short_hero_image, #article_hero_image_file").val('');
-    } else if ($(this).hasClass('uploaded_image')) { // select former uploaded hero_image
-      $(".selected_image").removeClass('selected_image');
-      //TODO: How to get the selected value?
-      $('#article_hero_image, #article_hero_image_cache, #article_short_hero_image').val('');
-      $('#article_hero_image_file').val(bg_url);
-    } else { // select short_hero_image image
-      var value = $(this).attr('src');
-      $('#article_hero_image_file, #article_hero_image, #article_hero_image_cache').val('');
-      $(".selected_image").removeClass('selected_image');
-      $(this).addClass("selected_image");
-      $("#article_short_hero_image").val(value);
-    }
-    $('#hero_image_name').text('');
-    $('.choose-file').html("Change Image");
-  });
-
-  // Unselect hero image on upload
-  // If a custom image is selected of the hard drive, the current selected default image will be unselected
-  $('#article_hero_image').on('change', function(e){
-    $(".selected_image").removeClass('selected_image');
-    $("#article_short_hero_image").val('');
-  });
-
   // Scroll to the top of the page
   $('.top_link').click(function(){
     $("html, body").animate({ scrollTop: 0 }, 600);
     return false;
   });
-
-
-
-  // File Reader for hero image and document upload
-  // If you need more input fields like this, you need to add an event listener for every input field
-  // You also need to insert a case for every input inside of the "handleFiles" function below ($type_id)
-  if (window.File && window.FileList && window.FileReader) {
-    var hero_input      = document.getElementById('article_hero_image');  // Hero image input
-    var document_input  = document.getElementById('article_document');    // Document input
-    if (typeof(hero_input) !== 'undefined' && hero_input !== null && typeof(document_input) !== 'undefined' && document_input !== null) {
-      hero_input.addEventListener('change', handleFiles, false);          // Add listener to the hero image input
-      document_input.addEventListener('change', handleFiles, false);      // Add listener to the document input
-    }
-  } else {
-    alert("You need a browser with file reader support, to use this form properly.");
-  }
-
-  // This function handels the hero image & documents
-  // It generates a live preview (image/name) of the selected file
-  function handleFiles(event) {
-    var files   = event.target.files;       // Get current file
-    var type_id = event.currentTarget.id;   // Get the # of the current input field
-
-    if (files.length > 0) {
-      var file = files[0];
-      var reader = new FileReader();
-
-      // Check format
-      if (type_id == 'article_hero_image') {
-        if (!file.type.match('image')) {
-          return false;
-        }
-      } else if (type_id == 'article_document') {
-        // Nothing to do here yet ...
-      }
-
-      // Load file
-      reader.addEventListener("load",function(event) {
-        var loadedFile = event.target;
-
-        // Change labels, background and so on
-        // Different action depending on the type_id
-        if (type_id == 'article_hero_image') {
-          $('.hero-image').css("background-image","url("+loadedFile.result+")");
-          $('.hero-image').css("background-size","cover");
-
-          $('.choose-file').html("Change Image");
-          $('.short-hero-images').append("<div class=\"short-hero-image-box\"><img src=\""+loadedFile.result+"\" width=\"115\" class=\"select_image uploaded_image\" /></div>");
-        } else if (type_id == 'article_document') {
-          $('.choose-files').html(file.name);
-        }
-      });
-
-      // Read the file
-      reader.readAsDataURL(file);
-    } else {
-      // Change labels, background and so on
-      // Different action depending on the type_id
-      if (type_id == 'article_hero_image') {
-        $('.choose-file').html("Choose Image");
-        $('.hero-image').css("background-image","none");
-      } else if (type_id == 'article_document') {
-        $('.choose-files').html("Choose File");
-      }
-    }
-  }
 
   // Close notification boxes below the navbar
   $('.alert').click(function(e){
