@@ -254,6 +254,9 @@ form {
           margin-bottom: 1em;
           cursor: pointer;
           display: none;
+          &.show {
+            display: block;
+          }
         }
         label {
           background-color: $color-beta;

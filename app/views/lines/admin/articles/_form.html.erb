@@ -6,14 +6,14 @@
       <%#= @article.hero_image? ? "<img src='#{@article.hero_image}' alt='' />".html_safe : "<img src='#{@article.short_hero_image}' alt='' />".html_safe %>
       <% if @article.short_hero_image.present? %>
         <img src="<%= @article.short_hero_image %>" alt="" />
-      <% elsif @article.hero_image.present? %>
+      <% elsif @article.hero_image? %>
         <img src="<%= @article.hero_image %>" alt="" />
       <% end %>
       <%= f.hidden_field :hero_image_file %>
       <div class="upload-overlay">
         <div class="upload-overlay-inner">
           <h2>Select Hero Image</h2>
-          <div class="btn-remove-hero">Remove hero image</div>
+          <div class="btn-remove-hero<%= " show" if @article.hero_image? || @article.short_hero_image %>">Remove hero image</div>
           <%= f.label :hero_image, "Upload an image" %>
           <div class="hero-images">
             <% Lines::Article::HERO_IMAGES.each_with_index do |h, i| %>
