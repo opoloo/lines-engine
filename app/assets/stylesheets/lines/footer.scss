@@ -8,7 +8,9 @@ footer, #footer {
     margin: 1.5em auto;
     max-width: $max-width;
     p {
-      padding: 0 13%;
+      padding: 0.4em 13%;
+      a { color: $white; font-weight: 600; }
+      a:hover { color: lighten($red, 10%); text-decoration: underline;  }
     }
   }
 }
