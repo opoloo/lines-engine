@@ -1,62 +1,14 @@
 footer, #footer {
-  background-color: #f4f4f4;
-  margin: 50px 0 0 0;
-  padding: 30px 0;
-
+  margin-top: 2em;
+  background-color: $black;
+  color: $white;
+  font-family: $SourceSansPro;
+  line-height: 120%;
   .container {
-    margin: 0 auto;
+    margin: 1.5em auto;
     max-width: $max-width;
-    color: #999;
-    font-size: 0.85em;
-    font-family: $Merriweather;
-    .row {
-      text-align: left;
-      width: 100%;
-      .two-cols {
-        padding: 0 20px;
-        width: 50%;
-        line-height:24px;
-        float: left;
-        &:first-child {
-          margin-right: 0;
-        }
-      }
-    }
-  }
-  
-  hr { background-color:#ccc; margin:40px 0px; }
-
-  h2, h2 a {
-    margin-top: 20px;
-    text-transform: uppercase;
-    font-family: $SourceSansPro;
-    font-size: 1.2em;
-    font-weight: 300;
-    letter-spacing: 0.03em;
-  }
-
-  span.label {
-    text-transform: uppercase;
-    font-size:13px;
-    color:#c0bfbf;
-  }
-
-  .weekday {
-    font-family: $SourceSansPro;
-    font-weight: 300;
-    color: $darkgrey;
-  }
-  
-  #copyright {
-    text-align:center;
-    padding:50px 0 10px 0;
-    font-size:13px;
-    text-transform:uppercase;
-    letter-spacing: 0.05em;
-    line-height:24px;
-    a {
-      color:#999; font-family: $Merriweather;
-      &:hover { color: $orange; }
+    p {
+      padding: 0 13%;
     }
   }
 }

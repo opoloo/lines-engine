@@ -178,20 +178,22 @@
       p { font-size: 1.0rem; line-height: 1.5em; }
       .more-link {
         display: block;
-        margin:40px auto 0 auto;
+        margin: 0 auto;
         text-align: center;
+        font-family: $SourceSansPro;
         a {
+          margin: 0;
+          font-weight: 600;
           display: inline-block;
           text-transform: uppercase;
           letter-spacing: 0.06em;
-          font-size:0.8em;
-          background-color: #f4f4f4;
+          font-size: 1.25rem;
           padding:5px 10px;
           color: #4d4d4d;
           display:block;
           width:100%;
           text-align:center;
-          &:hover { background-color: #e7e7e7; }
+          &:hover { background-color: $grey; }
         }
       }      
     }
