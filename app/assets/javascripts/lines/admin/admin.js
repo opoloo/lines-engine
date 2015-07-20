@@ -39,8 +39,10 @@ jQuery.fn.extend({
 
 hero_image = {
   init: function() {
-    this.bind_events();
-    this.check_availability();
+    if ($('#article_hero_image').length > 0) {
+      this.bind_events();
+      this.check_availability();
+    }
   },
 
   bind_events: function() {
@@ -110,6 +112,58 @@ hero_image = {
   }
 };
 
+editor = function(el) {
+  // Initialize CodeMirror Instance
+  this.cm = CodeMirror.fromTextArea(el, {
+    mode: {
+      name: 'gfm',
+      highlightFormatting: true
+    },
+    lineWrapping: true,
+    styleActiveLine: true,
+    tabSize: 2,
+    theme: 'lines',
+    viewportMargin: Infinity
+  });
+
+  this.wrapper = $(this.cm.getTextArea()).parent();
+
+  // Create and inset moving widget before editor
+  this.movingWidget = $('<div class="cm-movingwidget">+</div>');
+  $(el).before(this.movingWidget);
+
+  // Save `this` for usage inside child-functions
+  obj = this
+
+  // Initialize Moving Widget
+  init_moving_widget = function() {
+    if (obj.movingWidget) {
+      obj.cm.on('cursorActivity', function() {
+        setTimeout(function() {
+          var al = obj.wrapper.find('.CodeMirror-activeline');
+
+          if (al.length) {
+            obj.movingWidget.show()
+            obj.movingWidget.css({
+              'top': (al.offset().top - obj.wrapper.offset().top) + 'px'
+            });
+          } else {
+            obj.movingWidget.hide();
+          }
+        });
+      });
+    }
+  }();
+
+  // Bind events
+  bind_events = function() {
+    // Moving Widget Click Event Listener
+    obj.movingWidget.on('click', function() {
+      obj.cm.replaceSelection('\n![Image](http://url.tld/image.png)\n');
+    });
+  }();
+};
+
 $(document).ready(function() {
   // New stuff lines 1.0
   // Handle hero image uploads
@@ -122,16 +176,7 @@ $(document).ready(function() {
 
   // Handle Codemirror
   $.each($("[data-editor='codemirror']"), function(key, val) {
-    CodeMirror.fromTextArea(val, {
-      mode: {
-        name: 'gfm',
-        highlightFormatting: true
-      },
-      lineWrapping: true,
-      tabSize: 2,
-      theme: 'lines',
-      viewportMargin: Infinity
-    });
+    new editor(val);
   });
 
   // ---------------------------------------------------------

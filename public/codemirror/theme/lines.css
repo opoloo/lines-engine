@@ -62,9 +62,9 @@
 .cm-s-lines .CodeMirror-guttermarker { color: white; }
 .cm-s-lines .CodeMirror-guttermarker-subtle { color: #d0d0d0; }
 .cm-s-lines .CodeMirror-linenumber {color: #d0d0d0;}
-.cm-s-lines .CodeMirror-cursor {border-left: 1px solid #000 !important;}
+.cm-s-lines .CodeMirror-cursor {border-left: 3px solid #c10020 !important;}
 
-.cm-s-lines .CodeMirror-activeline-background {background: #373831 !important;}
+.cm-s-lines .CodeMirror-activeline-background {background: rgba(0,0,0,0) !important;}
 .cm-s-lines .CodeMirror-matchingbracket {
   text-decoration: underline;
   color: white !important;
