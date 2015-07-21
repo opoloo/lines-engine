@@ -62,6 +62,24 @@
       <%= f.text_field :published_at, value: (@article.published_at || Time.now).strftime("%Y-%m-%d"), 'data-behaviour' => 'datepicker', placeholder: "Published on" %>
     </div>
 
+    <div class="input-field">
+      <div class="documents">
+        <%= f.label :document, "#{@article.document? ? @article.document.file.filename : 'Choose File' }", class: "choose-files" -%>
+        <%= f.file_field :document, class: "article-document-value" %>
+        <div class="hidden">
+          <%= f.hidden_field :document_cache %>
+          <%= (@article.hero_image.filename) if @article.document? %>
+        </div>
+      </div>
+
+      <% if @article.document? %>
+      <div class="checkbox">
+        <%= f.check_box :remove_document %>
+        <label for="article_remove_document" class="checkbox"><span></span>Delete document</label>
+      </div>
+      <% end %>
+    </div>
+
 
     <!--
     <div class="row">

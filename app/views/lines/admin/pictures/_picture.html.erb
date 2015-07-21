@@ -1,5 +1,4 @@
-<div class="picture-preview" id="<%= dom_id @picture %>">
-  <div class="picture"><%= image_tag @picture.image_url(:preview) %></div>
-  <a href="#" class="insert-image" data-url="<%= @picture.image_url %>"></a>
-  <%= button_to "", admin_picture_path(@picture), remote: true, confirm: "Are you sure?", method: :delete, class: 'btn-delete-photo' %>
+<div class="image-preview" id="<%= dom_id @picture %>" style="background-image: url(<%= @picture.image_url(:preview) %>)" data-url="<%= @picture.image_url %>">
+  <%#= image_tag @picture.image_url(:preview), data: { :url => @picture.image_url } %>
+  <%= button_to "", admin_picture_path(@picture), remote: true, confirm: "Are you sure?", method: :delete, class: 'icon-delete' %>
 </div>

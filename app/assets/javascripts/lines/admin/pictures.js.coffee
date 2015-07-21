@@ -17,5 +17,6 @@ jQuery ->
       if data.context
         progress = parseInt(data.loaded / data.total * 100, 10)
         data.context.find('.bar').css('width', progress + '%')
+        data.context.find('.percent').html(progress + '%')
         if progress >= 100
-          $('.progress').fadeOut()
+          $('.upload').remove()

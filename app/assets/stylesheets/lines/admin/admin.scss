@@ -176,7 +176,7 @@ form {
       margin-bottom: 1em;
       cursor: pointer;
       &:after {
-        content: "\f101"; // Blank checkbox
+        content: "\e602"; // Blank checkbox
         font-family: 'iconfont';
         position: absolute;
         color: $color-gamma;
@@ -189,7 +189,7 @@ form {
     &:checked {
       &+label {
         &:after {
-          content: "\f100"; // Filled checkbox
+          content: "\e601"; // Filled checkbox
           color: $color-beta;
         }
       }
@@ -236,26 +236,38 @@ form {
       z-index: 1;
     }
     .upload-overlay {
-      position: absolute;
+      position: fixed;
       display: none;
-      z-index: 3;
-      top: 2em;
-      right: 2em;
-      left: 2em;
+      max-width: calc(960px - 4em);
       width: calc(100% - 4em);
+      z-index: 50;
+      margin: 0 auto;
+      top: calc(56px + 2em);
+      left: 0;
+      right: 0;
+      bottom: 2em;
       .upload-overlay-inner {
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
         background-color: #fff;
-        padding: 2em;
         z-index: 1;
+        padding: 2em;
         .btn-remove-hero {
           background-color: $color-gamma;
           padding: 0.5em 1em;
           margin-bottom: 1em;
           cursor: pointer;
           display: none;
+          transition: all 0.3s ease;
           &.show {
             display: block;
+          }
+          &:hover {
+            background-color: lighten($color-gamma, 10%);
           }
         }
         label {
@@ -264,12 +276,23 @@ form {
           display: block;
           margin-bottom: 1em;
           cursor: pointer;
+          transition: all 0.3s ease;
+          &:hover {
+            background-color: lighten($color-beta, 10%);
+          }
         }
         .hero-images {
           img {
-            width: 100%;
+            width: calc(50% - 0.5em);
             display: block;
-            &+img {
+            float: left;
+            &:nth-of-type(odd) {
+              margin-right: 0.5em;
+            }
+            &:nth-of-type(even) {
+              margin-left: 0.5em;
+            }
+            &:nth-of-type(n+3) {
               margin-top: 1em;
             }
           }
@@ -305,23 +328,150 @@ form {
   }
 }
 
+.images-overlay {
+  position: fixed;
+  display: none;
+  max-width: calc(960px - 4em);
+  width: calc(100% - 4em);
+  z-index: 50;
+  margin: 0 auto;
+  top: calc(56px + 2em);
+  left: 2em;
+  right: 2em;
+  bottom: 2em;
+  .images-overlay-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #fff;
+    z-index: 1;
+    padding: 2em;
+    form {
+      input {
+        display: none;
+      }
+      label {
+        background-color: $color-beta;
+        padding: 0.5em 1em;
+        display: block;
+        margin-bottom: 1em;
+        cursor: pointer;
+        color: #fff;
+        transition: all 0.3s ease;
+        &:hover {
+          background-color: lighten($color-beta, 10%);
+        }
+      }
+    }
+
+    .images {
+      .image-preview {
+        position: relative;
+        width: calc(50% - 0.5em);
+        height: 0;
+        padding-bottom: calc((50% - 0.5em) / 16 * 9);
+        background-position: center;
+        background-size: cover;
+        cursor: pointer;
+        float: left;
+        &:nth-of-type(odd) {
+          margin-right: 0.5em;
+        }
+        &:nth-of-type(even) {
+          margin-left: 0.5em;
+        }
+        &:nth-of-type(n+3) {
+          margin-top: 1em;
+        }
+      }
+    }
+
+    .upload {
+      width: 100%;
+      height: 20px;
+      position: relative;
+      margin-bottom: 1em;
+      .progress {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #eee;
+        .bar {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          background-color: $color-beta;
+          z-index: 0;
+        }
+        .percent {
+          position: absolute;
+          z-index: 1;
+          color: #000;
+          width: 100%;
+          height: 100%;
+          line-height: 20px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .images-background-overlay {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color-alpha, 0.8);
+    z-index: 0;
+  }
+}
+
 .cm-movingwidget {
   position: absolute;
   top: 0px;
   right: 0;
-  width: 25px;
-  height: 25px;
+  width: 50px;
+  height: 50px;
   text-align: center;
-  line-height: 25px;
+  line-height: 50px;
   color: #fff;
   background-color: $color-delta;
   cursor: pointer;
-  border-radius: 50%;
-  z-index: 100;
-  transform: translateX(100%);
+  z-index: 40;
+  transform: translateX(calc(100% + 10px)) translateY(calc(-50% + 10px));
   transition: all 0.3s ease;
+  border-radius: 3px;
+  font-size: 1.5em;
+  &:after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-right: 10px solid $color-delta;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    transition: all 0.3s ease;
+  }
   &:hover {
     background-color: $color-beta;
+    &:after {
+      border-right-color: $color-beta;
+    }
+  }
+}
+@media screen and (max-width: 1100px) {
+  .cm-movingwidget {
+    // display: none !important;
+    transform: translateX(0) translateY(calc(-50% + 10px));
+  }
+  .cm-s-lines.CodeMirror {
+    width: calc(100% - 60px);
   }
 }
 

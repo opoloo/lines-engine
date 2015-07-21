@@ -1,4 +1,34 @@
-<div class="body-picture-upload">
+<div class="images-overlay">
+  <div class="images-overlay-inner">
+    <%= form_for [:admin, Lines::Picture.new], {enctype: "multipart/form-data"} do |f| %>
+      <input id="picture_image" multiple="multiple" name="picture[image]" type="file" />
+      <label for="picture_image">Upload an image</label>
+    <% end %>
+
+    <script id="template-upload" type="text/x-tmpl">
+      <div class="upload">
+        <div class="progress">
+          <div class="bar" style="width: 0%"></div>
+          <div class="percent">0%</div>
+        </div>
+      </div>
+    </script>
+
+    <div class="images">
+      <% if @article.pictures.any? %>
+        <% @article.pictures.each do |picture| %>
+          <div class="image-preview" id="<%= dom_id picture %>" style="background-image: url(<%= picture.image_url(:preview) %>)" data-url="<%= picture.image_url %>">
+            <%#= image_tag picture.image_url(:preview), data: {:url => picture.image_url} %>
+            <%= button_to "", admin_picture_path(picture), remote: true, confirm: "Are you sure?", method: :delete, class: 'icon-delete' %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="images-background-overlay"></div>
+</div>
+
+<!--<div class="body-picture-upload">
   
   <h2>Upload photos</h2>
 
@@ -22,10 +52,4 @@
   </div>
   <br style="clear: both;" />
 
-</div>
-
-<script id="template-upload" type="text/x-tmpl">
-  <div class="upload">
-    <div class="progress"><div class="bar" style="width: 0%"></div></div>
-  </div>
-</script>
+</div>-->
