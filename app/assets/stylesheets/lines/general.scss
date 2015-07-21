@@ -26,8 +26,8 @@ a {
   &:hover { color: $orange; }
 }
 
-i, em { font-family: $Merriweather; font-style: italic; }
-strong, b { font-family: $Merriweather; font-weight: bold; }
+i, em { font-style: italic; }
+strong, b { font-weight: bold; }
 
 ul li { list-style-position: outside; }
 

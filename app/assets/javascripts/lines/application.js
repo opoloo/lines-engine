@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require lines/viewer
 //= require lines/admin/navbar
 

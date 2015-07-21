@@ -2,7 +2,7 @@
   max-width: $max-width;
   font-family: $Merriweather;
   line-height: 1.5em;
-  color: #555;
+  color: $black;
 
 
   h1, h2, h3, h4, h5, h6 {
@@ -16,8 +16,8 @@
     & > * { padding: 0 13%; }
     & > blockquote { padding: 0 5%; }
     & > p img {
-      margin: 0 -10%;
-      max-width: 120%;
+      max-width: 100%;
+      margin: 0 auto;
     }
   }
 
@@ -52,7 +52,7 @@
   } 
 
   .article_content {
-    line-height: 1.8em;
+    line-height: 1.9em;
 
     h1, h2, h3, h4, h5, h6 { margin-top: 1.8em; line-height: 120%; color: $black }
     h2, h3, h4, h5 { font-weight: 700; }

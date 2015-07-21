@@ -23,8 +23,8 @@ Lines::Engine.routes.draw do
   namespace :admin do
     resources :articles do
       get :autocomplete_tag_name, on: :collection
-      post :toggle_publish
-      post :toggle_feature
+      post :toggle_publish#, on: :member
+      post :toggle_feature#, on: :member
     end
     resources :authors
     resources :pictures, only: [:create, :update, :destroy]
