@@ -171,6 +171,7 @@ editor = function(el) {
     $(document).on('click', '.image-preview', function() {
       $('.images-overlay').fadeOut('fast');
       obj.cm.replaceSelection('\n![Alt Text](' + $(this).data('url') + ')\n');
+      obj.cm.focus();
     });
   }();
 };
