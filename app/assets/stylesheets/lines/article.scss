@@ -17,7 +17,7 @@
     & > blockquote { padding: 0 5%; }
     & > p img {
       max-width: 100%;
-      margin: 0 auto;
+      margin: 3em auto;
     }
   }
 
@@ -54,6 +54,11 @@
   .article_content {
     line-height: 1.9em;
 
+    a { 
+      border-bottom: 1px solid $grey;
+      &:hover { color: $red; border-bottom: 1px solid $red; }
+    }
+
     h1, h2, h3, h4, h5, h6 { margin-top: 1.8em; line-height: 120%; color: $black }
     h2, h3, h4, h5 { font-weight: 700; }
     h6 { font-weight: 600; }
@@ -65,32 +70,72 @@
       color: $red; 
       margin-bottom: 1.0em; 
       a { color: $red; }
-      a:hover { color: $grey; }
+      a:hover { color: $black; border-bottom: 1px solid $black; }
     }
     h4 { font-size: 1.25em; text-transform: uppercase;  }
     h5 { font-size: 1.25em; }
-    h6 { font-size: 1.25em; color: $grey; }
+    h6 { 
+      font-size: 1.25em; color: $grey; 
+      a { color: $grey; }
+    }
 
     p { 
       font-size: 1.125em;
       display: block; 
-      a { color: $red; }
-      a:hover { color: $grey; }
+      a { color: $black; }
+      a:hover { color: $red; }
     }
   
-    a { 
-      border-bottom: 1px solid $grey;
-    }
 
     img { display: block; margin: 0 auto; }
 
     br { display: block; margin: 0; padding: 0;}
     
-    ul, ol { font-size: 1.125em; }
-    ul {
-      margin-left: 2em;
+    ul, ol {
+      list-style: none;
+      font-size: 1.125rem;
+      margin-left: 0;
       margin-right: 2em;
-      li { margin: 0.5em 0; }
+      li {
+        margin: 0.75em 0; padding-left: 1.5em;
+        line-height: 1.4em;
+        list-style-type: none;
+        position: relative;
+        &:before {
+          top: 0.03em;
+          left: 0;
+          content: '\2022 ';
+          color: $grey;
+          font-size: 2em;
+          position: absolute;
+        }
+      }
+    }
+
+    ol {
+      counter-reset: list;
+      li {
+        counter-increment: list;
+        &:before {
+          content: counter(list) ".";
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-size: 1.125rem;
+          font-family: $SourceSansPro;
+          font-weight: 600;
+        }
+      }
+      ol {
+        counter-reset: sublist;
+        li {
+          counter-increment: sublist;
+          padding-left: 3rem;
+          &:before {
+            content: counter(list) "." counter(sublist) ".";
+          }
+        }
+      }
     }
 
     blockquote {
@@ -99,8 +144,17 @@
       font-size: 1.5em;
       line-height: 1.5em;
       color:#999;
-      em:last-child { font-family: $MerriweatherSans; font-style: normal; font-size: 1.0rem; }
-      strong { font-weight: bold; }
+      text-align: center;
+      em { font-weight: 700;}
+      strong { font-weight: 900; }
+    }
+
+    blockquote strong:last-child, img + br + strong {
+      em { font-family: $SourceSansPro; font-style: normal; font-weight: normal; font-size: 1.0rem; color: $black; }
+    }
+
+    img + br + strong em {
+      display: block; text-align: center; margin-top: -3em;
     }
 
     pre {
