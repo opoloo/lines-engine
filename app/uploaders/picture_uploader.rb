@@ -19,7 +19,7 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # Generates +preview+ version.
   version :preview do
-    resize_to_limit(100, 100)
+    resize_to_limit(400, 300)
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

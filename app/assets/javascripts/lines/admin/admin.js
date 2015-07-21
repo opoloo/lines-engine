@@ -39,8 +39,10 @@ jQuery.fn.extend({
 
 hero_image = {
   init: function() {
-    this.bind_events();
-    this.check_availability();
+    if ($('#article_hero_image').length > 0) {
+      this.bind_events();
+      this.check_availability();
+    }
   },
 
   bind_events: function() {
@@ -110,6 +112,69 @@ hero_image = {
   }
 };
 
+editor = function(el) {
+  // Initialize CodeMirror Instance
+  this.cm = CodeMirror.fromTextArea(el, {
+    mode: {
+      name: 'gfm',
+      highlightFormatting: true
+    },
+    lineWrapping: true,
+    styleActiveLine: true,
+    tabSize: 2,
+    theme: 'lines',
+    viewportMargin: Infinity
+  });
+
+  this.wrapper = $(this.cm.getTextArea()).parent();
+
+  // Create and inset moving widget before editor
+  this.movingWidget = $('<div class="cm-movingwidget icon-add-image"></div>');
+  $(el).before(this.movingWidget);
+
+  // Save `this` for usage inside child-functions
+  obj = this
+
+  // Initialize Moving Widget
+  init_moving_widget = function() {
+    if (obj.movingWidget) {
+      obj.cm.on('cursorActivity', function() {
+        setTimeout(function() {
+          var al = obj.wrapper.find('.CodeMirror-activeline');
+
+          if (al.length) {
+            obj.movingWidget.show()
+            obj.movingWidget.css({
+              'top': (al.offset().top - obj.wrapper.offset().top) + 'px'
+            });
+          } else {
+            obj.movingWidget.hide();
+          }
+        });
+      });
+    }
+  }();
+
+  // Bind events
+  bind_events = function() {
+    // Moving Widget Click Event Listener
+    obj.movingWidget.on('click', function() {
+      $('.images-overlay').fadeIn('fast');
+    });
+
+    // Close images overlay
+    $(document).on('click', '.images-background-overlay', function() {
+      $('.images-overlay').fadeOut('fast');
+    });
+
+    // Insert image to content
+    $(document).on('click', '.image-preview', function() {
+      $('.images-overlay').fadeOut('fast');
+      obj.cm.replaceSelection('\n![Alt Text](' + $(this).data('url') + ')\n');
+    });
+  }();
+};
+
 $(document).ready(function() {
   // New stuff lines 1.0
   // Handle hero image uploads
@@ -122,16 +187,7 @@ $(document).ready(function() {
 
   // Handle Codemirror
   $.each($("[data-editor='codemirror']"), function(key, val) {
-    CodeMirror.fromTextArea(val, {
-      mode: {
-        name: 'gfm',
-        highlightFormatting: true
-      },
-      lineWrapping: true,
-      tabSize: 2,
-      theme: 'lines',
-      viewportMargin: Infinity
-    });
+    new editor(val);
   });
 
   // ---------------------------------------------------------
@@ -153,12 +209,12 @@ $(document).ready(function() {
   });
   
   // Insert image into content of the post
-  $(document.body).on('click', ".insert-image",  function(e){
-    var url = $(this).attr( 'data-url' );
-    var value = '\n![Alt text](' + url + ')\n';
-    $('#article_content').insertAtCaret(value);
-    e.preventDefault();
-  });
+  // $(document.body).on('click', ".insert-image",  function(e){
+  //   var url = $(this).attr( 'data-url' );
+  //   var value = '\n![Alt text](' + url + ')\n';
+  //   $('#article_content').insertAtCaret(value);
+  //   e.preventDefault();
+  // });
 
   // Show datepicker
   $(document).on("focus", "[data-behaviour~='datepicker']", function(e){
@@ -167,10 +223,10 @@ $(document).ready(function() {
   });
 
   // Scroll to the top of the page
-  $('.top_link').click(function(){
-    $("html, body").animate({ scrollTop: 0 }, 600);
-    return false;
-  });
+  // $('.top_link').click(function(){
+  //   $("html, body").animate({ scrollTop: 0 }, 600);
+  //   return false;
+  // });
 
   // Close notification boxes below the navbar
   $('.alert').click(function(e){
@@ -179,15 +235,15 @@ $(document).ready(function() {
   });
 
   // Formatting Help functions
-  $('.btn-close-formatting').click(function() {
-    $('#formatting_guide').fadeOut();
-  });
-  $('.btn-close-formatting-small').click(function() {
-    $('#formatting_guide').fadeOut();
-  });
-  $('.btn-formatting-help').click(function() {
-    $('#formatting_guide').fadeIn();
-  });
+  // $('.btn-close-formatting').click(function() {
+  //   $('#formatting_guide').fadeOut();
+  // });
+  // $('.btn-close-formatting-small').click(function() {
+  //   $('#formatting_guide').fadeOut();
+  // });
+  // $('.btn-formatting-help').click(function() {
+  //   $('#formatting_guide').fadeIn();
+  // });
   
   // Show security alert on unload only when something has changed
   $('.edit_article input, .edit_article textarea, .new_article input, .new_article textarea').bind("keyup change", function() {

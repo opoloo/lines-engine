@@ -11,45 +11,79 @@
   height: auto;
   padding: 0.5em;
   font-family: 'Merriweather Sans', sans-serif;
+  line-height: 1.6;
 }
 
-.cm-s-lines.CodeMirror.CodeMirror-focused {
-  border-bottom-color: #c10020;
+.CodeMirror.cm-s-lines div.CodeMirror-cursor {
+  border-left: 4px solid #c10020;
 }
 
-.cm-s-lines.CodeMirror pre {
-  padding: 0;
+.CodeMirror.cm-s-lines div.CodeMirror-selected {
+  background-color: #c10020;
+  opacity: 0.2;
 }
 
-.cm-s-lines.CodeMirror .CodeMirror-placeholder {
-  color: #a9a9a9;
+.CodeMirror.cm-s-lines .CodeMirror-placeholder {
+  opacity: 0.2;
 }
 
-/*
- * Headlines
- */
-.cm-s-lines.CodeMirror .cm-header {
-  font-weight: 400;
-  color: #666;
-}
-
-.cm-s-lines.CodeMirror .cm-header-1 {
+.CodeMirror.cm-s-lines .cm-header-1 {
   font-size: 1.333em;
+  opacity: 0.4;
+  line-height: 1.2;
+  font-weight: 400;
 }
 
-.cm-s-lines.CodeMirror .cm-header-2 {
+.CodeMirror.cm-s-lines .cm-header-2 {
   font-size: 1.111em;
+  opacity: 0.4;
+  line-height: 1.4;
+  font-weight: 400;
 }
 
-.cm-s-lines.CodeMirror .cm-header-3 {
+.CodeMirror.cm-s-lines .cm-header-3, .CodeMirror.cm-s-lines .cm-header-4, .CodeMirror.cm-s-lines .cm-header-5, .CodeMirror.cm-s-lines .cm-header-6 {
   font-size: 1em;
+  opacity: 0.4;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
-/*
- * Formatting
- */
-.cm-s-lines.CodeMirror .cm-formatting {
-  color: #dddddd;
+.CodeMirror.cm-s-lines .cm-quote {
+  font-size: 1em;
+  opacity: 1;
+  line-height: 1.6;
+}
+
+.CodeMirror.cm-s-lines .cm-hr {
+  opacity: 0.2;
+}
+.CodeMirror.cm-s-lines .cm-hr:after {
+  content: "";
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  background-color: #000;
+  opacity: 0.2;
+  height: 2px;
+  top: 50%;
+  margin-top: -1px;
+}
+
+.CodeMirror.cm-s-lines .cm-link {
+  text-decoration: none;
+  border-bottom: 2px solid #c10020;
+}
+
+.CodeMirror.cm-s-lines .cm-formatting.cm-link {
+  border: none;
+}
+
+.CodeMirror.cm-s-lines .cm-formatting-link-string + .cm-string {
+  opacity: 0.2;
+}
+
+.CodeMirror.cm-s-lines .cm-formatting {
+  opacity: 0.2;
 }
 
 /*
@@ -62,9 +96,9 @@
 .cm-s-lines .CodeMirror-guttermarker { color: white; }
 .cm-s-lines .CodeMirror-guttermarker-subtle { color: #d0d0d0; }
 .cm-s-lines .CodeMirror-linenumber {color: #d0d0d0;}
-.cm-s-lines .CodeMirror-cursor {border-left: 1px solid #000 !important;}
+.cm-s-lines .CodeMirror-cursor {border-left: 3px solid #c10020 !important;}
 
-.cm-s-lines .CodeMirror-activeline-background {background: #373831 !important;}
+.cm-s-lines .CodeMirror-activeline-background {background: rgba(0,0,0,0) !important;}
 .cm-s-lines .CodeMirror-matchingbracket {
   text-decoration: underline;
   color: white !important;
