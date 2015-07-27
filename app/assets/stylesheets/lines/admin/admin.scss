@@ -22,19 +22,20 @@
 
 html, body {
   height: 100%;
+  font-size: 16px;
 }
 
 /*
  * Defaults
  */
 body {
-  font-size: $size-alpha;
   font-family: $font-alpha;
   color: $color-alpha;
 }
 
 a {
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 h2 {
@@ -42,7 +43,8 @@ h2 {
   color: $color-gamma;
   text-transform: uppercase;
   font-weight: 800;
-  margin-bottom: 1em;
+  margin-top: $gutter-gamma;
+  margin-bottom: $gutter-beta;
 }
 
 input, textarea {
@@ -86,7 +88,6 @@ input, textarea {
 
 .article, .author {
   border-bottom: 1px solid $color-gamma;
-  padding-bottom: 1em;
   &+.article, &+.author {
     margin-top: 1em;
   }
@@ -106,18 +107,21 @@ input, textarea {
   }
   .title, .name {
     font-size: $size-gamma;
+    margin-bottom: $gutter-alpha;
     a {
       color: $color-alpha;
     }
   }
   .subtitle, .email {
-    margin-bottom: 0.5em;
+    margin-bottom: $gutter-beta;
+    font-size: $size-alpha;
     a {
       color: $color-gamma;
     }
   }
   .actions {
     font-size: $size-beta;
+    margin-bottom: $gutter-beta;
     a {
       color: $color-gamma;
       text-transform: uppercase;
@@ -128,20 +132,32 @@ input, textarea {
     .btn-unfeature {
       color: $color-beta;
     }
+    .btn-feature {
+      &:hover {
+        color: $color-beta;
+      }
+    }
     .btn-publish {
       color: $color-beta;
     }
     .btn-unpublish {
       color: $color-alpha;
     }
+    .btn-delete {
+      &:hover {
+        color: $color-beta;
+      }
+    }
+    .left, .right {
+      a + a {
+        margin-left: $gutter-beta;
+      }
+    }
     .left {
       float: left;
     }
     .right {
       float: right;
-      a + a {
-        margin-left: 0.5em;
-      }
     }
     &:after {
       @include clearfix();
@@ -161,6 +177,13 @@ form {
     &:focus {
       border-bottom-color: $color-beta;
     }
+    &.title {
+      font-size: $size-gamma;
+    }
+  }
+  input[type="text"], textarea {
+    font-family: $font-beta;
+    line-height: 1.6;
   }
   input[type="checkbox"] {
     display: none;
@@ -313,6 +336,20 @@ form {
     &:after {
       @include clearfix();
     }
+    &.required {
+      &:after {
+        content: "*";
+        position: absolute;
+        color: $color-beta;
+        right: 0;
+        top: 0.5em;
+      }
+      &.editor {
+        &:after {
+          right: 68px;
+        }
+      }
+    }
   }
   .submit {
     input[type="submit"] {
@@ -432,44 +469,21 @@ form {
   position: absolute;
   top: 0px;
   right: 0;
-  width: 50px;
-  height: 50px;
   text-align: center;
-  line-height: 50px;
-  color: #fff;
-  background-color: $color-delta;
+  color: $color-gamma;
   cursor: pointer;
   z-index: 40;
-  transform: translateX(calc(100% + 10px)) translateY(calc(-50% + 10px));
+  transform: translateX(0) translateY(calc(-50% + 13px));
   transition: all 0.3s ease;
   border-radius: 3px;
-  font-size: 1.5em;
-  &:after {
-    content: "";
-    position: absolute;
-    left: -10px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-right: 10px solid $color-delta;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    transition: all 0.3s ease;
-  }
+  font-size: 48px;
+  line-height: 1;
   &:hover {
-    background-color: $color-beta;
-    &:after {
-      border-right-color: $color-beta;
-    }
+    color: $color-beta;
   }
 }
-@media screen and (max-width: 1100px) {
-  .cm-movingwidget {
-    // display: none !important;
-    transform: translateX(0) translateY(calc(-50% + 10px));
-  }
-  .cm-s-lines.CodeMirror {
-    width: calc(100% - 60px);
-  }
+.cm-s-lines.CodeMirror {
+  width: calc(100% - 68px);
 }
 
 #error_explanation {

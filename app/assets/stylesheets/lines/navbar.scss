@@ -32,6 +32,9 @@
         
         &.highlight {
           background-color: $color-beta;
+          &:hover {
+            background-color: lighten($color-beta, 10%);
+          }
         }
       }
     }
@@ -53,9 +56,12 @@
         border-top: 1px solid $color-delta;
         padding-top: 1em;
         li {
-          font-size: $size-alpha;
+          font-size: $size-beta;
           &+li {
             margin-top: 1em;
+          }
+          &.small {
+            font-size: $size-alpha;
           }
         }
         &+ul {
@@ -116,10 +122,10 @@
 }
 
 .spacer {
-  height: $height-alpha + 20px;
+  height: $height-alpha;
   width: 100%;
   position: relative;
   top: 0px;
   left: 0px;
-  margin-bottom: 50px;
+  margin-bottom: $gutter-gamma;
 }

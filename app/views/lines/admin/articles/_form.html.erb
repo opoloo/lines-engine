@@ -25,41 +25,20 @@
       </div>
     </div>
 
-    <div class="input-field">
-      <%= f.text_field :title, placeholder: "Title *" %>
+    <div class="input-field required">
+      <%= f.text_field :title, placeholder: "Title", class: 'title' %>
     </div>
 
     <div class="input-field">
-      <%= f.text_field :sub_title, placeholder: "Subtitle *" %>
+      <%= f.text_field :sub_title, placeholder: "Subtitle" %>
     </div>
 
     <div class="input-field">
-      <%= f.text_area :teaser, placeholder: "Teaser *", rows: 1 %>
+      <%= f.text_area :teaser, placeholder: "Teaser", rows: 1 %>
     </div>
 
-    <div class="input-field">
-      <%= f.text_area :content, placeholder: "Body copy *", rows: 1, data: {editor: "codemirror"} %>
-    </div>
-
-    <h2>Authors</h2>
-
-    <div class="input-field">
-      <% Lines::Author.all.each do |author| %>
-        <%= check_box_tag "article[author_ids][]", author.id, @article.author_ids.include?(author.id), id: dom_id(author) %>
-        <label for="<%= dom_id(author) %>"><%= author.name %></label>
-      <% end %>
-    </div>
-
-    <div class="input-field">
-      <%= f.autocomplete_field :tag_list, autocomplete_tag_name_admin_articles_path, :"data-delimiter" => ', ', placeholder: "Tags" %>
-    </div>
-
-    <div class="input-field">
-      <%= f.text_field :gplus_url, placeholder: "Google+ link" %>
-    </div>
-
-    <div class="input-field">
-      <%= f.text_field :published_at, value: (@article.published_at || Time.now).strftime("%Y-%m-%d"), 'data-behaviour' => 'datepicker', placeholder: "Published on" %>
+    <div class="input-field editor required">
+      <%= f.text_area :content, placeholder: "Body copy", rows: 1, data: {editor: "codemirror"} %>
     </div>
 
     <div class="input-field">
@@ -79,6 +58,30 @@
       </div>
       <% end %>
     </div>
+
+    <h2>Authors <span style="color: #c10020;">*</span></h2>
+
+    <div class="input-field">
+      <% Lines::Author.all.each do |author| %>
+        <%= check_box_tag "article[author_ids][]", author.id, @article.author_ids.include?(author.id), id: dom_id(author) %>
+        <label for="<%= dom_id(author) %>"><%= author.name %></label>
+      <% end %>
+    </div>
+
+    <h2>Additional Info</h2>
+
+    <div class="input-field">
+      <%= f.autocomplete_field :tag_list, autocomplete_tag_name_admin_articles_path, :"data-delimiter" => ', ', placeholder: "Tags" %>
+    </div>
+
+    <div class="input-field">
+      <%= f.text_field :gplus_url, placeholder: "Google+ link" %>
+    </div>
+
+    <div class="input-field required">
+      <%= f.text_field :published_at, value: (@article.published_at || Time.now).strftime("%Y-%m-%d"), 'data-behaviour' => 'datepicker', placeholder: "Published on" %>
+    </div>
+
 
 
     <!--

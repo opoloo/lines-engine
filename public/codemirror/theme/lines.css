@@ -6,11 +6,11 @@
 .cm-s-lines.CodeMirror {
   background: #fff;
   color: #000;
-  font-size: 1.222rem;
+  font-size: 1.063rem;
   border-bottom: 1px solid #9793a0;
   height: auto;
   padding: 0.5em;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   line-height: 1.6;
 }
 
@@ -24,7 +24,11 @@
 }
 
 .CodeMirror.cm-s-lines .CodeMirror-placeholder {
-  opacity: 0.2;
+  opacity: 0.4;
+}
+
+.CodeMirror.cm-s-lines .CodeMirror-lines {
+  padding: 0;
 }
 
 .CodeMirror.cm-s-lines .cm-header-1 {

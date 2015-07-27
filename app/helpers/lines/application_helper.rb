@@ -77,7 +77,7 @@ module Lines
                   <li>#{link_to("Authors", admin_authors_path)}</li>
                 </ul>
                 <ul>
-                  <li>Logged in as #{current_lines_user.email}</li>
+                  <li class='small'>Logged in as #{current_lines_user.email}</li>
                   <li>#{link_to("Logout", logout_path)}</li>
                 </ul>
                 <ul>
