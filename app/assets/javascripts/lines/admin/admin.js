@@ -37,6 +37,7 @@ jQuery.fn.extend({
   }
 });
 
+// Handle Attachment Upload
 attachment = {
   init: function() {
     if ($('#article_document').length > 0) {
@@ -68,6 +69,7 @@ attachment = {
   }
 };
 
+// Handle Hero Image Uploads / Selection / Preview
 hero_image = {
   init: function() {
     if ($('#article_hero_image').length > 0) {
@@ -81,7 +83,7 @@ hero_image = {
       e.preventDefault();
       $('.upload-overlay').fadeIn('fast');
     });
-    $(document).on('click', '.hero-background-overlay', function(e) {
+    $(document).on('click', '.hero-background-overlay, .upload-overlay-close', function(e) {
       e.preventDefault();
       $('.upload-overlay').fadeOut('fast');
     });
@@ -143,6 +145,7 @@ hero_image = {
   }
 };
 
+// Handle Copy Editor
 editor = function(el) {
   // Initialize CodeMirror Instance
   this.cm = CodeMirror.fromTextArea(el, {
@@ -194,7 +197,7 @@ editor = function(el) {
     });
 
     // Close images overlay
-    $(document).on('click', '.images-background-overlay', function() {
+    $(document).on('click', '.images-background-overlay, .images-overlay-close', function() {
       $('.images-overlay').fadeOut('fast');
     });
 

@@ -78,7 +78,7 @@ input, textarea {
 .content {
   width: 100%;
   max-width: 1000px;
-  padding: 0 20px;
+  padding: 0 20px $gutter-gamma 20px;
   margin: 0 auto;
 }
 
@@ -290,6 +290,26 @@ form {
       left: 0;
       right: 0;
       bottom: 2em;
+      .upload-overlay-close {
+        position: absolute;
+        z-index: 2;
+        width: 48px;
+        height: 48px;
+        text-align: center;
+        line-height: 44px;
+        border-radius: 50%;
+        background-color: #fff;
+        color: $color-gamma;
+        font-size: 2rem;
+        border: 2px solid $color-alpha;
+        cursor: pointer;
+        right: -24px;
+        top: -24px;
+        transition: all 0.3s ease;
+        &:hover {
+          color: $color-beta;
+        }
+      }
       .upload-overlay-inner {
         position: absolute;
         top: 0;
@@ -300,6 +320,9 @@ form {
         background-color: #fff;
         z-index: 1;
         padding: 2em;
+        h2 {
+          margin-top: 0;
+        }
         .btn-remove-hero {
           background-color: $color-gamma;
           padding: 0.5em 1em;
@@ -365,7 +388,7 @@ form {
         content: "*";
         position: absolute;
         color: $color-beta;
-        right: 0;
+        right: 0.5em;
         top: 0.5em;
       }
       &.editor {
@@ -397,6 +420,26 @@ form {
   left: 2em;
   right: 2em;
   bottom: 2em;
+  .images-overlay-close {
+    position: absolute;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    line-height: 44px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: $color-gamma;
+    font-size: 2rem;
+    border: 2px solid $color-alpha;
+    cursor: pointer;
+    right: -24px;
+    top: -24px;
+    transition: all 0.3s ease;
+    &:hover {
+      color: $color-beta;
+    }
+  }
   .images-overlay-inner {
     position: absolute;
     top: 0;
@@ -407,6 +450,9 @@ form {
     background-color: #fff;
     z-index: 1;
     padding: 2em;
+    h2 {
+      margin-top: 0;
+    }
     form {
       input {
         display: none;
@@ -491,7 +537,7 @@ form {
 
 .cm-movingwidget {
   position: absolute;
-  top: 0px;
+  top: 8.5px;
   right: 0;
   text-align: center;
   color: $color-gamma;

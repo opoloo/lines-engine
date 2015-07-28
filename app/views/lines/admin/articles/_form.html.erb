@@ -10,6 +10,7 @@
       <% end %>
       <%= f.hidden_field :hero_image_file %>
       <div class="upload-overlay">
+        <div class="upload-overlay-close icon-close"></div>
         <div class="upload-overlay-inner">
           <h2>Select Hero Image</h2>
           <div class="btn-remove-hero<%= " show" if @article.hero_image? || @article.short_hero_image %>">Remove hero image</div>

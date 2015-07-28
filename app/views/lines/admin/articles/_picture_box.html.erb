@@ -1,5 +1,8 @@
 <div class="images-overlay">
+  <div class="images-overlay-close icon-close"></div>
   <div class="images-overlay-inner">
+    <h2>Insert image</h2>
+
     <%= form_for [:admin, Lines::Picture.new], {enctype: "multipart/form-data"} do |f| %>
       <input id="picture_image" multiple="multiple" name="picture[image]" type="file" />
       <label for="picture_image">Upload an image</label>
