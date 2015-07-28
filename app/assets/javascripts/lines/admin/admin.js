@@ -37,6 +37,37 @@ jQuery.fn.extend({
   }
 });
 
+attachment = {
+  init: function() {
+    if ($('#article_document').length > 0) {
+      this.bind_events();
+    }
+  },
+
+  bind_events: function() {
+    $(document).on('click', '.btn-delete-attachment', function(e) {
+      e.preventDefault();
+      $(this).remove();
+      $('#article_remove_document').prop('checked', true);
+      $('.attachment-label').html('Attach Document');
+    });
+
+    document.getElementById('article_document').addEventListener('change', this.preview, false);
+  },
+
+  preview: function(e) {
+    var files = e.target.files;
+    if (files.length > 0) {
+      var f = files[0];
+      label = f.name + ' <span>(' + Math.round((f.size / 1000000) * 100) / 100 + 'MB)</span>';
+      $('.attachment-label').html(label);
+      $('.btn-delete-attachment').remove();
+      $('#article_remove_document').prop('checked', false);
+      $('.attachment-label').after('<span class="icon-delete btn-delete-attachment" title="Remove Attachment"></span>');
+    }
+  }
+};
+
 hero_image = {
   init: function() {
     if ($('#article_hero_image').length > 0) {
@@ -180,6 +211,9 @@ $(document).ready(function() {
   // New stuff lines 1.0
   // Handle hero image uploads
   hero_image.init();
+
+  // Handle document attachments
+  attachment.init();
 
   // Handle password input placeholders
   $.each($("input[type='password']"), function(key, val) {

@@ -43,20 +43,23 @@
 
     <div class="input-field">
       <div class="documents">
-        <%= f.label :document, "#{@article.document? ? @article.document.file.filename : 'Choose File' }", class: "choose-files" -%>
+        <%= f.label :document, "#{@article.document? ? @article.document.file.filename + ' <span>(' + number_to_human_size(File.size(@article.document.file.file)) + ')</span>' : 'Attach Document' }".html_safe, class: "attachment-label", title: "Change Attachment" -%>
+        <% if @article.document? %>
+          <span class="icon-delete btn-delete-attachment" title="Remove Attachment"></span>
+        <% end %>
         <%= f.file_field :document, class: "article-document-value" %>
         <div class="hidden">
           <%= f.hidden_field :document_cache %>
-          <%= (@article.hero_image.filename) if @article.document? %>
+          <%= f.check_box :remove_document %>
         </div>
       </div>
 
-      <% if @article.document? %>
-      <div class="checkbox">
+      <%# if @article.document? %>
+      <!-- <div class="checkbox">
         <%= f.check_box :remove_document %>
         <label for="article_remove_document" class="checkbox"><span></span>Delete document</label>
-      </div>
-      <% end %>
+      </div> -->
+      <%# end %>
     </div>
 
     <h2>Authors <span style="color: #c10020;">*</span></h2>

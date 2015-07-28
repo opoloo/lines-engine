@@ -174,6 +174,8 @@ form {
     border-bottom: 1px solid $color-gamma;
     padding: 0.5em;
     overflow: hidden;
+    font-family: $font-beta;
+    line-height: 1.6;
     &:focus {
       border-bottom-color: $color-beta;
     }
@@ -181,26 +183,21 @@ form {
       font-size: $size-gamma;
     }
   }
-  input[type="text"], textarea {
-    font-family: $font-beta;
-    line-height: 1.6;
-  }
   input[type="checkbox"] {
     display: none;
     &+label {
       position: relative;
       display: block;
-      width: 100%;
-      max-width: 400px;
       font-size: $size-beta;
-      margin-bottom: 1em;
+      margin-bottom: $gutter-beta;
+      padding-left: calc(#{$gutter-alpha} + 1.5em);
       cursor: pointer;
       &:after {
         content: "\e602"; // Blank checkbox
         font-family: 'iconfont';
         position: absolute;
         color: $color-gamma;
-        right: 0;
+        left: 0;
         top: 50%;
         font-size: 1.5em;
         transform: translateY(-50%);
@@ -213,6 +210,33 @@ form {
           color: $color-beta;
         }
       }
+    }
+  }
+  .documents {
+    label {
+      color: $color-beta;
+      text-transform: uppercase;
+      cursor: pointer;
+      span {
+        color: $color-gamma;
+      }
+    }
+    input {
+      display: none;
+    }
+    .btn-delete-attachment {
+      color: $color-gamma;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: inline-block;
+      margin-left: $gutter-beta;
+      font-size: $size-beta;
+      &:hover {
+        color: $color-beta;
+      }
+    }
+    .hidden {
+      display: none;
     }
   }
   .hero-upload {
