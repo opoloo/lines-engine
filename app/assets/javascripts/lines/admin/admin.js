@@ -266,12 +266,6 @@ $(document).ready(function() {
   //   return false;
   // });
 
-  // Close notification boxes below the navbar
-  $('.alert').click(function(e){
-    e.preventDefault();
-    $(this).slideUp();
-  });
-
   // Formatting Help functions
   // $('.btn-close-formatting').click(function() {
   //   $('#formatting_guide').fadeOut();

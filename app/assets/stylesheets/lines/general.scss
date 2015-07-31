@@ -76,3 +76,23 @@ header {
   max-width: $max-width;
   margin: 0 auto;
 }
+
+/*
+ * Alerts
+ */
+.alert {
+  background-color: rgba(#0a0, .5);
+  border: 1px solid #0a0;
+  padding: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+  position: relative;
+  font-family: $MerriweatherSans;
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: block;
+  }
+}

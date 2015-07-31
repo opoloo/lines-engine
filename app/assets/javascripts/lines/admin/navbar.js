@@ -6,4 +6,10 @@ $(document).ready(function() {
     $("#navbar .submenu").slideToggle(300);
   });
 
+  // Close notification boxes below the navbar
+  $('.alert').click(function(e){
+    e.preventDefault();
+    $(this).slideUp();
+  });
+
 });
