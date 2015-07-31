@@ -20,7 +20,11 @@ module Lines
       def block_code(code, language)
         sha = Digest::SHA1.hexdigest(code)
         Rails.cache.fetch ["code", language, sha].join('-') do
-          Pygments.highlight(code, lexer: language)
+          begin
+            Pygments.highlight(code, lexer: language)
+          rescue => e
+            "<div class=\"highlight\"><pre>#{code}</pre></div>"
+          end
         end
       end
     end
