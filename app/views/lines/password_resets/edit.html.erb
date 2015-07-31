@@ -1,6 +1,7 @@
-<h1>Reset password</h1>
-
-<%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+<%= render_navbar {} %>
+<div class="login">
+  <h2>Set new password password</h2>
+  
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <div class="alert errors">
@@ -13,14 +14,26 @@
       </ul>
     </div>
   <% end %>
+  
+  <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
 
-  <%= hidden_field_tag :email, @user.email %>
+    <%= hidden_field_tag :email, @user.email %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+    <div class="input-field">
+      <%= f.password_field :password, placeholder: 'Enter a new password' %>
+    </div>
+    
+    <div class="input-field">
+      <%= f.password_field :password_confirmation, placeholder: 'Confirm your passwword' %>    
+    </div>
 
-  <%= f.label :password_confirmation, "Confirmation" %>
-  <%= f.password_field :password_confirmation %>
+    <br style="clear: both;" />
+    <div class="submit">
+      <%= submit_tag "Set new password" %>
+      <a href="/">or go back to your blog.</a>
+    </div>
+  <% end %>
+  
+</div>
 
-  <%= f.submit "Update password" %>
-<% end %>
+

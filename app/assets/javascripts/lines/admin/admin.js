@@ -219,9 +219,9 @@ $(document).ready(function() {
   attachment.init();
 
   // Handle password input placeholders
-  $.each($("input[type='password']"), function(key, val) {
-    val.placeholder = "Password";
-  });
+  // $.each($("input[type='password']"), function(key, val) {
+  //   val.placeholder = "Password";
+  // });
 
   // Handle Codemirror
   $.each($("[data-editor='codemirror']"), function(key, val) {
