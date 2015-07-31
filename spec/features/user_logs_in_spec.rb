@@ -10,8 +10,8 @@ feature 'user logs in' do
   scenario 'with invalid email' do
     @_current_lines_user = FactoryGirl.create(:user)
     visit lines.login_path
-    fill_in "Email", with: "invalid_email"
-    fill_in "Password", with: 'sekret'
+    fill_in "email", with: "invalid_email"
+    fill_in "password", with: 'sekret'
     click_button "Login"
     page.should_not have_content "Logged in"
     page.should have_content('Login')
@@ -20,8 +20,8 @@ feature 'user logs in' do
   scenario 'with blank password' do
     @_current_lines_user = FactoryGirl.create(:user, email: 'valid@example.com')
     visit lines.login_path
-    fill_in "Email", with: "valid@example.com"
-    fill_in "Password", with: ''
+    fill_in "email", with: "valid@example.com"
+    fill_in "password", with: ''
     click_button "Login"
     page.should_not have_content "Logged in"
     page.should have_content('Login')

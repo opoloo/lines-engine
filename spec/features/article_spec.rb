@@ -13,7 +13,7 @@ def create_valid_article
   #expect(page).to have_content('New article')
   fill_in "Title", with: "How to Test"
   fill_in "Teaser", with: "Awesome teaser!"
-  fill_in "Content", with: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  fill_in "article_content", with: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -21,7 +21,7 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   check "Foo Bar"
   fill_in "Subtitle", with: "with RSpec and Rails"
-  fill_in "G+ URL", with: "http://gplus.de/opoloo"
+  fill_in "article_gplus_url", with: "http://gplus.de/opoloo"
   fill_in "Tags", with: "tag1, tag2"
   attach_file('article_hero_image', File.join(Lines::Engine.root, 'spec/support/images/example.jpg'))
   click_on "Save"
@@ -60,6 +60,6 @@ feature 'user publishes an article' do
   scenario 'with article is unpublished' do
     create_valid_article
     click_on "Publish"
-    page.find("table.published").should have_content "How to Test"
+    page.find("div.published").should have_content "How to Test"
   end
 end
