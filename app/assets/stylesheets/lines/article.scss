@@ -44,6 +44,14 @@
     }
   }
 
+  .hero_image {
+    text-align: center;
+    a, img {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
 
   .article_teaser {
     font-size: 1.375em;

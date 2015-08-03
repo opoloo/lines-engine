@@ -3,7 +3,7 @@
 <% cache article do %>
 
   <div class="hero_image">
-    <%= link_to article_path(article), { style: "background-image:url('#{article.image_url}')" } do %>
+    <%= link_to article_path(article) do %>
       <img src="<%= article.image_url %>" alt="<%= article.title %>" />
     <% end %>
   </div>
