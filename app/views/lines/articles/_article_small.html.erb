@@ -1,10 +1,12 @@
 <div class="article <%= article_class %>">
 <% cache "#{article_small}_small" do %>
-  <div class="hero_image">
-    <%= link_to article_path(article_small), { style: "background-image:url('#{article_small.image_url}')" } do %>
-      <img src="<%= article_small.image_url %>" alt="<%= article_small.title %>" />
-    <% end %>
-  </div>
+  <% unless article_small.image_url.blank? %>
+    <div class="hero_image">
+      <%= link_to article_path(article_small) do %>
+        <img src="<%= article_small.image_url %>" alt="<%= article_small.title %>" />
+      <% end %>
+    </div>
+  <% end %>
 
   <div class="article_header">
     <h1><%= link_to article_small.title, article_path(article_small) %></h1>
@@ -13,7 +15,7 @@
   </div>
 
   <div class="article_teaser">
-    <%= render_teaser(article_small) %>
+    <%= render_teaser(article_small).html_safe %>
     <div class="more-link">
       <%= link_to "Read full article", article_path(article_small) %>
     </div>
