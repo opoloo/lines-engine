@@ -119,7 +119,7 @@ module Lines
 
     # Returns HTML for code blocks formatted with Pygment
     def format_code(text)
-      simple_format( truncate( Sanitize.clean(markdown(text)).html_safe, length: 300, separator: ' ', omission: ' …' ))
+      simple_format( truncate( Sanitize.clean(markdown(text)).html_safe, escape: false, length: 300, separator: ' ', omission: ' …' ))
     end
 
   end
