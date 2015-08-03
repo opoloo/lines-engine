@@ -67,7 +67,7 @@ header {
     color: #000;
     &:hover { color: $orange; }
   }
-  #logo { float: left; text-transform: uppercase; }
+  #logo { float: left; text-transform: uppercase; font-weight: 700; }
   #lines { float: right; }
 }
 
