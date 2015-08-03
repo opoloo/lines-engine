@@ -13,7 +13,7 @@
   </div>
 
   <div class="article_teaser">
-    <%= render_teaser(article_small) %>
+    <%= render_teaser(article_small).html_safe %>
     <div class="more-link">
       <%= link_to "Read full article", article_path(article_small) %>
     </div>
