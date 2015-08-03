@@ -58,7 +58,7 @@ module Lines
     def display_article_authors(article, with_info=false)
       authors = article.authors.map{|author| author.gplus_profile.blank? ? author.name : link_to(author.name, author.gplus_profile)}.to_sentence(two_words_connector: " & ", last_word_connector: " & ").html_safe
       if with_info
-        authors += (" -- " + article.authors.map{|author| content_tag(:span, "#{author.description}", class: 'author_description') }.join(" -- ")).html_safe
+        authors += (" – " + article.authors.map{|author| content_tag(:span, "#{author.description}", class: 'author_description') }.join(" -- ")).html_safe
       end
       authors
     end
