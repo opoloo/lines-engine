@@ -18,7 +18,7 @@ module Lines
       # <tt>@articles_published</tt> to distinguish between published and
       # unpublished articles
       def index
-        @articles = Article.order('published ASC, featured DESC, published_at DESC').page(params[:page]).per(25)
+        @articles = Article.order('published DESC, created_at DESC').page(params[:page]).per(25)
         @articles_unpublished = @articles.select{|a| a.published == false}
         @articles_published = @articles.select{|a| a.published == true}
         respond_to do |format|
