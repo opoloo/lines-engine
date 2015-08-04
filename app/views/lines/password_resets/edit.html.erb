@@ -2,17 +2,19 @@
 <div class="login">
   <h2>Set new password password</h2>
 
-  <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> occured:</h2>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> occured:</h2>
 
-    <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-    <a href="#" class="close">x</a>
-  </div>
-    
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+      <a href="#" class="close">x</a>
+    </div>
+  <% end %>
+      
   <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
 
     <%= hidden_field_tag :email, @user.email %>

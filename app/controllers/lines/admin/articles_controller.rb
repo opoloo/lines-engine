@@ -103,7 +103,8 @@ module Lines
       def toggle_publish
         @article = Article.find(params[:article_id])
         @article.update_attributes(published: !@article.published)
-        redirect_to admin_articles_url, success: "“#{@article.title}” has been published."
+        flash[:success] = "“#{@article.title}” has been #{'un' if !@article.published}published."
+        redirect_to admin_articles_url
       end
 
       # Toggles featured state of an article

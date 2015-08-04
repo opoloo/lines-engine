@@ -17,7 +17,7 @@ module Lines
         @user.create_reset_digest
         @user.send_password_reset_email
       end
-      flash[:success] = "You should receive an email with instructions on how to reset the password, if this email-address exists."
+      flash[:success] = "Reset instructions have been send to this email-address, if the user is registered."
       redirect_to root_url
     end
 
