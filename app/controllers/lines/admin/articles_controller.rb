@@ -165,7 +165,7 @@ module Lines
         def article_params
           params.require(:article).permit(:content, :teaser, :hero_image, :short_hero_image, :published, :published_at, 
             :sub_title, :title, :pictures, :author_ids, :hero_image_cache, :tag_list, :gplus_url, :featured, 
-            :document, :document_cache, :hero_image_file, :remove_document, :pictures, :authors,
+            :document, :document_cache, :hero_image_file, :remove_document, :remove_hero_image, :pictures, :authors,
             pictures_attributes: [:id, :image, :name, :article_id], author_ids: [] )
         end
 
