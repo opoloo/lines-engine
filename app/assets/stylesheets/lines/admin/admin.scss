@@ -31,6 +31,9 @@ html, body {
 body {
   font-family: $font-alpha;
   color: $color-alpha;
+  &.no-scroll {
+    overflow-y: hidden;
+  }
 }
 
 a {
@@ -73,6 +76,23 @@ input, textarea {
 }
 
 /*
+ * Login
+ */
+.login {
+  a {
+    color: $color-alpha;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+    &:hover {
+      border-bottom-color: $color-beta;
+    }
+    &:active {
+      color: $color-beta;
+    }
+  }
+}
+
+/*
  * Content
  */
 .content {
@@ -89,7 +109,7 @@ input, textarea {
 .article, .author {
   border-bottom: 1px solid $color-gamma;
   &+.article, &+.author {
-    margin-top: 1em;
+    margin-top: $gutter-beta;
   }
   &.unpublished {
     .title {
@@ -121,10 +141,13 @@ input, textarea {
   }
   .actions {
     font-size: $size-beta;
-    margin-bottom: $gutter-beta;
+    margin-bottom: $gutter-alpha;
     a {
       color: $color-gamma;
       text-transform: uppercase;
+      padding: 0 0.5em;
+      height: 40px;
+      line-height: 40px;
     }
     .btn-edit {
       color: $color-beta;
@@ -141,7 +164,7 @@ input, textarea {
       color: $color-beta;
     }
     .btn-unpublish {
-      color: $color-alpha;
+      // color: $color-alpha;
     }
     .btn-delete {
       &:hover {
@@ -149,8 +172,11 @@ input, textarea {
       }
     }
     .left, .right {
-      a + a {
-        margin-left: $gutter-beta;
+      a {
+        float: left;
+      }
+      &:after {
+        @include clearfix();
       }
     }
     .left {
@@ -296,18 +322,17 @@ form {
         width: 48px;
         height: 48px;
         text-align: center;
-        line-height: 44px;
-        border-radius: 50%;
-        background-color: #fff;
-        color: $color-gamma;
+        line-height: 48px;
+        border-radius: 3px;
+        background-color: $color-beta;
+        color: #fff;
         font-size: 2rem;
-        border: 2px solid $color-alpha;
         cursor: pointer;
         right: -24px;
         top: -24px;
         transition: all 0.3s ease;
         &:hover {
-          color: $color-beta;
+          background-color: lighten($color-beta, 10%);
         }
       }
       .upload-overlay-inner {
@@ -389,6 +414,7 @@ form {
         position: absolute;
         color: $color-beta;
         right: 0.5em;
+        font-family: $font-beta;
         top: 0.5em;
       }
       &.editor {
@@ -405,6 +431,11 @@ form {
       padding: 10px;
       border-radius: 3px;
       cursor: pointer;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      &:hover {
+        background-color: lighten($color-beta, 10%);
+      }
     }
   }
 }
@@ -426,18 +457,17 @@ form {
     width: 48px;
     height: 48px;
     text-align: center;
-    line-height: 44px;
-    border-radius: 50%;
-    background-color: #fff;
-    color: $color-gamma;
+    line-height: 48px;
+    border-radius: 3px;
+    background-color: $color-beta;
+    color: #fff;
     font-size: 2rem;
-    border: 2px solid $color-alpha;
     cursor: pointer;
     right: -24px;
     top: -24px;
     transition: all 0.3s ease;
     &:hover {
-      color: $color-beta;
+      background-color: lighten($color-beta, 10%);
     }
   }
   .images-overlay-inner {
@@ -575,6 +605,30 @@ form {
 .cm-s-lines.CodeMirror {
   width: calc(100% - 68px);
 }
+
+/*
+ * Pagination
+ */
+#pagination {
+  font-family: $SourceSansPro;
+  font-weight: 600;
+  margin: 1.8em auto 0 auto;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  text-align: center;
+  a {
+    color: $grey;
+    &:hover { color: lighen($grey, 10%); }
+  }
+
+  .newer, .older, .page { margin: 0 1em;}
+  .current { color: $black; }
+}
+
+
+/*
+ * Alert Box
+ */
 
 #error_explanation {
   background-color: rgba(#f00, 0.2);

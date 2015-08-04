@@ -26,10 +26,13 @@
         border: 0 none;
         color: #fff;
         text-transform: uppercase;
-        padding: 0.25em .5em;
+        padding: 0.5em 1em;
         border-radius: 3px;
         cursor: pointer;
         transition: all 0.3s ease;
+        &:hover {
+          background-color: lighten($color-alpha, 10%);
+        }
         &.highlight {
           background-color: $color-beta;
           &:hover {
@@ -58,10 +61,11 @@
         li {
           font-size: $size-beta;
           &+li {
-            margin-top: 1em;
+            // margin-top: 1em;
           }
           &.small {
             font-size: $size-alpha;
+            padding: 0.5em 1em;
           }
         }
         &+ul {
@@ -72,6 +76,11 @@
         color: #fff;
         text-transform: uppercase;
         font-size: $size-beta;
+        display: block;
+        padding: 0.5em 1em;
+        &:hover {
+          background-color: lighten($color-alpha, 10%);
+        }
       }
     }
   }
@@ -89,8 +98,8 @@
     height: 2px;
     background-color: #fff;
     top: 50%;
-    right: 0;
-    transform: translate3d(0, -50%, 0);
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
     transition: all 0.3s ease;
     &:before, &:after {
       content: "";
@@ -109,7 +118,7 @@
   }
   &.active {
     .stripes {
-      transform: rotate(90deg);
+      transform: translate3d(-50%, -50%, 0) rotate(90deg);
       background-color: transparent;
       &:before {
         transform: translateY(0%) rotate(45deg);
@@ -118,6 +127,9 @@
         transform: translateY(0%) rotate(-45deg);
       }
     }
+  }
+  &:hover {
+    background-color: lighten($color-alpha, 10%);
   }
 }
 
@@ -128,4 +140,67 @@
   top: 0px;
   left: 0px;
   margin-bottom: $gutter-gamma;
+}
+
+/*
+ * Markdown Cheatsheet
+ */
+.cheatsheet {
+  position: fixed;
+  display: none;
+  max-width: calc(960px - 4em);
+  width: calc(100% - 4em);
+  z-index: 50;
+  margin: 0 auto;
+  top: calc(56px + 2em);
+  left: 0;
+  right: 0;
+  bottom: 2em;
+  overflow: visible;
+  font-family: $font-alpha;
+  .cheatsheet-close {
+    position: absolute;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    border-radius: 3px;
+    background-color: $color-beta;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    right: -24px;
+    top: -24px;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: lighten($color-beta, 10%);
+    }
+  }
+  .cheatsheet-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #fff;
+    z-index: 1;
+    padding: 2em;
+    h2 {
+      margin-top: 0;
+    }
+    p {
+      margin-bottom: $gutter-beta;
+    }
+  }
+  .cheatsheet-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color-alpha, 0.8);
+    z-index: 0;
+  }
 }

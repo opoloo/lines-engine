@@ -19,6 +19,10 @@
       max-width: 100%;
       margin: 3em auto;
     }
+    *:last-child {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
   }
 
   .article_header {
@@ -248,6 +252,7 @@
   .article_googleplus {
     text-align: center;
     font-family: $SourceSansPro;
+    margin-top: $gutter-gamma;
     a {
       margin: 0 auto;
       display: inline-block;
