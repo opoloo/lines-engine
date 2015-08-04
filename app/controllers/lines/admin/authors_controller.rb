@@ -31,7 +31,7 @@ module Lines
         @author = Author.new(author_params)
 
         if @author.save
-          redirect_to admin_author_path @author, notice: 'Author was successfully created.'
+          redirect_to admin_author_path @author
         else
           render action: "new"
         end
@@ -42,8 +42,7 @@ module Lines
         @author = Author.find(params[:id])
 
         if @author.update_attributes(author_params)
-          # redirect_to admin_author_path @author, notice: 'Author was successfully updated.'
-          redirect_to admin_authors_url, notice: 'Author was successfully updated.'
+          redirect_to admin_author_path(@author)
         else
           render action: "edit"
         end

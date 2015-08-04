@@ -1,6 +1,6 @@
 <%= render_navbar do %>
   <%= link_to 'New Author', new_admin_author_path, class: "btn btn-new-author highlight" %>
-  <%= link_to 'Visit Blog', lines.root_path, class: "btn btn-view-blog" %>
+  <%= link_to 'Dashboard', lines.admin_root_path, class: "btn btn-view-blog" %>
 <% end %>
 
 <% if defined?(@author) && @author.errors.any? %>
@@ -21,7 +21,7 @@
   <% @authors.each do |author| %>
     <div class="author">
       <div class="name">
-        <%= link_to author.name, edit_admin_author_path(author) %>
+        <%= link_to author.name, admin_author_path(author) %>
       </div>
       <div class="email">
         <%= link_to author.email, edit_admin_author_path(author) %>

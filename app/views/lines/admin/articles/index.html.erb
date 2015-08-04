@@ -23,13 +23,6 @@
             <%= link_to "", {controller: :articles, action: 'destroy', id: article.id}, data: { confirm: "Are you sure?" }, class: "btn-delete icon-delete", method: :delete %>
           </div>
         </div>
-          <!--<td class="preview"><%= link_to "", admin_article_path(article), title: "Preview article" %></td>
-          <td style="width: 2px;"></td>
-          <td class="edit"><%= link_to "", edit_admin_article_path(article), title: "Edit article" %></td>
-          <td class="title"><%= link_to truncate(article.title, length: 25, omission: "…"), edit_admin_article_path(article), title: article.title %></td>
-          <td class="subtitle"><%= link_to truncate(article.sub_title, length: 35, omission: "…"), edit_admin_article_path(article), title: article.sub_title %></td>
-          <td class="date"><%= article.published_at.to_date %></td>
-          <td class="delete"><%= button_to "", {controller: :articles, action: 'destroy', id: article.id }, method: :delete, confirm: "Are you sure?" %></td>-->
       </div>
     <% end %>
   </div>
@@ -58,18 +51,6 @@
           </div>
         </div>
       </div>
-      <!-- <table class="article published" cellspacing="0" cellpadding="0">
-        <tr>
-          <td class="preview"><%= link_to "", admin_article_path(article), title: "Preview article" %></td>
-          <td style="width: 2px;"></td>
-          <td class="edit"><%= link_to "", edit_admin_article_path(article), title: "Edit article" %></td>
-          <td class="title"><%= link_to truncate(article.title, length: 25, omission: "…"), edit_admin_article_path(article), title: article.title %></td>
-          <td class="subtitle"><%= link_to truncate(article.sub_title, length: 35, omission: "…"), edit_admin_article_path(article), title: article.sub_title %></td>
-          <td class="featured <%= article.featured ? '' : 'not' %>"><%= button_to "", admin_article_toggle_feature_path(article) %></td>
-          <td class="date"><%= article.published_at.to_date %></td>
-          <td class="delete"><%= button_to "", {controller: :articles, action: 'destroy', id: article.id }, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      </table> -->
     <% end %>
   </div>
 <% end %>

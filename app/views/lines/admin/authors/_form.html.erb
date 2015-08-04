@@ -7,13 +7,13 @@
       <%= f.text_field :name, placeholder: "Name *" %>
     </div>
     <div class="input-field">
+      <%= f.text_area :description, placeholder: "Description *", rows: 1 %>
+    </div>
+    <div class="input-field">
       <%= f.text_field :email, placeholder: "E-Mail *" %>
     </div>
     <div class="input-field">
-      <%= f.text_field :gplus_profile, placeholder: "Google+ Profile" %>
-    </div>
-    <div class="input-field">
-      <%= f.text_area :description, placeholder: "Description *", rows: 1 %>
+      <%= f.text_field :gplus_profile, placeholder: "Website" %>
     </div>
 
     <%= render_navbar do %>
