@@ -2,6 +2,7 @@
   <div class="new-article">
     <div class="hero-upload">
       <%= f.file_field :hero_image %>
+      <%= f.hidden_field :remove_hero_image %>
       <div class="btn-change-hero">Change</div>
       <% if @article.short_hero_image.present? %>
         <img src="<%= @article.short_hero_image %>" alt="" />

@@ -30,6 +30,7 @@
         border-radius: 3px;
         cursor: pointer;
         transition: all 0.3s ease;
+        font-family: $font-alpha;
         &:hover {
           background-color: lighten($color-alpha, 10%);
         }

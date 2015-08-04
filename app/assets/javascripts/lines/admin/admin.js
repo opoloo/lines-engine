@@ -107,7 +107,11 @@ hero_image = {
   },
 
   remove_hero: function() {
-    $('#article_short_hero_image, #article_hero_image_file, #article_hero_image').val('');
+    $('#article_short_hero_image, #article_hero_image_file').val('');
+    upload_field = $('#article_hero_image')
+    upload_field.wrap('<form>').closest('form').get(0).reset();
+    upload_field.unwrap();
+    $('#article_remove_hero_image').val('true');
     $('.hero-upload > img').remove();
     $('.upload-overlay').fadeOut('fast');
     $('body').removeClass('no-scroll');
@@ -116,6 +120,7 @@ hero_image = {
 
   preview_default: function(img) {
     $('#article_hero_image_file').val('');
+    $('#article_remove_hero_image').val('');
     $('#article_short_hero_image').val(img.attr('src'));
     if ($('.hero-upload > img').length) {
       $('.hero-upload > img').attr('src', img.attr('src'));
@@ -135,6 +140,7 @@ hero_image = {
       reader.onload = (function(theFile) {
         return function(e) {
           $('#article_short_hero_image').val('');
+          $('#article_remove_hero_image').val('');
           if ($('.hero-upload > img').length) {
             $('.hero-upload > img').attr('src', e.target.result);
           } else {

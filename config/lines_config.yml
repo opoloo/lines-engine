@@ -2,17 +2,17 @@
 ### GENERAL, HEADER & META TAGS ###
 ###################################
 
-logo: ""                                                      # Logo for your blog. Leave empty if you don't have one
-blog_name: "LINES"                                            # Give your blog a meanungful name.
-title: "LINES - A Blog about Ruby on Rails"                   # Give your blog a meaningful title. This is used for the HTML title attribute
-title_short: "LINES"                                          # Place the name of your blog or a short title here
-short_description: "A simple blog engine, build open source with Rails" # Short description for your blog
-meta_description: "Lines - A Ruby on Rails Developer's Blog"  # meta description tag
-meta_author: "John Doe"                                       # meta tag for author
-keywords: "Lines, Blog, Ruby on Rails"                        # your keywords
-og_logo: "https://www.opoloo.com/assets/logo.png"             # OpenGraph logo
-geo_position: "50.00; 8.27"                                   # Geo tags for position and address
-geo_address: "Opoloo, 55116 Mainz"                            # Geo tags for position and address
+logo: ""                                                                        # Logo for your blog. Leave empty if you don't have one
+blog_name: "LINES"                                                              # Give your blog a meanungful name.
+title: "LINES - A simple open source blog engine, built with Rails"             # Give your blog a meaningful title. This is used for the HTML title attribute
+title_short: "LINES"                                                            # Place the name of your blog or a short title here
+short_description: "A simple open source blog engine, built with Rails"         # Short description for your blog
+meta_description: "LINES - A simple open source blog engine, built with Rails"  # meta description tag
+meta_author: "John Doe"                                                         # meta tag for author
+keywords: "Lines, Blog, Ruby on Rails"                                          # your keywords
+og_logo: "https://www.opoloo.com/assets/logo.png"                               # OpenGraph logo
+geo_position: "50.00; 8.27"                                                     # Geo tags for position and address
+geo_address: "Opoloo, 55116 Mainz"                                              # Geo tags for position and address
 
 
 ##############
@@ -29,7 +29,7 @@ gplus_url: 'https://plus.google.com/+Opoloo'
 ### ATOM FEED ###
 #################
 
-feed_title: "LINES - A Blog about Ruby on Rails"           # give your feed a title
+feed_title: "LINES - A simple open source blog engine, built with Rails"      # give your feed a title
 feed_logo: "http://blog.opoloo.com/assets/opoloo_feed.png" # full URL to the feed logo. Aspect ratio should be 2:1
 feed_favicon: "http://blog.opoloo.com/favivon.ico"         # #full URL to the favicon. Aspect ratio should be 1:1
 
