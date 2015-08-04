@@ -55,21 +55,12 @@
         </div>
       </div>
 
-      <%# if @article.document? %>
-      <!-- <div class="checkbox">
-        <%= f.check_box :remove_document %>
-        <label for="article_remove_document" class="checkbox"><span></span>Delete document</label>
-      </div> -->
-      <%# end %>
     </div>
 
     <h2>Authors <span style="color: #c10020;">*</span></h2>
 
     <div class="input-field">
-      <% Lines::Author.all.each do |author| %>
-        <%= check_box_tag "article[author_ids][]", author.id, @article.author_ids.include?(author.id), id: dom_id(author) %>
-        <label for="<%= dom_id(author) %>"><%= author.name %></label>
-      <% end %>
+      <%= f.collection_check_boxes(:author_ids, Lines::Author.all, :id, :name) %>
     </div>
 
     <h2>Additional Info</h2>
@@ -85,37 +76,6 @@
     <div class="input-field required">
       <%= f.text_field :published_at, value: (@article.published_at || Time.now).strftime("%Y-%m-%d"), 'data-behaviour' => 'datepicker', placeholder: "Published on" %>
     </div>
-
-
-
-    <!--
-    <div class="row">
-      <div class="label">
-        <h3><label>Document</label></h3>
-      </div>
-      <div class="input">
-        <div class="documents">
-          <%= f.label :document, "#{@article.document? ? @article.document.file.filename : 'Choose File' }", class: "choose-files" -%>
-          <%= f.file_field :document, class: "article-document-value" %>
-          <div class="hidden">
-            <%= f.hidden_field :document_cache %>
-            <%= (@article.hero_image.filename) if @article.document? %>
-          </div>
-        </div>
-
-        <% if @article.document? %>
-        <div class="checkbox">
-          <%= f.check_box :remove_document %>
-          <label for="article_remove_document" class="checkbox"><span></span>Delete document</label>
-        </div>
-        <% end %>
-
-      </div>
-      <div class="additional">
-
-      </div>
-    </div>
-    -->
 
     <%= render_navbar do %>
       <%= f.submit "Save Article", class: "btn btn-save-publish highlight" %>
