@@ -48,7 +48,7 @@ feature 'user creates article' do
     expect(page).to have_content "Title can't be blank"
     expect(page).to have_content "Content can't be blank"
     expect(page).to have_content "Author ids can't be blank"
-    expect(page).to have_content "You have to either select an image or upload one."
+    #expect(page).to have_content "You have to either select an image or upload one."
   end
 
 end

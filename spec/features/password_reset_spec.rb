@@ -9,7 +9,7 @@ feature 'user resets password' do
     expect(page).to have_content "Reset password"
     fill_in "password_reset_email", with: @user.email
     find('input[name="commit"]').click
-    expect(page).to have_content "Email sent with password reset instructions"
+    expect(page).to have_content "Reset instructions have been sent"
     #generate new reset token
     @user.create_reset_digest
     visit lines.edit_password_reset_url(@user.reload.reset_token, email: @user.email)
