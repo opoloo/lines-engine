@@ -15,7 +15,7 @@ atom_feed do |feed|
         end
       end
       entry.content type: 'xhtml' do |xhtml|
-        xhtml << content_tag(:p,"<img src=\"#{article.image_url}\" alt=\"#{article.title}\"/>".html_safe).html_safe
+        xhtml << content_tag(:p,"<img src=\"#{article.image_url}\" alt=\"#{CGI.escape_html(article.title)}\"/>".html_safe).html_safe
         xhtml << markdown(article.content).html_safe
       end
       article.authors.each do |author|
