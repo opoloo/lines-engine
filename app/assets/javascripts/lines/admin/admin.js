@@ -82,10 +82,12 @@ hero_image = {
     $(document).on('click', '.btn-change-hero', function(e) {
       e.preventDefault();
       $('.upload-overlay').fadeIn('fast');
+      $('body').addClass('no-scroll');
     });
     $(document).on('click', '.hero-background-overlay, .upload-overlay-close', function(e) {
       e.preventDefault();
       $('.upload-overlay').fadeOut('fast');
+      $('body').removeClass('no-scroll');
     });
     $(document).on('click', '.hero-images img', function(e) {
       e.preventDefault();
@@ -108,6 +110,7 @@ hero_image = {
     $('#article_short_hero_image, #article_hero_image_file, #article_hero_image').val('');
     $('.hero-upload > img').remove();
     $('.upload-overlay').fadeOut('fast');
+    $('body').removeClass('no-scroll');
     $('.btn-remove-hero').removeClass('show')
   },
 
@@ -121,6 +124,7 @@ hero_image = {
     }
     $('.btn-remove-hero').addClass('show');
     $('.upload-overlay').fadeOut('fast');
+    $('body').removeClass('no-scroll');
   },
 
   preview: function(e) {
@@ -138,6 +142,7 @@ hero_image = {
           }
           $('.btn-remove-hero').addClass('show');
           $('.upload-overlay').fadeOut('fast');
+          $('body').removeClass('no-scroll');
         };
       })(f);
       reader.readAsDataURL(f);
@@ -194,18 +199,24 @@ editor = function(el) {
     // Moving Widget Click Event Listener
     obj.movingWidget.on('click', function() {
       $('.images-overlay').fadeIn('fast');
+      $('body').addClass('no-scroll');
     });
 
     // Close images overlay
     $(document).on('click', '.images-background-overlay, .images-overlay-close', function() {
       $('.images-overlay').fadeOut('fast');
+      $('body').removeClass('no-scroll');
     });
 
     // Insert image to content
     $(document).on('click', '.image-preview', function() {
       $('.images-overlay').fadeOut('fast');
+      $('body').removeClass('no-scroll');
       obj.cm.replaceSelection('\n![Alt Text](' + $(this).data('url') + ')\n');
       obj.cm.focus();
+    });
+    $(document).on('click', '.image-preview *', function(e) {
+      e.stopPropagation();
     });
   }();
 };
@@ -217,11 +228,6 @@ $(document).ready(function() {
 
   // Handle document attachments
   attachment.init();
-
-  // Handle password input placeholders
-  // $.each($("input[type='password']"), function(key, val) {
-  //   val.placeholder = "Password";
-  // });
 
   // Handle Codemirror
   $.each($("[data-editor='codemirror']"), function(key, val) {

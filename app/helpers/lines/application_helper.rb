@@ -85,8 +85,8 @@ module Lines
                   <li>#{link_to("Logout", logout_path)}</li>
                 </ul>
                 <ul>
-                  <li>#{link_to("Formatting Help", "#")}</li>
-                  <li>#{link_to("About Lines", "#")}</li>
+                  <li>#{link_to("Formatting Help", "#", class: "btn-cheatsheet")}</li>
+                  <li>#{link_to("About Lines", "http://lines.opoloo.com")}</li>
                 </ul>
               </div>
             </div>".html_safe

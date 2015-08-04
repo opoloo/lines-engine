@@ -31,7 +31,7 @@ strong, b { font-weight: bold; }
 
 ul li { list-style-position: outside; }
 
-hr { display: block; margin: 4rem auto !important; height: 2px; background-color: $grey; border:none; width: 50%;}
+hr { display: block; margin: $gutter-gamma auto !important; height: 2px; background-color: $grey; border:none; width: 50%;}
 
 .float-right { float:right; margin: 15px 0 5px 10px; }
 .clearfix {
@@ -67,7 +67,7 @@ header {
     color: #000;
     &:hover { color: $orange; }
   }
-  #logo { float: left; text-transform: uppercase; font-weight: 700; }
+  #logo { float: left; text-transform: uppercase; font-weight: 600; }
   #lines { float: right; }
 }
 

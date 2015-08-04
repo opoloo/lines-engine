@@ -1,0 +1,32 @@
+@font-face{
+    font-family: 'Fira Mono';
+    src: url('FiraMono-Medium.eot');
+    src: local('Fira Mono'),
+         url('FiraMono-Medium.eot') format('embedded-opentype'),
+         url('FiraMono-Medium.woff') format('woff'),
+         url('FiraMono-Medium.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Mono';
+    src: url('FiraMono-Regular.eot');
+    src: local('Fira Mono'),
+         url('FiraMono-Regular.eot') format('embedded-opentype'),
+         url('FiraMono-Regular.woff') format('woff'),
+         url('FiraMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Mono';
+    src: url('FiraMono-Bold.eot');
+    src: local('Fira Mono Bold'),
+         url('FiraMono-Bold.eot') format('embedded-opentype'),
+         url('FiraMono-Bold.woff') format('woff'),
+         url('FiraMono-Bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}

@@ -11,13 +11,14 @@
  * Imports
  */
 @import url(//fonts.googleapis.com/css?family=Merriweather+Sans:400,800);
+@import url(/fira-mono/fira-mono.css); /* 300, 400, 600 */
 @import url(/iconfont/iconfont.css);
 
 /*
  * Variables
  */
 $font-alpha: 'Merriweather Sans', sans-serif;
-$font-beta: 'Source Code Pro', monospace;
+$font-beta: 'Fira Mono', monospace;
 
 $color-alpha: #100719; // blue/black
 $color-beta: #c10020; // red
