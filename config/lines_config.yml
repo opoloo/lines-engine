@@ -4,8 +4,8 @@
 
 logo: ""                                                      # Logo for your blog. Leave empty if you don't have one
 blog_name: "Lines"                                            # Give your blog a meanungful name.
-title: "Lines Blog - A Blog about Ruby on Rails"              # Give your blog a meaningful title. This is used for the HTML title attribute
-title_short: "Lines Blog"                                     # Place the name of your blog or a short title here
+title: "Lines Blog"                                           # Give your blog a meaningful title. This is used for the HTML title attribute
+title_short: "Lines"                                          # Place the name of your blog or a short title here
 short_description: "A simple blog engine, build open source with Rails" # Short description for your blog
 meta_description: "Lines - A Ruby on Rails Developer's Blog"  # meta description tag
 meta_author: "John Doe"                                       # meta tag for author
