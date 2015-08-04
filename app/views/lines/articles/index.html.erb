@@ -4,7 +4,7 @@
 </div>
 
 <div id="articles">
-  <%= render partial: 'article', locals: { article: @first_article, article_counter: -1 } unless @first_article.nil? %>
+  <%= render partial: 'article_small', locals: { article_small: @first_article, article_class: 'first', article_counter: -1 } unless @first_article.nil? %>
   <%= render partial: 'article_collection', collection: @articles %>
 </div>
 

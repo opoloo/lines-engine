@@ -1,8 +1,17 @@
-<h1>Reset Password</h1>
+<%= render_navbar {} %>
+<div class="login">
+  <h2>Reset password</h2>
+  
+  <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+    <div class="input-field">
+      <%= f.email_field :email, placeholder: 'E-Mail' %>
+    </div>
+    <br style="clear: both;" />
+    <div class="submit">
+      <%= submit_tag "Send password reset link" %>
+      <a href="/">or go back to your blog.</a>
+    </div>
+  <% end %>
+</div>
 
-<%= form_for(:password_reset, url: password_resets_path) do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
 
-  <%= f.submit "Submit" %>
-<% end %>

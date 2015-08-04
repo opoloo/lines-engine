@@ -221,11 +221,6 @@ $(document).ready(function() {
   // Handle document attachments
   attachment.init();
 
-  // Handle password input placeholders
-  $.each($("input[type='password']"), function(key, val) {
-    val.placeholder = "Password";
-  });
-
   // Handle Codemirror
   $.each($("[data-editor='codemirror']"), function(key, val) {
     new editor(val);
@@ -268,12 +263,6 @@ $(document).ready(function() {
   //   $("html, body").animate({ scrollTop: 0 }, 600);
   //   return false;
   // });
-
-  // Close notification boxes below the navbar
-  $('.alert').click(function(e){
-    e.preventDefault();
-    $(this).slideUp();
-  });
 
   // Formatting Help functions
   // $('.btn-close-formatting').click(function() {

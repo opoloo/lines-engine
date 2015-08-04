@@ -37,13 +37,13 @@ module Lines
 
     # Validations
     validates :title, :content, :author_ids, :published_at, presence: true
-    validate :one_image_selected
+    #validate :one_image_selected
 
     # Callbacks
     after_save :update_used_images, :refresh_sitemap
 
     # Model Scopes
-    scope :published, -> { where(published: true).order("featured DESC, published_at DESC") }
+    scope :published, -> { where(published: true).order("featured DESC, published_at DESC, created_at DESC") }
 
     # Predifined hero images.
     # Images are loaded from the <tt>public/heroes</tt> directory

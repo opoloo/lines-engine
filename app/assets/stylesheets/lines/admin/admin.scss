@@ -169,7 +169,7 @@ input, textarea {
  * Forms
  */
 form {
-  input[type="text"], input[type="password"], textarea {
+  input[type="text"], input[type="password"], input[type="email"], textarea {
     width: 100%;
     border-bottom: 1px solid $color-gamma;
     padding: 0.5em;

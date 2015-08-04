@@ -28,14 +28,14 @@ ActiveRecord::Schema.define(version: 20150421093311) do
     t.string   "title",            limit: 255
     t.string   "sub_title",        limit: 255
     t.text     "content",          limit: 65535
-    t.boolean  "published",        limit: 1,     default: false
+    t.boolean  "published",                      default: false
     t.datetime "published_at"
     t.string   "hero_image",       limit: 255
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
     t.string   "slug",             limit: 255
     t.string   "gplus_url",        limit: 255
-    t.boolean  "featured",         limit: 1,     default: false
+    t.boolean  "featured",                       default: false
     t.string   "document",         limit: 255
     t.string   "short_hero_image", limit: 255
     t.text     "teaser",           limit: 65535

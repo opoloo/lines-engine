@@ -34,7 +34,7 @@ module Lines
 
     # Sends email with instructions how to reset password.
     def send_password_reset_email
-      UserMailer.password_reset(self).deliver
+      UserMailer.password_reset(self).deliver_now
     end
 
     # Returns true if the given token matches the digest.

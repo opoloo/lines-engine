@@ -1,4 +1,4 @@
-<%= render partial: 'article_small', locals: { article_small: article_collection, article_counter: article_collection_counter } %>
+<%= render partial: 'article_small', locals: { article_small: article_collection, article_class: 'small', article_counter: article_collection_counter } %>
 
 <% if (article_collection_counter % 2) != 0 %>
   <div class="breaker" style="clear:both;height:1px;line-height:1px">&nbsp;</div>

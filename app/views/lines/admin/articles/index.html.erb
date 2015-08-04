@@ -49,7 +49,7 @@
         <div class="actions">
           <div class="left">
             <% feature_class = article.featured ? 'btn-unfeature icon-unkeep' : 'btn-feature icon-keep' %>
-            <%= link_to "", admin_article_toggle_feature_path(article), class: "#{feature_class}" %>
+            <%= link_to "", admin_article_toggle_feature_path(article), method: :post, class: "#{feature_class}" %>
             <%= link_to "Unpublish", admin_article_toggle_publish_path(article), method: :post, class: "btn-unpublish" %>
           </div>
           <div class="right">
