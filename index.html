@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>LINES — a simple blog engine build on Rails by Opoloo</title>
+  <meta charset="UTF-8" />
+  <!--meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" /-->
+  <meta name="viewport" content="width = device-width, initial-scale = 1.0, user-scalable = no">
+  <link rel="icon" href="assets/images/favicon.ico" type="image/ico" />
+  <link rel="stylesheet" media="all" href="assets/stylesheets/style.css" />
+</head>
+<body>
+
+  <nav id="main_nav">
+    <div class="nav_left">
+      <a href="/"><img src="assets/images/lines_logo.svg" alt="LINES" /></a>
+    </div>
+    <div class="nav_right">
+      <p>
+        build by <a href="http://opoloo.com/">Opoloo</a>
+      </p>
+    </div>
+  </nav>
+
+  <div id="content">
+    <h1>Better responsive publishing for Ruby on Rails 3.2 &amp; 4.0</h1>
+    <p class="subheadline">A simple, open source blog engine</p>
+    <p>
+      LINES is an open source blogging platform designed for mobile publishing needs. You work in a clear, responsive backend where you write with a distraction-free markdown editor, and where publishing your articles is dead simple. Readers enjoy your writing, not least because it’s perfectly readable on all screens.
+    </p>
+    <ul class="buttons">
+      <li><a href="#" class="primary">See Lines in action</a></li>
+      <li><a href="#" class="secondary">or fork Lines on Github</a></li>
+    </ul>
+
+    <hr>
+
+    <h2>Installation</h2>
+    <p>
+      LINES is an OSS project: the code and all the sources are on GitHub and we have a gem version ready to install for you at RubyGems. Have a look at the <a href="#">readme</a>, <a href="#">fork LINES</a>, or <a href="#">install the gem</a>.
+    </p>
+    <h3>1. Add the gem to your Gemfile</h3>
+    <pre>gem ‚lines-engine‘</pre>
+    <h3>2. Run ‚bundle‘</h3>
+    <pre>bundle</pre>
+    <h3>3. There is an installation task that will guide you through the rest of the installation process. Just switch to your application directory and run</h3>
+    <pre>rails g lines:install</pre>
+    <h3>4. Adjust settings for Lines in the newly generated config/</h3>
+    <pre>lines_config.yml file.</pre>
+    <h3>5. Run database migrations:</h3>
+    <pre>rake db:migrate</pre>
+
+    <hr>
+
+    <div class="gallery">
+      <ul>
+        <li><a href="#"><img src="assets/images/feature_01.png" alt="Preview of Lines markdown editor" /></a>Writing and editing are complex. Our sophisticated <em>markdown editor</em> helps you think well while keeping your mind on the text.</li>
+        <li><a href="#"><img src="assets/images/feature_02.png" alt="Preview of Lines markdown editor" /></a>Organize, preview, and <em>publish your articles from anywhere</em>, no matter if you’re on the road with a smartphone or on the big screen.</li>
+        <li><a href="#"><img src="assets/images/feature_03.png" alt="Preview of Lines markdown editor" /></a>Shaping text so it reads well is a science, especially when it must be <em>optimized for any screen size</em>. We studied this so you don’t have to.</li>
+      </ul>
+    </div>
+    <h2>More Features</h2>
+    <ul class="normal_list">
+      <li>Login- &amp; Password Management</li>
+      <li>Multiple Author Management</li>
+      <li>RSS Feed integration</li>
+      <li>Feature Articles</li>
+      <li>Article Preview</li>
+      <li>Image Upload &amp; Processing</li>
+      <li>Article Teasers</li>
+      <li>GFM (GitHub Flavored Markdown)</li>
+      <li>Tags</li>
+      <li>Social Media Integration</li>
+      <li>Include Documents for Download</li>
+      <li>Code Highlighting</li>
+    </ul>
+
+    <hr>
+
+    <h2>Please contribute, it’s open source</h2>
+    <p>
+      We built LINES as a plugin because we couldn’t find a system that served our responsive publishing requirements for Rails.
+    </p>
+    <p>
+      Customizing LINES to your needs and preferences shouldn’t be a problem for you as a developer, because we adhered closely to best practices and code conventions.
+    </p>
+    <p>
+      The <a href="#">complete documentation is on GitHub</a>. We’re constantly working on the blog platform, maintaining it and keeping it up-to-date it on GitHub.
+    </p>
+    <p>
+      LINES is an open source project for a reason. It needs people, work, and time to mature. You can help make this project great by giving us feedback, telling us about your concerns, and voicing questions.
+      Contact our developers: <a href="#">Max Boll</a> &amp; <a href="#">Jochen Greif</a>
+    </p>
+  </div>
+
+  <footer>
+    <div id="main_footer">
+      <div class="float_left">
+        <p class="contact">
+          Contact: <script id="mail_to-gow4hcbc">eval(decodeURIComponent('%76%61%72%20%73%63%72%69%70%74%20%3d%20%64%6f%63%75%6d%65%6e%74%2e%67%65%74%45%6c%65%6d%65%6e%74%42%79%49%64%28%27%6d%61%69%6c%5f%74%6f%2d%67%6f%77%34%68%63%62%63%27%29%3b%76%61%72%20%61%20%3d%20%64%6f%63%75%6d%65%6e%74%2e%63%72%65%61%74%65%45%6c%65%6d%65%6e%74%28%27%61%27%29%3b%61%2e%73%65%74%41%74%74%72%69%62%75%74%65%28%27%68%72%65%66%27%2c%20%27%6d%61%69%6c%74%6f%3a%69%6e%66%6f%40%6f%70%6f%6c%6f%6f%2e%63%6f%6d%27%29%3b%61%2e%61%70%70%65%6e%64%43%68%69%6c%64%28%64%6f%63%75%6d%65%6e%74%2e%63%72%65%61%74%65%54%65%78%74%4e%6f%64%65%28%27%69%6e%66%6f%40%6f%70%6f%6c%6f%6f%2e%63%6f%6d%27%29%29%3b%73%63%72%69%70%74%2e%70%61%72%65%6e%74%4e%6f%64%65%2e%69%6e%73%65%72%74%42%65%66%6f%72%65%28%61%2c%73%63%72%69%70%74%29%3b'))</script>
+        </p>
+        <ul class="social_links">
+          <li>oder bei</li>
+          <li><a href="http://plus.google.com/+Opoloo" class="icon-gplus"></a></li>
+          <li><a href="http://twitter.com/Opoloo" class="icon-twitter"></a></li>
+          <li><a href="http://github.com/opoloo" class="icon-github"></a></li>
+          <li><a href="http://dribbble.com/opoloo" class="icon-dribbble"></a></li>
+        </ul>
+      </div>
+      <div class="float_right">
+        <p>
+          &copy; 2015 by opoloo<br>
+          <a href="http://www.opoloo.com/en/imprint">Imprint</a><br>
+          We work from Mainz, Germany
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
