@@ -21,7 +21,7 @@ module Lines
     attr_accessor :reset_token
 
     # Validations
-    validates :password, length: { minimum: 6 }, if: :validate_password?
+    validates :password, length: { minimum: 8 }, if: :validate_password?
     validates :password, presence: true, on: :create
     validates :email, uniqueness: true, presence: true
 
