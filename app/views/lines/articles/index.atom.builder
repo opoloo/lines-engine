@@ -18,15 +18,16 @@ atom_feed do |feed|
         xhtml << content_tag(:p,"<img src=\"#{article.image_url}\" alt=\"#{article.title}\"/>".html_safe).html_safe
         xhtml << markdown(article.content).html_safe
       end
-      entry.author do |author|
-        article.authors.each do |a|
-          author.name a.name
-        end
+      article.authors.each do |author|
+        entry.author do |a|
+          a.name author.name
+
+        end        
       end
-      entry.contributor do |author|
-        article.authors.each do |a|
-          author.name a.name
-        end
+      article.authors.each do |author|
+        entry.contributor do |a|
+          a.name author.name
+        end        
       end
     end
   end
