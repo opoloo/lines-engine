@@ -12,7 +12,7 @@
     </ul>
     <a href="#" class="close">x</a>
   </div>
-  
+    
   <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
 
     <%= hidden_field_tag :email, @user.email %>
