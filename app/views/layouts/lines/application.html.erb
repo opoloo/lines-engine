@@ -13,6 +13,7 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <%= yield :head %>
+  <%= auto_discovery_link_tag(:atom, articles_url(format: "atom"), {title: CONFIG[:feed_title]}) %>
   <%= stylesheet_link_tag    "lines/application", media: "all" %>
   <%= javascript_include_tag "lines/application" %>
   <%= csrf_meta_tags %>
