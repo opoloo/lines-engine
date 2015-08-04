@@ -42,7 +42,8 @@ module Lines
         @author = Author.find(params[:id])
 
         if @author.update_attributes(author_params)
-          redirect_to admin_author_path @author, notice: 'Author was successfully updated.'
+          # redirect_to admin_author_path @author, notice: 'Author was successfully updated.'
+          redirect_to admin_authors_url, notice: 'Author was successfully updated.'
         else
           render action: "edit"
         end

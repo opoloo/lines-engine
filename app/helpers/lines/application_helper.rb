@@ -77,7 +77,7 @@ module Lines
             "<div class='submenu'>
               <div class='submenu-inner'>
                 <ul>
-                  <li>#{link_to("All Articles", admin_articles_path)}</li>
+                  <li>#{link_to("Dashboard", admin_articles_path)}</li>
                   <li>#{link_to("Authors", admin_authors_path)}</li>
                 </ul>
                 <ul>

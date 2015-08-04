@@ -7,7 +7,12 @@
 
 html, body { font-size: 16px }
 
-body { height: 100%; background-color: #fff; }
+body {
+  height: 100%; background-color: #fff;
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
 
 img, div { border: 0; display: block; }
 
@@ -32,6 +37,11 @@ strong, b { font-weight: bold; }
 ul li { list-style-position: outside; }
 
 hr { display: block; margin: $gutter-gamma auto !important; height: 2px; background-color: $grey; border:none; width: 50%;}
+
+input, textarea, input[type="submit"] {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
 
 .float-right { float:right; margin: 15px 0 5px 10px; }
 .clearfix {

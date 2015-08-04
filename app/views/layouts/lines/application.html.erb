@@ -19,7 +19,10 @@
 </head>
 <body>
 <% if current_lines_user %>
-  <%= render_navbar { "" } %>
+  <%= render_navbar do %>
+    <%= link_to 'New Article', new_admin_article_path, class: "btn btn-new-article highlight" %>  
+    <%= link_to 'Dashboard', admin_articles_path, class: "btn btn-view-blog" %>
+  <% end %>
   <div class="spacer"></div>
 <% end %>
 

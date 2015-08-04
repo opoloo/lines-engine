@@ -157,7 +157,7 @@
   right: 0;
   bottom: 2em;
   overflow: visible;
-  font-family: $font-alpha;
+  font-family: $font-beta;
   .cheatsheet-close {
     position: absolute;
     z-index: 2;
@@ -187,11 +187,28 @@
     background-color: #fff;
     z-index: 1;
     padding: 2em;
+    font-size: $size-beta;
     h2 {
       margin-top: 0;
+      font-family: $font-alpha;
+      font-size: $size-beta;
+      color: #9793a0;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 22px;
     }
     p {
       margin-bottom: $gutter-beta;
+    }
+    a {
+      border-bottom: 1px solid $color-gamma;
+      &:hover {
+        border-bottom-color: $color-beta;
+        color: $color-beta;
+      }
+    }
+    .formatting {
+      color: rgba(#000, 0.3);
     }
   }
   .cheatsheet-overlay {

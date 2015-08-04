@@ -223,16 +223,20 @@
 
 
     .article_document {
+      text-align: center;
       a {
-        display: block;
-        text-align: center;
-        background-color: $black;
+        display: inline-block;
+        padding: 0.5em 1em !important;
+        border-radius: 3px;
+        background-color: $color-beta;
         color: $white;
         font-family: $SourceSansPro;
-        font-size: 1.25rem;
-        font-weight: 600;
-        line-height: 3rem;
-        &:hover { background-color: $red; }
+        text-transform: uppercase;
+        border: 0;
+        margin: 0;
+        &:hover {
+          background-color: lighten($color-beta, 10%);
+        }
       }
     }
   }
