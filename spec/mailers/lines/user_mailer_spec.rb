@@ -11,7 +11,7 @@ module Lines
       end
 
       it "renders the headers" do
-        mail.subject.should eq("Password reset")
+        mail.subject.should eq("Forgot your LINES password?")
         mail.to.should eq([user.email])
       end
 
