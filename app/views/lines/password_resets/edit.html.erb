@@ -1,19 +1,17 @@
 <%= render_navbar {} %>
 <div class="login">
   <h2>Set new password password</h2>
-  
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <div class="alert errors">
-        The form contains <%= pluralize(@user.errors.count, "error") %>.
-      </div>
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> occured:</h2>
+
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+    <a href="#" class="close">x</a>
+  </div>
   
   <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
 

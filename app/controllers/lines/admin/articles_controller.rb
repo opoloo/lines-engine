@@ -56,7 +56,7 @@ module Lines
 
         respond_to do |format|
           if @article.save
-            format.html { redirect_to admin_article_path(@article), notice: 'Article was successfully created.' }
+            format.html { redirect_to admin_article_path(@article) }
           else
             format.html { render action: "new" }
           end
@@ -82,7 +82,7 @@ module Lines
         respond_to do |format|
           if @article.update_attributes(article_params)
             ActionController::Base.new.expire_fragment(@article)
-            format.html { redirect_to admin_article_path(@article), notice: 'Article was successfully updated.' }
+            format.html { redirect_to admin_article_path(@article) }
           else
             format.html { render action: "edit" }
           end
@@ -103,7 +103,7 @@ module Lines
       def toggle_publish
         @article = Article.find(params[:article_id])
         @article.update_attributes(published: !@article.published)
-        redirect_to admin_articles_url, notice: 'Article updated!'
+        redirect_to admin_articles_url, success: "“#{@article.title}” has been published."
       end
 
       # Toggles featured state of an article
@@ -116,7 +116,7 @@ module Lines
           end
         end
         @article.update_attributes(featured: !@article.featured)
-        redirect_to admin_articles_url, notice: 'Article updated!'
+        redirect_to admin_articles_url
       end
 
       # Handles base64 encoded file uploads

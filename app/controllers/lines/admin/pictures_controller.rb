@@ -15,7 +15,7 @@ module Lines
 
         respond_to do |format|
           if @picture.update_attributes(picture_params[:picture])
-            format.html { redirect_to @picture, notice: 'Picture was successfully updated.' }
+            format.html { redirect_to @picture }
           else
             format.html { render action: "edit" }
           end
