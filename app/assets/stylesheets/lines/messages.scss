@@ -1,0 +1,28 @@
+/*
+ * Alerts and messages
+ */
+#error_explanation, .alert {
+  background-color: $darkred;
+  border: 0 none;
+  color: $white;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  font-family: $MerriweatherSans;
+  &.alert-success { background-color: $green; }
+  &.alert-notice { background-color: $grey; }
+  &.alert-error { }
+  &.alert-warning { }
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: block;
+    color: $white
+  }
+  h2 { color: $white; margin-top: 0; text-transform: none; }
+  ul { padding-left: 1em; }
+}
+
+
