@@ -10,7 +10,7 @@
   <meta name="geo.position" CONTENT="<%= CONFIG[:geo_position] %>">
   <meta name="geo.placename" CONTENT="<%= CONFIG[:geo_address] %>">
   <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <%= favicon_link_tag %>
   <%= yield :head %>
   <%= auto_discovery_link_tag(:atom, articles_url(format: "atom"), {title: CONFIG[:feed_title]}) %>
   <%= stylesheet_link_tag    "lines/application", media: "all" %>
