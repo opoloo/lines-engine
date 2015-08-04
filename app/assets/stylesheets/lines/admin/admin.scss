@@ -481,6 +481,26 @@ form {
         background-size: cover;
         cursor: pointer;
         float: left;
+        form {
+          position: absolute;
+          top: 0;
+          right: 0;
+          button {
+            display: block;
+            width: 48px;
+            height: 48px;
+            text-align: center;
+            line-height: 48px;
+            color: #fff;
+            background-color: rgba(#000, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.25rem;
+            &:hover {
+              background-color: rgba(#000, 0.5);
+            }
+          }
+        }
         &:nth-of-type(odd) {
           margin-right: 0.5em;
         }

@@ -26,10 +26,10 @@
         border: 0 none;
         color: #fff;
         text-transform: uppercase;
-        padding: 10px;
+        padding: 0.25em .5em;
         border-radius: 3px;
         cursor: pointer;
-        
+        transition: all 0.3s ease;
         &.highlight {
           background-color: $color-beta;
           &:hover {

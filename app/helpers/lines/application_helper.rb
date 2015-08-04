@@ -82,7 +82,7 @@ module Lines
                 </ul>
                 <ul>
                   <li>#{link_to("Formatting Help", "#")}</li>
-                  <li>#{link_to("About Lines", "#")}</li>
+                  <li>#{link_to("About Lines", "http://lines.opoloo.com")}</li>
                 </ul>
               </div>
             </div>".html_safe

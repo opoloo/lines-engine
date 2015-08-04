@@ -207,6 +207,9 @@ editor = function(el) {
       obj.cm.replaceSelection('\n![Alt Text](' + $(this).data('url') + ')\n');
       obj.cm.focus();
     });
+    $(document).on('click', '.image-preview *', function(e) {
+      e.stopPropagation();
+    });
   }();
 };
 

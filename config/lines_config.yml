@@ -3,9 +3,9 @@
 ###################################
 
 logo: ""                                                      # Logo for your blog. Leave empty if you don't have one
-blog_name: "Lines"                                            # Give your blog a meanungful name.
-title: "Lines Blog - A Blog about Ruby on Rails"              # Give your blog a meaningful title. This is used for the HTML title attribute
-title_short: "Lines Blog"                                     # Place the name of your blog or a short title here
+blog_name: "LINES"                                            # Give your blog a meanungful name.
+title: "LINES - A Blog about Ruby on Rails"                   # Give your blog a meaningful title. This is used for the HTML title attribute
+title_short: "LINES"                                          # Place the name of your blog or a short title here
 short_description: "A simple blog engine, build open source with Rails" # Short description for your blog
 meta_description: "Lines - A Ruby on Rails Developer's Blog"  # meta description tag
 meta_author: "John Doe"                                       # meta tag for author
@@ -29,7 +29,7 @@ gplus_url: 'https://plus.google.com/+Opoloo'
 ### ATOM FEED ###
 #################
 
-feed_title: "Lines Blog - A Blog about Ruby on Rails"      # give your feed a title
+feed_title: "LINES - A Blog about Ruby on Rails"      # give your feed a title
 feed_logo: "http://blog.opoloo.com/assets/opoloo_feed.png" # full URL to the feed logo. Aspect ratio should be 2:1
 feed_favicon: "http://blog.opoloo.com/favivon.ico"         # #full URL to the favicon. Aspect ratio should be 1:1
 
