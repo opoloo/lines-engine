@@ -1,11 +1,13 @@
 # Changelog
 
-## development @master branch
+## @master branch
 
-- new default hero images! NOTE: The old default images have been removed ("001_dark.jpg", "001.jpg", "002_dark.jpg", "002.jpg", "003_dark.jpg", "003.jpg"). If you want to further use them, just copy them over to your *public/hero*directory and add them to the *config/lines_config.yml*
-- new config variable *blog_name*. NOTE: Adjust your current *lines_config.yml* and add the *blog_name* option.
+- New backend: the entire backend has been restyled and made responsive
+- New default hero images! NOTE: The old default images have been removed ("001_dark.jpg", "001.jpg", "002_dark.jpg", "002.jpg", "003_dark.jpg", "003.jpg"). If you want to further use them, just copy them over to your *public/hero*directory and add them to the *config/lines_config.yml*
+- New config variable *blog_name*. NOTE: Adjust your current *lines_config.yml* and add the *blog_name* option.
 - *article#show* action now list 2 related articles at the bottom
-- lots of style adjustments
+- Lots of style adjustments
+- Lots of bug fixes
 
 ## 0.6.1, 0.6.2
 
