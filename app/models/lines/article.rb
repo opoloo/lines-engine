@@ -63,7 +63,12 @@ module Lines
 
     # Returns the url for the hero image
     def image_url
-      self.hero_image? ? self.hero_image.url : self.short_hero_image
+      image = self.hero_image? ? self.hero_image.url : self.short_hero_image
+    end
+
+    # Returns the absolute url for the hero image
+    def absolute_image_url
+      absolute_url_for(image_url)
     end
 
     # Returns value of subtitle
@@ -111,6 +116,11 @@ module Lines
     # Returns false if no hero image is selected or uploaded
     def no_image_selected
       !hero_image.present? && !short_hero_image.present?
+    end
+
+    # Get absolute URL (with host and port) for an image
+    def absolute_url_for(image)
+      image = "//#{CONFIG[Rails.env.to_sym]['host']}#{image}"
     end
 
   end
