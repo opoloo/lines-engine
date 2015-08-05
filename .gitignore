@@ -7,5 +7,6 @@ spec/dummy/log/*.log
 spec/dummy/tmp
 spec/dummy/public/assets
 /lines-engine-*.gem
+node_modules/
 .DS_Store
 
