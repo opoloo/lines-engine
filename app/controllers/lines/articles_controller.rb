@@ -34,7 +34,7 @@ module Lines
                         keywords: KEYWORDS,
                         open_graph: { title: SITE_TITLE,
                                         type: 'website',
-                                        url: 'meta_og_url',
+                                        url: articles_url,
                                         site_name: SITE_TITLE,
                                         image: CONFIG[:og_logo]
                                       }
