@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lines-engine (0.6.2)
+    lines-engine (0.9.0)
       acts-as-taggable-on (~> 3.5, >= 3.5)
       bcrypt (~> 3.1.0, >= 3.1.0)
       bcrypt-ruby (>= 3.0.0, <= 4)
@@ -69,7 +69,7 @@ GEM
     acts-as-taggable-on (3.5.0)
       activerecord (>= 3.2, < 5)
     addressable (2.3.8)
-    arel (6.0.2)
+    arel (6.0.3)
     autoprefixer-rails (5.2.1)
       execjs
       json
@@ -116,7 +116,7 @@ GEM
     formatador (0.2.5)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
-    globalid (0.3.5)
+    globalid (0.3.6)
       activesupport (>= 4.1.0)
     guard (2.12.8)
       formatador (>= 0.2.4)
@@ -294,3 +294,6 @@ DEPENDENCIES
   rspec-rails
   thor
   yard
+
+BUNDLED WITH
+   1.10.6

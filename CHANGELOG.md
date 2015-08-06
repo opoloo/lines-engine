@@ -1,6 +1,6 @@
 # Changelog
 
-## @master branch
+## 0.9.0
 
 - New backend: the entire backend has been restyled and made responsive
 - New default hero images! NOTE: The old default images have been removed ("001_dark.jpg", "001.jpg", "002_dark.jpg", "002.jpg", "003_dark.jpg", "003.jpg"). If you want to further use them, just copy them over to your *public/hero*directory and add them to the *config/lines_config.yml*
