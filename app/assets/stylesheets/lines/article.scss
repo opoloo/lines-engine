@@ -168,6 +168,20 @@
       }
     }
 
+    svg {
+      margin: 0 auto;
+      display: block;
+      max-width: 100%;
+    }
+
+    iframe {
+      width: auto;
+      max-width: 100%;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     blockquote {
       font-family: $Merriweather;
       font-style: italic;

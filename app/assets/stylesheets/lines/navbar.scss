@@ -203,6 +203,7 @@
     }
     a {
       border-bottom: 1px solid $color-gamma;
+      color: $color-alpha;
       &:hover {
         border-bottom-color: $color-beta;
         color: $color-beta;
