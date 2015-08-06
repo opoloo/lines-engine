@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Lines::VERSION
   s.authors     = ["Opoloo GbR"]
   s.email       = ["info@opoloo.de"]
-  s.homepage    = "http://github.com/opoloo/lines-engine"
+  s.homepage    = "http://lines.opoloo.com"
   s.summary     = "LINES is the open source blog platform you have been waiting for"
   s.description = "LINES lets you manage your posts in a clear, consistent frontend. The gracefully slender editor keeps your editing simple and lets you just splash around in your ideas. Once you're happy, just hit publish and see your text, code examples, images, and links shine."
   s.license     = "LGPL3"
