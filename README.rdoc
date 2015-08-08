@@ -8,7 +8,7 @@ Lines is a customizable blog framework for rails developers. It aims at making p
 
 Lines is a very slim, feature-constrained, young publishing platform. It is not wordpress or blogger and it doesn't aspire to be. It needs brains, work, and time to mature. It is a framework for tech-savvies who care about their content with the freedom of full OSS access.
 
-To get an idea of the appearance, see the screenshots below, visit the {Lines Website}[http://lines.opoloo.com], or see it in action at link: http://blog.opoloo.com
+To get an idea of the appearance, see the screenshots below, visit the {Lines Website}[http://lines.opoloo.com], or see it in action at link: https://www.opoloo.com/blog
 
 
 == Features & Specifications
@@ -19,8 +19,8 @@ To get an idea of the appearance, see the screenshots below, visit the {Lines We
 - extendable & customizable
 - full focus on content
 
-=== Features
 
+=== Features
 
 - authentication system (w/ password reset, remember token, ...)
 - custom hero graphics for posts
@@ -87,13 +87,15 @@ Don't forget to adjust the full url to your sitemaps in <tt>public/robots.txt</t
 
 == Documentation
 
-The complete documentation can be found at rdoc.info: http://rdoc.info/github/opoloo/lines/master/frames
+The complete documentation can be found at RubyDoc.info: http://www.rubydoc.info/gems/lines-engine/
 
 == Customization
 
 === Modify CSS/SCSS
 
-Default viewer SCSS: <tt>app/assets/stylesheets/lines/style.css.scss</tt>
+Find the SASS files inside the <tt>app/assets/stylesheets/lines/</tt> directory. 
+
+Use the <tt>app/assets/stylesheets/lines/lines_overrides.scss</tt> file to adjust existing styles or add new ones.
 
 === Modify custom hero images
 
@@ -101,26 +103,23 @@ You can add, remove or change the +HERO_IMAGES+ variable inside the <tt>config/l
 
 === Header (Meta) & Footer
 
-To change the header/meta/footer elements you need to modify <tt>app/views/layouts/lines/application.html.erb</tt>
+To change the header/meta/footer elements you need to modify <tt>app/views/layouts/lines/application.html.erb</tt> and the corresponding partials.
 
 == Screenshots
 
 Some screenshots to get an impression of the look & feel
 
-=== Dashboard
-{<img src="http://lines.opoloo.com/images/screenshot_01.png" />}[http://lines.opoloo.com/images/screenshot_01.png]
+{<img src="http://lines.opoloo.com/assets/images/feature-dashboard-full.png" />}[http://lines.opoloo.com/assets/images/feature-dashboard-full.png]
 
-=== Create or edit an article
-{<img src="http://lines.opoloo.com/images/screenshot_02.png" />}[http://lines.opoloo.com/images/screenshot_02.png]
+{<img src="http://lines.opoloo.com/assets/images/feature-reading-full.png" />}[http://lines.opoloo.com/assets/images/feature-reading-full.png]
 
-=== Preview and publish
-{<img src="http://lines.opoloo.com/images/screenshot_03.png" />}[http://lines.opoloo.com/images/screenshot_03.png]
+{<img src="http://lines.opoloo.com/assets/images/feature-markdown-full.png" />}[http://lines.opoloo.com/assets/images/feature-markdown-full.png]
 
 
 == License
 
-You may use the Lines blog template as you please. You must, however, keep the footer section, so attribution to Lines[http://lines.opoloo.com] and {Opoloo}[http://www.opoloo.com] is granted.
+You may use the Lines blog template as you please. You must, however, keep the footer section, so attribution to {Lines}[http://lines.opoloo.com] and {Opoloo}[https://www.opoloo.com] is granted.
 
-We heartily invite you to extend the features of the template, but when you do, you should fork it on GitHub, so everyone can profit from your work.
+We heartily invite you to extend the features of the engine, but when you do, you should fork it on GitHub, so everyone can profit from your work.
 
 You can see the full license here: http://choosealicense.com/licenses/lgpl-v3/
