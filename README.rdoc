@@ -1,35 +1,37 @@
-= Lines Blog by Opoloo[http://www.opoloo.com]
+GITHUB README
+
+= LINES Publishing Engine by Opoloo[http://www.opoloo.com]
 
 {<img src="https://badge.fury.io/rb/lines-engine.svg" alt="Gem Version" />}[http://badge.fury.io/rb/lines-engine]
 
 == Introduction
 
-Lines is a customizable blog framework for rails developers. It aims at making publishing simple and beautiful.
+LINES is a customizable publishing framework for Rails developers. It makes your publications and the processes around it simple and beautiful.
 
-Lines is a very slim, feature-constrained, young publishing platform. It is not wordpress or blogger and it doesn't aspire to be. It needs brains, work, and time to mature. It is a framework for tech-savvies who care about their content with the freedom of full OSS access.
+LINES is designed for mobile publishing needs. You work in a clear, responsive backend where you write with a distraction-free markdown editor, and where publishing your articles is dead simple. Readers enjoy your writing, not least because it’s perfectly readable on all screens. 
 
-To get an idea of the appearance, see the screenshots below, visit the {Lines Website}[http://lines.opoloo.com], or see it in action at link: https://www.opoloo.com/blog
+LINES is a framework for tech-savvies who care about writing and publishing, with the freedom of full OSS access.
+
+Learn more at the {Lines Website}[http://www.opoloo.com/lines], or see it in action: http://www.opoloo.com/blog.
 
 
-== Features & Specifications
-
-- solid editing system
-- simple, consistent publishing process
+== Purpose, Features, Specifications
+LINES is designed for
+- distraction-free writing and editing
+- a simple, consistent, mobile publishing process
 - clear, responsive presentation
-- extendable & customizable
+- customization
 - full focus on content
 
-
 === Features
-
-- authentication system (w/ password reset, remember token, ...)
+- authentication system (with password reset, remember token, …)
 - custom hero graphics for posts
-- upload default hero images that you want to use more frequently
+- upload default hero images that you want to re-use
 - customizable generic titles & subtitles
 - automatic teaser & scaled image for the article overview
 - determine featured article
-- markdown implementation (six headline styles according to priority, italics & bold text, block quotes, images, lists, links,...)
-- code highlighting
+- GitHub Flavored Markdown (four headline styles according to priority, italics & bold text, block quotes and citation, images, lists, links, image captions, …)
+- code syntax highlighting
 - formatting help
 - tags for articles
 - G+ link to social network discussion
@@ -46,7 +48,7 @@ To get an idea of the appearance, see the screenshots below, visit the {Lines We
 2. Run 'bundle':
     bundle
 
-3. There is a installation task that will guide you through the rest of the installation process. Just switch to your application directory and run:
+3. There is an installation task that will guide you through the rest of the installation process. Just switch to your application directory and run:
     rails g lines:install
 
 4. Adjust settings for Lines in the newly generated <tt>config/lines_config.yml</tt> file.
@@ -54,72 +56,66 @@ To get an idea of the appearance, see the screenshots below, visit the {Lines We
 5. Run database migrations:
     rake db:migrate
 
-If you need some more information or help, you can just follow this readme file.
+If you need some more information or help, you can just follow this read me file.
 
 
 === Managing admin users
 
-Currently Lines does not offer a GUI for managing users, but you can use a rake task to do so:
+Currently, LINES does not offer a GUI for managing users, but you can use a rake task to do so:
 
   rake lines:add_user
 
-To update an existing user, you'll need the rails console with 'rails c'
-  # UPDATE an existing user
-  u = User.find_by(email: 'your@email.com')
+To update an existing user, you’ll need the rails console with 'rails c'
+ 
+ === UPDATE an existing user
+  u = User.find_by_email('your@email.com')
   u.email = "new@mail.com"
   u.password = "newsekret"
   u.save
 
 
-=== Copy/update stylesheets
-
-Run <tt>rails g lines:copy_styles</tt> to install stylesheets from newer gem versions. Keep in mind to backup your overrides and other customizations before doing so!
-
-
 === Google Sitemap
 
-The sitemap_generator gem (https://github.com/kjvarga/sitemap_generator) handles the creation of sitemaps for search engines. To update the sitemap on server, run:
+The sitemap_generator gem (https://github.com/kjvarga/sitemap_generator) handles the creation of site maps for search engines. To update the sitemap on server, run:
 
-  bundle exec rake sitemap:refresh:no_ping # don't ping search engines
+  bundle exec rake sitemap:refresh:no_ping # don’t ping search engines
   bundle exec rake sitemap:refresh         # ping search engines
 
-Don't forget to adjust the full url to your sitemaps in <tt>public/robots.txt</tt>
+Don’t forget to adjust the full URL to your site maps in <tt>public/robots.txt</tt>
 
 == Documentation
 
-The complete documentation can be found at RubyDoc.info: http://www.rubydoc.info/gems/lines-engine/
+The complete documentation can be found at rdoc.info: http://rdoc.info/github/opoloo/lines/master/frames
 
 == Customization
 
 === Modify CSS/SCSS
 
-Find the SASS files inside the <tt>app/assets/stylesheets/lines/</tt> directory. 
-
-Use the <tt>app/assets/stylesheets/lines/lines_overrides.scss</tt> file to adjust existing styles or add new ones.
+Default viewer SCSS: <tt>app/assets/stylesheets/lines/style.css.scss</tt>
 
 === Modify custom hero images
 
-You can add, remove or change the +HERO_IMAGES+ variable inside the <tt>config/lines_config.yml</tt> file. The corresponding images reside inside the <tt>public/heroes</tt> directory.
+You can change, remove, or add the +HERO_IMAGES+ variable inside the <tt>config/lines_config.yml</tt> file. The corresponding images reside inside the <tt>public/heroes</tt> directory.
 
 === Header (Meta) & Footer
 
-To change the header/meta/footer elements you need to modify <tt>app/views/layouts/lines/application.html.erb</tt> and the corresponding partials.
+To change the header/meta/footer elements you need to modify <tt>app/views/layouts/lines/application.html.erb</tt>
 
 == Screenshots
 
-Some screenshots to get an impression of the look & feel
+=== Dashboard
 
-{<img src="http://lines.opoloo.com/assets/images/feature-dashboard-full.png" />}[http://lines.opoloo.com/assets/images/feature-dashboard-full.png]
+=== Create or edit an article
 
-{<img src="http://lines.opoloo.com/assets/images/feature-reading-full.png" />}[http://lines.opoloo.com/assets/images/feature-reading-full.png]
 
-{<img src="http://lines.opoloo.com/assets/images/feature-markdown-full.png" />}[http://lines.opoloo.com/assets/images/feature-markdown-full.png]
+=== Preview and publish
 
 
 == License
 
-You may use the Lines blog template as you please. You must, however, keep the footer section, so attribution to {Lines}[http://lines.opoloo.com] and {Opoloo}[https://www.opoloo.com] is granted.
+You may use the Lines blog template as you please. You’d make us happy, though, if you kept an attribution to (Lines)[http://lines.opoloo.com/] and {Opoloo}[http://www.opoloo.com] to spread the word.
 
-We heartily invite you to extend the features of the engine, but when you do, you should fork it on GitHub, so everyone can profit from your work.
+We heartily invite you to extend the features of the template, but when you do, you should fork it on GitHub, so everyone can profit from your work.
 
 You can see the full license here: http://choosealicense.com/licenses/lgpl-v3/
+
