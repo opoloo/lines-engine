@@ -126,9 +126,12 @@ To change the header/meta/footer elements you need to modify <tt>app/views/layou
 
 {<img src="http://lines.opoloo.com/assets/images/screenshots/git-editor.png" />}[http://lines.opoloo.com/assets/images/screenshots/git-editor.png]
 
-=== Preview and publish
+=== Preview
 
 {<img src="http://lines.opoloo.com/assets/images/screenshots/git-post.png" />}[http://lines.opoloo.com/assets/images/screenshots/git-post.png]
+
+=== Articles overview
+
 {<img src="http://lines.opoloo.com/assets/images/screenshots/git-overview.png" />}[http://lines.opoloo.com/assets/images/screenshots/git-overview.png]
 
 
