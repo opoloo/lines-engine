@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.0
+
+- Proud to announce the first stable release with the new backend!
+- New README
+- Minor fixes since v0.9.0
+- Have fun ;)
+
 ## 0.9.0
 
 - New backend: the entire backend has been restyled and made responsive
