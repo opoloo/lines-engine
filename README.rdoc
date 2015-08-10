@@ -1,3 +1,5 @@
+{<img src="http://lines.opoloo.com/assets/images/screenshots/git-logo.png" />}[http://lines.opoloo.com/assets/images/screenshots/git-logo.png]
+
 = LINES Publishing Engine by Opoloo[https://www.opoloo.com]
 
 {<img src="https://badge.fury.io/rb/lines-engine.svg" alt="Gem Version" />}[http://badge.fury.io/rb/lines-engine]
@@ -118,10 +120,16 @@ To change the header/meta/footer elements you need to modify <tt>app/views/layou
 == Screenshots
 
 === Dashboard
+{<img src="http://lines.opoloo.com/assets/images/screenshots/git-dashboard.png" />}[http://lines.opoloo.com/assets/images/screenshots/git-dashboard.png]
 
 === Create or edit an article
 
+{<img src="http://lines.opoloo.com/assets/images/screenshots/git-editor.png" />}[http://lines.opoloo.com/assets/images/screenshots/git-editor.png]
+
 === Preview and publish
+
+{<img src="http://lines.opoloo.com/assets/images/screenshots/git-post.png" />}[http://lines.opoloo.com/assets/images/screenshots/git-post.png]
+{<img src="http://lines.opoloo.com/assets/images/screenshots/git-overview.png" />}[http://lines.opoloo.com/assets/images/screenshots/git-overview.png]
 
 
 == License
