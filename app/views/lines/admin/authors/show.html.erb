@@ -16,7 +16,7 @@
         <%= mail_to @author.email, @author.email  %>
       </div>
       <div class="right">
-        <%= link_to "Website", @author.gplus_profile, class: "btn-unpublish" unless @author.gplus_profile.empty? %>
+        <%= link_to "Website", @author.gplus_profile, class: "btn-unpublish" if @author.gplus_profile %>
       </div>
     </div>
   </div>
