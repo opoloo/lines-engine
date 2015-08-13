@@ -8,6 +8,7 @@ PATH
       carrierwave (~> 0.10.0, >= 0.10.0)
       coffee-rails (>= 4.0.0, < 5)
       friendly_id (~> 5.1.0, >= 5.1.0)
+      i18n
       jquery-fileupload-rails (~> 0.4.1, >= 0.4.1)
       jquery-rails (>= 3.1.0, < 5)
       jquery-ui-rails (~> 5, >= 5.0.0)
@@ -22,7 +23,6 @@ PATH
       rmagick (~> 2.13.4, >= 2.13.4)
       sanitize (~> 3.0.0, >= 3.0.0)
       sass-rails (>= 4.0.0)
-      simple_form (~> 3, >= 3.0.0, < 4)
       sitemap_generator (~> 5.0.0, >= 5.0.5)
       thor (~> 0.1, >= 0.19)
       thread_safe (~> 0.1, >= 0.3)
@@ -246,9 +246,6 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
     shellany (0.0.1)
-    simple_form (3.1.0)
-      actionpack (~> 4.0)
-      activemodel (~> 4.0)
     sitemap_generator (5.0.5)
       builder
     slop (3.6.0)
