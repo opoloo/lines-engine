@@ -9,4 +9,4 @@ spec/dummy/public/assets
 /lines-engine-*.gem
 node_modules/
 .DS_Store
-
+tmp/
