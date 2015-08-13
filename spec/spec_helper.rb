@@ -43,9 +43,14 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.before(:each, type: :routing) do
-  @routes = Utilizer::Engine.routes
-  assertion_instance.instance_variable_set(:@routes, Utilizer::Engine.routes)
-end
+    @routes = Utilizer::Engine.routes
+    assertion_instance.instance_variable_set(:@routes, Utilizer::Engine.routes)
+  end
+
+  config.before do
+    I18n.default_locale = :en
+  end
 
   config.include AuthMacros
+
 end
