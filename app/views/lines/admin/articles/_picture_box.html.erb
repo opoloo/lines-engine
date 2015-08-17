@@ -1,11 +1,11 @@
 <div class="images-overlay">
   <div class="images-overlay-close icon-close"></div>
   <div class="images-overlay-inner">
-    <h2>Insert image</h2>
+    <h2><%= t('lines.buttons.insert_image').html_safe %></h2>
 
     <%= form_for [:admin, Lines::Picture.new], {enctype: "multipart/form-data"} do |f| %>
       <input id="picture_image" multiple="multiple" name="picture[image]" type="file" />
-      <label for="picture_image">Upload an image</label>
+      <label for="picture_image"><%= t('lines.buttons.upload_image').html_safe %></label>
     <% end %>
 
     <script id="template-upload" type="text/x-tmpl">
@@ -21,9 +21,7 @@
       <% if @article.pictures.any? %>
         <% @article.pictures.each do |picture| %>
           <div class="image-preview" id="<%= dom_id picture %>" style="background-image: url(<%= picture.image_url(:preview) %>)" data-url="<%= picture.image_url %>">
-            <%#= image_tag picture.image_url(:preview), data: {:url => picture.image_url} %>
             <%= button_to admin_picture_path(picture), remote: true, confirm: "Are you sure?", method: :delete, class: 'icon-delete' do %>
-              
             <% end %>
           </div>
         <% end %>
@@ -32,29 +30,3 @@
   </div>
   <div class="images-background-overlay"></div>
 </div>
-
-<!--<div class="body-picture-upload">
-  
-  <h2>Upload photos</h2>
-
-  <div id="pictures">
-    <% if @article.pictures.any? %>
-      <% @article.pictures.each do |picture| %>
-        <div class="picture-preview" id="<%= dom_id picture %>">
-          <div class="picture"><%= image_tag picture.image_url(:preview) %></div>
-          <a href="#insert" class="insert-image" data-url="<%= picture.image_url %>"></a>
-          <%= button_to "", admin_picture_path(picture), remote: true, confirm: "Are you sure?", method: :delete, class: 'btn-delete-photo' %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  
-  <div class="picture-preview">
-    <%= form_for [:admin, Lines::Picture.new], {enctype: "multipart/form-data"} do |f| %>
-      <img src="/assets/ic_action_add.png" style="height: 48px; width: 48px; padding: 18px;" alt="" />
-      <input id="picture_image" multiple="multiple" name="picture[image]" type="file" />
-    <% end %>
-  </div>
-  <br style="clear: both;" />
-
-</div>-->
