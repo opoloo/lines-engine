@@ -19,7 +19,7 @@ module Lines
         session[:user_id] = user.id
         redirect_to admin_root_url
       else
-        flash.now[:error] = "Email or password is invalid"
+        flash.now[:error] = t('lines.login_error')
         render "new"
       end
     end

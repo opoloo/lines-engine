@@ -102,17 +102,17 @@ module Lines
     def get_action_link
       if controller_path == 'admin/articles'
         case action_name
-          when 'index' then 'All articles'
-          when 'new' then 'New article'
-          when 'edit' then 'Edit article'
-          when 'show' then "Preview"
+          when 'index' then t('lines/buttons/all_articles').html_safe
+          when 'new' then t('lines/buttons/new_article').html_safe
+          when 'edit' then t('lines/buttons/edit_article').html_safe
+          when 'show' then t('lines/buttons/preview').html_safe
         end
       elsif controller_path == 'admin/authors'
         case action_name
-          when 'index' then 'All authors'
-          when 'new' then 'New author'
-          when 'edit' then 'Edit author'
-          when 'show' then "Author"
+          when 'index' then t('lines/buttons/all_authors').html_safe
+          when 'new' then t('lines/buttons/new_author').html_safe
+          when 'edit' then t('lines/buttons/edit_author').html_safe
+          when 'show' then t('lines/buttons/author').html_safe
         end
       end
     end

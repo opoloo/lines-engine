@@ -1,9 +1,21 @@
-<%= simple_form_for([:admin, @article], id: 'article_form') do |f| %>
+<% if @article.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+    <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+    <a href="#" class="close">x</a>
+  </div>
+<% end %>
+
+<%= form_for([:admin, @article], id: 'article_form') do |f| %>
   <div class="new-article">
     <div class="hero-upload">
       <%= f.file_field :hero_image %>
       <%= f.hidden_field :remove_hero_image %>
-      <div class="btn-change-hero">Change</div>
+      <div class="btn-change-hero"><%= t('lines.buttons.change') %></div>
       <% if @article.short_hero_image.present? %>
         <img src="<%= @article.short_hero_image %>" alt="" />
       <% elsif @article.hero_image? %>
@@ -13,9 +25,9 @@
       <div class="upload-overlay">
         <div class="upload-overlay-close icon-close"></div>
         <div class="upload-overlay-inner">
-          <h2>Select Hero Image</h2>
-          <div class="btn-remove-hero<%= " show" if @article.hero_image? || @article.short_hero_image %>">Remove hero image</div>
-          <%= f.label :hero_image, "Upload an image" %>
+          <h2><%= t('lines.buttons.select_hero_image') %></h2>
+          <div class="btn-remove-hero<%= " show" if @article.hero_image? || @article.short_hero_image %>"><%= t('lines.buttons.remove_hero_image') %></div>
+          <%= f.label :hero_image, t('lines.buttons.upload_image') %>
           <div class="hero-images">
             <% Lines::Article::HERO_IMAGES.each_with_index do |h, i| %>
               <img src="<%= "/heroes/#{h}" %>" alt="" class="<%= 'selected-hero-image' if ('/heroes/' + h) == @article.short_hero_image %>" />
@@ -28,26 +40,26 @@
     </div>
 
     <div class="input-field required">
-      <%= f.text_field :title, placeholder: "Title", class: 'title' %>
+      <%= f.text_field :title, placeholder: true, class: 'title' %>
     </div>
 
     <div class="input-field">
-      <%= f.text_field :sub_title, placeholder: "Subtitle" %>
+      <%= f.text_field :sub_title, placeholder: true %>
     </div>
 
     <div class="input-field">
-      <%= f.text_area :teaser, placeholder: "Teaser", rows: 1 %>
+      <%= f.text_area :teaser, placeholder: true, rows: 1 %>
     </div>
 
     <div class="input-field editor required">
-      <%= f.text_area :content, placeholder: "Body copy", rows: 1, data: {editor: "codemirror"} %>
+      <%= f.text_area :content, placeholder: true, rows: 1, data: {editor: "codemirror"} %>
     </div>
 
     <div class="input-field">
       <div class="documents">
-        <%= f.label :document, "#{@article.document? ? @article.document.file.filename + ' <span>(' + number_to_human_size(File.size(@article.document.file.file)) + ')</span>' : 'Attach Document' }".html_safe, class: "attachment-label", title: "Change Attachment" -%>
+        <%= f.label :document, "#{@article.document? ? @article.document.file.filename + ' <span>(' + number_to_human_size(File.size(@article.document.file.file)) + ')</span>' : t('lines.buttons.attach_document').html_safe }".html_safe, class: "attachment-label", title: t('lines.buttons.change_attachment').html_safe -%>
         <% if @article.document? %>
-          <span class="icon-delete btn-delete-attachment" title="Remove Attachment"></span>
+          <span class="icon-delete btn-delete-attachment" title="<%= t('lines.buttons.remove_attachment').html_safe %>"></span>
         <% end %>
         <%= f.file_field :document, class: "article-document-value" %>
         <div class="hidden">
@@ -58,20 +70,20 @@
 
     </div>
 
-    <h2>Authors <span style="color: #c10020;">*</span></h2>
+    <h2><%= t('activerecord.models.lines/author', count: 2) %> <span style="color: #c10020;">*</span></h2>
 
     <div class="input-field">
       <%= f.collection_check_boxes(:author_ids, Lines::Author.all, :id, :name) %>
     </div>
 
-    <h2>Additional Info</h2>
+    <h2><%= t('lines.additional_info').html_safe %></h2>
 
     <div class="input-field">
       <%= f.autocomplete_field :tag_list, autocomplete_tag_name_admin_articles_path, :"data-delimiter" => ', ', placeholder: "Tags" %>
     </div>
 
     <div class="input-field">
-      <%= f.text_field :gplus_url, placeholder: "Google+ link" %>
+      <%= f.text_field :gplus_url, placeholder: true %>
     </div>
 
     <div class="input-field required">
@@ -79,8 +91,8 @@
     </div>
 
     <%= render_navbar do %>
-      <%= f.submit "Save Article", class: "btn btn-save-publish highlight" %>
-      <%= link_to "Cancel", admin_articles_path, class: "btn btn-cancel" %>
+      <%= f.submit t('lines.buttons.save_article').html_safe, class: "btn btn-save-publish highlight" %>
+      <%= link_to t('lines.buttons.cancel').html_safe, admin_articles_path, class: "btn btn-cancel" %>
     <% end %>        
 
   </div>

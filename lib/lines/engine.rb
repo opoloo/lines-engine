@@ -34,6 +34,12 @@ module Lines
       end
     end
 
+    # Load locale files for I18n module
+    config.before_initialize do   
+      I18n.enforce_available_locales = false                                                   
+      config.i18n.load_path += Dir["#{config.root}/config/locales/**/*.yml"]
+    end
+
     # RSpec configuration for generators
     config.generators do |g|
       g.test_framework :rspec,

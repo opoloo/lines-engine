@@ -1,0 +1,57 @@
+en:
+  lines:
+    buttons:
+      new_article: 'New Article'
+      all_articles: 'All Articles'
+      dashboard: 'Dashboard'
+      visit_blog: 'Visit Blog'
+      edit_article: 'Edit Article'
+      save_article: 'Save Article'
+      cancel: 'Cancel'
+      preview: 'Preview'
+      all_authors: 'All authors'
+      new_author: 'New author'
+      edit_author: 'Edit author'
+      author: 'Author'
+      publish: 'Publish'
+      unpublish: 'Unpublish'
+      change_attachment: 'Change attachment'
+      remove_attachment: 'Remove attachment'
+      attach_document: 'Attach document'
+      upload_image: 'Upload an image'
+      remove_hero_image: 'Remove hero image'
+      select_hero_image: 'Select hero image'
+      change: 'Change'
+      insert_image: 'Insert image'
+      login: 'Login'
+
+    published_articles: 'Published articles'
+    unpublished_articles: 'Unpublished articles'
+    confirm: 'Are you sure?'
+    additional_info: 'Additional Info'
+    forgot_password: 'Forgot password?'
+    or: 'or'
+    go_back_to_blog: 'go back to your blog.'
+    please_login: 'Please log in to access the administration area.'
+    login_error: 'Email or password is invalid'
+
+  activerecord:
+    models:
+      lines/author:
+        one: 'Author'
+        other: 'Authors'
+      linens/article: 'Article'
+    attributes:
+      lines/author:
+        description: 'Description'
+      lines/article:
+        title: 'Title'
+        sub_title: 'Subtitle'
+        teaser: 'Teaser'
+        content: 'Body copy'
+        gplus_url: 'Website'
+      lines/user:
+        email: 'E-Mail'
+        password: 'Password'
+    errors:
+      models:

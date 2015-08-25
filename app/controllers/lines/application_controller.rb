@@ -11,7 +11,7 @@ module Lines
 
       # checks if current user is authorized. Redirects to login_url if not
       def authorize
-        redirect_to login_url, notice: "Please log in to access the administration area." if current_lines_user.nil?
+        redirect_to login_url, notice: t('lines.please_login') if current_lines_user.nil?
       end
 
   end

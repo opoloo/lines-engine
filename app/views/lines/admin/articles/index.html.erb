@@ -1,10 +1,10 @@
 <%= render_navbar do %>
-  <%= link_to 'New Article', new_admin_article_path, class: "btn btn-new-article highlight" %>  
-  <%= link_to 'Visit Blog', lines.root_path, class: "btn btn-view-blog" %>
+  <%= link_to t('lines.buttons.new_article').html_safe, new_admin_article_path, class: "btn btn-new-article highlight" %>  
+  <%= link_to t('lines.buttons.visit_blog').html_safe, lines.root_path, class: "btn btn-view-blog" %>
 <% end %>
 
 <% if @articles_unpublished.size > 0 %>
-  <h2>Unpublished articles</h2>
+  <h2><%= t('lines.unpublished_articles').html_safe %></h2>
   <div class="articles-list">
     <% @articles_unpublished.each do |article| %>
       <div class="article unpublished">
@@ -16,11 +16,11 @@
         </div>
         <div class="actions">
           <div class="left">
-            <%= link_to "Publish", admin_article_toggle_publish_path(article), method: :post, class: "btn-publish" %>
+            <%= link_to t('lines.buttons.publish').html_safe, admin_article_toggle_publish_path(article), method: :post, class: "btn-publish" %>
           </div>
           <div class="right">
-            <%= link_to "Preview", admin_article_path(article) %>
-            <%= link_to "", {controller: :articles, action: 'destroy', id: article.id}, data: { confirm: "Are you sure?" }, class: "btn-delete icon-delete", method: :delete %>
+            <%= link_to t('lines.buttons.preview').html_safe, admin_article_path(article) %>
+            <%= link_to "", {controller: :articles, action: 'destroy', id: article.id}, data: { confirm: t('lines.confirm').html_safe }, class: "btn-delete icon-delete", method: :delete %>
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@
 <% end %>
 
 <% if @articles_published.size > 0 %>
-  <h2>Published articles</h2>
+  <h2><%= t('lines.published_articles').html_safe %></h2>
   <div class="articles-list">
     <% @articles_published.each do |article| %>
       <div class="article published">
@@ -43,11 +43,11 @@
           <div class="left">
             <% feature_class = article.featured ? 'btn-unfeature icon-unkeep' : 'btn-feature icon-keep' %>
             <%= link_to "", admin_article_toggle_feature_path(article), method: :post, class: "#{feature_class}" %>
-            <%= link_to "Unpublish", admin_article_toggle_publish_path(article), method: :post, class: "btn-unpublish" %>
+            <%= link_to t('lines.buttons.unpublish').html_safe, admin_article_toggle_publish_path(article), method: :post, class: "btn-unpublish" %>
           </div>
           <div class="right">
-            <%= link_to "Preview", admin_article_path(article) %>
-            <%= link_to "", {controller: :articles, action: 'destroy', id: article.id}, data: { confirm: "Are you sure?" }, class: "btn-delete icon-delete", method: :delete %>
+            <%= link_to t('lines.buttons.preview').html_safe, admin_article_path(article) %>
+            <%= link_to "", {controller: :articles, action: 'destroy', id: article.id}, data: { confirm: t('lines.confirm').html_safe }, class: "btn-delete icon-delete", method: :delete %>
           </div>
         </div>
       </div>

@@ -1,0 +1,8 @@
+de:
+  views:
+    pagination:
+      first: "&laquo; Neueste"
+      last: "Letzte &raquo;"
+      previous: "&lsaquo; Neuer"
+      next: "Älter &rsaquo;"
+      truncate: "&hellip;"

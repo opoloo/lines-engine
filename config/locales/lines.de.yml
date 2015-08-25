@@ -1,0 +1,57 @@
+de:
+  lines:
+    buttons:
+      new_article: 'Neuer Artikel'
+      all_articles: 'Alle Artikel'
+      dashboard: 'Dashboard'
+      visit_blog: 'Zum Blog'
+      edit_article: 'Artikel bearbeiten'
+      preview: 'Vorschau'
+      save_article: 'Artikel speichern'
+      cancel: 'Abbrechen'
+      all_authors: 'Alle Autoren'
+      new_author: 'Neuer Autor'
+      edit_author: 'Autor bearbeiten'
+      author: 'Autor'
+      publish: 'Veröffentlichen'
+      unpublish: 'Veröffentlichung rückgängig machen'
+      change_attachment: 'Anhang ändern'
+      remove_attachment: 'Anhang löschen'
+      attach_document: 'Dokument anhängen'
+      upload_image: 'Bild hochladen'
+      remove_hero_image: 'Artikel-Bild entfernen'
+      select_hero_image: 'Artikel-Bild wählen'
+      change: 'Ändern'
+      insert_image: 'Bild einfügen'
+      login: 'Anmelden'
+
+    published_articles: 'Veröffentlichte Artikel'
+    unpublished_articles: 'Unveröffentlichte Artikel'
+    confirm: 'Wirklich löschen?'
+    additional_info: 'Weitere Informationen'
+    forgot_password: 'Passwort vergessen?'
+    or: 'oder'
+    go_back_to_blog: 'zurück zum Blog.'
+    please_login: 'Bitte melde dich an, wenn du den Administrationsbereich betreten willst.'
+    login_error: 'E-Mail oder Passwort ist ungültig.'
+
+  activerecord:
+    models:
+      lines/author:
+        one: 'Autor'
+        other: 'Autoren'
+      linens/article: 'Artikel'
+    attributes:
+      lines/author:
+        description: 'Beschreibung'
+      lines/article:
+        title: 'Titel'
+        sub_title: 'Untertitel'
+        teaser: 'Teaser'
+        content: 'Artikel Inhalt'
+        gplus_url: 'Website'
+      lines/user:
+        email: 'E-Mail'
+        password: 'Passwort'
+    errors:
+      models:

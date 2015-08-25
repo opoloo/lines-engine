@@ -1,20 +1,6 @@
 <%= content_for :admin_nav do %>
-  <%= link_to 'New Article', new_admin_article_path, class: "btn btn-new-article" %>
+  <%= link_to t('lines.buttons.new_article').html_safe, new_admin_article_path, class: "btn btn-new-article" %>
 <% end %>
-
-
-<% if @article.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
-    <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-    <a href="#" class="close">x</a>
-  </div>
-<% end %>
-
 
 <%= render 'lines/admin/articles/form' %>
 <%= render 'lines/admin/articles/picture_box' %>
