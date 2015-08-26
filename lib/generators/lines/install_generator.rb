@@ -28,6 +28,10 @@ module Lines
       copy_file "../../../config/lines_config.yml", 'config/lines_config.yml'
     end
 
+    def copy_locales
+      directory "../../../config/locales/", 'config/locales/'
+    end
+
 
     def load_seeds
       FileUtils.mkdir_p "vendor/screenshots"

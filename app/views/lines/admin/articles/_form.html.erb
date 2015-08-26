@@ -72,7 +72,7 @@
 
     <h2><%= t('activerecord.models.lines/author', count: 2) %> <span style="color: #c10020;">*</span></h2>
 
-    <div class="input-field">
+    <div class="input-field checkbox">
       <%= f.collection_check_boxes(:author_ids, Lines::Author.all, :id, :name) %>
     </div>
 

@@ -50,6 +50,7 @@ de:
         teaser: 'Teaser'
         content: 'Artikel Inhalt'
         gplus_url: 'Website'
+        author_ids: 'Autoren'
       lines/user:
         email: 'E-Mail'
         password: 'Passwort'
