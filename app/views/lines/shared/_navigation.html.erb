@@ -6,7 +6,7 @@
       <ul class="user-info">
         <% if current_lines_user %>
           <li><%= current_lines_user.email %></li>
-          <li><a href="<%= logout_path %>">Logout</a></li>
+          <li><a href="<%= logout_path %>"><%= t('lines.buttons.logout').html_safe %></a></li>
         <% end %>
       </ul>
       <br class="clear" />

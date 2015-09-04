@@ -8,10 +8,12 @@ en:
       edit_article: 'Edit Article'
       save_article: 'Save Article'
       cancel: 'Cancel'
+      edit: 'Edit'
       preview: 'Preview'
       all_authors: 'All authors'
       new_author: 'New author'
       edit_author: 'Edit author'
+      save_author: 'Save Author'
       author: 'Author'
       publish: 'Publish'
       unpublish: 'Unpublish'
@@ -24,6 +26,9 @@ en:
       change: 'Change'
       insert_image: 'Insert image'
       login: 'Login'
+      logout: 'Logout'
+      formating_help: 'Formatting Help'
+      about: 'About Lines'
 
     published_articles: 'Published articles'
     unpublished_articles: 'Unpublished articles'
@@ -34,6 +39,7 @@ en:
     go_back_to_blog: 'go back to your blog.'
     please_login: 'Please log in to access the administration area.'
     login_error: 'Email or password is invalid'
+    logged_in_as: 'Logged in as'
 
   activerecord:
     models:
@@ -44,6 +50,8 @@ en:
     attributes:
       lines/author:
         description: 'Description'
+        email: 'E-Mail'
+        gplus_profile: 'Website'
       lines/article:
         title: 'Title'
         sub_title: 'Subtitle'

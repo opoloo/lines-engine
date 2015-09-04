@@ -1,5 +1,5 @@
 <%= render_navbar do %>
-  <%= link_to 'New Author', new_admin_author_path, class: "btn btn-new-author highlight" %>
+  <%= link_to t('lines.buttons.new_author').html_safe, new_admin_author_path, class: "btn btn-new-author highlight" %>
   <%= link_to 'Dashboard', lines.admin_root_path, class: "btn btn-view-blog" %>
 <% end %>
 
@@ -16,7 +16,7 @@
 </div>
 <% end %>
 
-<h2>All authors</h2>
+<h2><%= t('lines.buttons.all_authors').html_safe %></h2>
 <div class="authors-list">
   <% @authors.each do |author| %>
     <div class="author">
@@ -28,10 +28,10 @@
       </div>
       <div class="actions">
         <div class="left">
-          <%= link_to "Edit", edit_admin_author_path(author), class: "btn-edit" %>
+          <%= link_to t('lines.buttons.edit').html_safe, edit_admin_author_path(author), class: "btn-edit" %>
         </div>
         <div class="right">
-          <%= link_to "", {controller: :authors, action: 'destroy', id: author.id}, data: { confirm: "Are you sure?" }, class: "btn-delete icon-delete", method: :delete %>
+          <%= link_to "", {controller: :authors, action: 'destroy', id: author.id}, data: { confirm: t('lines.confirm').html_safe }, class: "btn-delete icon-delete", method: :delete %>
         </div>
       </div>
     </div>

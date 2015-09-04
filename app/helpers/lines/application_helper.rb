@@ -72,21 +72,20 @@ module Lines
       html = content_tag(:div, id: 'navbar') do
         content_tag(:div, class: 'navbar-inner') do
           if current_lines_user
-            #content_tag(:span, link_to('', admin_articles_path), class: 'backlink', title: 'Dashboard') + content_tag(:span, action_link, class: 'actionlink') + content_tag(:span, class: 'buttons', &block) + content_tag(:span, link_to('Logout', logout_path), class: 'logout') + content_tag(:span, "Logged in as #{current_lines_user.email}", class: 'logged-in-as')
             content_tag(:span, class: 'buttons', &block) + "<div class='btn-menu'><dic class='stripes'></div></div>".html_safe + 
             "<div class='submenu'>
               <div class='submenu-inner'>
                 <ul>
                   <li>#{link_to("Dashboard", admin_articles_path)}</li>
-                  <li>#{link_to("Authors", admin_authors_path)}</li>
+                  <li>#{link_to(t('activerecord.models.lines/author', count: 2).html_safe, admin_authors_path)}</li>
                 </ul>
                 <ul>
-                  <li class='small'>Logged in as #{current_lines_user.email}</li>
-                  <li>#{link_to("Logout", logout_path)}</li>
+                  <li class='small'>#{t('lines.logged_in_as').html_safe} #{current_lines_user.email}</li>
+                  <li>#{link_to(t('lines.buttons.logout').html_safe, logout_path)}</li>
                 </ul>
                 <ul>
-                  <li>#{link_to("Formatting Help", "#", class: "btn-cheatsheet")}</li>
-                  <li>#{link_to("About Lines", "http://lines.opoloo.com")}</li>
+                  <li>#{link_to(t('lines.buttons.formating_help').html_safe, "#", class: "btn-cheatsheet")}</li>
+                  <li>#{link_to(t('lines.buttons.about').html_safe, "http://lines.opoloo.com")}</li>
                 </ul>
               </div>
             </div>".html_safe
