@@ -10,3 +10,5 @@ spec/dummy/public/assets
 node_modules/
 .DS_Store
 tmp/
+/doc/
+.yardoc
