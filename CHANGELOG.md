@@ -2,8 +2,7 @@
 
 ## 1.1.0
 
-- 118n support now available
-
+- 118n support now available. Locale files can be found at */config/locales/*
 
 ## 1.0.0
 

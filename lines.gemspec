@@ -42,10 +42,10 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails3-jquery-autocomplete', '~> 1.0.11', '>= 1.0.11'
   s.add_dependency 'meta-tags', '~> 2.0.0', '>= 2.0.0'
   s.add_dependency 'bcrypt-ruby', '>= 3.0.0', '<= 4'
-  s.add_dependency 'i18n'
+  s.add_dependency 'i18n', '~> 0.7.0'
   s.add_runtime_dependency 'rails', ['>= 3', '< 5']
 
-  s.add_development_dependency 'mysql2', '~> 2.9', '>= 2.9'
+  s.add_development_dependency 'mysql2', '~> 0.3.20', '< 0.3.4'
   s.add_development_dependency 'rspec-rails', '~> 2.14.2', '< 3'
   s.add_development_dependency 'rspec', '~> 2.14.1', '< 3'
 
