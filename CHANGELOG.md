@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0
+
+- 118n support now available
+
+
 ## 1.0.0
 
 - Proud to announce the first stable release with the new backend!
