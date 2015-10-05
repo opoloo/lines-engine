@@ -27,14 +27,14 @@ Gem::Specification.new do |s|
   s.add_dependency 'carrierwave', '~> 0.10.0', '>= 0.10.0'
   s.add_dependency 'kaminari', '~> 0.16.1', '>= 0.16.1'
   s.add_dependency 'pygments.rb', '~> 0.6.0', '>= 0.6.0'
-  s.add_dependency 'redcarpet', '~> 3.2.3', '>= 3.2.3'
+  s.add_dependency 'redcarpet', '~> 3.3.3', '>= 3.3.3'
   s.add_dependency 'jquery-rails', '< 5', '>= 3.1.0'
   s.add_dependency 'acts-as-taggable-on', '~> 3.5', '>= 3.5'
   s.add_dependency 'bcrypt', '~> 3.1.0', '>= 3.1.0'
   s.add_dependency 'sitemap_generator', '~> 5.0.0', '>= 5.0.5'
   s.add_dependency 'jquery-fileupload-rails', '~> 0.4.1', '>= 0.4.1'
   s.add_dependency 'jquery-ui-rails', '~> 5', '>= 5.0.0'
-  s.add_dependency 'sanitize', '~> 3.0.0', '>= 3.0.0'
+  s.add_dependency 'sanitize', '~> 4.0.0', '>= 3.0.0'
   s.add_dependency 'sass-rails', '>= 4.0.0'
   s.add_dependency 'coffee-rails', '< 5', '>= 4.0.0'
   s.add_dependency 'uglifier', '~> 2', '>= 2'
@@ -45,7 +45,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'i18n', '~> 0.7.0'
   s.add_runtime_dependency 'rails', ['>= 3', '< 5']
 
-  s.add_development_dependency 'mysql2', '~> 0.3.20', '< 0.3.4'
+  s.add_development_dependency 'mysql2', '~> 0.3.20', '< 4.0.0'
   s.add_development_dependency 'rspec-rails', '~> 2.14.2', '< 3'
   s.add_development_dependency 'rspec', '~> 2.14.1', '< 3'
 

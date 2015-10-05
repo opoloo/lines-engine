@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1
+
+- Gem dependencies updated.
+
 ## 1.1.0
 
 - 118n support now available. Locale files can be found at */config/locales/*
