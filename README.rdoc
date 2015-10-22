@@ -13,7 +13,7 @@ LINES is designed for mobile publishing needs. You work in a clear, responsive b
 
 LINES is a framework for tech-savvies who care about writing and publishing, with the freedom of full OSS access.
 
-Learn more at the {Lines Website}[http://linees.opoloo.com], or see it in action: https://www.opoloo.com/blog.
+Learn more at the {Lines Website}[http://lines.opoloo.com], or see it in action: https://www.opoloo.com/blog.
 
 
 == Purpose, Features, Specifications
