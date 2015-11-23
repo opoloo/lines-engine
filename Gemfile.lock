@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lines-engine (1.1.1)
+    lines-engine (1.1.2)
       acts-as-taggable-on (~> 3.5, >= 3.5)
       bcrypt (~> 3.1.0, >= 3.1.0)
       bcrypt-ruby (>= 3.0.0, <= 4)
@@ -99,7 +99,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.1.1)
+    coffee-script-source (1.10.0)
     colorize (0.7.7)
     crass (1.0.2)
     diff-lcs (1.2.5)

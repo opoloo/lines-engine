@@ -1,5 +1,10 @@
 # Changelog
 
+# 1.1.2
+
+- typo fixes and pull request merges
+- Gem dependencies updated
+
 ## 1.1.1
 
 - Gem dependencies updated.
