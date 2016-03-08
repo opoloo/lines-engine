@@ -1,6 +1,11 @@
 # Changelog
 
-# 1.1.2
+## 1.1.3
+
+- Gem dependencies updated
+- Precompile rules for assets added
+
+## 1.1.2
 
 - typo fixes and pull request merges
 - Gem dependencies updated
