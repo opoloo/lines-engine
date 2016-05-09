@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'railties', '>= 3.2.6', '< 5'
   s.add_dependency 'rmagick', '~> 2.13.4', '>= 2.13.4'
   s.add_dependency 'thor', '~> 0.1', '>= 0.19'
-  s.add_dependency 'carrierwave', '~> 0.10.0', '>= 0.10.0'
+  s.add_dependency 'carrierwave', '~> 0.11.0', '>= 0.10.0'
   s.add_dependency 'kaminari', '~> 0.16.1', '>= 0.16.1'
   s.add_dependency 'pygments.rb', '~> 0.6.0', '>= 0.6.0'
   s.add_dependency 'redcarpet', '~> 3.3.3', '>= 3.3.3'
