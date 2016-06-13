@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.5
+
+- Gem updates
+
 ## 1.1.4
 
 - Gem dependencies upated: carrierwave
