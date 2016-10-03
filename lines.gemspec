@@ -34,7 +34,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'sitemap_generator', '~> 5.0.0', '>= 5.0.5'
   s.add_dependency 'jquery-fileupload-rails', '~> 0.4.1', '>= 0.4.1'
   s.add_dependency 'jquery-ui-rails', '~> 5', '>= 5.0.0'
-  s.add_dependency 'sanitize', '~> 4.0.0', '>= 3.0.0'
+  s.add_dependency 'sanitize', '~> 4.4.0', '>= 3.0.0'
   s.add_dependency 'sass-rails', '>= 4.0.0'
   s.add_dependency 'coffee-rails', '< 5', '>= 4.0.0'
   s.add_dependency 'uglifier', '>= 2'
