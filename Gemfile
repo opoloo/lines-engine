@@ -31,7 +31,7 @@ group :development, :test do
   gem 'factory_girl_rails', require: false
   gem 'railroady'
   gem 'thor'
-  gem 'mysql2', '< 0.4.0'
+  gem 'mysql2'
 end
 
 group :test do

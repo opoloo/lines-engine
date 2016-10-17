@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2 
+
+- Added support for Rails 5
+
 ## 1.1.5, 1.1.5.1 - 1.1.5.3
 
 - Gem updates
