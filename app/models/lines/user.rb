@@ -14,7 +14,7 @@
 
 module Lines
 
-  class User < ActiveRecord::Base
+  class User < Lines::ApplicationRecord
     # Use bcrypt-ruby to encrypt passwords
     has_secure_password validations: false
     

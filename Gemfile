@@ -27,17 +27,16 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 2.14.0'
   gem 'factory_girl_rails', require: false
   gem 'railroady'
   gem 'thor'
-  gem 'mysql2'
 end
 
 group :test do
   gem 'faker'
   gem 'capybara'
-  gem 'guard-rspec'
+  gem 'guard-rspec', '= 4.2.0'
   gem 'rb-inotify', '~> 0.9'
   gem 'launchy'
 end

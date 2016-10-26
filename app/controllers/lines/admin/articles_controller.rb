@@ -28,7 +28,7 @@ module Lines
 
       # GET /admin/articles/1
       def show
-        @article = Article.find(params[:id])
+        @article = Article.friendly.find(params[:id])
         @first_page = true
 
         respond_to do |format|
@@ -47,7 +47,7 @@ module Lines
 
       # GET /admin/articles/1/edit
       def edit
-        @article = Article.find(params[:id])
+        @article = Article.friendly.find(params[:id])
       end
 
       # POST /admin/articles
@@ -66,7 +66,7 @@ module Lines
       # PUT /admin/articles/1
       # TODO: Very much is happening here. Move deletion of hero_image to the article model
       def update
-        @article = Article.find(params[:id])
+        @article = Article.friendly.find(params[:id])
         a_params = article_params
 
         # replace picture_path with the new uploaded file
@@ -91,7 +91,7 @@ module Lines
 
       # DELETE /admin/articles/1
       def destroy
-        @article = Article.find(params[:id])
+        @article = Article.friendly.find(params[:id])
         @article.destroy
 
         respond_to do |format|
@@ -101,7 +101,7 @@ module Lines
 
       # Toggles published state of an article
       def toggle_publish
-        @article = Article.find(params[:article_id])
+        @article = Article.friendly.find(params[:article_id])
         @article.update_attributes(published: !@article.published)
         flash[:success] = "“#{@article.title}” has been #{'un' if !@article.published}published."
         redirect_to admin_articles_url
@@ -109,7 +109,7 @@ module Lines
 
       # Toggles featured state of an article
       def toggle_feature
-        @article = Article.find(params[:article_id])
+        @article = Article.friendly.find(params[:article_id])
         old_featured = Article.where(featured: true)
         if old_featured.size > 0
           old_featured.each do |article|

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1
+
+- Fixed compatibility with Rails 5
+
 ## 1.2 
 
 - Added support for Rails 5

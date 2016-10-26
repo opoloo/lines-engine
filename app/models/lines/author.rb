@@ -4,7 +4,7 @@
 # {Article}s by guest authors that don't need an own user account
 
 module Lines
-  class Author < ActiveRecord::Base
+  class Author < Lines::ApplicationRecord
       
     # Relations
     has_many :authorables

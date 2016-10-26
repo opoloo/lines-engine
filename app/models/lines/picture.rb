@@ -6,7 +6,7 @@ require 'carrierwave'
 require 'carrierwave/orm/activerecord'
 
 module Lines  
-  class Picture < ActiveRecord::Base
+  class Picture < Lines::ApplicationRecord
     # Associations    
     belongs_to :article, touch: true
 

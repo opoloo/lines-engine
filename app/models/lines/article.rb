@@ -14,7 +14,7 @@ require 'carrierwave/orm/activerecord'
 require 'friendly_id'
 
 module Lines
-  class Article < ActiveRecord::Base
+  class Article < Lines::ApplicationRecord
     extend FriendlyId
     friendly_id :title, use: [:slugged, :history, :finders]
 
