@@ -62,5 +62,3 @@ en:
       lines/user:
         email: 'E-Mail'
         password: 'Password'
-    errors:
-      models:
