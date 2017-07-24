@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.1.1
+- Fix activerecord.errors.models translations being truncated by gem.
+
 ## 1.2.1
 
 - Fixed compatibility with Rails 5
