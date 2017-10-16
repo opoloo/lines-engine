@@ -1,5 +1,8 @@
 # Changelog
 
+##  1.2.2
+- Fix JqueryUI datepicker (Thanks to @edgarlepe)
+
 ## 1.2.1.1
 - Fix activerecord.errors.models translations being truncated by gem.
 
