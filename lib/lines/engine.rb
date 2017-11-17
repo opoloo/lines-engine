@@ -34,6 +34,10 @@ module Lines
       end
     end
 
+    initializer "host helpers" do |app|
+      Lines::ApplicationController.helper app.helpers
+    end
+
     # Disable error wrapper around form fields
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
       class_attr_index = html_tag.index 'class="'
