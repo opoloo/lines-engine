@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lines-engine (1.2.2)
+    lines-engine (1.2.3)
       acts-as-taggable-on (>= 3.5)
       bcrypt (~> 3.1.0, >= 3.1.0)
       bcrypt-ruby (>= 3.0.0)
@@ -316,4 +316,4 @@ DEPENDENCIES
   yard
 
 BUNDLED WITH
-   1.14.6
+   1.15.4
