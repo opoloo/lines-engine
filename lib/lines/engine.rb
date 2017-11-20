@@ -21,7 +21,7 @@ module Lines
 
     # Initializer to combine this engines static assets with the static assets of the hosting site.
     initializer "static assets" do |app|
-      app.middleware.insert_before(::ActionDispatch::Static, ::ActionDispatch::Static, "#{root}/public")
+      app.middleware.insert_after(::Rack::Runtime, ::ActionDispatch::Static, "#{root}/public")
     end
 
     initializer "lines.assets.precompile" do |app|
@@ -32,6 +32,10 @@ module Lines
       ActiveSupport.on_load :action_controller do
         helper Lines::ApplicationHelper
       end
+    end
+
+    initializer "host helpers" do |app|
+      Lines::ApplicationController.helper app.helpers
     end
 
     # Disable error wrapper around form fields
