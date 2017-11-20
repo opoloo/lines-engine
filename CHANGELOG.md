@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.3
+- fix No such middleware to insert before: ActionDispatch::Static (Thanks to @scottbarrow)
+
 ##  1.2.2
 - Fix JqueryUI datepicker (Thanks to @edgarlepe)
 
