@@ -8,12 +8,12 @@ module Lines
 
       # Listes all authroes
       def index
-        @authors = Author.all
+        @authors = Lines::Author.all
       end
 
       # Shows an author
       def show
-        @author = Author.find(params[:id])
+        @author = Lines::Author.find(params[:id])
       end
 
       # New author
@@ -23,12 +23,12 @@ module Lines
 
       # Edit an existing author
       def edit
-        @author = Author.find(params[:id])
+        @author = Lines::Author.find(params[:id])
       end
 
       # Create a new author from params
       def create
-        @author = Author.new(author_params)
+        @author = Lines::Author.new(author_params)
 
         if @author.save
           redirect_to admin_author_path @author
@@ -39,7 +39,7 @@ module Lines
 
       # Update an existing author from params
       def update
-        @author = Author.find(params[:id])
+        @author = Lines::Author.find(params[:id])
 
         if @author.update_attributes(author_params)
           redirect_to admin_author_path(@author)
@@ -50,11 +50,11 @@ module Lines
 
       # Delete an author
       def destroy
-        @author = Author.find(params[:id])
+        @author = Lines::Author.find(params[:id])
         if @author.destroy
           redirect_to admin_authors_url
         else
-          @authors = Author.all
+          @authors = Lines::Author.all
           render "index" 
         end
       end

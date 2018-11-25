@@ -57,7 +57,7 @@
 
     <div class="input-field">
       <div class="documents">
-        <%= f.label :document, "#{@article.document? ? @article.document.file.filename + ' <span>(' + number_to_human_size(File.size(@article.document.file.file)) + ')</span>' : t('lines.buttons.attach_document').html_safe }".html_safe, class: "attachment-label", title: t('lines.buttons.change_attachment').html_safe -%>
+        <%= f.label :document, "#{@article.document? ? @article.document.file.filename + ' <span>(' + number_to_human_size(@article.document.file.size) + ')</span>' : t('lines.buttons.attach_document').html_safe }".html_safe, class: "attachment-label", title: t('lines.buttons.change_attachment').html_safe -%>
         <% if @article.document? %>
           <span class="icon-delete btn-delete-attachment" title="<%= t('lines.buttons.remove_attachment').html_safe %>"></span>
         <% end %>

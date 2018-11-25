@@ -12,7 +12,7 @@ module Lines
     end
   
     def create
-      @user = User.find_by(email: params[:password_reset][:email].downcase)
+      @user = Lines::User.find_by(email: params[:password_reset][:email].downcase)
       if @user
         @user.create_reset_digest
         @user.send_password_reset_email
@@ -67,7 +67,7 @@ module Lines
       end
 
       def get_user
-        @user = User.find_by(email: params[:email])
+        @user = Lines::User.find_by(email: params[:email])
       end
 
       # Confirms a valid user.
