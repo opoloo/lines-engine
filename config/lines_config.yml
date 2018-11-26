@@ -59,4 +59,4 @@ test:
   from_email: 'noreply@example.com'
 production:
   host: "blog.opoloo.com"
-  from_email: 'noreply@example.com'
+  from_email: <%= ENV["MAILER_EMAIL"] %>
