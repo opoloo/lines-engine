@@ -48,7 +48,7 @@ LINES is designed for
 == Installation
 
 1. Add the gem to your Gemfile:
-    gem 'lines-engine', git: "https://github.com/adonespitogo/lines-engine", tag: "v1.2.5"
+    gem 'lines-engine'
 
 2. Run 'bundle':
     bundle
