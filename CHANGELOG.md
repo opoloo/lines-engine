@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.2.5
+- Allow ERB syntax in `lines_config.yml`
+
+## 1.2.4
+- Can specify carrierwave storage in `lines_config.yml`
+- Fixed namespacing bugs
+
 ## 1.2.3
 - fix No such middleware to insert before: ActionDispatch::Static (Thanks to @scottbarrow)
 

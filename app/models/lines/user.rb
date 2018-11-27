@@ -27,8 +27,8 @@ module Lines
 
     # Sets +rest_digest+ and +reset_sent_at+ for password reset.
     def create_reset_digest
-      self.reset_token = User.generate_token
-      update_attribute(:reset_digest,  User.digest(reset_token))
+      self.reset_token = Lines::User.generate_token
+      update_attribute(:reset_digest,  Lines::User.digest(reset_token))
       update_attribute(:reset_sent_at, Time.zone.now)
     end
 
