@@ -1,6 +1,4 @@
-= A lighter copy of this repo is in {here}[https://github.com/AdoPisoWiFi/lines-engine.git].
-
-Removed old commits which caused this repo to be heavy. Future commits will be pushed to that repo.
+{<img src="http://lines.opoloo.com/assets/images/screenshots/git-logo.png" />}[http://lines.opoloo.com/assets/images/screenshots/git-logo.png]
 
 = LINES Publishing Engine by Opoloo[https://www.opoloo.com]
 
