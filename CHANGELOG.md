@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.6.1
+- Typo inside div tag corrected
+
 ## 1.2.6
 - Security updates for the following Gems: ffi, nokogiri, rack, rails-html-sanitizer, loofah, yard
 

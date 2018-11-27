@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lines-engine (1.2.6)
+    lines-engine (1.2.6.1)
       acts-as-taggable-on (>= 3.5)
       bcrypt (~> 3.1.0, >= 3.1.0)
       bcrypt-ruby (>= 3.0.0)
@@ -191,8 +191,8 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
-    nokogumbo (1.5.0)
-      nokogiri
+    nokogumbo (2.0.1)
+      nokogiri (~> 1.8, >= 1.8.4)
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -255,10 +255,10 @@ GEM
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
     ruby_dep (1.5.0)
-    sanitize (4.6.6)
+    sanitize (5.0.0)
       crass (~> 1.0.2)
-      nokogiri (>= 1.4.4)
-      nokogumbo (~> 1.4)
+      nokogiri (>= 1.8.0)
+      nokogumbo (~> 2.0)
     sass (3.7.2)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
