@@ -72,7 +72,7 @@ module Lines
       html = content_tag(:div, id: 'navbar') do
         content_tag(:div, class: 'navbar-inner') do
           if current_lines_user
-            content_tag(:span, class: 'buttons', &block) + "<div class='btn-menu'><dic class='stripes'></div></div>".html_safe + 
+            content_tag(:span, class: 'buttons', &block) + "<div class='btn-menu'><div class='stripes'></div></div>".html_safe + 
             "<div class='submenu'>
               <div class='submenu-inner'>
                 <ul>
