@@ -135,6 +135,12 @@ To change the header/meta/footer elements you need to modify <tt>app/views/layou
 {<img src="http://lines.opoloo.com/assets/images/screenshots/git-overview.png" />}[http://lines.opoloo.com/assets/images/screenshots/git-overview.png]
 
 
+== Contributors
+A big thanks goes to these wonderful people for their contributions and support:
+
+@MyXoToD, @adonespitogo, @scottbarrow, @aziflaj, @dafuga, @usamah82, @edgarlepe
+
+
 == License
 
 You may use the Lines blog template as you please. You’d make us happy, though, if you kept an attribution to {Lines}[http://lines.opoloo.com/] and {Opoloo}[https://www.opoloo.com] to spread the word.
