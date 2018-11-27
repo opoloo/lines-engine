@@ -18,9 +18,9 @@ module Lines
         format.html {
           @first_page = (params[:page] and params[:page].to_i > 0) ? false : true
           if params[:tag]
-            @articles = Article.published.tagged_with(params[:tag]).page(params[:page].to_i)
+            @articles = Lines::Article.published.tagged_with(params[:tag]).page(params[:page].to_i)
           else
-            @articles = Article.published.page(params[:page].to_i).padding(1)
+            @articles = Lines::Article.published.page(params[:page].to_i).padding(1)
           end
           
           if @articles.first_page?
@@ -41,7 +41,7 @@ module Lines
 
         }
         format.atom{
-          @articles = Article.published
+          @articles = Lines::Article.published
         }
       end
     end
@@ -49,7 +49,7 @@ module Lines
     # Shows specific article
     def show
       @first_page = true
-      @article = Article.published.find(params[:id])
+      @article = Lines::Article.published.find(params[:id])
       @article.teaser = nil unless @article.teaser.present?
       meta_tags = { title: @article.title,
         type: 'article',
@@ -64,7 +64,7 @@ module Lines
         return redirect_to @article, status: :moved_permanently
       end
 
-      @related_articles = Article.published.where('id != ?', @article.id).order('').limit(2)
+      @related_articles = Lines::Article.published.where('id != ?', @article.id).order('').limit(2)
     end
 
   end
