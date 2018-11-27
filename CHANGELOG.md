@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.6
+- Security updates for the following Gems: ffi, nokogiri, rack, rails-html-sanitizer, loofah, yard
+
 ## 1.2.5
 - Allow ERB syntax in `lines_config.yml`
 
