@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="author" content="<%= CONFIG[:meta_author] %>" />
   <meta name="revisit-after" content="3 days" />
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="<%= CONFIG[:meta_robots] || 'index,follow' %>" />
   <%= display_meta_tags site: CONFIG[:title_short] %>
   <meta name="geo.position" CONTENT="<%= CONFIG[:geo_position] %>">
   <meta name="geo.placename" CONTENT="<%= CONFIG[:geo_address] %>">

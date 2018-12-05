@@ -13,6 +13,7 @@ keywords: "Lines, Blog, Ruby on Rails"                                          
 og_logo: "https://opoloo.github.io/lines-engine/assets/images/lines-logo.jpg"   # OpenGraph logo
 geo_position: "50.00; 8.27"                                                     # Geo tags for position and address
 geo_address: "Opoloo, 55116 Mainz"                                              # Geo tags for position and address
+meta_robots: "index,follow"
 
 
 ##############
