@@ -42,7 +42,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'friendly_id', '>= 5.2.4'
   s.add_runtime_dependency 'rails3-jquery-autocomplete', '>= 1.0.11'
   s.add_runtime_dependency 'meta-tags', '>= 2.0.0'
-  s.add_runtime_dependency 'bcrypt-ruby', '>= 3.0.0'
   s.add_runtime_dependency 'i18n', '>= 0.7.0'
   s.add_runtime_dependency 'sprockets-rails', '< 4'
   s.add_runtime_dependency 'rails', ['>= 3', '< 6']
