@@ -1,6 +1,6 @@
 module Lines
   class ApplicationController < ActionController::Base
-
+    
     private
 
       # sets the current_lines_user if one exists in session

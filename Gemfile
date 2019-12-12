@@ -36,6 +36,7 @@ end
 group :test do
   gem 'faker'
   gem 'capybara'
+  gem 'shoulda-matchers'
   gem 'guard-rspec', '= 4.2.0'
   gem 'rb-inotify', '~> 0.9'
   gem 'launchy'

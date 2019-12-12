@@ -1,14 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-# Maintain your gem's version:
 require "lines/version"
 require 'date'
 
-# Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "lines-engine"
   s.version     = Lines::VERSION
-  s.authors     = ["Opoloo GbR"]
+  s.authors     = ["Jochen Greif"]
   s.email       = ["info@opoloo.de"]
   s.homepage    = "http://lines.opoloo.com"
   s.summary     = "LINES is the open source blog platform you have been waiting for"
@@ -32,7 +30,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'jquery-rails', '< 6', '>= 3.1.0'
   s.add_runtime_dependency 'acts-as-taggable-on', '>= 3.5'
   s.add_runtime_dependency 'bcrypt', '~> 3.1.0', '>= 3.1.0'
-  s.add_runtime_dependency 'sitemap_generator', '~> 5.0.0', '>= 5.0.5'
+  s.add_runtime_dependency 'sitemap_generator', '>= 5.0.5'
   s.add_runtime_dependency 'jquery-fileupload-rails', '>= 0.4.1'
   s.add_runtime_dependency 'jquery-ui-rails', '>= 5.0.0'
   s.add_runtime_dependency 'sanitize', '>= 4.4.0'

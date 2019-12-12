@@ -22,7 +22,7 @@ PATH
       rmagick (>= 2.13.4)
       sanitize (>= 4.4.0)
       sass-rails (>= 4.0.0)
-      sitemap_generator (~> 5.0.0, >= 5.0.5)
+      sitemap_generator (>= 5.0.5)
       sprockets-rails (< 4)
       thor (>= 0.19)
       thread_safe (>= 0.3)
@@ -82,7 +82,7 @@ GEM
     autoprefixer-rails (9.7.3)
       execjs
     bcrypt (3.1.13)
-    builder (3.2.3)
+    builder (3.2.4)
     capistrano (3.11.2)
       airbrussh (>= 1.0.0)
       i18n
@@ -121,7 +121,7 @@ GEM
     factory_girl_rails (4.9.0)
       factory_girl (~> 4.9.0)
       railties (>= 3.0.0)
-    faker (2.8.0)
+    faker (2.8.1)
       i18n (>= 1.6, < 1.8)
     ffi (1.11.3)
     formatador (0.2.5)
@@ -170,7 +170,7 @@ GEM
     kaminari-core (1.1.1)
     launchy (2.4.3)
       addressable (~> 2.3)
-    listen (3.2.0)
+    listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.4.0)
@@ -280,8 +280,10 @@ GEM
       sprockets-rails
       tilt
     shellany (0.0.1)
-    sitemap_generator (5.0.5)
-      builder
+    shoulda-matchers (4.1.2)
+      activesupport (>= 4.2.0)
+    sitemap_generator (6.0.2)
+      builder (~> 3.0)
     sprockets (4.0.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -323,6 +325,7 @@ DEPENDENCIES
   rb-inotify (~> 0.9)
   rspec (~> 2.14.1, < 3)
   rspec-rails (~> 2.14.0)
+  shoulda-matchers
   thor
   yard
 
