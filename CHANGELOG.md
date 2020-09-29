@@ -1,4 +1,6 @@
 # Changelog
+## 1.2.7
+- Kirka customization
 
 ## 1.2.6.1
 - Typo inside div tag corrected
