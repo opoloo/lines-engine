@@ -8,7 +8,6 @@ namespace :lines do
     end
   end
 
-
   desc "Add a new Lines User"
   task :add_user => :environment do
     # Get user's credentials
@@ -22,13 +21,12 @@ namespace :lines do
     if u.valid? && a.valid? && u.save! && a.save!
       puts "\n\nUser created.\n\n"
     else
-      puts "Something went wrong. lets do it again...\n"
+      puts "Something went wrong. lets do it again...\n #{u.errors.messages} \n #{a.errors.messages}"
       get_credentials
     end
 
   end
 
-  
   # Reads credentials(email and password) from STDIN
   def get_credentials
     print "Your name: "

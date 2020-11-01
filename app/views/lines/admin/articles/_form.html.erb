@@ -40,19 +40,31 @@
     </div>
 
     <div class="input-field required">
-      <%= f.text_field :title, placeholder: true, class: 'title' %>
+      <%= f.text_field :title, placeholder: I18n.t('admin.articles.form.inputs.title'), class: 'title' %>
+    </div>
+    <div class="input-field required">
+      <%= f.text_field :title_ru, placeholder: I18n.t('admin.articles.form.inputs.title_ru'), class: 'title' %>
     </div>
 
     <div class="input-field">
-      <%= f.text_field :sub_title, placeholder: true %>
+      <%= f.text_field :sub_title, placeholder: I18n.t('admin.articles.form.inputs.sub_title') %>
+    </div>
+    <div class="input-field">
+      <%= f.text_field :sub_title_ru, placeholder: I18n.t('admin.articles.form.inputs.sub_title_ru') %>
     </div>
 
     <div class="input-field">
-      <%= f.text_area :teaser, placeholder: true, rows: 1 %>
+      <%= f.text_area :teaser, placeholder: I18n.t('admin.articles.form.inputs.teaser'), rows: 1 %>
+    </div>
+    <div class="input-field">
+      <%= f.text_area :teaser_ru, placeholder: I18n.t('admin.articles.form.inputs.teaser_ru'), rows: 1 %>
     </div>
 
     <div class="input-field editor required">
-      <%= f.text_area :content, placeholder: true, rows: 1, data: {editor: "codemirror"} %>
+      <%= f.text_area :content, placeholder: I18n.t('admin.articles.form.inputs.content'), rows: 1, data: {editor: "codemirror"} %>
+    </div>
+    <div class="input-field editor required">
+      <%= f.text_area :content_ru, placeholder: I18n.t('admin.articles.form.inputs.content_ru'), rows: 1, data: {editor: "codemirror"} %>
     </div>
 
     <div class="input-field">
@@ -79,7 +91,7 @@
     <h2><%= t('lines.additional_info').html_safe %></h2>
 
     <div class="input-field">
-      <%= f.autocomplete_field :tag_list, autocomplete_tag_name_admin_articles_path, :"data-delimiter" => ', ', placeholder: "Tags" %>
+      <%= f.autocomplete_field :tag_list, autocomplete_tag_name_admin_articles_path, :"data-delimiter" => ', ', placeholder: I18n.t('admin.articles.form.headers.tags') %>
     </div>
 
     <div class="input-field">

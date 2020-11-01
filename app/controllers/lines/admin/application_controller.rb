@@ -7,15 +7,12 @@ require_dependency "lines/application_controller"
 
 module Lines
   module Admin
-
     class ApplicationController < Lines::ApplicationController
       protect_from_forgery
 
       before_action :authorize
 
       layout 'lines/admin'
-
     end
-    
   end
 end

@@ -164,8 +164,8 @@ module Lines
 
         # Allowed attribute with strong_params
         def article_params
-          params.require(:article).permit(:content, :teaser, :hero_image, :short_hero_image, :published, 
-            :published_at, :sub_title, :title, :hero_image_cache, :tag_list, :gplus_url, :featured, 
+          params.require(:article).permit(:content, :content_ru, :teaser, :teaser_ru, :hero_image, :short_hero_image, :published, 
+            :published_at, :sub_title, :sub_title_ru, :title, :title_ru, :hero_image_cache, :tag_list, :gplus_url, :featured, 
             :document, :document_cache, :hero_image_file, :remove_document, :remove_hero_image, :pictures,
             pictures_attributes: [:id, :image, :name, :article_id], author_ids: [] )
         end

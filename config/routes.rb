@@ -1,5 +1,4 @@
 Lines::Engine.routes.draw do
-
   get 'password_resets/new'
 
   get 'password_resets/edit'
@@ -10,10 +9,6 @@ Lines::Engine.routes.draw do
 
   resources :sessions
   resources :password_resets,     only: [:new, :create, :edit, :update]
-
-  resources :articles, only: [:index, :show] do
-    get 'page/:page', action: :index, on: :collection
-  end
 
   resources :short_articles, only: [:index, :show], controller: :articles do
     get 'page/:page', action: :index, on: :collection
@@ -33,5 +28,4 @@ Lines::Engine.routes.draw do
   end
   
   root :to => 'articles#index'
-
 end

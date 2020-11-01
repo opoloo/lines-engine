@@ -46,7 +46,6 @@
             <%= link_to t('lines.buttons.unpublish').html_safe, admin_article_toggle_publish_path(article), method: :post, class: "btn-unpublish" %>
           </div>
           <div class="right">
-            <%= link_to t('lines.buttons.preview').html_safe, admin_article_path(article) %>
             <%= link_to "", {controller: :articles, action: 'destroy', id: article.id}, data: { confirm: t('lines.confirm').html_safe }, class: "btn-delete icon-delete", method: :delete %>
           </div>
         </div>

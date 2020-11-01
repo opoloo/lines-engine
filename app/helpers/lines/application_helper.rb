@@ -76,7 +76,7 @@ module Lines
             "<div class='submenu'>
               <div class='submenu-inner'>
                 <ul>
-                  <li>#{link_to("Dashboard", admin_articles_path)}</li>
+                  <li>#{link_to(t('admin.header'), admin_articles_path)}</li>
                   <li>#{link_to(t('activerecord.models.lines/author', count: 2).html_safe, admin_authors_path)}</li>
                 </ul>
                 <ul>

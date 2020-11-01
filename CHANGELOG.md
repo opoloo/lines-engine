@@ -1,4 +1,7 @@
 # Changelog
+## 1.2.8
+- Moved articles from gem to base. Added russian support to articles. Added translations.
+
 ## 1.2.7
 - Kirka customization
 

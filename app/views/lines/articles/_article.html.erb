@@ -4,14 +4,12 @@
 
   <% unless article.image_url.blank? %>
     <div class="hero_image">
-      <%= link_to article_path(article) do %>
-        <img src="<%= article.image_url %>" alt="<%= article.title %>" />
-      <% end %>
+      <img src="<%= article.image_url %>" alt="<%= article.title %>" />
     </div>
   <% end %>
 
   <div class="article_header">
-    <h1><%= link_to article.title, article_path(article) %></h1>
+    <h1><%= article.title %></h1>
     <h2><%= article.sub_title %></h2>
     <div class="author_name"><span>by</span> <%= display_article_authors(article) %></div>
   </div>

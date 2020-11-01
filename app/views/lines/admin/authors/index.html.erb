@@ -1,6 +1,6 @@
 <%= render_navbar do %>
   <%= link_to t('lines.buttons.new_author').html_safe, new_admin_author_path, class: "btn btn-new-author highlight" %>
-  <%= link_to 'Dashboard', lines.admin_root_path, class: "btn btn-view-blog" %>
+  <%= link_to t('admin.header'), lines.admin_root_path, class: "btn btn-view-blog" %>
 <% end %>
 
 <% if defined?(@author) && @author.errors.any? %>

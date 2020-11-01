@@ -1,7 +1,7 @@
 <%= content_for :navbar do  %>
   <%= render_navbar do %>
-    <%= button_to (@article.published ? "Unpublish" : "Publish"), admin_article_toggle_publish_path(@article), :class => "btn btn-save-publish highlight" %>
-    <%= link_to 'Edit', edit_admin_article_path(@article), :class => "btn btn-edit" %>
+    <%= button_to (@article.published ? t('lines.buttons.unpublish') : t('lines.buttons.publish')), admin_article_toggle_publish_path(@article), :class => "btn btn-save-publish highlight" %>
+    <%= link_to t('lines.buttons.edit'), edit_admin_article_path(@article), :class => "btn btn-edit" %>
   <% end %>
 <% end %>
 
