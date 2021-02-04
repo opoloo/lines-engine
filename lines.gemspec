@@ -7,13 +7,13 @@ Gem::Specification.new do |s|
   s.name        = "lines-engine"
   s.version     = Lines::VERSION
   s.authors     = ["Jochen Greif"]
-  s.email       = ["info@opoloo.de"]
+  s.email       = ["lines@jochengreif.de"]
   s.homepage    = "http://lines.opoloo.com"
   s.summary     = "LINES is the open source blog platform you have been waiting for"
   s.description = "LINES lets you manage your posts in a clear, consistent frontend. The gracefully slender editor keeps your editing simple and lets you just splash around in your ideas. Once you're happy, just hit publish and see your text, code examples, images, and links shine."
   s.license     = "LGPL-3.0"
   s.date        = Date.today.to_s
-  s.required_ruby_version = '>= 1.9.3'
+  s.required_ruby_version = '>= 2.4'
   s.cert_chain  = ['certs/lines-engine.pem']
   s.signing_key = File.expand_path("~/.ssh/gem-private_key.pem") if $0 =~ /gem\z/
 
