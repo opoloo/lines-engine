@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'orm_adapter', '>= 0.5'
   s.add_runtime_dependency 'thread_safe', '>= 0.3'
-  s.add_runtime_dependency 'railties', '>= 3.2.6', '< 6'
+  s.add_runtime_dependency 'railties', '>= 3.2.6', '< 7'
   s.add_runtime_dependency 'rmagick', '>= 2.13.4'
   s.add_runtime_dependency 'thor', '>= 0.19'
   s.add_runtime_dependency 'carrierwave', '>= 0.10.0'
@@ -42,7 +42,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'meta-tags', '>= 2.0.0'
   s.add_runtime_dependency 'i18n', '>= 0.7.0'
   s.add_runtime_dependency 'sprockets-rails', '< 4'
-  s.add_runtime_dependency 'rails', ['>= 3', '< 6']
+  s.add_runtime_dependency 'rails', ['>= 3', '< 7']
 
   s.add_development_dependency 'mysql2'
   s.add_development_dependency 'rspec-rails', '~> 2.14.2', '< 3'
