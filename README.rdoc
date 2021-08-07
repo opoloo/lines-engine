@@ -72,7 +72,7 @@ To update an existing user, you’ll need the rails console with 'rails c'
 
  
 === UPDATE an existing user
-  u = User.find_by_email('your@email.com')
+  u = Lines::User.find_by(email: 'your@email.com')
   u.email = "new@mail.com"
   u.password = "newsekret"
   u.save
