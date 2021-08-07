@@ -85,7 +85,7 @@ module Lines
       image_ids = self.used_images
       if !image_ids.nil?
         Picture.where(id: image_ids).each do |picture|
-          picture.update_attributes(article_id: self.id)
+          picture.update(article_id: self.id)
         end
       end
     end
