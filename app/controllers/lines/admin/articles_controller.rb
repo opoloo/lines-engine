@@ -80,7 +80,7 @@ module Lines
         end
 
         respond_to do |format|
-          if @article.update_attributes(article_params)
+          if @article.update(article_params)
             ActionController::Base.new.expire_fragment(@article)
             format.html { redirect_to admin_article_path(@article) }
           else
@@ -102,7 +102,7 @@ module Lines
       # Toggles published state of an article
       def toggle_publish
         @article = Article.friendly.find(params[:article_id])
-        @article.update_attributes(published: !@article.published)
+        @article.update(published: !@article.published)
         flash[:success] = "“#{@article.title}” has been #{'un' if !@article.published}published."
         redirect_to admin_articles_url
       end
@@ -113,10 +113,10 @@ module Lines
         old_featured = Article.where(featured: true)
         if old_featured.size > 0
           old_featured.each do |article|
-            article.update_attributes(featured: false)
+            article.update(featured: false)
           end
         end
-        @article.update_attributes(featured: !@article.featured)
+        @article.update(featured: !@article.featured)
         redirect_to admin_articles_url
       end
 
