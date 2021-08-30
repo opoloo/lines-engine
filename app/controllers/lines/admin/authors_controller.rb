@@ -41,7 +41,7 @@ module Lines
       def update
         @author = Lines::Author.find(params[:id])
 
-        if @author.update_attributes(author_params)
+        if @author.update(author_params)
           redirect_to admin_author_path(@author)
         else
           render action: "edit"
@@ -55,7 +55,7 @@ module Lines
           redirect_to admin_authors_url
         else
           @authors = Lines::Author.all
-          render "index" 
+          render "index"
         end
       end
 

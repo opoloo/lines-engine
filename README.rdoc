@@ -9,7 +9,7 @@
 
 LINES is a customizable publishing framework for Rails developers. It makes your publications and the processes around it simple and beautiful.
 
-LINES is designed for mobile publishing needs. You work in a clear, responsive backend where you write with a distraction-free markdown editor, and where publishing your articles is dead simple. Readers enjoy your writing, not least because it’s perfectly readable on all screens. 
+LINES is designed for mobile publishing needs. You work in a clear, responsive backend where you write with a distraction-free markdown editor, and where publishing your articles is dead simple. Readers enjoy your writing, not least because it’s perfectly readable on all screens.
 
 LINES is a framework for tech-savvies who care about writing and publishing, with the freedom of full OSS access.
 
@@ -70,9 +70,9 @@ Currently, LINES does not offer a GUI for managing users, but you can use a rake
 
 To update an existing user, you’ll need the rails console with 'rails c'
 
- 
+
 === UPDATE an existing user
-  u = User.find_by_email('your@email.com')
+  u = Lines::User.find_by(email: 'your@email.com')
   u.email = "new@mail.com"
   u.password = "newsekret"
   u.save
@@ -103,7 +103,7 @@ Run <tt>rails g lines:copy_styles</tt> to install stylesheets from newer gem ver
 
 === Modify CSS/SCSS
 
-Find the SASS files inside the <tt>app/assets/stylesheets/lines/</tt> directory. 
+Find the SASS files inside the <tt>app/assets/stylesheets/lines/</tt> directory.
 
 Use the <tt>app/assets/stylesheets/lines/lines_overrides.scss</tt> file to adjust existing styles or add new ones.
 
@@ -144,7 +144,7 @@ A big thanks goes to these wonderful people for their contributions and support:
 == License
 
 You may use the Lines blog template as you please. You’d make us happy, though, if you kept an attribution to {Lines}[http://lines.opoloo.com/] and {Opoloo}[https://www.opoloo.com] to spread the word.
- 
+
 We heartily invite you to extend the features of the engine, but when you do, you should fork it on GitHub, so everyone can profit from your work.
 
 You can see the full license here: http://choosealicense.com/licenses/lgpl-v3/

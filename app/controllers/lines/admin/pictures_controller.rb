@@ -14,7 +14,7 @@ module Lines
         @picture = Lines::Picture.find(params[:id])
 
         respond_to do |format|
-          if @picture.update_attributes(picture_params[:picture])
+          if @picture.update(picture_params[:picture])
             format.html { redirect_to @picture }
           else
             format.html { render action: "edit" }
@@ -39,6 +39,6 @@ module Lines
           params.fetch(:picture, {}).permit(:image)
         end
     end
-  
+
   end
 end

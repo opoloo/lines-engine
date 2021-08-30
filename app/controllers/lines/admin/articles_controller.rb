@@ -1,7 +1,7 @@
 # Provides the CRUD operations for +Article+.
-# Also handles base64 encoded file uploads and toggling of 
+# Also handles base64 encoded file uploads and toggling of
 # published and featured state of an +Article+
-# 
+#
 # Inherits from +Admin::ApplicationController+ to ensure authentication.
 
 require_dependency "lines/admin/application_controller"
@@ -14,7 +14,7 @@ module Lines
       autocomplete :tag, :name, class_name: 'ActsAsTaggableOn::Tag'
       before_action :process_base64_upload, only: [:create, :update]
 
-      # Lists all articles. Provides <tt>@articles_unpublished</tt> and 
+      # Lists all articles. Provides <tt>@articles_unpublished</tt> and
       # <tt>@articles_published</tt> to distinguish between published and
       # unpublished articles
       def index
@@ -74,13 +74,13 @@ module Lines
 
         # delete uploaded hero image when predifined image is selected
         if !a_params[:hero_image_cache].present? && a_params[:short_hero_image].present?
-          @article.remove_hero_image! 
-          @article.remove_hero_image = true 
+          @article.remove_hero_image!
+          @article.remove_hero_image = true
           @article.save
         end
 
         respond_to do |format|
-          if @article.update_attributes(article_params)
+          if @article.update(article_params)
             ActionController::Base.new.expire_fragment(@article)
             format.html { redirect_to admin_article_path(@article) }
           else
@@ -102,7 +102,7 @@ module Lines
       # Toggles published state of an article
       def toggle_publish
         @article = Article.friendly.find(params[:article_id])
-        @article.update_attributes(published: !@article.published)
+        @article.update(published: !@article.published)
         flash[:success] = "“#{@article.title}” has been #{'un' if !@article.published}published."
         redirect_to admin_articles_url
       end
@@ -113,10 +113,10 @@ module Lines
         old_featured = Article.where(featured: true)
         if old_featured.size > 0
           old_featured.each do |article|
-            article.update_attributes(featured: false)
+            article.update(featured: false)
           end
         end
-        @article.update_attributes(featured: !@article.featured)
+        @article.update(featured: !@article.featured)
         redirect_to admin_articles_url
       end
 
@@ -141,7 +141,7 @@ module Lines
 
           #create a new uploaded file
           @uploaded_file = ActionDispatch::Http::UploadedFile.new(
-            tempfile: tempfile, 
+            tempfile: tempfile,
             filename: picture_filename,
             original_filename: picture_original_filename
           )
@@ -164,8 +164,8 @@ module Lines
 
         # Allowed attribute with strong_params
         def article_params
-          params.require(:article).permit(:content, :teaser, :hero_image, :short_hero_image, :published, 
-            :published_at, :sub_title, :title, :hero_image_cache, :tag_list, :gplus_url, :featured, 
+          params.require(:article).permit(:content, :teaser, :hero_image, :short_hero_image, :published,
+            :published_at, :sub_title, :title, :hero_image_cache, :tag_list, :gplus_url, :featured,
             :document, :document_cache, :hero_image_file, :remove_document, :remove_hero_image, :pictures,
             pictures_attributes: [:id, :image, :name, :article_id], author_ids: [] )
         end
