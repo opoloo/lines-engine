@@ -5,7 +5,7 @@ default: &default
 
 development:
   <<: *default
-  url: blog_development
+  url: <%= ENV['DATABASE_URL'] %>
 
 test:
   <<: *default
