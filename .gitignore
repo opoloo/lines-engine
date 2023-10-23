@@ -12,3 +12,4 @@ node_modules/
 tmp/
 /doc/
 .yardoc
+.env
