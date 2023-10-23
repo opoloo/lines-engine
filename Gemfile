@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+ruby "2.6.8"
 
 # Declare your gem's dependencies in lines.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -24,6 +25,7 @@ group :development do
   gem 'capistrano'
   gem 'yard'
   gem 'autoprefixer-rails'
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
 end
 
 group :development, :test do
